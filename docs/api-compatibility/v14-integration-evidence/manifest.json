@@ -1,0 +1,20 @@
+{
+  "scope": "V14 offline integration evidence; source promotion and complete fee/runtime acceptance tracked separately",
+  "files": {
+    "README.md": "3fe91cfd8aeb6e990c6d3d00bf8a32ae21866afba7ad49dc155212752c845ed0",
+    "archive-consumer.json": "290f948b2a90cbe2fbee5bba1387016179b050c42cbd66e83e467d49b571be49",
+    "client-ready.json": "1bb0dbf7a40d2914ba3b1c14909550c5a18dafc2e12c2b95202fa053182b74ca",
+    "client-source-equality.json": "257bb757f2cbc6910ca7217e2268024879c57ed2cb019ae84e0f2b02602deb8e",
+    "client-sync.json": "5c61e8525f8c3568774bf9fcd31ef2fc6fed816aa772047ba29e712f6e0d5702",
+    "client-typecheck-config.json": "8039a68559814dbef791b1753ebf00453a967d1b8c94982b1160fe8c31c106f8",
+    "client-typecheck-exit.json": "982b9e9bfb10ffe83cad665807abcfd3fa97b37822db5ab7831157a499548a9e",
+    "client-typecheck.log": "7dac21ad56c3c4dc427164ea8d1835b6842f6e574e53a9f78371e9b8c7b8dea7",
+    "maintained-source-readiness.json": "c4171f0563ced4a76d4b90831aed77e9f800ba614aa41fe08fc02b691c45ad62",
+    "native-build-provenance.json": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+    "native-readiness.json": "8162a1e48bb73a315ba96182a5eb5c6fbe4a7c298d655c0059f95c071460b77e",
+    "release-installer-revision.json": "1cd0964e8b7e9af1b68b63385904d312a936ef03634eeb650fba2df61b0c42e0",
+    "summary.json": "71560046ab7bdc05299e968555139b09f3bf3d3a9ba55ada942d0d8af0dbca01",
+    "wrapper-compatibility-revision.json": "773da5665770bcaddcdd4789e86d68e06d9593342e954c5e904c6a607514f020",
+    "wrapper-equivalence.json": "450d61723da8aa8f110b6d4ea3014761df508715f777b424b1a8d43893e548b2"
+  }
+}

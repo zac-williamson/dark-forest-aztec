@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "actualChecks": 1429,
+  "suites": [
+    {
+      "suite": "read-only",
+      "passed": true,
+      "checks": 162,
+      "report": "reader-regressions-candidate-v12.json",
+      "reportSHA256": "3f57af9fda935e488dc9f4532cb449500bb5a01888002054bf78e62fddc0870e",
+      "liveClassChecks": 20,
+      "scope": "Read-only original store methods on a fresh SDK5.2 wallet registering only the nine facade artifacts; no backend artifact, no utility authorization hook, no sends.",
+      "proofsEnabled": false
+    },
+    {
+      "suite": "trust",
+      "passed": true,
+      "checks": 183,
+      "report": "trust-regressions-candidate-v12.json",
+      "reportSHA256": "2e78b8dd8206267a33916c1ff240abfbd9e100675c7e1e507cb94675cce5d1d1",
+      "liveClassChecks": 20,
+      "scope": "Simulated hostile calls only; no sends or game state changes. V5/V6 additionally isolate AVM caller/pair guards with clearly labelled injected msg_sender; those synthetic calls are not valid account transactions, proof evidence, or fee measurements. Exact live artifact classes recorded.",
+      "proofsEnabled": false,
+      "simulationChecks": 179,
+      "abiAbsenceChecks": 4
+    },
+    {
+      "suite": "run",
+      "passed": true,
+      "checks": 792,
+      "report": "storage-regressions-candidate-v12.json",
+      "reportSHA256": "1d67c21f8ef467e49f7e3e6b32f70c56dcb6f37962f11c106457b45912c88808",
+      "liveClassChecks": 20,
+      "scope": "Isolated fresh legacy stores and canonical-backend namespaces; original APIs, actual public receipts and exact emitted fields; V5/V6 independently read physical facade roots against exact typed-state hashes and version-selected Backend/facade grant/admin words against explicit transitions. No shared game state mutated. Gameplay proofs are outside this storage suite.",
+      "proofsEnabled": false,
+      "physicalObservations": 486
+    },
+    {
+      "suite": "config-caller",
+      "passed": true,
+      "checks": 34,
+      "report": "config-caller-regressions-candidate-v12.json",
+      "reportSHA256": "c28131eb2061e0ab5e0541814792900c70f11816a996ebd96bc42a5d0093fee5",
+      "liveClassChecks": 20,
+      "scope": "Original private APIs evaluated and publicly simulated through isolated original/candidate System instances with caller-sensitive Config. Distinctive reverts occur before game-state writes; Upgrade first executes its original state-root checks against isolated seeded namespaces. This checks caller preservation, not successful settlement, proof cost or Fee Juice.",
+      "proofsEnabled": false
+    },
+    {
+      "suite": "location-caller",
+      "passed": true,
+      "checks": 20,
+      "report": "location-caller-regressions-candidate-v12.json",
+      "reportSHA256": "e76fe138e4f926baaeceff05bb7ccf07ff5ea22426c6e637f0ffd422c22ca4ba",
+      "liveClassChecks": 20,
+      "scope": "Original private Refresh/Move APIs evaluated without transaction proofs, then publicly simulated through isolated original/final Systems. A custom location store checks actual caller, every inactive location field, and Move source/target batch order before a sentinel reverts all writes. Setup transactions are isolated; this is not fee or proof-latency evidence.",
+      "proofsEnabled": false
+    },
+    {
+      "suite": "batch-caller",
+      "passed": true,
+      "checks": 238,
+      "report": "batch-caller-regressions-candidate-v12.json",
+      "reportSHA256": "d7ac694e303ea4324a582941b56d580bb716e80e9b2a1e1c663fccbeeec7e314",
+      "liveClassChecks": 20,
+      "scope": "Original private Refresh/Give/Move entry points, proof-disabled public execution with isolated System/store clones. Custom view verifier checks actual caller and every original batch word, returns false or a distinctive sentinel. Asymmetric queues distinguish Move source and target; no static-call counter is assumed. This is compatibility evidence, not Fee Juice or proof evidence.",
+      "proofsEnabled": false
+    }
+  ],
+  "scope": "Six suites against the exact fee-measured V12 native classes, with separate fresh proof-disabled PXEs. Checks are assertions, not transaction counts. Trust183 includes179 diagnostic simulations plus4 compiled ABI-absence checks. Physical486 are included within storage792. Custom caller gameplay calls deliberately revert; their isolated setup sends do not mutate fee namespaces.",
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "startupRecovery": "The first reader process stalled inside fresh PXE initialization before the first assertion and sent no transactions. Only that reader was terminated. The exact frozen reader passed162 on a fresh retry with info logging; all later suites completed serially. Both attempts are preserved. No node restart, state reset, source correction or ambiguous send.",
+  "nativeBuildSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+  "planSHA256": "2b52d4a226b96a0e3b2bdcee6064df27c0db621d51a2a4262c309900eda8bd27",
+  "readinessSHA256": "d919d161c6c1f982e8a690869edc60c40d2d38c3f06f5e1c48d1109789eb2d98"
+}

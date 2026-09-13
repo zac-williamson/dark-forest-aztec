@@ -1,0 +1,1 @@
+Copied all20 checked contract interfaces and native artifacts.

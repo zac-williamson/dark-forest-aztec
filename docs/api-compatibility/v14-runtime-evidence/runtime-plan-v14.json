@@ -1,0 +1,209 @@
+{
+  "sdkNodeModules": "/tmp/df-fee-tools/node_modules",
+  "externalRuntimePins": [
+    {
+      "path": "/private/tmp/df-fee-tools/package.json",
+      "sha256": "dab0dfa598b001bf417239640e3a6bf431bd170848d62672a2e057beaa29b1e3"
+    },
+    {
+      "path": "/private/tmp/df-fee-tools/package-lock.json",
+      "sha256": "d3d3bfa4bbf609d4ba1dba2d2814ec21b7c475bbfb022b007c4130deaf222420"
+    },
+    {
+      "path": "/private/tmp/df-fee-tools/node_modules/@aztec/stdlib/package.json",
+      "sha256": "589ae48b19c30dcc76f38b24f16128f78f25f1e5f89b89d24359134109dae65f"
+    },
+    {
+      "path": "/private/tmp/df-fee-tools/node_modules/@aztec/wallets/package.json",
+      "sha256": "3cff57a43286e611012cc81f9ec005d557d4cd07b83a6926a1add9e0075ba441"
+    }
+  ],
+  "originalArtifactInputs": [
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/world-WorldStorage.json",
+      "sha256": "f2c5e0a51c2d5b4db628bf97a1bc65bec4e90f172447d821b7705ea50a4f8c44"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/player-PlayerStorage.json",
+      "sha256": "7f3f98e5e1d084c479705d3dc14eb4f454aed82475d787a15f41f51b80cfc9de"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet-PlanetStorage.json",
+      "sha256": "1532636585e9e79857ac8db0ce00f58c1d65d9a32e114ce1e6e1c7750dc3d926"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+      "sha256": "63892e5b9edb0eb325ea56164cefcf6becd410b8e1856e798c13a71e7cd504fd"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet_events-PlanetEventsStorage.json",
+      "sha256": "2176e311ee720f719acc23075122626b933a61e045066073322eecd65be92f12"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet_artifacts-PlanetArtifactsStorage.json",
+      "sha256": "e2647fa5d973fcc658e8bf9a57d3efa5635e53666d348ac8392fabbda0a4cf03"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/arrival-ArrivalStorage.json",
+      "sha256": "763627846ff01e3ba854011e6287f5320c307367bf3ca2e35ff0fce37e92bbc3"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/artifact-ArtifactStorage.json",
+      "sha256": "f962e4229e7963190b1159b8a60a188765faa073ec8af545c7df3b08117cb9b3"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/artifact_location-ArtifactLocationStorage.json",
+      "sha256": "58b0ca15120be56f6de4e372bc4786230e9d152c8888e0f09b781d1c16a884d3"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/core-Core.json",
+      "sha256": "b952eaaa2342ab5fa86f369191d584e0aca0502c36ca6ea1405091d3d92022ab"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/move-Move.json",
+      "sha256": "308f0612d0419e8513d084e5a9bed7e49f7d3a75af1872e0e934369938dfd309"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/artifact_valut-ArtifactValut.json",
+      "sha256": "7a8c3f7aebb644259168375bb910c379c215d9ceae610a109e81d0b469c7f1d5"
+    }
+  ],
+  "candidate": "candidate-v14",
+  "preparedOnly": true,
+  "status": "HELD: source-only; root and sole fee writer must release after full58.",
+  "transactionProofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "plannedChecks": 381,
+  "actualV14Checks": 0,
+  "inheritedV12Checks": 1429,
+  "scope": "Reader162 + trust183 (179 simulations/4ABI absence) +Give36 (12 private-entry and12 direct-caller simulations/12rollback checks). Dedicated touch and58fees remain separate evidence.",
+  "finalBuildManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "deploymentInputs": [
+    {
+      "path": "/tmp/df-v14-touch-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v14-deployments.json",
+      "sha256": "80b70909065d1488718a02f79a9407d050f8039780276b72d5e2951680471035"
+    }
+  ],
+  "fixtureInputs": [
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+      "sha256": "137847e671166affba2160e00aa5399276ce642ff44fa2792a06262862d55e3b"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-give_spaceships-ordinary.json",
+      "sha256": "68ef0392c85f4121ee4a0b5f4421e3ad604214de24fef1de536eb5a2b56e54fc"
+    }
+  ],
+  "fixtureArtifacts": [
+    {
+      "role": "batch",
+      "path": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+      "sha256": "45f6140d11b04d203b447fd5c95e20e3ca090b5ec36fc54de3133b6dea8dd76b"
+    }
+  ],
+  "steps": [
+    {
+      "id": "read-only",
+      "cwd": "/tmp/df-v14-final-runtime-suites",
+      "program": "/tmp/df-v14-final-runtime-suites/tests/api-compatible-storage/read-only.mjs",
+      "arguments": [
+        "candidate-v14",
+        "/tmp/df-v14-touch-order-native-r1/codegen",
+        "/tmp/df-v14-final-runtime-suites/results/reader-regressions-candidate-v14.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-v14-touch-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v14-deployments.json",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v14",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-v14-touch-order-native-r1/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+        "STORAGE_REVIEWED_PLAN_SHA256": "5bdf5d181e9165a611fe3521ad0330416362cb15a7f9420f51b1ca1f6c34cb5e",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-v14-touch-order-native-r1/input-manifest.json",
+        "STORAGE_DEPLOYMENTS_SHA256": "80b70909065d1488718a02f79a9407d050f8039780276b72d5e2951680471035"
+      },
+      "log": "/tmp/df-v14-final-runtime-suites/logs/read-only.log",
+      "plannedChecks": 162
+    },
+    {
+      "id": "trust",
+      "cwd": "/tmp/df-v14-final-runtime-suites",
+      "program": "/tmp/df-v14-final-runtime-suites/tests/api-compatible-storage/trust.mjs",
+      "arguments": [
+        "candidate-v14",
+        "/tmp/df-v14-touch-order-native-r1/codegen",
+        "/tmp/df-v14-final-runtime-suites/results/trust-regressions-candidate-v14.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-v14-touch-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v14-deployments.json",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v14",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-v14-touch-order-native-r1/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+        "STORAGE_REVIEWED_PLAN_SHA256": "5bdf5d181e9165a611fe3521ad0330416362cb15a7f9420f51b1ca1f6c34cb5e",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-v14-touch-order-native-r1/input-manifest.json",
+        "STORAGE_DEPLOYMENTS_SHA256": "80b70909065d1488718a02f79a9407d050f8039780276b72d5e2951680471035"
+      },
+      "log": "/tmp/df-v14-final-runtime-suites/logs/trust.log",
+      "plannedChecks": 183
+    },
+    {
+      "id": "batch-caller",
+      "cwd": "/tmp/df-v14-final-runtime-suites",
+      "program": "/tmp/df-v14-final-runtime-suites/tests/api-compatible-storage/batch-caller.mjs",
+      "arguments": [
+        "candidate-v14",
+        "/tmp/df-v14-touch-order-native-r1/codegen",
+        "/tmp/df-v14-final-runtime-suites/results/batch-caller-regressions-candidate-v14.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-v14-touch-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v14-deployments.json",
+        "CALLER_BATCH_ARTIFACT": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+        "RUN_CALLER_BATCH": "1",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v14",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-v14-touch-order-native-r1/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+        "STORAGE_REVIEWED_PLAN_SHA256": "5bdf5d181e9165a611fe3521ad0330416362cb15a7f9420f51b1ca1f6c34cb5e",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-v14-touch-order-native-r1/input-manifest.json",
+        "CALLER_BATCH_MOVE_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+        "CALLER_BATCH_ARTIFACT_VALUT_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-give_spaceships-ordinary.json",
+        "STORAGE_DEPLOYMENTS_SHA256": "80b70909065d1488718a02f79a9407d050f8039780276b72d5e2951680471035"
+      },
+      "log": "/tmp/df-v14-final-runtime-suites/logs/batch-caller.log",
+      "plannedChecks": 36
+    }
+  ],
+  "conditions": [
+    "Actual full58 completed and coordinator+sole fee owner explicit release",
+    "Serial fresh PXEs; no shared fee wallet",
+    "All20 final live class IDs and349 frozen native build inputs checked before wallet",
+    "No automatic resume/retry; reconcile uncertain setup sends",
+    "No proofs, profiling, compiler, native processing or concurrent traces"
+  ],
+  "coverageGate": {
+    "path": "/tmp/df-v14-touch-fee-runtime/experiments/api-compatible-benchmark/results/coverage-full-candidate-v14.json",
+    "verifiedPairs": 58
+  },
+  "harnessManifestSHA256": "a8b6aeb8db1fad32e2a1e9dabe42a336a3d496c7441b51430f34122758b161e1",
+  "revision": 2,
+  "setupJournal": {
+    "preBroadcastSerializedTransaction": true,
+    "deploymentAddressSaltClassBeforeSend": true,
+    "extraPublicSimulations": 0,
+    "automaticRetries": false,
+    "feeEffectsGate": false
+  }
+}

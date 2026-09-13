@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "20792588a4b39167822ccc1525d28d7d238de96cc1deee2732f4ef1837928680",
+      "bytes": 1991
+    },
+    {
+      "file": "batch-caller-regressions-candidate-v14.json",
+      "sha256": "1c6c1acc783b0e49927c7b43729c73cae79b225e8827bbcdd128abd9822d09e8",
+      "bytes": 88931
+    },
+    {
+      "file": "dispatcher-journal.json",
+      "sha256": "312651de55cf6ae271b1676e3e804cc2cd7d1f10b4f3f6d8b7b7608a18a696e0",
+      "bytes": 2800
+    },
+    {
+      "file": "reader-regressions-candidate-v14.json",
+      "sha256": "db1f5b357243edbe8782a5142d160fda8af344a05bf0f3f1dcb8962cb030afcd",
+      "bytes": 33875
+    },
+    {
+      "file": "readiness.json",
+      "sha256": "990d46e3ce23c45ec19b42654ac70e3b153a0a27de924b49d5ab944fc7b72524",
+      "bytes": 725
+    },
+    {
+      "file": "runtime-completion-v14-targeted.json",
+      "sha256": "312651de55cf6ae271b1676e3e804cc2cd7d1f10b4f3f6d8b7b7608a18a696e0",
+      "bytes": 2800
+    },
+    {
+      "file": "runtime-plan-v14.json",
+      "sha256": "b32c0cdecf7d497e3507feb1cd1442143c925a6efabbb61892f042cab420aaa2",
+      "bytes": 10238
+    },
+    {
+      "file": "runtime-summary.json",
+      "sha256": "0d937318e65b35c316db75d367578154cf62e893483291dc2ca4dc20bef5fece",
+      "bytes": 3874
+    },
+    {
+      "file": "runtime.log",
+      "sha256": "2c07eb2a92a225c0a676cddb8062dfe14bf84bf615843e34bfb5d60adfac8baa",
+      "bytes": 319
+    },
+    {
+      "file": "snapshot.json",
+      "sha256": "3e5b70123d2ed24784bbd7e74966b6bcdcc78a66d9c94dbb8719ab7c82cf8ec6",
+      "bytes": 19957
+    },
+    {
+      "file": "source-manifest.json",
+      "sha256": "a8b6aeb8db1fad32e2a1e9dabe42a336a3d496c7441b51430f34122758b161e1",
+      "bytes": 4832
+    },
+    {
+      "file": "trust-regressions-candidate-v14.json",
+      "sha256": "fb1f1e3321fc31bd5de394646e54fba2900d5e4fa72512f46283422076dc5eaf",
+      "bytes": 113514
+    }
+  ]
+}

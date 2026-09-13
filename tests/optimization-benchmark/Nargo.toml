@@ -1,0 +1,11 @@
+[package]
+name = "optimization_benchmark"
+type = "contract"
+authors = [""]
+
+[dependencies]
+aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
+arrival = { path = "../../contracts/storage/arrival" }
+artifact_location = { path = "../../contracts/storage/artifact_location" }
+planet = { path = "../../contracts/storage/planet" }
+types = { path = "../../contracts/types" }

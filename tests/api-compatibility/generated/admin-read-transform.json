@@ -1,0 +1,48 @@
+{
+  "scope": "Exact six-function source restoration and guarded verify semantics; execution and fees tested separately.",
+  "functions": [
+    {
+      "function": "pause",
+      "originalHash": "f7fc4c53f68c4b4a168843ac439305870abf5b8b4e428bfcc679e4b293d4565d",
+      "optimizedHash": "7205d181522eef272510ba9eecdb9d657ea90126948a90f021a1bebdf9dc3b5a",
+      "originalExpression": "self.view(world_storage.verify(0, world))",
+      "optimizedExpression": "_verify_world_for_admin(self.context, self.storage.state_backend.read(), world_storage.target_contract, 0, world)"
+    },
+    {
+      "function": "unpause",
+      "originalHash": "3ad0d700fcd678d38a9f527ef9daefd0421d3d306c9e9a6ffbd1997e7af8c5cd",
+      "optimizedHash": "da0ab8d5e74670adde0456ad87d83da6d1388fa1b3d5ee77a6869edd27aa9c96",
+      "originalExpression": "self.view(world_storage.verify(0, world))",
+      "optimizedExpression": "_verify_world_for_admin(self.context, self.storage.state_backend.read(), world_storage.target_contract, 0, world)"
+    },
+    {
+      "function": "set_owner",
+      "originalHash": "4e95c927c08219dcfe12bf34d3079d9953cd692ff21e7a425e4aa141c40a6c20",
+      "optimizedHash": "faa583db2953dcd2f0b5dc2dde287d8b4ed1761670df41419eca1f8707a4f3f7",
+      "originalExpression": "self.view(planet_storage.verify(planet_id, planet_state))",
+      "optimizedExpression": "_verify_planet_for_admin(self.context, self.storage.state_backend.read(), planet_storage.target_contract, planet_id, planet_state)"
+    },
+    {
+      "function": "deduct_score",
+      "originalHash": "971a3a8555dfda1a286441ae179afcf63e1f57694d816e14cc6bf0b97809f01f",
+      "optimizedHash": "27f95503fe38709f45460dfd9627219680a8a224fae6204b931ed746f9c4bdf5",
+      "originalExpression": "self.view(player_storage.verify(player_address, player_state))",
+      "optimizedExpression": "_verify_player_for_admin(self.context, self.storage.state_backend.read(), player_storage.target_contract, player_address, player_state)"
+    },
+    {
+      "function": "add_score",
+      "originalHash": "05fdeef3420c054a40b923708dafb1be7e14ca4b893be30bfe303895c294efcb",
+      "optimizedHash": "f57be2edebc4a0aaf90c83a6db029a5aaff114b1da5d0b3be166221f57fae6e0",
+      "originalExpression": "self.view(player_storage.verify(player_address, player_state))",
+      "optimizedExpression": "_verify_player_for_admin(self.context, self.storage.state_backend.read(), player_storage.target_contract, player_address, player_state)"
+    },
+    {
+      "function": "admin_set_world_radius",
+      "originalHash": "b98f87beef3c95a18430d0910963bc617c4d8e762d1a490d72b296425bee6ca7",
+      "optimizedHash": "4990f4b2bb35368058e8a682388615262e72c6be84bcf2981668eb79514ef7a3",
+      "originalExpression": "self.view(world_storage.verify(0, world))",
+      "optimizedExpression": "_verify_world_for_admin(self.context, self.storage.state_backend.read(), world_storage.target_contract, 0, world)"
+    }
+  ],
+  "helpersHash": "c2fdbc19c9024018adb3a4b15f67877fb6737a52aaa87d2b4202fd37ab2cdbb4"
+}

@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "sourceFiles": 402,
+  "originalWrappers": 17,
+  "copiedFiles": 40,
+  "indexSha256": "0dcff713165cd84a8321f721710c06a8aced2884b856f390161604416cace93b",
+  "nativeBuildSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "resolutions": [
+    {
+      "specifier": "@dfpunk/contracts",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/index.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/WorldStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/WorldStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/PlayerStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlayerStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/PlanetStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/PlanetRevealedCoordsStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetRevealedCoordsStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/PlanetEventsStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetEventsStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/PlanetArtifactsStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetArtifactsStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/ArrivalStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArrivalStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/ArtifactStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/ArtifactLocationStorage",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactLocationStorage.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/Config",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Config.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/Core",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Core.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/Move",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Move.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/Admin",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Admin.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/ArtifactAction",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactAction.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/ArtifactFind",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactFind.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/ArtifactProspect",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactProspect.ts"
+    },
+    {
+      "specifier": "@dfpunk/contracts/artifacts/ArtifactValut",
+      "file": "/private/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactValut.ts"
+    }
+  ]
+}

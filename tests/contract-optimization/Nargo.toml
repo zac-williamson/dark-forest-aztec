@@ -1,0 +1,18 @@
+[package]
+name = "optimization_tests"
+type = "lib"
+authors = [""]
+
+[dependencies]
+aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
+types = { path = "../../contracts/types" }
+arrival = { path = "../../contracts/storage/arrival" }
+artifact = { path = "../../contracts/storage/artifact" }
+artifact_location = { path = "../../contracts/storage/artifact_location" }
+planet = { path = "../../contracts/storage/planet" }
+planet_artifacts = { path = "../../contracts/storage/planet_artifacts" }
+planet_events = { path = "../../contracts/storage/planet_events" }
+planet_revealed_coords = { path = "../../contracts/storage/planet_revealed_coords" }
+player = { path = "../../contracts/storage/player" }
+world = { path = "../../contracts/storage/world" }
+optimization_benchmark = { path = "../optimization-benchmark" }

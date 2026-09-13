@@ -1,0 +1,30 @@
+{
+  "admin-Admin.json": {
+    "file": "reference/private/admin-Admin.json",
+    "sha256": "f1738b05806fee3b5ea60c156c56a61270670f12ee937a987151778219e75bd1"
+  },
+  "core-Core.json": {
+    "file": "reference/private/core-Core.json",
+    "sha256": "01b3c9321926e6d9c1edfe7317ee59fd87c74fec99d43600c4acf1c646f26e86"
+  },
+  "move-Move.json": {
+    "file": "reference/private/move-Move.json",
+    "sha256": "7115613e1a822dcaef56ea5b1c9273b88acf14459d54860b4c5c26ab4300b369"
+  },
+  "artifact_action-ArtifactAction.json": {
+    "file": "reference/private/artifact_action-ArtifactAction.json",
+    "sha256": "2c805c41e05ba3defd7c598c97846690182ca3dcc1f1c30e9cca26b68ab7979b"
+  },
+  "artifact_find-ArtifactFind.json": {
+    "file": "reference/private/artifact_find-ArtifactFind.json",
+    "sha256": "10b4a47056effe1a9d6a6e147cbb2c2a61257c8f65158ab3ea00680424d898b2"
+  },
+  "artifact_prospect-ArtifactProspect.json": {
+    "file": "reference/private/artifact_prospect-ArtifactProspect.json",
+    "sha256": "9244bbfe6b33d67cd0865e6acb7680dcb35130abb5098bdafe69fd18663657c6"
+  },
+  "artifact_valut-ArtifactValut.json": {
+    "file": "reference/private/artifact_valut-ArtifactValut.json",
+    "sha256": "0399e2723ca667998f94401f32e7320ec9ef168c7a54654d992c78f35fdb8318"
+  }
+}

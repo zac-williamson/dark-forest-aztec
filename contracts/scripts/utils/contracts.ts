@@ -77,7 +77,7 @@ export function addressesFromDeployResults(
 /**
  * Register contract instances with the wallet (PXE) so simulate() can run their code.
  * Uses *_DEPLOYER_ADDRESS and *_DEPLOYMENT_SALT from env (same prefix as *_CONTRACT_ADDRESS).
- * Constructor args are assumed to be [admin] for all contracts.
+ * Existing constructors take [admin]; the shared backend and workers take no args.
  */
 export async function registerContractsWithWallet(
     wallet: Wallet,
@@ -116,7 +116,7 @@ export async function registerContractsWithWallet(
                 {
                     deployer: AztecAddress.fromStringUnsafe(deployerStr),
                     salt: Fr.fromString(saltStr),
-                    constructorArgs: [admin],
+                    constructorArgs: spec.name === 'GameStateBackend' || spec.name.endsWith('SettlementWorker') ? [] : [admin],
                 }
             );
             await wallet.registerContract(

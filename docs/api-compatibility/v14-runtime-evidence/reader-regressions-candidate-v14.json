@@ -1,0 +1,926 @@
+{
+  "passed": true,
+  "configuration": {
+    "variant": "candidate-v14",
+    "deployment": "/tmp/df-v14-touch-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v14-deployments.json",
+    "artifacts": "/tmp/df-v14-touch-order-native-r1/codegen",
+    "output": "/tmp/df-v14-final-runtime-suites/results/reader-regressions-candidate-v14.json",
+    "nodeUrl": "http://127.0.0.1:8097",
+    "artifactGate": {
+      "buildManifest": "/tmp/df-v14-touch-order-native-r1/build-provenance.json",
+      "buildManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+      "reviewedPlanSHA256": "5bdf5d181e9165a611fe3521ad0330416362cb15a7f9420f51b1ca1f6c34cb5e",
+      "inputManifestSHA256": "5184ec853dc6b5d46007ab7727cca74ab6c12ef4d51c37241f176c3592e26461",
+      "classes": {
+        "config": {
+          "file": "config-Config.json",
+          "sha256": "2ac06fe5ca5d49e8b970e7168220354f25ba5c6822de5bef5e2fb1a525d2fb9a",
+          "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8"
+        },
+        "world": {
+          "file": "world-WorldStorage.json",
+          "sha256": "3c311a698e829bde9ca08e11139bccf25537f9686466ce908e3738178d205d6a",
+          "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934"
+        },
+        "player": {
+          "file": "player-PlayerStorage.json",
+          "sha256": "0eb88afdcc3584c4eee0bc1df7a8b7e2bffc5c4b2bc66dd5979b1cf74fb7e84a",
+          "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9"
+        },
+        "planet": {
+          "file": "planet-PlanetStorage.json",
+          "sha256": "0b1723bfcf4c3abae7525602fad0bc5323c27b58d3a132cbf2ed6b3700a71888",
+          "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03"
+        },
+        "planet_revealed_coords": {
+          "file": "planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+          "sha256": "824debb7d430d7b20786cd7a32fc748ea28278bb59f169a5bb4631d321294ef6",
+          "classId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb"
+        },
+        "planet_events": {
+          "file": "planet_events-PlanetEventsStorage.json",
+          "sha256": "1dba4f3efa73ea56e9cc6ef3b03df426e3adacbefcc66ff2bae3f36e95e0d7d9",
+          "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918"
+        },
+        "planet_artifacts": {
+          "file": "planet_artifacts-PlanetArtifactsStorage.json",
+          "sha256": "86b785ba03ccf6939ac75d7b401530f75a21f6f8b22559222a3480f464365020",
+          "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4"
+        },
+        "arrival": {
+          "file": "arrival-ArrivalStorage.json",
+          "sha256": "25df2092f3f187d299edd3aa18ffde5a2fea68d3a954b43882f349d021969809",
+          "classId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603"
+        },
+        "artifact": {
+          "file": "artifact-ArtifactStorage.json",
+          "sha256": "81eb5e1138470cfc9b2bd8b37a7b8e4bfe9f30ac02ce9d963e07a63c37ed8545",
+          "classId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332"
+        },
+        "artifact_location": {
+          "file": "artifact_location-ArtifactLocationStorage.json",
+          "sha256": "ea1f6aef5792d73b0edc1ebc654da05f5e96d08e64ae144d3837f1cd0e0b8d8a",
+          "classId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b"
+        },
+        "admin": {
+          "file": "admin-Admin.json",
+          "sha256": "60013e0cb1a24bf58ce46448b47b86ebf74dcf956f1e8be78ec1ae4006d20029",
+          "classId": "0x1a9a196ce606e50d345c869d22f92231a4c9fad33e62efbb676188b5154941a5"
+        },
+        "core": {
+          "file": "core-Core.json",
+          "sha256": "810b8bd4358e03b19bc15d4e5e74e20ad3aecf6ca12dedde93ff0e3168c378d5",
+          "classId": "0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72"
+        },
+        "move": {
+          "file": "move-Move.json",
+          "sha256": "a5f0ae2999f46a3b01d57c43f8754a324d6e5aa1294edd270da1c36438b8c1af",
+          "classId": "0x28eb74154d163fe2f6e930d446715c05bac0c76629bb168e458370d164259dd4"
+        },
+        "artifact_action": {
+          "file": "artifact_action-ArtifactAction.json",
+          "sha256": "f4eec7991712eb94e182830048016030485006baae7fbb8a741bc1a93425b6bc",
+          "classId": "0x0e6a9bd340ea2f520046657277a3cedb9fefad2c9ed062b66b1d3df1462b5cbf"
+        },
+        "artifact_find": {
+          "file": "artifact_find-ArtifactFind.json",
+          "sha256": "d471b514b52a6d9d7bb1c24c5e13197a521b2d22cae8317c84dee7ff436c6576",
+          "classId": "0x27493770b04fa49fb89c99c0d532f5377f248168e3cc8d7f0e6b557d779f9254"
+        },
+        "artifact_prospect": {
+          "file": "artifact_prospect-ArtifactProspect.json",
+          "sha256": "9b55febd14f1066033d808682f2280500421af0d73d49fca3c193ad9dbeed14c",
+          "classId": "0x0bd13431758a496e5fc5d23e90f0048e14f2adcf7582a9f73e527b6d2f3d06e8"
+        },
+        "artifact_valut": {
+          "file": "artifact_valut-ArtifactValut.json",
+          "sha256": "d211ced4f4e42dc379fa3aeeaebc1c6a1bd2d72832b78f44b4899d9a4d7db859",
+          "classId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484"
+        },
+        "core_settlement_worker": {
+          "file": "core_settlement_worker-CoreSettlementWorker.json",
+          "sha256": "bd842720d4c7c107938cca1c5cd075a5f70ab3e33f943ab0f261b21cd9ba57da",
+          "classId": "0x00fcab2a469bf2e21ef15b44fecdbc65bf23cb208756510043634d274f64e872"
+        },
+        "vault_settlement_worker": {
+          "file": "vault_settlement_worker-VaultSettlementWorker.json",
+          "sha256": "89691d8083417027ac4b34efee6235d454e27aa1e4ac9a5cdaa5eb7f204f83fa",
+          "classId": "0x0fb0e0a4bf49f80419a66c8768038aa9a6e0286d91282f34b6efef2c3fddc1e2"
+        },
+        "backend": {
+          "file": "game_state_backend-GameStateBackend.json",
+          "sha256": "23b3f8f4ac5ecb063b4bb47b6a4c441df1551f8e0f415b984508736f9d3cab8b",
+          "classId": "0x1526cea11a475af86152fed567c6e9344568b5ad1dcc2ee654b353b121e433ac"
+        }
+      }
+    },
+    "liveClassGate": {
+      "config": {
+        "address": "0x0d886d7549dab933420e9ce22661a71625f997ea4e4e6bdc61586ad9bc2d3ae6",
+        "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8"
+      },
+      "world": {
+        "address": "0x149b61072fdbff69969153519252d7dae655304774209f71160175023ad0a86e",
+        "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934"
+      },
+      "player": {
+        "address": "0x040e458509a7e700f37c05cc9dc6d055fb1594092741f4c7ba07d742406e96fa",
+        "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9"
+      },
+      "planet": {
+        "address": "0x05d9bedf35d9f9827d989a0e7ad8d5141c44e906a3a9f710b5c2e4b4626a3a6f",
+        "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03"
+      },
+      "planet_revealed_coords": {
+        "address": "0x04526963e87086639a4250b37d9ad1a37be06957834d64a327f468c240315544",
+        "classId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb"
+      },
+      "planet_events": {
+        "address": "0x1b0ea66beba1d491093c981a57828b8a544e8176eef4487326b2dbacc67e9e18",
+        "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918"
+      },
+      "planet_artifacts": {
+        "address": "0x225e5c47a8ccc6ec623cd4a498ceed3e619796b4a57a4899b932d1c0e322bc2a",
+        "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4"
+      },
+      "arrival": {
+        "address": "0x23712679e919c20b2f66610f4a1437720d8eade1d0930683587e03ba2c68cfbf",
+        "classId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603"
+      },
+      "artifact": {
+        "address": "0x280149b05594bd9f759d8108fa4abbb90505ce51f945db9baa982eeaa7eabdaa",
+        "classId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332"
+      },
+      "artifact_location": {
+        "address": "0x0bcbe29d8b89454b74acefa191ba12adee6191a1754d636c3cb0ee3a15881095",
+        "classId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b"
+      },
+      "admin": {
+        "address": "0x1c5a37b24b43e35051cd959c8874cbd13dc25edb1f54b8f8ed8e365a06473882",
+        "classId": "0x1a9a196ce606e50d345c869d22f92231a4c9fad33e62efbb676188b5154941a5"
+      },
+      "core": {
+        "address": "0x2b7a56b3859ec8b4500cfaed1d81755bc46bbaedc5ca0f0e2b898967bde252ca",
+        "classId": "0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72"
+      },
+      "move": {
+        "address": "0x241c967422d3ec8661bca97d2db08d54a1e0143952444d6cc6e0f2b26d294b5d",
+        "classId": "0x28eb74154d163fe2f6e930d446715c05bac0c76629bb168e458370d164259dd4"
+      },
+      "artifact_action": {
+        "address": "0x301eefa5ed7dcb1effb4f86437cd68cc6c1612bd4a177f0120659ee0237d4f78",
+        "classId": "0x0e6a9bd340ea2f520046657277a3cedb9fefad2c9ed062b66b1d3df1462b5cbf"
+      },
+      "artifact_find": {
+        "address": "0x066d7d88feb4f608c0b153d0157fd8308e99dfe2902a34d0a25eb5cb026f5662",
+        "classId": "0x27493770b04fa49fb89c99c0d532f5377f248168e3cc8d7f0e6b557d779f9254"
+      },
+      "artifact_prospect": {
+        "address": "0x10261f8e8d579ade7617ee83cf935b157a09500f7e6cbcd0979d6e0d14543666",
+        "classId": "0x0bd13431758a496e5fc5d23e90f0048e14f2adcf7582a9f73e527b6d2f3d06e8"
+      },
+      "artifact_valut": {
+        "address": "0x03180555ad378030b1a615db377e08a04e752e76764c953811b262059dcedebd",
+        "classId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484"
+      },
+      "core_settlement_worker": {
+        "address": "0x1c53f045654eda50a28ca4316031db1fc834c578458e4d76e43a0565f916fd73",
+        "classId": "0x00fcab2a469bf2e21ef15b44fecdbc65bf23cb208756510043634d274f64e872"
+      },
+      "vault_settlement_worker": {
+        "address": "0x071afbcd8c582d7a04d81f4dda2accce0eee760ae7f11cf169abab8e3969bf3e",
+        "classId": "0x0fb0e0a4bf49f80419a66c8768038aa9a6e0286d91282f34b6efef2c3fddc1e2"
+      },
+      "backend": {
+        "address": "0x1cda708f3580d3868651d5facee1a0f1347683ec04fa7de407353d4c3acd44f5",
+        "classId": "0x1526cea11a475af86152fed567c6e9344568b5ad1dcc2ee654b353b121e433ac"
+      }
+    }
+  },
+  "scope": "Read-only original store methods on a fresh SDK5.2 wallet registering only the nine facade artifacts; no backend artifact, no utility authorization hook, no sends.",
+  "backendAddress": "0x1cda708f3580d3868651d5facee1a0f1347683ec04fa7de407353d4c3acd44f5",
+  "classes": {
+    "player": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/player-PlayerStorage.json",
+      "sha256": "0eb88afdcc3584c4eee0bc1df7a8b7e2bffc5c4b2bc66dd5979b1cf74fb7e84a",
+      "address": "0x040e458509a7e700f37c05cc9dc6d055fb1594092741f4c7ba07d742406e96fa",
+      "currentClassId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9",
+      "artifactClassId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9",
+      "classMatchesArtifact": true
+    },
+    "planet": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/planet-PlanetStorage.json",
+      "sha256": "0b1723bfcf4c3abae7525602fad0bc5323c27b58d3a132cbf2ed6b3700a71888",
+      "address": "0x05d9bedf35d9f9827d989a0e7ad8d5141c44e906a3a9f710b5c2e4b4626a3a6f",
+      "currentClassId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03",
+      "artifactClassId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03",
+      "classMatchesArtifact": true
+    },
+    "planet_revealed_coords": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+      "sha256": "824debb7d430d7b20786cd7a32fc748ea28278bb59f169a5bb4631d321294ef6",
+      "address": "0x04526963e87086639a4250b37d9ad1a37be06957834d64a327f468c240315544",
+      "currentClassId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb",
+      "artifactClassId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb",
+      "classMatchesArtifact": true
+    },
+    "planet_events": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/planet_events-PlanetEventsStorage.json",
+      "sha256": "1dba4f3efa73ea56e9cc6ef3b03df426e3adacbefcc66ff2bae3f36e95e0d7d9",
+      "address": "0x1b0ea66beba1d491093c981a57828b8a544e8176eef4487326b2dbacc67e9e18",
+      "currentClassId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918",
+      "artifactClassId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918",
+      "classMatchesArtifact": true
+    },
+    "planet_artifacts": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/planet_artifacts-PlanetArtifactsStorage.json",
+      "sha256": "86b785ba03ccf6939ac75d7b401530f75a21f6f8b22559222a3480f464365020",
+      "address": "0x225e5c47a8ccc6ec623cd4a498ceed3e619796b4a57a4899b932d1c0e322bc2a",
+      "currentClassId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4",
+      "artifactClassId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4",
+      "classMatchesArtifact": true
+    },
+    "arrival": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/arrival-ArrivalStorage.json",
+      "sha256": "25df2092f3f187d299edd3aa18ffde5a2fea68d3a954b43882f349d021969809",
+      "address": "0x23712679e919c20b2f66610f4a1437720d8eade1d0930683587e03ba2c68cfbf",
+      "currentClassId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603",
+      "artifactClassId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603",
+      "classMatchesArtifact": true
+    },
+    "artifact": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/artifact-ArtifactStorage.json",
+      "sha256": "81eb5e1138470cfc9b2bd8b37a7b8e4bfe9f30ac02ce9d963e07a63c37ed8545",
+      "address": "0x280149b05594bd9f759d8108fa4abbb90505ce51f945db9baa982eeaa7eabdaa",
+      "currentClassId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332",
+      "artifactClassId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332",
+      "classMatchesArtifact": true
+    },
+    "artifact_location": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/artifact_location-ArtifactLocationStorage.json",
+      "sha256": "ea1f6aef5792d73b0edc1ebc654da05f5e96d08e64ae144d3837f1cd0e0b8d8a",
+      "address": "0x0bcbe29d8b89454b74acefa191ba12adee6191a1754d636c3cb0ee3a15881095",
+      "currentClassId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b",
+      "artifactClassId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b",
+      "classMatchesArtifact": true
+    },
+    "world": {
+      "artifactPath": "/tmp/df-v14-touch-order-native-r1/codegen/world-WorldStorage.json",
+      "sha256": "3c311a698e829bde9ca08e11139bccf25537f9686466ce908e3738178d205d6a",
+      "address": "0x149b61072fdbff69969153519252d7dae655304774209f71160175023ad0a86e",
+      "currentClassId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934",
+      "artifactClassId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934",
+      "classMatchesArtifact": true
+    }
+  },
+  "checks": [
+    {
+      "label": "player public/utility exact root 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "player public/utility zero witness 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "player initialized follows actual root 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "player public initialized matches root 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "player public/utility exact root 0x0000000000000000000000000000000000000000000000000db4da5f4b717715",
+      "passed": true
+    },
+    {
+      "label": "player public/utility zero witness 0x0000000000000000000000000000000000000000000000000db4da5f4b717715",
+      "passed": true
+    },
+    {
+      "label": "player initialized follows actual root 0x0000000000000000000000000000000000000000000000000db4da5f4b717715",
+      "passed": true
+    },
+    {
+      "label": "player public initialized matches root 0x0000000000000000000000000000000000000000000000000db4da5f4b717715",
+      "passed": true
+    },
+    {
+      "label": "player exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "player full default state schema",
+      "passed": true
+    },
+    {
+      "label": "player canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "player authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "player authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "player authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "player grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "player grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "player grant list view parity 4",
+      "passed": true
+    },
+    {
+      "label": "player utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "planet public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "planet public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "planet initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "planet public initialized matches root 0",
+      "passed": true
+    },
+    {
+      "label": "planet public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet public initialized matches root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "planet full default state schema",
+      "passed": true
+    },
+    {
+      "label": "planet canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "planet authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "planet authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "planet authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "planet grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "planet grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "planet grant list view parity 7",
+      "passed": true
+    },
+    {
+      "label": "planet utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords public initialized matches root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords public initialized matches root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords full default state schema",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords grant list view parity 1",
+      "passed": true
+    },
+    {
+      "label": "planet_revealed_coords utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "planet_events public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_events public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "planet_events initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_events public initialized matches root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_events public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_events public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_events initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_events public initialized matches root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_events exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "planet_events full default state schema",
+      "passed": true
+    },
+    {
+      "label": "planet_events canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "planet_events authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "planet_events authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "planet_events authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "planet_events grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "planet_events grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "planet_events grant list view parity 6",
+      "passed": true
+    },
+    {
+      "label": "planet_events utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts public initialized matches root 0",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts public initialized matches root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts full default state schema",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts grant list view parity 6",
+      "passed": true
+    },
+    {
+      "label": "planet_artifacts utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "arrival public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "arrival public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "arrival initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "arrival public initialized matches root 0",
+      "passed": true
+    },
+    {
+      "label": "arrival public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "arrival public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "arrival initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "arrival public initialized matches root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "arrival exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "arrival full default state schema",
+      "passed": true
+    },
+    {
+      "label": "arrival canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "arrival authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "arrival authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "arrival authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "arrival grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "arrival grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "arrival grant list view parity 1",
+      "passed": true
+    },
+    {
+      "label": "arrival complete raw reader parity 0",
+      "passed": true
+    },
+    {
+      "label": "arrival complete raw reader parity 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "arrival utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "artifact public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "artifact public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "artifact initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "artifact public initialized matches root 0",
+      "passed": true
+    },
+    {
+      "label": "artifact public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact public initialized matches root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "artifact full default state schema",
+      "passed": true
+    },
+    {
+      "label": "artifact canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "artifact authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "artifact authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "artifact authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "artifact grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "artifact grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "artifact grant list view parity 4",
+      "passed": true
+    },
+    {
+      "label": "artifact utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "artifact_location public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "artifact_location public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "artifact_location initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "artifact_location public initialized matches root 0",
+      "passed": true
+    },
+    {
+      "label": "artifact_location public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact_location public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact_location initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact_location public initialized matches root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "artifact_location exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "artifact_location full default state schema",
+      "passed": true
+    },
+    {
+      "label": "artifact_location canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "artifact_location authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "artifact_location authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "artifact_location authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "artifact_location grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "artifact_location grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "artifact_location grant list view parity 6",
+      "passed": true
+    },
+    {
+      "label": "artifact_location utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    },
+    {
+      "label": "world public/utility exact root 0",
+      "passed": true
+    },
+    {
+      "label": "world public/utility zero witness 0",
+      "passed": true
+    },
+    {
+      "label": "world initialized follows actual root 0",
+      "passed": true
+    },
+    {
+      "label": "world public/utility exact root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "world public/utility zero witness 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "world initialized follows actual root 987654321123456789",
+      "passed": true
+    },
+    {
+      "label": "world exact zero-hash API behavior",
+      "passed": true
+    },
+    {
+      "label": "world full default state schema",
+      "passed": true
+    },
+    {
+      "label": "world canonical admin is authorized",
+      "passed": true
+    },
+    {
+      "label": "world authorization view parity 0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+      "passed": true
+    },
+    {
+      "label": "world authorization view parity 0x01dd3d9ae8b36fa659692b4c81b69102f567191458205966fa16891f1429c41d",
+      "passed": true
+    },
+    {
+      "label": "world authorization view parity 0x0000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "label": "world grant count view parity",
+      "passed": true
+    },
+    {
+      "label": "world grant list view parity 0",
+      "passed": true
+    },
+    {
+      "label": "world grant list view parity 1",
+      "passed": true
+    },
+    {
+      "label": "world utilities require no backend artifact registration or cross-utility permission hook",
+      "passed": true
+    }
+  ]
+}

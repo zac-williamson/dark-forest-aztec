@@ -1,0 +1,93 @@
+{
+  "classes": [
+    {
+      "file": "config-Config.json",
+      "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8"
+    },
+    {
+      "file": "world-WorldStorage.json",
+      "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934"
+    },
+    {
+      "file": "player-PlayerStorage.json",
+      "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9"
+    },
+    {
+      "file": "planet-PlanetStorage.json",
+      "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03"
+    },
+    {
+      "file": "planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+      "classId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb"
+    },
+    {
+      "file": "planet_events-PlanetEventsStorage.json",
+      "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918"
+    },
+    {
+      "file": "planet_artifacts-PlanetArtifactsStorage.json",
+      "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4"
+    },
+    {
+      "file": "arrival-ArrivalStorage.json",
+      "classId": "0x2ebeb64d80dd9cf1da3e152d9df166adce1862072ee83505cad6a6b346b923a6"
+    },
+    {
+      "file": "artifact-ArtifactStorage.json",
+      "classId": "0x28725b0d1219a632670fa96beb2c7169df0aca538b93a007fcf2bc56da74f1ed"
+    },
+    {
+      "file": "artifact_location-ArtifactLocationStorage.json",
+      "classId": "0x00677a91e83a0a3fcff0499a91864f107481a1634e70ccfa3fdbf43cc1cc78d4"
+    },
+    {
+      "file": "admin-Admin.json",
+      "classId": "0x2e6a77689bfa1f3868eaa927099297e9f7a2dfa308db0b131189b8b43d0bf9d9"
+    },
+    {
+      "file": "core-Core.json",
+      "classId": "0x18c5c699dfa680a81f301ed482b61bf44f4df2c94a05930cb65747cbbc15214a"
+    },
+    {
+      "file": "move-Move.json",
+      "classId": "0x1f08565d3ae0c119b87f98a4b08fb61cb44f13a4bd7174b5e73175e44a13d768"
+    },
+    {
+      "file": "artifact_action-ArtifactAction.json",
+      "classId": "0x0559602cf5a15ee94e9142aa8b7ce2b32b7adbc43850bc61f03ed72e2978aaca"
+    },
+    {
+      "file": "artifact_find-ArtifactFind.json",
+      "classId": "0x2f567befebc07deca16991d7aecc45660dee37c2d82591f1f9c0ee1b12f6a056"
+    },
+    {
+      "file": "artifact_prospect-ArtifactProspect.json",
+      "classId": "0x2f3e651b7f8820b34bb5a7a924e9f43cab78c357a77b9d716bf90eb1b59ab2e2"
+    },
+    {
+      "file": "artifact_valut-ArtifactValut.json",
+      "classId": "0x2861f5bc3bfb6f83080d9383e5770893026013aa9fb790efd5bcf1ccc59cfa35"
+    },
+    {
+      "file": "core_settlement_worker-CoreSettlementWorker.json",
+      "classId": "0x096396b4b5ef22a8f1110fdbe8b1acd3a41d72627b73a649e66d72ac47f0ebb2"
+    },
+    {
+      "file": "vault_settlement_worker-VaultSettlementWorker.json",
+      "classId": "0x0131ca716396698a01676cb5d78847f4bd02fbd8c9d69945a4607839ded9ca34"
+    },
+    {
+      "file": "game_state_backend-GameStateBackend.json",
+      "classId": "0x2e52f68b9aeab3604184f17b0688db66e732ae23c2359ef00332615ce258d1a4"
+    }
+  ],
+  "files": {
+    "contracts/libs/src/config_class.nr": "// Generated from the actual native Config and touch facade artifacts before compiling Systems.\npub global CONFIG_CLASS: Field = 0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8;\npub global ARTIFACT_TOUCH_CLASS: Field = 0x28725b0d1219a632670fa96beb2c7169df0aca538b93a007fcf2bc56da74f1ed;\npub global LOCATION_TOUCH_CLASS: Field = 0x00677a91e83a0a3fcff0499a91864f107481a1634e70ccfa3fdbf43cc1cc78d4;\n",
+    "contracts/prospect_original_libs/src/config_class.nr": "// Generated from the actual native Config and touch facade artifacts before compiling Systems.\npub global CONFIG_CLASS: Field = 0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8;\npub global ARTIFACT_TOUCH_CLASS: Field = 0x28725b0d1219a632670fa96beb2c7169df0aca538b93a007fcf2bc56da74f1ed;\npub global LOCATION_TOUCH_CLASS: Field = 0x00677a91e83a0a3fcff0499a91864f107481a1634e70ccfa3fdbf43cc1cc78d4;\n",
+    "contracts/settlement_workers/core/src/system_class.nr": "// Generated immutable initiating System class.\npub global SYSTEM_CLASS: Field = 0x18c5c699dfa680a81f301ed482b61bf44f4df2c94a05930cb65747cbbc15214a;\n",
+    "contracts/settlement_workers/vault/src/system_class.nr": "// Generated immutable initiating System class.\npub global SYSTEM_CLASS: Field = 0x2861f5bc3bfb6f83080d9383e5770893026013aa9fb790efd5bcf1ccc59cfa35;\n",
+    "contracts/state_backend/src/trusted_classes.nr": "// Generated from the immutable native artifacts by build-api-compatible.mjs.\n// Full public hash validation remains mandatory for every other writer.\npub global CONFIG_CLASS: Field = 0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8;\npub global WORKER_CLASSES: [Field; 2] = [0x096396b4b5ef22a8f1110fdbe8b1acd3a41d72627b73a649e66d72ac47f0ebb2, 0x0131ca716396698a01676cb5d78847f4bd02fbd8c9d69945a4607839ded9ca34];\npub global SYSTEM_CLASSES: [Field; 7] = [0x2e6a77689bfa1f3868eaa927099297e9f7a2dfa308db0b131189b8b43d0bf9d9, 0x18c5c699dfa680a81f301ed482b61bf44f4df2c94a05930cb65747cbbc15214a, 0x1f08565d3ae0c119b87f98a4b08fb61cb44f13a4bd7174b5e73175e44a13d768, 0x0559602cf5a15ee94e9142aa8b7ce2b32b7adbc43850bc61f03ed72e2978aaca, 0x2f567befebc07deca16991d7aecc45660dee37c2d82591f1f9c0ee1b12f6a056, 0x2f3e651b7f8820b34bb5a7a924e9f43cab78c357a77b9d716bf90eb1b59ab2e2, 0x2861f5bc3bfb6f83080d9383e5770893026013aa9fb790efd5bcf1ccc59cfa35];\npub global FACADE_CLASSES: [Field; 9] = [0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934, 0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9, 0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03, 0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb, 0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918, 0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4, 0x2ebeb64d80dd9cf1da3e152d9df166adce1862072ee83505cad6a6b346b923a6, 0x28725b0d1219a632670fa96beb2c7169df0aca538b93a007fcf2bc56da74f1ed, 0x00677a91e83a0a3fcff0499a91864f107481a1634e70ccfa3fdbf43cc1cc78d4];\npub fn contains(id: Field) -> bool {\n    (id != 0) & ((id == SYSTEM_CLASSES[0]) | (id == SYSTEM_CLASSES[1]) | (id == SYSTEM_CLASSES[2]) | (id == SYSTEM_CLASSES[3]) | (id == SYSTEM_CLASSES[4]) | (id == SYSTEM_CLASSES[5]) | (id == SYSTEM_CLASSES[6]))\n}\n"
+  },
+  "originManifestSHA256": "256931d6e7503c2e8b69b57a26097469ec0df15e293369fc85053dfcbe44e243",
+  "scope": "Pure binding-format fixture using authenticated V8 numeric class IDs. Does not claim V8 facades implement touch; real touch classes must be compiled before System binding."
+}

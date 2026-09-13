@@ -1,0 +1,89 @@
+{
+  "status": "native_fixture_ready_waiting_final_candidate_runtime_GO",
+  "runtimeExecuted": false,
+  "fixtureCompiled": true,
+  "proverEnabled": false,
+  "transactionProofsGenerated": 0,
+  "gameplayTransactionsSubmitted": 0,
+  "offlineChecks": {
+    "fixtureTests": 5,
+    "syntax": "pass"
+  },
+  "plannedChecks": {
+    "fullOriginalPrivateEntrySimulations": 66,
+    "directAccountCallerRejections": 66,
+    "unchangedStateAndCounterChecks": 66,
+    "allZeroArrayPositionNegativeControls": 40,
+    "total": 238
+  },
+  "coverage": [
+    "Core empty Refresh: Arrival, Artifact, Location false result and exact caller/payload",
+    "Vault empty Give: Arrival, Artifact, Location false result and exact caller/payload",
+    "Move empty/empty: all three original source batch calls",
+    "Move source0/target1: source first and nonzero-count/all-zero Artifact/Location ID calls",
+    "Move source1/target0: source first, target empty call, false result propagation",
+    "Every one of 40 empty-batch ID/hash positions checked by custom view fixture"
+  ],
+  "scope": "New essential custom-store fallback coverage. Frozen V4 620 checks do not establish this edge. Every gameplay call deliberately reverts; no fee/proof claims. Only isolated local setup writes after release. Static view calls do not keep counters.",
+  "sourceHashes": {
+    "tests/api-compatible-storage/caller-batch/Nargo.toml": "714ba3d5d60554ed2a255a088045681d32d9a7e9a4951a678a4569a553591317",
+    "tests/api-compatible-storage/caller-batch/src/main.nr": "7f5fbbb33642aeab223e6b3b6b90714cd4caf7003dcd0078c49e1a2c4d0e5e0b",
+    "tests/api-compatible-storage/caller-batch/README.md": "4a17a08bb8d184477f58767db41caa63d05e55b5de05cba0393c4ced896227c8",
+    "tests/api-compatible-storage/caller-batch-fixtures.mjs": "4c8774eb6a71bc25892bf2000ea217ad5b16d78a5dbc67961bbba094858210db",
+    "tests/api-compatible-storage/caller-batch-fixtures.test.mjs": "c1c2d8635df6ee121e9146e3eec914e1abd8fd95e0eb39b5b7d79aaff14b7b6f",
+    "tests/api-compatible-storage/batch-caller.mjs": "d94c7342b791c77f35eeec30d93db14324d75c249a7308b15f37114a108d6e9b",
+    "tests/api-compatible-storage/verify-batch-artifact.mjs": "fd5fd537c981b457afa5727456f7e50ff045ef03baf121196a897f81e2fd3c05"
+  },
+  "runCommand": "RUN_CALLER_BATCH=1 NODE_BACKEND=js LOG_LEVEL=error node --import ./node_modules/tsx/dist/loader.mjs tests/api-compatible-storage/batch-caller.mjs candidate-v5 /tmp/df-api-compatible-v5-native",
+  "nativeFixture": {
+    "status": "passed",
+    "runtimeExecuted": false,
+    "proverEnabled": false,
+    "privateFunctionCount": 0,
+    "transactionProofsGenerated": 0,
+    "sourceSha256": "7f5fbbb33642aeab223e6b3b6b90714cd4caf7003dcd0078c49e1a2c4d0e5e0b",
+    "artifact": {
+      "file": "file:///Users/zac/Documents/ChatGPT/Dark%20Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+      "sha256": "45f6140d11b04d203b447fd5c95e20e3ca090b5ec36fc54de3133b6dea8dd76b",
+      "nativePublicBytes": 5757
+    },
+    "signature": "verify_hashes_batch([Field;20],[Field;20],u32)",
+    "selector": "0x47c7b238",
+    "originals": [
+      {
+        "role": "arrival",
+        "file": "/tmp/df-fee-tools/artifacts/baseline/arrival-ArrivalStorage.json",
+        "sha256": "763627846ff01e3ba854011e6287f5320c307367bf3ca2e35ff0fce37e92bbc3",
+        "selector": "0x47c7b238",
+        "sameInputTypes": true,
+        "sameReturnType": true,
+        "sameViewSemantics": true
+      },
+      {
+        "role": "artifact",
+        "file": "/tmp/df-fee-tools/artifacts/baseline/artifact-ArtifactStorage.json",
+        "sha256": "f962e4229e7963190b1159b8a60a188765faa073ec8af545c7df3b08117cb9b3",
+        "selector": "0x47c7b238",
+        "sameInputTypes": true,
+        "sameReturnType": true,
+        "sameViewSemantics": true
+      },
+      {
+        "role": "artifact_location",
+        "file": "/tmp/df-fee-tools/artifacts/baseline/artifact_location-ArtifactLocationStorage.json",
+        "sha256": "58b0ca15120be56f6de4e372bc4786230e9d152c8888e0f09b781d1c16a884d3",
+        "selector": "0x47c7b238",
+        "sameInputTypes": true,
+        "sameReturnType": true,
+        "sameViewSemantics": true
+      }
+    ]
+  },
+  "compiler": {
+    "threads": 2,
+    "compileLog": "/tmp/df-api-caller-batch-compile.log",
+    "nativeLog": "/tmp/df-api-caller-batch-native.log",
+    "nativeProcessReportedNoPrivateConstrainedFunctions": true,
+    "windowReleased": true
+  }
+}

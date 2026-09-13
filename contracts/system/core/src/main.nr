@@ -2,6 +2,15 @@ use ::aztec::macros::aztec;
 
 #[aztec]
 contract Core {
+    use aztec::protocol::traits::FromField;
+
+    use aztec::protocol::traits::Deserialize;
+
+    use aztec::protocol::traits::ToField;
+
+    use ::game_state_backend::GameStateBackend;
+    use ::core_settlement_worker::CoreSettlementWorker;
+
     use ::aztec::{
         macros::{
             events::event,
@@ -75,6 +84,8 @@ contract Core {
         arrivals_storage_address: PublicMutable<AztecAddress, Context>,
         artifact_storage_address: PublicMutable<AztecAddress, Context>,
         artifact_location_storage_address: PublicMutable<AztecAddress, Context>,
+        state_backend: PublicMutable<AztecAddress, Context>,
+        state_worker: PublicMutable<AztecAddress, Context>,
     }
 
     #[internal("public")]
@@ -266,23 +277,75 @@ contract Core {
             }
         }
 
-        self.enqueue_self.refresh_planet_public(
-            location,
-            timestamp,
-            planet_state_hash,
-            planet_artifacts_state_hash,
-            planet_events_state_hash,
-            original_arrivals_count,
-            arrival_ids,
-            arrival_hashes,
-            arrival_artifact_ids,
-            arrival_artifact_hashes,
-            arrival_artifact_location_hashes,
-            new_planet,
-            new_planet_artifacts_state,
-            new_planet_events_state,
-            new_arrival_artifact_locations,
-        );
+        {
+            if (original_arrivals_count) == 0 {
+            let mut compact_payload:[Field;144]=[0;144];
+            let compact_part_0=(location).serialize();
+            for compact_i in 0..1 { compact_payload[0+compact_i]=compact_part_0[compact_i]; }
+            let compact_part_1=(timestamp).serialize();
+            for compact_i in 0..1 { compact_payload[1+compact_i]=compact_part_1[compact_i]; }
+            let compact_part_2=(planet_state_hash).serialize();
+            for compact_i in 0..1 { compact_payload[2+compact_i]=compact_part_2[compact_i]; }
+            let compact_part_3=(planet_artifacts_state_hash).serialize();
+            for compact_i in 0..1 { compact_payload[3+compact_i]=compact_part_3[compact_i]; }
+            let compact_part_4=(planet_events_state_hash).serialize();
+            for compact_i in 0..1 { compact_payload[4+compact_i]=compact_part_4[compact_i]; }
+            let compact_part_5=(new_planet).serialize();
+            for compact_i in 0..32 { compact_payload[5+compact_i]=compact_part_5[compact_i]; }
+            let compact_part_6=(new_planet_artifacts_state).serialize();
+            for compact_i in 0..22 { compact_payload[37+compact_i]=compact_part_6[compact_i]; }
+            let compact_part_7=(new_planet_events_state).serialize();
+            for compact_i in 0..22 { compact_payload[59+compact_i]=compact_part_7[compact_i]; }
+            let compact_part_8=(poseidon2_hash((new_planet).serialize())).serialize();
+            for compact_i in 0..1 { compact_payload[81+compact_i]=compact_part_8[compact_i]; }
+            let compact_part_9=(poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
+            for compact_i in 0..1 { compact_payload[82+compact_i]=compact_part_9[compact_i]; }
+            let compact_part_10=(poseidon2_hash((new_planet_events_state).serialize())).serialize();
+            for compact_i in 0..1 { compact_payload[83+compact_i]=compact_part_10[compact_i]; }
+            let compact_part_11=(new_arrival_artifact_locations).serialize();
+            for compact_i in 0..60 { compact_payload[84+compact_i]=compact_part_11[compact_i]; }
+            self.enqueue_self.refresh_planet_empty_public_prepared(::libs::field_buffer::FieldBuffer { words: compact_payload });
+        } else {
+            let mut prepared_payload: [Field;245] = [0;245];
+            let prepared_part_0 = (location).serialize();
+            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
+            let prepared_part_1 = (timestamp).serialize();
+            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
+            let prepared_part_2 = (planet_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
+            let prepared_part_3 = (planet_artifacts_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
+            let prepared_part_4 = (planet_events_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }
+            let prepared_part_5 = (original_arrivals_count).serialize();
+            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }
+            let prepared_part_6 = (arrival_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }
+            let prepared_part_7 = (arrival_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[26 + prepared_i] = prepared_part_7[prepared_i]; }
+            let prepared_part_8 = (arrival_artifact_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[46 + prepared_i] = prepared_part_8[prepared_i]; }
+            let prepared_part_9 = (arrival_artifact_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[66 + prepared_i] = prepared_part_9[prepared_i]; }
+            let prepared_part_10 = (arrival_artifact_location_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[86 + prepared_i] = prepared_part_10[prepared_i]; }
+            let prepared_part_11 = (new_planet).serialize();
+            for prepared_i in 0..32 { prepared_payload[106 + prepared_i] = prepared_part_11[prepared_i]; }
+            let prepared_part_12 = (new_planet_artifacts_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[138 + prepared_i] = prepared_part_12[prepared_i]; }
+            let prepared_part_13 = (new_planet_events_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[160 + prepared_i] = prepared_part_13[prepared_i]; }
+            let prepared_part_14 = (new_arrival_artifact_locations).serialize();
+            for prepared_i in 0..60 { prepared_payload[182 + prepared_i] = prepared_part_14[prepared_i]; }
+            let prepared_part_15 = (poseidon2_hash((new_planet).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[242 + prepared_i] = prepared_part_15[prepared_i]; }
+            let prepared_part_16 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[243 + prepared_i] = prepared_part_16[prepared_i]; }
+            let prepared_part_17 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[244 + prepared_i] = prepared_part_17[prepared_i]; }
+            self.enqueue_self.refresh_planet_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
+        }
+        }
     }
 
     #[external("public")]
@@ -304,65 +367,7 @@ contract Core {
         new_planet_events_state: PlanetEvents,
         new_arrival_artifact_locations: [ArtifactLocation; 20],
     ) {
-        let actual_timestamp = self.context.timestamp();
-        assert_public_timestamp(timestamp, actual_timestamp);
-
-        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
-        let planet_artifacts_storage =
-            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
-        let planet_events_storage =
-            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
-        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
-        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
-        let artifact_location_storage =
-            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
-
-        assert(
-            self.view(planet_storage.verify_hash(location, planet_state_hash)),
-            "Planet state hash mismatch",
-        );
-        assert(
-            self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)),
-            "Planet artifacts state hash mismatch",
-        );
-        assert(
-            self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)),
-            "Planet events state hash mismatch",
-        );
-
-        assert(
-            self.view(arrival_storage.verify_hashes_batch(
-                arrival_ids,
-                arrival_hashes,
-                original_arrivals_count,
-            )),
-            "Arrival hash mismatch",
-        );
-        assert(
-            self.view(artifact_storage.verify_hashes_batch(
-                arrival_artifact_ids,
-                arrival_artifact_hashes,
-                original_arrivals_count,
-            )),
-            "Artifact hash mismatch",
-        );
-        assert(
-            self.view(artifact_location_storage.verify_hashes_batch(
-                arrival_artifact_ids,
-                arrival_artifact_location_hashes,
-                original_arrivals_count,
-            )),
-            "Artifact location hash mismatch",
-        );
-
-        self.call(planet_storage.set(location, new_planet));
-        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
-        self.call(planet_events_storage.set(location, new_planet_events_state));
-        self.call(artifact_location_storage.set_arrival_locations_max20(
-            arrival_artifact_ids,
-            new_arrival_artifact_locations,
-            original_arrivals_count,
-        ));
+        _refresh_planet_public_local(self.context, location, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, new_planet, new_planet_artifacts_state, new_planet_events_state, new_arrival_artifact_locations);
     }
 
     #[external("private")]
@@ -449,29 +454,58 @@ contract Core {
             }
         }
 
-        self.enqueue_self.upgrade_planet_public(
-            location,
-            sender,
-            branch,
-            current_branch_level,
-            timestamp,
-            planet_state_hash,
-            planet_artifacts_state_hash,
-            planet_events_state_hash,
-            original_arrivals_count,
-            arrival_ids,
-            arrival_hashes,
-            arrival_artifact_ids,
-            arrival_artifact_hashes,
-            arrival_artifact_location_hashes,
-            upgrade_config_hash,
-            upgrade_hash,
-            world_hash,
-            new_planet,
-            new_planet_events_state,
-            new_planet_artifacts_state,
-            new_arrival_artifact_locations,
-        );
+        {
+            let mut prepared_payload: [Field;251] = [0;251];
+            let prepared_part_0 = (location).serialize();
+            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
+            let prepared_part_1 = (sender).serialize();
+            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
+            let prepared_part_2 = (branch).serialize();
+            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
+            let prepared_part_3 = (current_branch_level).serialize();
+            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
+            let prepared_part_4 = (timestamp).serialize();
+            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }
+            let prepared_part_5 = (planet_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }
+            let prepared_part_6 = (planet_artifacts_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }
+            let prepared_part_7 = (planet_events_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[7 + prepared_i] = prepared_part_7[prepared_i]; }
+            let prepared_part_8 = (original_arrivals_count).serialize();
+            for prepared_i in 0..1 { prepared_payload[8 + prepared_i] = prepared_part_8[prepared_i]; }
+            let prepared_part_9 = (arrival_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[9 + prepared_i] = prepared_part_9[prepared_i]; }
+            let prepared_part_10 = (arrival_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[29 + prepared_i] = prepared_part_10[prepared_i]; }
+            let prepared_part_11 = (arrival_artifact_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[49 + prepared_i] = prepared_part_11[prepared_i]; }
+            let prepared_part_12 = (arrival_artifact_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[69 + prepared_i] = prepared_part_12[prepared_i]; }
+            let prepared_part_13 = (arrival_artifact_location_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[89 + prepared_i] = prepared_part_13[prepared_i]; }
+            let prepared_part_14 = (upgrade_config_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[109 + prepared_i] = prepared_part_14[prepared_i]; }
+            let prepared_part_15 = (upgrade_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[110 + prepared_i] = prepared_part_15[prepared_i]; }
+            let prepared_part_16 = (world_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[111 + prepared_i] = prepared_part_16[prepared_i]; }
+            let prepared_part_17 = (new_planet).serialize();
+            for prepared_i in 0..32 { prepared_payload[112 + prepared_i] = prepared_part_17[prepared_i]; }
+            let prepared_part_18 = (new_planet_events_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[144 + prepared_i] = prepared_part_18[prepared_i]; }
+            let prepared_part_19 = (new_planet_artifacts_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[166 + prepared_i] = prepared_part_19[prepared_i]; }
+            let prepared_part_20 = (new_arrival_artifact_locations).serialize();
+            for prepared_i in 0..60 { prepared_payload[188 + prepared_i] = prepared_part_20[prepared_i]; }
+            let prepared_part_21 = (poseidon2_hash((new_planet).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[248 + prepared_i] = prepared_part_21[prepared_i]; }
+            let prepared_part_22 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[249 + prepared_i] = prepared_part_22[prepared_i]; }
+            let prepared_part_23 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[250 + prepared_i] = prepared_part_23[prepared_i]; }
+            self.enqueue_self.upgrade_planet_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
+        }
     }
 
     #[external("public")]
@@ -499,84 +533,7 @@ contract Core {
         new_planet_artifacts_state: PlanetArtifacts,
         new_arrival_artifact_locations: [ArtifactLocation; 20],
     ) {
-        let actual_timestamp = self.context.timestamp();
-        assert_public_timestamp(timestamp, actual_timestamp);
-
-        let config = Config::at(self.storage.config_storage_address.read());
-        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
-        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
-        let planet_artifacts_storage =
-            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
-        let planet_events_storage =
-            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
-        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
-        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
-        let artifact_location_storage =
-            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
-
-        assert(
-            self.view(planet_storage.verify_hash(location, planet_state_hash)),
-            "Planet state hash mismatch",
-        );
-        assert(
-            self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)),
-            "Planet artifacts state hash mismatch",
-        );
-        assert(
-            self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)),
-            "Planet events state hash mismatch",
-        );
-
-        assert(
-            self.view(arrival_storage.verify_hashes_batch(
-                arrival_ids,
-                arrival_hashes,
-                original_arrivals_count,
-            )),
-            "Arrival hash mismatch",
-        );
-        assert(
-            self.view(artifact_storage.verify_hashes_batch(
-                arrival_artifact_ids,
-                arrival_artifact_hashes,
-                original_arrivals_count,
-            )),
-            "Artifact hash mismatch",
-        );
-        assert(
-            self.view(artifact_location_storage.verify_hashes_batch(
-                arrival_artifact_ids,
-                arrival_artifact_location_hashes,
-                original_arrivals_count,
-            )),
-            "Artifact location hash mismatch",
-        );
-
-        assert(
-            self.view(config.verify_upgrade_config_hash(upgrade_config_hash)),
-            "Upgrade config hash mismatch",
-        );
-
-        assert(
-            self.view(config.verify_upgrade_hash_by_branch_level(
-                branch as u128,
-                current_branch_level as u128,
-                upgrade_hash,
-            )),
-            "Upgrade hash mismatch",
-        );
-
-        assert(self.view(world_storage.verify_hash(0, world_hash)), "World state hash mismatch");
-
-        assert(new_planet.owner == sender, "Planet owner mismatch");
-        self.call(planet_storage.set(location, new_planet));
-        self.call(planet_events_storage.set(location, new_planet_events_state));
-        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
-        self.call(artifact_location_storage.set_arrival_locations_max20(
-            arrival_artifact_ids,
-            new_arrival_artifact_locations,
-            original_arrivals_count,
-        ));
+        _upgrade_planet_public_local(self.context, location, sender, branch, current_branch_level, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, upgrade_config_hash, upgrade_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations);
     }
 
     #[external("private")]
@@ -671,28 +628,58 @@ contract Core {
         }
         new_player.last_updated = timestamp;
 
-        self.enqueue_self.withdraw_silver_public(
-            location,
-            sender,
-            timestamp,
-            planet_state_hash,
-            planet_artifacts_state_hash,
-            planet_events_state_hash,
-            original_arrivals_count,
-            arrival_ids,
-            arrival_hashes,
-            arrival_artifact_ids,
-            arrival_artifact_hashes,
-            arrival_artifact_location_hashes,
-            player_state_hash,
-            world_config_hash,
-            world_hash,
-            new_planet,
-            new_planet_events_state,
-            new_planet_artifacts_state,
-            new_arrival_artifact_locations,
-            new_player,
-        );
+        {
+            let mut prepared_payload: [Field;258] = [0;258];
+            let prepared_part_0 = (location).serialize();
+            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
+            let prepared_part_1 = (sender).serialize();
+            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
+            let prepared_part_2 = (timestamp).serialize();
+            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
+            let prepared_part_3 = (planet_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
+            let prepared_part_4 = (planet_artifacts_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }
+            let prepared_part_5 = (planet_events_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }
+            let prepared_part_6 = (original_arrivals_count).serialize();
+            for prepared_i in 0..1 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }
+            let prepared_part_7 = (arrival_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[7 + prepared_i] = prepared_part_7[prepared_i]; }
+            let prepared_part_8 = (arrival_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[27 + prepared_i] = prepared_part_8[prepared_i]; }
+            let prepared_part_9 = (arrival_artifact_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[47 + prepared_i] = prepared_part_9[prepared_i]; }
+            let prepared_part_10 = (arrival_artifact_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[67 + prepared_i] = prepared_part_10[prepared_i]; }
+            let prepared_part_11 = (arrival_artifact_location_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[87 + prepared_i] = prepared_part_11[prepared_i]; }
+            let prepared_part_12 = (player_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[107 + prepared_i] = prepared_part_12[prepared_i]; }
+            let prepared_part_13 = (world_config_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[108 + prepared_i] = prepared_part_13[prepared_i]; }
+            let prepared_part_14 = (world_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[109 + prepared_i] = prepared_part_14[prepared_i]; }
+            let prepared_part_15 = (new_planet).serialize();
+            for prepared_i in 0..32 { prepared_payload[110 + prepared_i] = prepared_part_15[prepared_i]; }
+            let prepared_part_16 = (new_planet_events_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[142 + prepared_i] = prepared_part_16[prepared_i]; }
+            let prepared_part_17 = (new_planet_artifacts_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[164 + prepared_i] = prepared_part_17[prepared_i]; }
+            let prepared_part_18 = (new_arrival_artifact_locations).serialize();
+            for prepared_i in 0..60 { prepared_payload[186 + prepared_i] = prepared_part_18[prepared_i]; }
+            let prepared_part_19 = (new_player).serialize();
+            for prepared_i in 0..8 { prepared_payload[246 + prepared_i] = prepared_part_19[prepared_i]; }
+            let prepared_part_20 = (poseidon2_hash((new_planet).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[254 + prepared_i] = prepared_part_20[prepared_i]; }
+            let prepared_part_21 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[255 + prepared_i] = prepared_part_21[prepared_i]; }
+            let prepared_part_22 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[256 + prepared_i] = prepared_part_22[prepared_i]; }
+            let prepared_part_23 = (poseidon2_hash((new_player).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[257 + prepared_i] = prepared_part_23[prepared_i]; }
+            self.enqueue_self.withdraw_silver_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
+        }
     }
 
     #[external("public")]
@@ -719,81 +706,7 @@ contract Core {
         new_arrival_artifact_locations: [ArtifactLocation; 20],
         new_player: Player,
     ) {
-        let actual_timestamp = self.context.timestamp();
-        assert_public_timestamp(timestamp, actual_timestamp);
-
-        let config = Config::at(self.storage.config_storage_address.read());
-        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
-        let player_storage = PlayerStorage::at(self.storage.player_storage_address.read());
-        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
-        let planet_artifacts_storage =
-            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
-        let planet_events_storage =
-            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
-        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
-        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
-        let artifact_location_storage =
-            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
-
-        assert(
-            self.view(config.verify_world_config_hash(world_config_hash)),
-            "World config hash mismatch",
-        );
-
-        assert(
-            self.view(planet_storage.verify_hash(location, planet_state_hash)),
-            "Planet state hash mismatch",
-        );
-        assert(
-            self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)),
-            "Planet artifacts state hash mismatch",
-        );
-        assert(
-            self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)),
-            "Planet events state hash mismatch",
-        );
-
-        assert(
-            self.view(arrival_storage.verify_hashes_batch(
-                arrival_ids,
-                arrival_hashes,
-                original_arrivals_count,
-            )),
-            "Arrival hash mismatch",
-        );
-        assert(
-            self.view(artifact_storage.verify_hashes_batch(
-                arrival_artifact_ids,
-                arrival_artifact_hashes,
-                original_arrivals_count,
-            )),
-            "Artifact hash mismatch",
-        );
-        assert(
-            self.view(artifact_location_storage.verify_hashes_batch(
-                arrival_artifact_ids,
-                arrival_artifact_location_hashes,
-                original_arrivals_count,
-            )),
-            "Artifact location hash mismatch",
-        );
-
-        assert(
-            self.view(player_storage.verify_hash(sender, player_state_hash)),
-            "Player state hash mismatch",
-        );
-
-        assert(self.view(world_storage.verify_hash(0, world_hash)), "World state hash mismatch");
-
-        self.call(planet_storage.set(location, new_planet));
-        self.call(planet_events_storage.set(location, new_planet_events_state));
-        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
-        self.call(artifact_location_storage.set_arrival_locations_max20(
-            arrival_artifact_ids,
-            new_arrival_artifact_locations,
-            original_arrivals_count,
-        ));
-        self.call(player_storage.set(sender, new_player));
+        _withdraw_silver_public_local(self.context, location, sender, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_config_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
     }
 
     /// Noir port of Solidity `DFCoreFacet.revealLocation`.
@@ -966,6 +879,7 @@ contract Core {
             assert(sender == self.storage.admin.read(), "Only admin can bypass cooldown");
         }
 
+        let state_backend_address = self.storage.state_backend.read();
         let config = Config::at(self.storage.config_storage_address.read());
         let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
         let player_storage = PlayerStorage::at(self.storage.player_storage_address.read());
@@ -986,24 +900,24 @@ contract Core {
 
         if planet_state_hash != 0 {
             assert(
-                self.view(planet_storage.verify_hash(location, planet_state_hash)),
+                (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::get_state_root(state_backend_address, planet_storage.target_contract, location) == planet_state_hash } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
                 "Planet state hash mismatch",
             );
         }
 
         assert(
-            !self.view(planet_revealed_coords_storage.is_initialized(location)),
+            !(if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_revealed_coords_storage.target_contract) == 4 }) { ::state_backend_readonly::public_read::get_state_root(state_backend_address, planet_revealed_coords_storage.target_contract, location) != 0 } else { self.view(planet_revealed_coords_storage.is_initialized(location)) }),
             "Planet already revealed",
         );
 
         assert(player_state_hash != 0, "Player state must be initialized");
         assert(
-            self.view(player_storage.verify_hash(sender, player_state_hash)),
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, player_storage.target_contract) == 2 }) { ::state_backend_readonly::public_read::get_state_root(state_backend_address, player_storage.target_contract, sender.to_field()) == player_state_hash } else { self.view(player_storage.verify_hash(sender, player_state_hash)) }),
             "Player state hash mismatch",
         );
 
         assert(world_hash != 0, "World state must be initialized");
-        assert(self.view(world_storage.verify_hash(0, world_hash)), "World state hash mismatch");
+        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::get_state_root(state_backend_address, world_storage.target_contract, 0) == world_hash } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
 
         self.call(planet_storage.set(location, new_planet));
         self.call(planet_revealed_coords_storage.set(location, new_planet_revealed_coords));
@@ -1206,29 +1120,85 @@ contract Core {
         };
 
         // 7. Enqueue public verification and writes
-        self.enqueue_self.initialize_player_public(
-            sender,
-            location_id,
-            timestamp,
-            config_hashes,
-            planet_default_stats_hash,
-            planet_state_hash,
-            planet_artifacts_state_hash,
-            planet_events_state_hash,
-            original_arrivals_count,
-            arrival_ids,
-            arrival_hashes,
-            arrival_artifact_ids,
-            arrival_artifact_hashes,
-            arrival_artifact_location_hashes,
-            player_state_hash,
-            world_hash,
-            new_planet,
-            new_planet_events_state,
-            new_planet_artifacts_state,
-            new_arrival_artifact_locations,
-            new_player,
-        );
+        {
+            if (planet_state_hash) == 0 {
+            let mut compact_payload:[Field;56]=[0;56];
+            let compact_part_0=(sender).serialize();
+            for compact_i in 0..1 { compact_payload[0+compact_i]=compact_part_0[compact_i]; }
+            let compact_part_1=(location_id).serialize();
+            for compact_i in 0..1 { compact_payload[1+compact_i]=compact_part_1[compact_i]; }
+            let compact_part_2=(timestamp).serialize();
+            for compact_i in 0..1 { compact_payload[2+compact_i]=compact_part_2[compact_i]; }
+            let compact_part_3=(config_hashes).serialize();
+            for compact_i in 0..9 { compact_payload[3+compact_i]=compact_part_3[compact_i]; }
+            let compact_part_4=(planet_default_stats_hash).serialize();
+            for compact_i in 0..1 { compact_payload[12+compact_i]=compact_part_4[compact_i]; }
+            let compact_part_5=(world_hash).serialize();
+            for compact_i in 0..1 { compact_payload[13+compact_i]=compact_part_5[compact_i]; }
+            let compact_part_6=(new_planet).serialize();
+            for compact_i in 0..32 { compact_payload[14+compact_i]=compact_part_6[compact_i]; }
+            let compact_part_7=(new_player).serialize();
+            for compact_i in 0..8 { compact_payload[46+compact_i]=compact_part_7[compact_i]; }
+            let compact_part_8=(poseidon2_hash((new_planet).serialize())).serialize();
+            for compact_i in 0..1 { compact_payload[54+compact_i]=compact_part_8[compact_i]; }
+            let compact_part_9=(poseidon2_hash((new_player).serialize())).serialize();
+            for compact_i in 0..1 { compact_payload[55+compact_i]=compact_part_9[compact_i]; }
+            self.enqueue_self.initialize_player_new_public_prepared(::libs::field_buffer::FieldBuffer { words: compact_payload });
+        } else {
+            let mut prepared_payload: [Field;267] = [0;267];
+            let prepared_part_0 = (sender).serialize();
+            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
+            let prepared_part_1 = (location_id).serialize();
+            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
+            let prepared_part_2 = (timestamp).serialize();
+            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
+            let prepared_part_3 = (config_hashes).serialize();
+            for prepared_i in 0..9 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
+            let prepared_part_4 = (planet_default_stats_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[12 + prepared_i] = prepared_part_4[prepared_i]; }
+            let prepared_part_5 = (planet_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[13 + prepared_i] = prepared_part_5[prepared_i]; }
+            let prepared_part_6 = (planet_artifacts_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[14 + prepared_i] = prepared_part_6[prepared_i]; }
+            let prepared_part_7 = (planet_events_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[15 + prepared_i] = prepared_part_7[prepared_i]; }
+            let prepared_part_8 = (original_arrivals_count).serialize();
+            for prepared_i in 0..1 { prepared_payload[16 + prepared_i] = prepared_part_8[prepared_i]; }
+            let prepared_part_9 = (arrival_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[17 + prepared_i] = prepared_part_9[prepared_i]; }
+            let prepared_part_10 = (arrival_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[37 + prepared_i] = prepared_part_10[prepared_i]; }
+            let prepared_part_11 = (arrival_artifact_ids).serialize();
+            for prepared_i in 0..20 { prepared_payload[57 + prepared_i] = prepared_part_11[prepared_i]; }
+            let prepared_part_12 = (arrival_artifact_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[77 + prepared_i] = prepared_part_12[prepared_i]; }
+            let prepared_part_13 = (arrival_artifact_location_hashes).serialize();
+            for prepared_i in 0..20 { prepared_payload[97 + prepared_i] = prepared_part_13[prepared_i]; }
+            let prepared_part_14 = (player_state_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[117 + prepared_i] = prepared_part_14[prepared_i]; }
+            let prepared_part_15 = (world_hash).serialize();
+            for prepared_i in 0..1 { prepared_payload[118 + prepared_i] = prepared_part_15[prepared_i]; }
+            let prepared_part_16 = (new_planet).serialize();
+            for prepared_i in 0..32 { prepared_payload[119 + prepared_i] = prepared_part_16[prepared_i]; }
+            let prepared_part_17 = (new_planet_events_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[151 + prepared_i] = prepared_part_17[prepared_i]; }
+            let prepared_part_18 = (new_planet_artifacts_state).serialize();
+            for prepared_i in 0..22 { prepared_payload[173 + prepared_i] = prepared_part_18[prepared_i]; }
+            let prepared_part_19 = (new_arrival_artifact_locations).serialize();
+            for prepared_i in 0..60 { prepared_payload[195 + prepared_i] = prepared_part_19[prepared_i]; }
+            let prepared_part_20 = (new_player).serialize();
+            for prepared_i in 0..8 { prepared_payload[255 + prepared_i] = prepared_part_20[prepared_i]; }
+            let prepared_part_21 = (poseidon2_hash((new_planet).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[263 + prepared_i] = prepared_part_21[prepared_i]; }
+            let prepared_part_22 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[264 + prepared_i] = prepared_part_22[prepared_i]; }
+            let prepared_part_23 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[265 + prepared_i] = prepared_part_23[prepared_i]; }
+            let prepared_part_24 = (poseidon2_hash((new_player).serialize())).serialize();
+            for prepared_i in 0..1 { prepared_payload[266 + prepared_i] = prepared_part_24[prepared_i]; }
+            self.enqueue_self.initialize_player_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
+        }
+        }
     }
 
     #[external("public")]
@@ -1256,8 +1226,257 @@ contract Core {
         new_arrival_artifact_locations: [ArtifactLocation; 20],
         new_player: Player,
     ) {
+        _initialize_player_public_local(self.context, sender, location_id, timestamp, config_hashes, planet_default_stats_hash, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
+    }
+
+
+    // Additional hashes are bound by the existing private gameplay proof.
+    #[external("public")]
+    #[only_self]
+    fn refresh_planet_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<245>) {
+        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
+        let location: Field = Deserialize::stream_deserialize(&mut reader);
+        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
+        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
+        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
+        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
+        reader.advance_offset(3);
+        reader.finish();
+        _refresh_planet_public_local(self.context, location, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, new_planet, new_planet_artifacts_state, new_planet_events_state, new_arrival_artifact_locations);
+    }
+
+    // Additional hashes are bound by the existing private gameplay proof.
+    #[external("public")]
+    #[only_self]
+    fn upgrade_planet_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<251>) {
+        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
+        let location: Field = Deserialize::stream_deserialize(&mut reader);
+        let sender: AztecAddress = Deserialize::stream_deserialize(&mut reader);
+        let branch: u8 = Deserialize::stream_deserialize(&mut reader);
+        let current_branch_level: u8 = Deserialize::stream_deserialize(&mut reader);
+        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
+        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
+        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let upgrade_config_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let upgrade_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let world_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
+        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
+        reader.advance_offset(3);
+        reader.finish();
+        _upgrade_planet_public_local(self.context, location, sender, branch, current_branch_level, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, upgrade_config_hash, upgrade_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations);
+    }
+
+    // Additional hashes are bound by the existing private gameplay proof.
+    #[external("public")]
+    #[only_self]
+    fn withdraw_silver_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<258>) {
+        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
+        let location: Field = Deserialize::stream_deserialize(&mut reader);
+        let sender: AztecAddress = Deserialize::stream_deserialize(&mut reader);
+        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
+        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
+        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let player_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let world_config_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let world_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
+        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
+        let new_player: Player = Deserialize::stream_deserialize(&mut reader);
+        reader.advance_offset(4);
+        reader.finish();
+        _withdraw_silver_public_local(self.context, location, sender, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_config_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
+    }
+
+    // Additional hashes are bound by the existing private gameplay proof.
+
+
+    // Additional hashes are bound by the existing private gameplay proof.
+    #[external("public")]
+    #[only_self]
+    fn initialize_player_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<267>) {
+        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
+        let sender: AztecAddress = Deserialize::stream_deserialize(&mut reader);
+        let location_id: Field = Deserialize::stream_deserialize(&mut reader);
+        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
+        let config_hashes: [Field; 9] = Deserialize::stream_deserialize(&mut reader);
+        let planet_default_stats_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
+        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
+        let player_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let world_hash: Field = Deserialize::stream_deserialize(&mut reader);
+        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
+        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
+        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
+        let new_player: Player = Deserialize::stream_deserialize(&mut reader);
+        reader.advance_offset(4);
+        reader.finish();
+        _initialize_player_public_local(self.context, sender, location_id, timestamp, config_hashes, planet_default_stats_hash, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
+    }
+
+    #[external("public")]
+    fn set_state_backend(state_backend: AztecAddress) {
+        self.internal.assert_admin();
+        self.storage.state_backend.write(state_backend);
+    }
+
+    #[external("utility")]
+    unconstrained fn get_state_backend() -> AztecAddress {
+        self.storage.state_backend.read()
+    }
+    #[external("public")]
+    fn set_state_worker(state_worker:AztecAddress) {
+        self.internal.assert_admin();
+        self.storage.state_worker.write(state_worker);
+    }
+    #[external("utility")]
+    unconstrained fn get_state_worker() -> AztecAddress {
+        self.storage.state_worker.read()
+    }
+
+    #[inline_never]
+    #[contract_library_method]
+    unconstrained fn _checked_worker_result(result:[Field]) -> bool {
+        // A malformed response cannot bypass the original continuation.
+        if result.len()==1 { result[0]==1 } else { false }
+    }
+    #[external("public")] #[only_self]
+    fn initialize_player_new_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<56>) {
+        let prepared_payload=prepared_payload.words;
+        let backend=self.storage.state_backend.read();
+        let mut settled=false;
+        if !backend.is_zero() {
+            if ::libs::config_recognition::supports_config(self.storage.config_storage_address.read()) {
+            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("try_settle_initialize_new(([Field;60]))") };
+            let calldata=[selector.to_field(), self.storage.config_storage_address.read().to_field(), self.storage.world_storage_address.read().to_field(), self.storage.player_storage_address.read().to_field(), self.storage.planet_storage_address.read().to_field(), prepared_payload[0], prepared_payload[1], prepared_payload[2], prepared_payload[3], prepared_payload[4], prepared_payload[5], prepared_payload[6], prepared_payload[7], prepared_payload[8], prepared_payload[9], prepared_payload[10], prepared_payload[11], prepared_payload[12], prepared_payload[13], prepared_payload[14], prepared_payload[15], prepared_payload[16], prepared_payload[17], prepared_payload[18], prepared_payload[19], prepared_payload[20], prepared_payload[21], prepared_payload[22], prepared_payload[23], prepared_payload[24], prepared_payload[25], prepared_payload[26], prepared_payload[27], prepared_payload[28], prepared_payload[29], prepared_payload[30], prepared_payload[31], prepared_payload[32], prepared_payload[33], prepared_payload[34], prepared_payload[35], prepared_payload[36], prepared_payload[37], prepared_payload[38], prepared_payload[39], prepared_payload[40], prepared_payload[41], prepared_payload[42], prepared_payload[43], prepared_payload[44], prepared_payload[45], prepared_payload[46], prepared_payload[47], prepared_payload[48], prepared_payload[49], prepared_payload[50], prepared_payload[51], prepared_payload[52], prepared_payload[53], prepared_payload[54], prepared_payload[55]];
+            settled=_checked_worker_result(::libs::public_call::call(backend,calldata));
+            }
+        }
+        if !settled {
+            // The original new-planet branch never reads these omitted parameters.
+            // Reconstruct its same typed call; the supplied fields remain exact.
+            let mut original_calldata:[Field;264]=[0;264];
+            for i in 0..1 { original_calldata[1+i]=prepared_payload[0+i]; }
+            for i in 0..1 { original_calldata[2+i]=prepared_payload[1+i]; }
+            for i in 0..1 { original_calldata[3+i]=prepared_payload[2+i]; }
+            for i in 0..9 { original_calldata[4+i]=prepared_payload[3+i]; }
+            for i in 0..1 { original_calldata[13+i]=prepared_payload[12+i]; }
+            for i in 0..1 { original_calldata[119+i]=prepared_payload[13+i]; }
+            for i in 0..32 { original_calldata[120+i]=prepared_payload[14+i]; }
+            for i in 0..8 { original_calldata[256+i]=prepared_payload[46+i]; }
+            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("initialize_player_public((Field),Field,u64,[Field;9],Field,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([(Field);20],u32,u64),([Field;20],u32,u64),[(Field,Field,u64);20],(u64,Field,u64,u128,u128,u128,bool,u64))") };
+            original_calldata[0]=selector.to_field();
+            let result=::libs::public_call::call(self.context.this_address(),original_calldata);
+            assert(result.len()==0,"Unexpected original continuation result");
+        }
+    }
+    #[external("public")] #[only_self]
+    fn refresh_planet_empty_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<144>) {
+        let prepared_payload=prepared_payload.words;
+        let backend=self.storage.state_backend.read();
+        let mut settled=false;
+        if !backend.is_zero() {
+            let arrival=self.storage.arrivals_storage_address.read();
+            let artifact=self.storage.artifact_storage_address.read();
+            if (::state_backend_readonly::public_read::get_namespace_kind(backend,arrival)==7)
+                & (::state_backend_readonly::public_read::get_namespace_kind(backend,artifact)==8) {
+            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("try_settle_refresh_empty(([Field;88]))") };
+            let calldata=[selector.to_field(), self.storage.planet_storage_address.read().to_field(), self.storage.planet_artifacts_storage_address.read().to_field(), self.storage.planet_events_storage_address.read().to_field(), self.storage.artifact_location_storage_address.read().to_field(), prepared_payload[0], prepared_payload[1], prepared_payload[2], prepared_payload[3], prepared_payload[4], prepared_payload[5], prepared_payload[6], prepared_payload[7], prepared_payload[8], prepared_payload[9], prepared_payload[10], prepared_payload[11], prepared_payload[12], prepared_payload[13], prepared_payload[14], prepared_payload[15], prepared_payload[16], prepared_payload[17], prepared_payload[18], prepared_payload[19], prepared_payload[20], prepared_payload[21], prepared_payload[22], prepared_payload[23], prepared_payload[24], prepared_payload[25], prepared_payload[26], prepared_payload[27], prepared_payload[28], prepared_payload[29], prepared_payload[30], prepared_payload[31], prepared_payload[32], prepared_payload[33], prepared_payload[34], prepared_payload[35], prepared_payload[36], prepared_payload[37], prepared_payload[38], prepared_payload[39], prepared_payload[40], prepared_payload[41], prepared_payload[42], prepared_payload[43], prepared_payload[44], prepared_payload[45], prepared_payload[46], prepared_payload[47], prepared_payload[48], prepared_payload[49], prepared_payload[50], prepared_payload[51], prepared_payload[52], prepared_payload[53], prepared_payload[54], prepared_payload[55], prepared_payload[56], prepared_payload[57], prepared_payload[58], prepared_payload[59], prepared_payload[60], prepared_payload[61], prepared_payload[62], prepared_payload[63], prepared_payload[64], prepared_payload[65], prepared_payload[66], prepared_payload[67], prepared_payload[68], prepared_payload[69], prepared_payload[70], prepared_payload[71], prepared_payload[72], prepared_payload[73], prepared_payload[74], prepared_payload[75], prepared_payload[76], prepared_payload[77], prepared_payload[78], prepared_payload[79], prepared_payload[80], prepared_payload[81], prepared_payload[82], prepared_payload[83]];
+            settled=_checked_worker_result(::libs::public_call::call(backend,calldata));
+            }
+        }
+        if !settled {
+            // Count-zero hash/ID arrays are provably zero; preserve every location word
+            // because an arbitrary configured legacy setter can inspect inactive values.
+            let mut original_calldata:[Field;243]=[0;243];
+            for i in 0..1 { original_calldata[1+i]=prepared_payload[0+i]; }
+            for i in 0..1 { original_calldata[2+i]=prepared_payload[1+i]; }
+            for i in 0..1 { original_calldata[3+i]=prepared_payload[2+i]; }
+            for i in 0..1 { original_calldata[4+i]=prepared_payload[3+i]; }
+            for i in 0..1 { original_calldata[5+i]=prepared_payload[4+i]; }
+            for i in 0..32 { original_calldata[107+i]=prepared_payload[5+i]; }
+            for i in 0..22 { original_calldata[139+i]=prepared_payload[37+i]; }
+            for i in 0..22 { original_calldata[161+i]=prepared_payload[59+i]; }
+            for i in 0..60 { original_calldata[183+i]=prepared_payload[84+i]; }
+            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("refresh_planet_public(Field,u64,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([Field;20],u32,u64),([(Field);20],u32,u64),[(Field,Field,u64);20])") };
+            original_calldata[0]=selector.to_field();
+            let result=::libs::public_call::call(self.context.this_address(),original_calldata);
+            assert(result.len()==0,"Unexpected original continuation result");
+        }
+    }
+
+
+
+
+
+
+    // The same public context preserves the actual caller and storage authority.
+    #[inline_never]
+    #[contract_library_method]
+    unconstrained fn _initialize_player_public_local(
+        context: aztec::context::PublicContext,
+        sender: AztecAddress,
+        location_id: Field,
+        timestamp: u64,
+        config_hashes: [Field; 9],
+        planet_default_stats_hash: Field,
+        planet_state_hash: Field,
+        planet_artifacts_state_hash: Field,
+        planet_events_state_hash: Field,
+        original_arrivals_count: u32,
+        arrival_ids: [Field; 20],
+        arrival_hashes: [Field; 20],
+        arrival_artifact_ids: [Field; 20],
+        arrival_artifact_hashes: [Field; 20],
+        arrival_artifact_location_hashes: [Field; 20],
+        player_state_hash: Field,
+        world_hash: Field,
+        new_planet: Planet,
+        new_planet_events_state: PlanetEvents,
+        new_planet_artifacts_state: PlanetArtifacts,
+        new_arrival_artifact_locations: [ArtifactLocation; 20],
+        new_player: Player,
+    ) {
+        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
         let actual_timestamp = self.context.timestamp();
         assert_public_timestamp(timestamp, actual_timestamp);
+        let state_backend_address = self.storage.state_backend.read();
 
         let config = Config::at(self.storage.config_storage_address.read());
         let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
@@ -1275,11 +1494,11 @@ contract Core {
         );
 
         // Verify player not yet initialized
-        assert(!self.view(player_storage.is_initialized(sender)), "Player already initialized");
+        assert(!(if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, player_storage.target_contract) == 2 }) { ::state_backend_readonly::public_read::is_initialized(state_backend_address, player_storage.target_contract, sender.to_field()) } else { self.view(player_storage.is_initialized(sender)) }), "Player already initialized");
 
         // Verify world state
         assert(world_hash != 0, "World state must be initialized");
-        assert(self.view(world_storage.verify_hash(0, world_hash)), "World state hash mismatch");
+        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, world_storage.target_contract, 0, world_hash) } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
 
         // Planet: verify hashes and write states
         if planet_state_hash == 0 {
@@ -1298,42 +1517,42 @@ contract Core {
                 ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
 
             assert(
-                self.view(planet_storage.verify_hash(location_id, planet_state_hash)),
+                (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location_id, planet_state_hash) } else { self.view(planet_storage.verify_hash(location_id, planet_state_hash)) }),
                 "Planet state hash mismatch",
             );
             assert(
-                self.view(planet_artifacts_storage.verify_hash(
+                (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location_id, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(
                     location_id,
                     planet_artifacts_state_hash,
-                )),
+                )) }),
                 "Planet artifacts state hash mismatch",
             );
             assert(
-                self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash)),
+                (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location_id, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash)) }),
                 "Planet events state hash mismatch",
             );
             assert(
-                self.view(arrival_storage.verify_hashes_batch(
+                (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
                     arrival_ids,
                     arrival_hashes,
                     original_arrivals_count,
-                )),
+                )) }),
                 "Arrival hash mismatch",
             );
             assert(
-                self.view(artifact_storage.verify_hashes_batch(
+                (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
                     arrival_artifact_ids,
                     arrival_artifact_hashes,
                     original_arrivals_count,
-                )),
+                )) }),
                 "Artifact hash mismatch",
             );
             assert(
-                self.view(artifact_location_storage.verify_hashes_batch(
+                (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
                     arrival_artifact_ids,
                     arrival_artifact_location_hashes,
                     original_arrivals_count,
-                )),
+                )) }),
                 "Artifact location hash mismatch",
             );
 
@@ -1350,4 +1569,338 @@ contract Core {
         // Write new player
         self.call(player_storage.set(sender, new_player));
     }
+
+
+    // The same public context preserves the actual caller and storage authority.
+    #[inline_never]
+    #[contract_library_method]
+    unconstrained fn _refresh_planet_public_local(
+        context: aztec::context::PublicContext,
+        location: Field,
+        timestamp: u64,
+        planet_state_hash: Field,
+        planet_artifacts_state_hash: Field,
+        planet_events_state_hash: Field,
+        original_arrivals_count: u32,
+        arrival_ids: [Field; 20],
+        arrival_hashes: [Field; 20],
+        arrival_artifact_ids: [Field; 20],
+        arrival_artifact_hashes: [Field; 20],
+        arrival_artifact_location_hashes: [Field; 20],
+        new_planet: Planet,
+        new_planet_artifacts_state: PlanetArtifacts,
+        new_planet_events_state: PlanetEvents,
+        new_arrival_artifact_locations: [ArtifactLocation; 20],
+    ) {
+        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
+        let actual_timestamp = self.context.timestamp();
+        assert_public_timestamp(timestamp, actual_timestamp);
+        let state_backend_address = self.storage.state_backend.read();
+
+        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
+        let planet_artifacts_storage =
+            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
+        let planet_events_storage =
+            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
+        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
+        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
+        let artifact_location_storage =
+            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
+
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
+            "Planet state hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
+            "Planet artifacts state hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
+            "Planet events state hash mismatch",
+        );
+
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
+                arrival_ids,
+                arrival_hashes,
+                original_arrivals_count,
+            )) }),
+            "Arrival hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
+                arrival_artifact_ids,
+                arrival_artifact_hashes,
+                original_arrivals_count,
+            )) }),
+            "Artifact hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
+                arrival_artifact_ids,
+                arrival_artifact_location_hashes,
+                original_arrivals_count,
+            )) }),
+            "Artifact location hash mismatch",
+        );
+
+        self.call(planet_storage.set(location, new_planet));
+        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
+        self.call(planet_events_storage.set(location, new_planet_events_state));
+        self.call(artifact_location_storage.set_arrival_locations_max20(
+            arrival_artifact_ids,
+            new_arrival_artifact_locations,
+            original_arrivals_count,
+        ));
+    }
+
+
+    // The same public context preserves the actual caller and storage authority.
+    #[inline_never]
+    #[contract_library_method]
+    unconstrained fn _upgrade_planet_public_local(
+        context: aztec::context::PublicContext,
+        location: Field,
+        sender: AztecAddress,
+        branch: u8,
+        current_branch_level: u8,
+        timestamp: u64,
+        planet_state_hash: Field,
+        planet_artifacts_state_hash: Field,
+        planet_events_state_hash: Field,
+        original_arrivals_count: u32,
+        arrival_ids: [Field; 20],
+        arrival_hashes: [Field; 20],
+        arrival_artifact_ids: [Field; 20],
+        arrival_artifact_hashes: [Field; 20],
+        arrival_artifact_location_hashes: [Field; 20],
+        upgrade_config_hash: Field,
+        upgrade_hash: Field,
+        world_hash: Field,
+        new_planet: Planet,
+        new_planet_events_state: PlanetEvents,
+        new_planet_artifacts_state: PlanetArtifacts,
+        new_arrival_artifact_locations: [ArtifactLocation; 20],
+    ) {
+        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
+        let actual_timestamp = self.context.timestamp();
+        assert_public_timestamp(timestamp, actual_timestamp);
+        let state_backend_address = self.storage.state_backend.read();
+
+        let config = Config::at(self.storage.config_storage_address.read());
+        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
+        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
+        let planet_artifacts_storage =
+            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
+        let planet_events_storage =
+            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
+        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
+        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
+        let artifact_location_storage =
+            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
+
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
+            "Planet state hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
+            "Planet artifacts state hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
+            "Planet events state hash mismatch",
+        );
+
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
+                arrival_ids,
+                arrival_hashes,
+                original_arrivals_count,
+            )) }),
+            "Arrival hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
+                arrival_artifact_ids,
+                arrival_artifact_hashes,
+                original_arrivals_count,
+            )) }),
+            "Artifact hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
+                arrival_artifact_ids,
+                arrival_artifact_location_hashes,
+                original_arrivals_count,
+            )) }),
+            "Artifact location hash mismatch",
+        );
+
+        assert(
+            self.view(config.verify_upgrade_config_hash(upgrade_config_hash)),
+            "Upgrade config hash mismatch",
+        );
+
+        assert(
+            self.view(config.verify_upgrade_hash_by_branch_level(
+                branch as u128,
+                current_branch_level as u128,
+                upgrade_hash,
+            )),
+            "Upgrade hash mismatch",
+        );
+
+        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, world_storage.target_contract, 0, world_hash) } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
+
+        assert(new_planet.owner == sender, "Planet owner mismatch");
+        self.call(planet_storage.set(location, new_planet));
+        self.call(planet_events_storage.set(location, new_planet_events_state));
+        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
+        self.call(artifact_location_storage.set_arrival_locations_max20(
+            arrival_artifact_ids,
+            new_arrival_artifact_locations,
+            original_arrivals_count,
+        ));
+    }
+
+
+    // The same public context preserves the actual caller and storage authority.
+    #[inline_never]
+    #[contract_library_method]
+    unconstrained fn _withdraw_silver_public_local(
+        context: aztec::context::PublicContext,
+        location: Field,
+        sender: AztecAddress,
+        timestamp: u64,
+        planet_state_hash: Field,
+        planet_artifacts_state_hash: Field,
+        planet_events_state_hash: Field,
+        original_arrivals_count: u32,
+        arrival_ids: [Field; 20],
+        arrival_hashes: [Field; 20],
+        arrival_artifact_ids: [Field; 20],
+        arrival_artifact_hashes: [Field; 20],
+        arrival_artifact_location_hashes: [Field; 20],
+        player_state_hash: Field,
+        world_config_hash: Field,
+        world_hash: Field,
+        new_planet: Planet,
+        new_planet_events_state: PlanetEvents,
+        new_planet_artifacts_state: PlanetArtifacts,
+        new_arrival_artifact_locations: [ArtifactLocation; 20],
+        new_player: Player,
+    ) {
+        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
+        let actual_timestamp = self.context.timestamp();
+        assert_public_timestamp(timestamp, actual_timestamp);
+        let state_backend_address = self.storage.state_backend.read();
+
+        let config = Config::at(self.storage.config_storage_address.read());
+        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
+        let player_storage = PlayerStorage::at(self.storage.player_storage_address.read());
+        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
+        let planet_artifacts_storage =
+            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
+        let planet_events_storage =
+            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
+        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
+        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
+        let artifact_location_storage =
+            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
+
+        assert(
+            self.view(config.verify_world_config_hash(world_config_hash)),
+            "World config hash mismatch",
+        );
+
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
+            "Planet state hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
+            "Planet artifacts state hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
+            "Planet events state hash mismatch",
+        );
+
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
+                arrival_ids,
+                arrival_hashes,
+                original_arrivals_count,
+            )) }),
+            "Arrival hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
+                arrival_artifact_ids,
+                arrival_artifact_hashes,
+                original_arrivals_count,
+            )) }),
+            "Artifact hash mismatch",
+        );
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
+                arrival_artifact_ids,
+                arrival_artifact_location_hashes,
+                original_arrivals_count,
+            )) }),
+            "Artifact location hash mismatch",
+        );
+
+        assert(
+            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, player_storage.target_contract) == 2 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, player_storage.target_contract, sender.to_field(), player_state_hash) } else { self.view(player_storage.verify_hash(sender, player_state_hash)) }),
+            "Player state hash mismatch",
+        );
+
+        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, world_storage.target_contract, 0, world_hash) } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
+
+        self.call(planet_storage.set(location, new_planet));
+        self.call(planet_events_storage.set(location, new_planet_events_state));
+        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
+        self.call(artifact_location_storage.set_arrival_locations_max20(
+            arrival_artifact_ids,
+            new_arrival_artifact_locations,
+            original_arrivals_count,
+        ));
+        self.call(player_storage.set(sender, new_player));
+    }
+}
+
+
+// Public-only parser helper. Share the five Field20 reads within each prepared
+// Reader width without changing the pinned Field20 read/advance semantics.
+#[inline_never]
+unconstrained fn read_prepared_core_field20<let N: u32>(
+    reader: &mut ::aztec::protocol::utils::reader::Reader<N>,
+) -> [Field; 20] {
+    let result = [
+        reader.peek_offset(0),
+        reader.peek_offset(1),
+        reader.peek_offset(2),
+        reader.peek_offset(3),
+        reader.peek_offset(4),
+        reader.peek_offset(5),
+        reader.peek_offset(6),
+        reader.peek_offset(7),
+        reader.peek_offset(8),
+        reader.peek_offset(9),
+        reader.peek_offset(10),
+        reader.peek_offset(11),
+        reader.peek_offset(12),
+        reader.peek_offset(13),
+        reader.peek_offset(14),
+        reader.peek_offset(15),
+        reader.peek_offset(16),
+        reader.peek_offset(17),
+        reader.peek_offset(18),
+        reader.peek_offset(19),
+    ];
+    reader.advance_offset(20);
+    result
 }

@@ -1,0 +1,5 @@
+.                                        |  WARN  Unsupported engine: wanted: {"node":"24.12.0"} (current: {"node":"v25.8.1","pnpm":"10.28.0"})
+
+> contracts@0.1.0 scripts:typecheck /Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/contracts
+> tsc -p tsconfig.integration.json
+

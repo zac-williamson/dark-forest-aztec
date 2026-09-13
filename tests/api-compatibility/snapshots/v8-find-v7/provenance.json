@@ -1,0 +1,13 @@
+{
+  "scope": "Authenticated frozen V7 Find canonical prepared route; only six scalar root records may move to public hashing.",
+  "v7FindSnapshot": {
+    "path": "tests/api-compatibility/snapshots/v8-find-v7/artifact_find.nr",
+    "sha256": "d7edcbe49b8160c330e9a9a5a02d604798a114dfc0bf31a1f0887b9fc7f48875"
+  },
+  "originalGit": "00bfa05c18862cce1c5adb362e4ecebe084c329a",
+  "originalFindSourceSha256": "6d620aae61c70a01d18e12f8282c632629d4cf0dcd5a461e505fec06252b16d3",
+  "prototypeOverlay": {
+    "path": "/tmp/df-original-find-probe/original-find.patch",
+    "sha256": "58ea6138b709e1f76beb7cdb6540d13ade8e238f6cc8eb0a0ccf4f9b3e0309f7"
+  }
+}

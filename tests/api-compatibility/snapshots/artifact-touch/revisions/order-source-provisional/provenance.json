@@ -1,0 +1,22 @@
+{
+  "scope": "Reviewed class-only touch with additive (state, id) order. Source-only revision over admitted V13; final derived class bindings and new native/runtime validation pending.",
+  "reviewedProbeReadinessSHA256": "5201f23f0ac7f2d75cde25e0b8f7a3f7190ed99cfaf92bb3b8f180741b714915",
+  "nativeBuildSHA256": "fc9fe754303056cd14a078ed1003d3754da6571bc9ee3dcafb293f581a3c3b13",
+  "dispatchSHA256": "f9da5fe45d2fa501e6c032af01d70a7985a798ad64f7d23f5cad3ff250f16442",
+  "v8References": {
+    "contracts/system/artifact_valut/src/main.nr": "95738b02ff88821e5525d4bb182d206284bca5ec4ab39ec56e8c8ec2cd058657",
+    "contracts/storage/artifact/src/main.nr": "57b22f8508ba57de41562e0d6d8fa7a5ecbfa492d933e27ba7347bac5386a1a8",
+    "contracts/storage/artifact_location/src/main.nr": "048f26e24fe3ab8424d72960c58881d822fc02f82568570d79f38c508f1ac905"
+  },
+  "admittedV13Sources": {
+    "contracts/system/artifact_valut/src/main.nr": "b8eb0d4353a11280fc88fa12185a1e3b48211cf91d235bfc4939fee19d74dfa7",
+    "contracts/storage/artifact/src/main.nr": "0a64b26a4daa7744f4904e94842e92bd98e5ec26c69d97f8b66e492616355629",
+    "contracts/storage/artifact_location/src/main.nr": "788c831709f93b03f32415e017269776d0bb2a4bff6efd85dbe24c84160c6f7c"
+  },
+  "orderSourceProvenanceSHA256": "91244f7f6edf55843452174163ea7ae1248a7b9db9b58f68b70e2ae1cae3c2e9",
+  "orderSources": {
+    "contracts/system/artifact_valut/src/main.nr": "475ee0d82eb9151ed8b6d80079339ff1324918331f22a61e9584e7729265595f",
+    "contracts/storage/artifact/src/main.nr": "7eaa9f61f05da3610ecafc570b2b7a0363d7023129964fd134dc4833c57195f6",
+    "contracts/storage/artifact_location/src/main.nr": "8b31a3660b549dd57e57a4a241436ce7967c84b1830ba6188f7558e3e796221e"
+  }
+}

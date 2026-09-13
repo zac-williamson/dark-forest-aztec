@@ -1,0 +1,830 @@
+{
+  "scope": "V14 full58 only:56 remaining actual candidate actions plus two exact reused receipts,52 cached canonical original non-Find cases plus6 fresh matched Find pairs. No additional runtime/proof/profile authorization.",
+  "files": [
+    {
+      "file": "RUNBOOK-FULL58-V14.md",
+      "sha256": "8e7c01c60013305586b4e06c447c8b01f1be124d52f29e192af954181722039e"
+    },
+    {
+      "file": "RUNBOOK-V14.md",
+      "sha256": "acaf38df9905d0b5b2fbe3d7a0c59ec215a4c7b362d43f8f038345f575adddd5"
+    },
+    {
+      "file": "RUNBOOK.md",
+      "sha256": "3face02491296451772e8bba588ece1e3412a8161d7beaac05da1a2b5cda72ed"
+    },
+    {
+      "file": "accepted-admission.json",
+      "sha256": "4c0f352c8b169d8a7a82d81f8ae968f17e35fec8e9364fb8b4c6c00ec78d62cd"
+    },
+    {
+      "file": "attempt1-execution-inputs-manifest.json",
+      "sha256": "b34accb238b7bdc1b25c3859ea11251c03c4fd21b7394bc9edf01009cc89e30c"
+    },
+    {
+      "file": "docs/fee-benchmark/common-fee-schedule.json",
+      "sha256": "75f36be77a71b5ccab0dd3bc2bc7431edb009168bb8c644d2cc81b71af664d0f"
+    },
+    {
+      "file": "evidence/loader-preflight.tap",
+      "sha256": "940f9b28e6f6e6f7eb7f9a9b684f501dc017049df1439275f043c9d6751f7dd1"
+    },
+    {
+      "file": "evidence/native-build-provenance.json",
+      "sha256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0"
+    },
+    {
+      "file": "evidence/offline-tests.tap",
+      "sha256": "c3406d53b72186ce6b028cb8198d20d568b15706ff20a9186293019d7b10c600"
+    },
+    {
+      "file": "evidence/root-readiness.json",
+      "sha256": "013072a0f58586c9488e9aaac1f1cc1d60611e4e291041d7940c9dc4a87c0a05"
+    },
+    {
+      "file": "evidence/source-only-readiness.json",
+      "sha256": "639b39e4c01ae762cf41a082b64ba456ddae16588872bf9e98b4a4990b1354f0"
+    },
+    {
+      "file": "evidence/startup-attempt1.log",
+      "sha256": "5d577f62c44b979082c5a7ae9717be39ad4b1ebaaa5fdf0498aad5dcfc1f497f"
+    },
+    {
+      "file": "evidence/v14/full58-plan-tests.tap",
+      "sha256": "24047147f7192d1ba5d133b4061a043ee0631be89819cee8715319c2e457b96e"
+    },
+    {
+      "file": "evidence/v14/native-build-provenance.json",
+      "sha256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c"
+    },
+    {
+      "file": "evidence/v14/pre-admission-rejection.log",
+      "sha256": "bab037e74e7c275cc925c4a48462900853c15fb5021b2f72301bffea44eca194"
+    },
+    {
+      "file": "evidence/v14/root-readiness.json",
+      "sha256": "8162a1e48bb73a315ba96182a5eb5c6fbe4a7c298d655c0059f95c071460b77e"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-move-20.json",
+      "sha256": "89a6e2267fd59af038b68d39e724d48e7d6863bbfd6104e078aad720ba25477b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-reveal_location-ordinary.json",
+      "sha256": "d841d24630d43cb53e3451c21089df448525b16ce0977526ecd3dfb9b1d353ce"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-upgrade_planet-ordinary.json",
+      "sha256": "f23bd1bccba1f2455b566b2362b116e98191f837799bf70093256a8306b5a926"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v12-artifacts-deployments.json",
+      "sha256": "33fd3a51da3be99525183e9319bb004681114f8252e791998b92b3f28dc5c877"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v12-artifacts-deposit_artifact-boundary_deposit_4_due_0_future.json",
+      "sha256": "03276ad9d4949702735ee13c19c0b5cd93e91b2beec21a55e038af624fe13829"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v12-artifacts-deposit_artifact-boundary_deposit_4_due_11_future.json",
+      "sha256": "5f62c3ff462d4e7d0768d7613169263b1935b2dfbdd11d71a6f5fb5405a9513d"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v12-artifacts-deposit_artifact-boundary_deposit_4_due_12_future.json",
+      "sha256": "a34d2bc7346565a2e3e45f4e65094eab580d38263fc0421be17c864e48424bbd"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v12-artifacts-fixture-configured",
+      "sha256": "82837adbf251e57158f800c69afc3213456e2d602322b9383db8896117e1c66b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v14-artifacts-deployments.json",
+      "sha256": "33fd3a51da3be99525183e9319bb004681114f8252e791998b92b3f28dc5c877"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v14-artifacts-fixture-configured",
+      "sha256": "82837adbf251e57158f800c69afc3213456e2d602322b9383db8896117e1c66b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-activate_artifact-ordinary.json",
+      "sha256": "14bb80c009080524c664b521a4ee2ec7e544729423d910dc5889de971f0ce752"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-add_score-ordinary.json",
+      "sha256": "7c234d517002e607ddfc91d78551b39f40b1273a71f5a3d231f05665f79e46a7"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-admin_give_artifact-ordinary.json",
+      "sha256": "891de835ce0fd3d27f6dd5775f5deee4b251ffcd5962f8b126b6074772775873"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-admin_give_spaceship-ordinary.json",
+      "sha256": "4b569b9a6330a97c5de0eb75b8628074031f3bda8722cda6e26a191a14edf5c6"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-admin_initialize_planet-ordinary.json",
+      "sha256": "8b19402f4d66791fe13b3e66574d0171801124158f3b1d71b21a640c9e1d922f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-admin_set_world_radius-ordinary.json",
+      "sha256": "50873c2489d88e8c0bb014f37a8871ab527398e0c4bf6fc39396e015cb6eedaf"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-create_artifact-ordinary.json",
+      "sha256": "c8b974158ed00cce72a66ca994bbb8fd1e895d1e5914f4a0c8fcc9cf7b8f6205"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-create_planet-ordinary.json",
+      "sha256": "072666c71988a66877f38a18314a553c2c67f633fa7b7195d5045b4a391c45ba"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-deactivate_artifact-ordinary.json",
+      "sha256": "d98d379bdc7ee086dbb3b043da1c59ca4ef70797f44d89d25fed4c56560309bd"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-deduct_score-ordinary.json",
+      "sha256": "1efa6ed64327692fef4d1916e3114f5a95e32f32c0d086eb8f9b06702c65c506"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-deployments.json",
+      "sha256": "33fd3a51da3be99525183e9319bb004681114f8252e791998b92b3f28dc5c877"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-deposit_artifact-carried_deposit_5.json",
+      "sha256": "12cec21eca24db496c9f5dcbc8bf3e627fc1cbf995339721de460a88bd2ed432"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-deposit_artifact-ordinary.json",
+      "sha256": "7ed722a11165b7d27994f013e5eafef867be6521ae2784b79e1cb4cdbd9b87fd"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-find_artifact-find_v4.json",
+      "sha256": "d97d4fcf46312de407cbacffc2f8668a867dc8b3ec6f5db013b9912369112bf7"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-find_artifact-find_v5.json",
+      "sha256": "52356dff7237795da166f2e04dc9893cdf62d3483e12b157e531b349522f7b60"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-find_artifact-find_v6.json",
+      "sha256": "1edb925c9ff429d3bb6655921b72d95ccc7ab0ac097c056584698075df738bcf"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-find_artifact-find_v7.json",
+      "sha256": "b97e4700cbef810a73afe842258f075e05095f936e8ab6ca0ca79ca11c9b80c7"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-find_artifact-find_v8.json",
+      "sha256": "da1fc5eeff7133171210c01c8c58d0d3e659e4a113252ebdb44616608eadbb03"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-find_artifact-ordinary.json",
+      "sha256": "183da4460c518b97df178340f997d228c9b4e58a35e2829352f2202b8572df50"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-fixture-configured",
+      "sha256": "82837adbf251e57158f800c69afc3213456e2d602322b9383db8896117e1c66b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-give_spaceships-ordinary.json",
+      "sha256": "68ef0392c85f4121ee4a0b5f4421e3ad604214de24fef1de536eb5a2b56e54fc"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-initialize_player-init_existing_planet.json",
+      "sha256": "6647067ea0b91134c926baafe801d2fe82ac4dd9da031f4cad42304a7c482540"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-initialize_player-init_unused_padding.json",
+      "sha256": "735ae1f6637e55d73cfdc91960682b2089e2ef3b32fd18ffef45d7717cb465e2"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-initialize_player-ordinary.json",
+      "sha256": "b9d7c59d160ee4bc2f77b23342d077305d07c990a489ee7f3ce0fd376cdf4350"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-1.json",
+      "sha256": "4120cd2ad74c22ee2b8d97de90b31a6c5376bb4801a9da9842781a1569b45e08"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-20.json",
+      "sha256": "c2641494604391cc757cdb1d2068aadfe44f53988ca41675202ce0c93c9c334a"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-5.json",
+      "sha256": "70d513a44bbf58abb403f1da41434570107a8d5f13ef07b4f1e289b5abcf3d96"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-artifact_alias.json",
+      "sha256": "5b2c1ee85e53a62eae430e0e8b21e96f19df9242e19101cf2ca661de4b554368"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-artifact_arrival.json",
+      "sha256": "b06795b3cd9af398f5a106d357aefdac6a00ea8bc032309d7c5add503a3e9f0d"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-artifact_move.json",
+      "sha256": "40bc93989ae0705f4d442544f33fcbced95399524af753f869c146d7ce1685bc"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-carried_arrivals_20.json",
+      "sha256": "db0f8ff962b14bfcd73b527621ffd7b1676f12ffe80a5973167942008cf1d1d2"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-carried_arrivals_5.json",
+      "sha256": "a854916722295a528b1970a68477e0d6d59538705cac9f46bbb0fcc048a64c36"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-conquest.json",
+      "sha256": "9d1cbe8baebe58c1d07f192cc57a73c7fe9caa6fe7d6b9c35148dd8a45a4606e"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-future_queue.json",
+      "sha256": "18495ff76db41b02d3a68043b26fd93c7912ff103b0c1320ee4ddd71795e576f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-nonzero_padding.json",
+      "sha256": "06726fa17646965c1bca2511d5a857069551895a5066996dc61d08d8c64532e4"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary-sponsored.json",
+      "sha256": "fbf95e734f0a3a6e22368f2dcd6f835ad5973048104d05753a919828566b7400"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+      "sha256": "137847e671166affba2160e00aa5399276ce642ff44fa2792a06262862d55e3b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-photoid.json",
+      "sha256": "2ad24eeebfa7562e2e96123ea7d0c271537e57b0e8b5f4935bf0f1f97eb72d47"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-move-wormhole.json",
+      "sha256": "6ced6082da6b1668e4a716a9f3a9a62cdc076af65281b702c242dcb971b2aecf"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-pause-ordinary.json",
+      "sha256": "9a8c712186696bb0cda2faffd3c9cf63dbca4b8358117178d4ee94f23906ba23"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-prospect_planet-ordinary.json",
+      "sha256": "1650d18c071929a0249ba090b7475f1b7a1bbffa852abe2c1bd6aba0542bf5e1"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-1.json",
+      "sha256": "7efe125e9c02c166259b1f755abac9b076c4026a56aabffccc1aebb045674580"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-20.json",
+      "sha256": "b1c43fc20b3ec8883c330cbc390b4880c30592d79623e53b10134553e1974acf"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-artifact_arrival.json",
+      "sha256": "060b04c3fe5312286bcbb8b1687021300c78afe0a66748207909cce7524b1e26"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-carried_arrivals_20.json",
+      "sha256": "b24fe0635307df2edf362fcd1b56a3d40ce2bdabd38e4d684470a8d04f0b0108"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-carried_arrivals_5.json",
+      "sha256": "6e5cb386f372c3ca4744730008116e237f65065b899c78ea19be2e4d81fd630d"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-ordinary-sponsored.json",
+      "sha256": "2ca629987f31befbb130daecd62ad262e201abe0f371526e28c97f40d2e8b3b3"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-ordinary.json",
+      "sha256": "32b118150c0e9a0a33a7e27618b7b975c14b7512bcc69c6d3a9bb0e2f8d45ce3"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-refresh_unused_padding.json",
+      "sha256": "d90f709adbbb14b872334f53f458b86ab9c7c72a2914c70cf3c89124f4dca922"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-reveal_location-ordinary.json",
+      "sha256": "6de8153796ba2bfa93653777086b6a5f072cd30d1c0c179c4d9bbbf81617554f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-safe_set_owner-ordinary.json",
+      "sha256": "da5f4a68e5c353cd84e915426ecb0b6b4010474b5b9ed5f0e95bcff19234ab1f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-set_owner-ordinary.json",
+      "sha256": "e2c2a6613eaf3b4e7c9e824ee2f10469a541feef8d9847f865de3416e2242f63"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-unpause-ordinary.json",
+      "sha256": "f1d760456685363fa3a93c2094e70da20aca248f6a66ae147f0fe8d2694a8ba4"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-update_artifact-ordinary.json",
+      "sha256": "dcb3a81ab3d51e6f7dde8fa654d09c58f21c18333dbdba76b52d56722d955088"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-upgrade_planet-ordinary.json",
+      "sha256": "f73ecf9ac61430acc26fa133d9b5ef8293b47037a3796557d1b80990a1f0613f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-withdraw_artifact-ordinary.json",
+      "sha256": "c6cd0c4cccca57ba2a3a0e8e2fbc805ce577186fe2a1d1dbae7bc4bded866f4e"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-v2-withdraw_silver-ordinary.json",
+      "sha256": "0c6350a46b0335769ba0aa24ebb636e3d266d0e23ee239fa1a923405cb1930c4"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/baseline-withdraw_silver-ordinary.json",
+      "sha256": "de7aa18a3fcfa4f6d38ee93ae478958dd19639917b48e024bb6b7b7e67a64a51"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/candidate-v14-addresses-authorized-v2",
+      "sha256": "8321f82ebdd41e4bc50825b5967719ddad895ab35b4d52cdf13fbe9de105f475"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/candidate-v14-create_artifact-ordinary.json",
+      "sha256": "85962223210ddb0ff785be400f40333156ddad98d3978029a8070c21e93ac0cd"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/candidate-v14-deployments.json",
+      "sha256": "80b70909065d1488718a02f79a9407d050f8039780276b72d5e2951680471035"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/candidate-v14-fixture-configured",
+      "sha256": "82837adbf251e57158f800c69afc3213456e2d602322b9383db8896117e1c66b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/candidate-v14-update_artifact-ordinary.json",
+      "sha256": "9ff90b96f6a7391b9841e988fd64db632ac138a658a34262b33a55314b591342"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/common-config.json",
+      "sha256": "1338e3a7acd988e1ea1c8f3231512135ff0279f064f6104f9ce13cdb3cbfc2ff"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/shared-seed-block-v2.json",
+      "sha256": "1293186a3f75e0632db67b1a2ad58248164d342aa8807bbd770e6857b31687ea"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/shared-seed-block-v4.json",
+      "sha256": "f22400aad9438ebb60d4e2b0612cb749662af372ab37fc2fb543138039ec6a38"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/shared-seed-block-v5.json",
+      "sha256": "f1b127cd865072623e58067fc2013ae2d2452d8941c6b705de566fd75f563551"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/shared-seed-block-v6.json",
+      "sha256": "d4ae633e48cb4b4dbb00d9a689821d9f679e6c53a9c67eaffc0cf9ad0fa963e4"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/shared-seed-block-v7.json",
+      "sha256": "32b6156fe14c9b2473c6e8c9c834364c7cfbfdc728e4f4aa33faee1bac769e13"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/.state/shared-seed-block-v8.json",
+      "sha256": "5bd9b28b7d11b7edbe99874ce598d1c6ec2527c9e3fcd1e1aa513de37ccb3beb"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/abi-utils.mjs",
+      "sha256": "d0a74ee4a01ca3e71df4e48a398d466b4701d5a80f4668a34c4538a700c24bca"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/artifact-fixtures.mjs",
+      "sha256": "c7e857d7628ea7ae58c2dbb6ffd1f6baf34825d529ac61dd61f204a4fcbe6e9f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/base-fixture.mjs",
+      "sha256": "cb319038957a65de6c0444a0747a90c9b3ce679fce2ec16e03fb5ff945048488"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/baseline-plan-selection.mjs",
+      "sha256": "ebb5dad9a1ea9b36f9ce506778fd94d517acce8413466b488fa4f4e0ed5ea8f7"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/baseline-plan-selection.test.mjs",
+      "sha256": "e44c2e10330596b4fa18ac83d4b3762507a54bd87a170f34a8c8a5c861a20d2d"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/carried-arrival-fixtures.mjs",
+      "sha256": "15bdd5e70fa38d0b6efe8c913f37a242425964e7126e20372a122a45891aa36f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/carried-arrival-fixtures.test.mjs",
+      "sha256": "5a29b0672a69fd2c53960eb6bf53391bde25cd1a10c0ca07e04802cb9306479d"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/carried-artifact-action-fixtures.mjs",
+      "sha256": "01fac74a27cacf78aa22b7e13965b63d3b21cd99c44f731c0ef92209b3fbef96"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/carried-artifact-action-fixtures.test.mjs",
+      "sha256": "b1c59a3bedbc65bf8cea3d328f72589d3a001e5ca90312c54f5f924a30053749"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/check-baseline-drift.mjs",
+      "sha256": "ed0e595afc34b1b728e660c3bb9fd5768bd7de5992e8d50551d1714d7261d46f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/check-recovered-candidate-classes.mjs",
+      "sha256": "06acb5b24c23515bacdc0c42edc2a931ad1f16ed0f00313786d1319caaa41ca2"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/compare-abi.mjs",
+      "sha256": "0a3d7be74f69cbe1de3fcb22e12b67140e994025e63f8d5e854a733c2bda959f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/compare-fees.mjs",
+      "sha256": "2a828df5b3284cea4515d840d78483028e2f6f4874aaa961b75ce051b3983d5b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/configure.mjs",
+      "sha256": "e299fb6b6e3d770d0ffe114a2b5e316246f28d138beb59cc5cddf96ab6c9f235"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/core-fixtures.mjs",
+      "sha256": "b6996813f0422ff8e282f381705ef23febb74d4b1abb42da4ff1e37c971003ea"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/event-effects.mjs",
+      "sha256": "68df8672fcf88aeed9202967e3ecc17facc8ebd1e0b399dad28e15bf7033be30"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/extension-plan-v12.mjs",
+      "sha256": "735e66ca50be6c2c557e0fc24865a01e1742ef7dd32faabc9fe9b9dbcbddd695"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/extension-plan-v14.mjs",
+      "sha256": "d70099a49046f7791ca731298414c658934abe4348b9bd649ee4cd4698be272e"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/field-buffer-probe.mjs",
+      "sha256": "570327bc4acd6a0924a409b37d684329c9770deaed480806a11e69bd7b28c57a"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/final-tx-gate.mjs",
+      "sha256": "a686e5e9d59ab5b80818cfdc054be6c300979c78414ae33e1ec53b1c7ace7bd8"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/final-tx-gate.test.mjs",
+      "sha256": "a8a51ecf252cc17e99ca8c6eb3bce1ae9de15df48cf6c7e40b519b2d522f8c0a"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/fixture-replay.mjs",
+      "sha256": "4ddb95999cee5630855f168076ce41eb533cb5bd11cb5f0c248e9a47b9e373d1"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/fixture-replay.test.mjs",
+      "sha256": "a7fcf527c1a9b6ace2041dcf2b8a0d995fccb990c0f86e4d185a00f2159d5f66"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/fixtures.mjs",
+      "sha256": "14e517cbce36d8e2e0eea675fd0c0b7180ef87e60de0502e437efb82e2ecf9ce"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/install-avm-profile.mjs",
+      "sha256": "85c2b161660a8fdfa4e2cbe3d9733882e2f68cee6d26e8a29c018c53e484dcee"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/inventory.mjs",
+      "sha256": "a97c2eadd1df2d16e51a6d4ac4255105157dbe144d0ebeecca77e1677fe1c4a6"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/loader-v12.test.mjs",
+      "sha256": "1c4f0e050dff72aecd3cf95810086cb65c4c8ca91b3bdaf9b8595b17e18fd306"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/plan-gas-probe.mjs",
+      "sha256": "35d1782feabc31d5429819703d4682e76d72afa9659b502dd6c68f3e4742eb3a"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/plan-v12.test.mjs",
+      "sha256": "e1f4b5fea3194564e0ce3fa150db84ce2722edc96ef7efee1739a1c5e43252a1"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/profile-event-encoding.mjs",
+      "sha256": "4614d61eedc8c75d8a80e845e22d1ddc547848c0d34abf6628e4e35ac19d7bce"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/profile.mjs",
+      "sha256": "b6b5bd0e317904f33964b4455eae2e96a0e8c87bb5b29f43f9ccf6db95e51394"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/prove-and-mine.mjs",
+      "sha256": "542e28dda66fcebfdc39eef351171d414aba8cf17153f0e53478d977a73d311d"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/public-fixtures.mjs",
+      "sha256": "cbea822bc2310212c9824fa026a413598e0d955b64b95dbfaf014f966a3d80e8"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/queue-fixtures.mjs",
+      "sha256": "4a12d24e24f55c99cf9b6d5e8a69b0f68127fa0ead1c05b500e602a81db9dde7"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/reconcile-deployment.mjs",
+      "sha256": "3b6d93c5e7f5d382f2ca968289268417a2ccf2b7003b07e297e4f4ddb0af5076"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/recovery-preflight.mjs",
+      "sha256": "c4d1a8cf39d5a7c02575b64b2ce025855981daac1d77465c716ed99f20e8222c"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/render-report-v8.mjs",
+      "sha256": "a3e9c1dd13c8553b42888902981674f56d0c442cc27357c7c53330a9f8bf2ac8"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/render-report.mjs",
+      "sha256": "79b198ffec32eb2273c379b6a68dd357ff1ff4688b435906ca8a261ab4205fa0"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/results/baseline-manifest.json",
+      "sha256": "966ec41ca73d103926273aefb63d72368c5b2712b922662535816f611770e8ee"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/results/candidate-v14-build-provenance.json",
+      "sha256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/resume-guards.mjs",
+      "sha256": "1006fa293ca540ab8463be7bf85792a4839348ed704d96103cc994ce1266a118"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/resume-guards.test.mjs",
+      "sha256": "64c654890b1cb9028c88c1f50cd9c344433b23d7eb7adf41f5581be73c4c7c1c"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/resume-owned-node.mjs",
+      "sha256": "f42f8638edf60d5cf43aa62d817c9c356541462f3810da799a0b9b009a21b62f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-artifact-extension-v12.mjs",
+      "sha256": "cb7ef2735b4bc5def066f0591ee1d6c7e00b74521cfeb7f429a9786f89d94898"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-artifact-extension-v14.mjs",
+      "sha256": "ceede01119cbfa9f8205f8ac584ad24d91fd7e0151986b03090df90d7ccd0db2"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-carried-v12.mjs",
+      "sha256": "0764d773230340e2560681a9bed32c02ae50fdc5d3e0fef5d8656b23c719b7ef"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-carried-v14.mjs",
+      "sha256": "a602e2c4c631bc2a3fc2fe9c0569f78c9d9e5324aecf0696a59ee3aa3cfae2a2"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-carried-v8.mjs",
+      "sha256": "6fe9120fec2a357861a3cfdc1affbec6eb0e27bfcb21060c17e930c9a032f953"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-plan-v12.mjs",
+      "sha256": "88aea292ffb0bc594b18f8071eae10f9caad98e0bb0d45b71162b3679b37ee09"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-plan-v14.mjs",
+      "sha256": "b58ce82514ac0e378b0c41a8c5b52122d91237eaf8a2be6f82b5e8237b4d0ee6"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-plan-v8.mjs",
+      "sha256": "c279b0d4d4d64c36d987a1740575177d675746bf5127ced1dbc2a400f8c9eb21"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-runtime-batch-v8.mjs",
+      "sha256": "1b898910a724f40f624b13dcd48904313397aa620b0a938a5de0a7807709103f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-runtime-remaining-v8.mjs",
+      "sha256": "c46e1985a1828734ec09091b177559bf155fb420bc8a9b444fd7c19da0f840e0"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run-runtime-v8.mjs",
+      "sha256": "e8290ebf308781675e8c82956d7e69b58cf939e8a3c828a81c32e4b48cb9de23"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/run.mjs",
+      "sha256": "cb82f8ed0096839afb1497f24a76c27e996009a065dad0ed5ed2de46e4945ee4"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/runtime.mjs",
+      "sha256": "1c7b4c7f126ec9b8b0ad56044eea2b5dc677ddc4e1118e2b3c86a08886770def"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-0-account.json",
+      "sha256": "d6d2cb7e6dcf93ca370aab99d2e19d8da3d913180da556470ed0fa1950b708e7"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-1-account.json",
+      "sha256": "545923b247a7c6b342065d76dd016d62882ec0f5cc7a6bc3a1c31c1fe4096cde"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-20-account.json",
+      "sha256": "cea2e77c7a5db4c5a15c60d04c08ee7f3ce06cdb482ce6f7bc26fb4b707f44e7"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-5-account.json",
+      "sha256": "83428c8ced441e58f45a18c2ee32223ad37c5b5e5d889992682fd789cc12e7ba"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-artifact_alias-account.json",
+      "sha256": "32bbefce4e8e38b128ec08719c3003f65343be4ab0b70b120c8b8a096fdd0b07"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-artifact_arrival-account.json",
+      "sha256": "bf34eeaf5ed1c2cf12e500d403a8a53715c941f8577fc3074869b5d38a58ec61"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-artifact_move-account.json",
+      "sha256": "d4b5278e2f5f877ad353513e11da0ff5f96e26370d29a284070fcdd474f6854b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-conquest-account.json",
+      "sha256": "a57d4a9d595699f6e4631afeb3566bd3358598c59d65f2c33ee8b7f78b37aec4"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-future_queue-account.json",
+      "sha256": "fbbf6844f8593f49792c6a995e09eb0a9129fc155355cd13ec2678d62b4bcf37"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-nonzero_padding-account.json",
+      "sha256": "5cc8d38456d8575dfd222d815646865cf51b4301c3d91261ff8155d8958cd22b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-photoid-account.json",
+      "sha256": "e4700d1cb47ab8013300aec5af41f586119193fbe1420920724eb963d9de39d4"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/fixture-wormhole-account.json",
+      "sha256": "9ec4a3399e8f38e27a69ffc1a309fde6b19318e020685864b3e3de592cd4dc26"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/manifest.json",
+      "sha256": "60899bf7b283198cb4e04b790de6f46479fdcc81e6bec06f46b750e84c4af866"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/refresh-fixture-baseline-0.json",
+      "sha256": "826c6c57f9cb5be664a82f252231d6febe6e3cd5d8167595cd5df05915e47a72"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/refresh-fixture-baseline-20.json",
+      "sha256": "9d0e30971f85b46397cec8e905b26baddbbc1329554ca73442cf167ee1c8e163"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/seed-fixtures/refresh-fixture-baseline-artifact_arrival.json",
+      "sha256": "1f1382aeb2843adc53f8627214315a5de96da5758ae1260247072a99cdea4559"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/set-owned-node-profile.mjs",
+      "sha256": "03d5351c9f9eacdb8e779684a554f396e9c9a22d261050cb134a3650811b5100"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/setup.mjs",
+      "sha256": "8d2253c0d8d8f253fc8a5254a205d9d6559571c070bc20a0946d183b0622310b"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/summarize-avm-profile.mjs",
+      "sha256": "44e8b0542e19f503133222740cfa7f29c96e932974e09a396bd72799ca2be0ea"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/utilities.test.mjs",
+      "sha256": "8c5cb48f32ada947c51487c0be3bd9a5ecb041e1b9f62764fa84dd2a5f58ec57"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/validate-preview-effects.mjs",
+      "sha256": "f5540f4505ce482d0612337538d5180a5ef05b341128b4d7037ee59daf022e9e"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/validate-run-plan-v8.mjs",
+      "sha256": "9f8d95c9b09713eaf2b99eb56c9e3574fed7d145a12eb5c35e8069ed3ee9095f"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/verify-cached-baseline.mjs",
+      "sha256": "fa0683ff6a812d43a9e169ff2adbc414d6f4010aa47743c1bb38926adef9fce5"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/verify-cached-originals-v14.mjs",
+      "sha256": "7150424485ff8809aac7acc6d28110e50732ea6d15998fc83065adf882741002"
+    },
+    {
+      "file": "experiments/api-compatible-benchmark/verify-config-fixture.mjs",
+      "sha256": "8644f2b3adc644c9addef6b960c1c46bb5bf3b7e2d66f62ee62a6239bcfc26a8"
+    },
+    {
+      "file": "full58-plan.json",
+      "sha256": "02c99cb06736c4d6e36009ee09023de819823add85afcadca6efbc34fe8bbe58"
+    },
+    {
+      "file": "full58-plan.test.mjs",
+      "sha256": "64ebca45706c74eb88b64621a6b09a42f3beaa4fec20b56db3f58252ba11b8bc"
+    },
+    {
+      "file": "reference/artifact-route-boundaries/boundary-fixtures.mjs",
+      "sha256": "ce7ed29e697e9ca9670bf0718568b2be70b84796e7dcc767becd42543cd2bb71"
+    },
+    {
+      "file": "reference/artifact-route-boundaries/boundary-fixtures.test.mjs",
+      "sha256": "6c90292cd07e3756329e478b61e707ad6b55c2106791c4511358555cea760568"
+    },
+    {
+      "file": "reference/artifact-route-boundaries/source-pins.json",
+      "sha256": "d2e85f140636d01a43f130ef4ce004767a1da6279b115cd2366fba6a91c7c622"
+    },
+    {
+      "file": "reference/cached-original-rows-v14.json",
+      "sha256": "131b275b490a6437eb23b70a4fd4f2d975de2b08bf38074bf413dd33c306ac22"
+    },
+    {
+      "file": "reference/cached-original-rows.json",
+      "sha256": "8a2f233d82428ed2dc03a02cf300f5f7b8788fc2eab15077e41d280f2b3ff95e"
+    },
+    {
+      "file": "reference/completed-first2-v14.json",
+      "sha256": "02f4cb425c48e837a41de8524fe2e37595161101627560a539ad2a073d1a393b"
+    },
+    {
+      "file": "reference/completed-v12-rows.json",
+      "sha256": "9fea040a752f3120ac9a01efc0971fa7c1c667e14e144f2150fa9ce34b3c85ff"
+    },
+    {
+      "file": "reference/external-execution-inputs.json",
+      "sha256": "8b030aebf0c23d5633740fc3d184c37181e744c247eabe5613d18ec228ba17a9"
+    },
+    {
+      "file": "reference/first2-controls-v12-v13.json",
+      "sha256": "548833e6bbc0ebc26f90bd857f973174612d6e8d550fa7c0bb024dca312d09c0"
+    },
+    {
+      "file": "reference/first2-execution-inputs-manifest-v14.json",
+      "sha256": "c2d8a985be3e7cb32cf1361bde947f1bda9d5de2dd68d47d96a8a86eaee99c74"
+    },
+    {
+      "file": "reference/first2-readiness-v14.json",
+      "sha256": "d1e6cc49792e1cfa1db674fc3b5fe2122ee289a3ce566d2991014f8df1c572bb"
+    },
+    {
+      "file": "reference/v13-first2/RUNBOOK-V13.md",
+      "sha256": "7bbb3bf221b8e6b5fcc7bb0dda32fa5d9e4ad726086b5979ed3855d2d9393def"
+    },
+    {
+      "file": "reference/v13-first2/accepted-admission.json",
+      "sha256": "756a3f12117298cd73abfac4610e7eaf8c06b12f794eb38054eae691d7c1cf0f"
+    },
+    {
+      "file": "reference/v13-first2/completion.json",
+      "sha256": "9fd49e1e9cb8d90f2d8021939ec046802aac4c93515d2420a83f2d6890816d14"
+    },
+    {
+      "file": "reference/v13-first2/execution-inputs-manifest.json",
+      "sha256": "7e133f054482d7770eb9737ebceb507377da8221305b7e457ae7b6e85ee22a97"
+    },
+    {
+      "file": "reference/v13-first2/first2-readiness.json",
+      "sha256": "a1caf072293234c28138680423d81f7d2de556baaff2ba0eff4df6ef5512b9ba"
+    },
+    {
+      "file": "reference/v13-first2/run-touch-first2.mjs",
+      "sha256": "f346301373b57043bde60c3f469f717c27fcc6f63f90d62acdd9d80b4e60ebeb"
+    },
+    {
+      "file": "reference/v13-first2/source-only-validation-v13.json",
+      "sha256": "21c8ac409e8864432680a3869a28a0d09642f27ff47a1131ac5f90837763a6fb"
+    },
+    {
+      "file": "reference/v13-first2/touch-fee-plan.json",
+      "sha256": "15924313023530b63dc23cbf14c1b6f13ab01b142bd34d67ac98103cc702c3ac"
+    },
+    {
+      "file": "run-full-v14.mjs",
+      "sha256": "fdbb0dccbd7ba79b506e26a95b7cbda57b4327fbaf8aa089b4fdd9f4c896825d"
+    },
+    {
+      "file": "run-touch-first2.mjs",
+      "sha256": "d2e18b9752602237ffd39d9603b886ed01d6a9b9b198ecabde817e3d8bbdc2bd"
+    },
+    {
+      "file": "source-only-validation-v14.json",
+      "sha256": "d20d52caa627462855bdb09557c8cadd8223eda474188b5fa7beae417f732d90"
+    },
+    {
+      "file": "tests/api-compatibility/baseline/sources/contracts/libs/src/batch_utils.nr",
+      "sha256": "c4b0fb1a591fdabf7860b96d81267e2e9279d18b529c385b6b3b7e4ad22d9537"
+    },
+    {
+      "file": "tests/api-compatibility/baseline/sources/contracts/libs/src/lazy_update.nr",
+      "sha256": "e299bbe30510a1aa6ab4edb72f5b6e59ee8d8087b4a1b5e077883997ef0eabd5"
+    },
+    {
+      "file": "tests/api-compatibility/baseline/sources/contracts/system/artifact_valut/src/main.nr",
+      "sha256": "97034e03caa421d578d1403ac7fd11c7795870c73f19989db1152ad255dcfda7"
+    },
+    {
+      "file": "touch-fee-plan.json",
+      "sha256": "5eafc60df36151caaf962a6d24065beacf8ee18c66a9c9bada93637e65295108"
+    }
+  ],
+  "externalInputs": {
+    "/tmp/df-artifact-route-boundary-fixtures/boundary-fixtures.mjs": "ce7ed29e697e9ca9670bf0718568b2be70b84796e7dcc767becd42543cd2bb71",
+    "/tmp/df-artifact-route-boundary-fixtures/source-pins.json": "d2e85f140636d01a43f130ef4ce004767a1da6279b115cd2366fba6a91c7c622",
+    "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/node_modules/tsx/dist/loader.mjs": "0b1c5b86192772fe9257710e739959cee5947c11ae1f93b61abfaa9b80c6def1"
+  }
+}

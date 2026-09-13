@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "buildManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "reviewedPlanSHA256": "5bdf5d181e9165a611fe3521ad0330416362cb15a7f9420f51b1ca1f6c34cb5e",
+  "inputFilesRehashed": 349,
+  "finalFilesRehashed": 349,
+  "artifactsRehashed": 20,
+  "originalCompiledAPICompatible": true,
+  "privateMethodsAudited": 14,
+  "privateMethodsEqualV12": true,
+  "actualTouchFacadeBindingsVerified": true,
+  "secondIdentityPass": 19,
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0,
+  "changedClassIdsVsV12": [
+    "artifact-ArtifactStorage.json",
+    "artifact_location-ArtifactLocationStorage.json",
+    "artifact_valut-ArtifactValut.json",
+    "vault_settlement_worker-VaultSettlementWorker.json",
+    "game_state_backend-GameStateBackend.json"
+  ],
+  "scope": "V14 actual full20 native admission; first2 fees and touch runtime pending"
+}

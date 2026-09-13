@@ -1,0 +1,99 @@
+{
+  "planSHA256": "2b52d4a226b96a0e3b2bdcee6064df27c0db621d51a2a4262c309900eda8bd27",
+  "readinessSHA256": "d919d161c6c1f982e8a690869edc60c40d2d38c3f06f5e1c48d1109789eb2d98",
+  "dispatcherSHA256": "043e0dd7fb0f3bd194d5abcf947a05dc1b763bee3555425aa1f038b37248d808",
+  "loaderSHA256": "0b1c5b86192772fe9257710e739959cee5947c11ae1f93b61abfaa9b80c6def1",
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "steps": [
+    {
+      "id": "read-only",
+      "status": "passed",
+      "checks": 162,
+      "reportSHA256": "3f57af9fda935e488dc9f4532cb449500bb5a01888002054bf78e62fddc0870e",
+      "priorRetryJournalSHA256": "f65e1d1eeb09981931e3a0b4a5f4ccc81bc935dbce6a58c0a3b0389dde27a6a9",
+      "scope": "Previously completed exact frozen reader report; never repeated by this launcher"
+    },
+    {
+      "id": "trust",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/trust.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/trust-regressions-candidate-v12.json"
+      ],
+      "log": "/tmp/df-v12-runtime-suites/logs/trust.log",
+      "startedAt": "2026-09-12T16:49:49.793Z",
+      "status": "passed",
+      "checks": 183,
+      "reportSHA256": "2e78b8dd8206267a33916c1ff240abfbd9e100675c7e1e507cb94675cce5d1d1",
+      "endedAt": "2026-09-12T16:50:13.156Z"
+    },
+    {
+      "id": "run",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/run.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/storage-regressions-candidate-v12.json"
+      ],
+      "log": "/tmp/df-v12-runtime-suites/logs/run.log",
+      "startedAt": "2026-09-12T16:50:13.202Z",
+      "status": "passed",
+      "checks": 792,
+      "reportSHA256": "1d67c21f8ef467e49f7e3e6b32f70c56dcb6f37962f11c106457b45912c88808",
+      "endedAt": "2026-09-12T16:55:37.692Z"
+    },
+    {
+      "id": "config-caller",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/config-caller.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/config-caller-regressions-candidate-v12.json"
+      ],
+      "log": "/tmp/df-v12-runtime-suites/logs/config-caller.log",
+      "startedAt": "2026-09-12T16:55:37.739Z",
+      "status": "passed",
+      "checks": 34,
+      "reportSHA256": "c28131eb2061e0ab5e0541814792900c70f11816a996ebd96bc42a5d0093fee5",
+      "endedAt": "2026-09-12T16:58:14.128Z"
+    },
+    {
+      "id": "location-caller",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/location-caller.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/location-caller-regressions-candidate-v12.json"
+      ],
+      "log": "/tmp/df-v12-runtime-suites/logs/location-caller.log",
+      "startedAt": "2026-09-12T16:58:14.180Z",
+      "status": "passed",
+      "checks": 20,
+      "reportSHA256": "e76fe138e4f926baaeceff05bb7ccf07ff5ea22426c6e637f0ffd422c22ca4ba",
+      "endedAt": "2026-09-12T17:00:28.757Z"
+    },
+    {
+      "id": "batch-caller",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/batch-caller.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/batch-caller-regressions-candidate-v12.json"
+      ],
+      "log": "/tmp/df-v12-runtime-suites/logs/batch-caller.log",
+      "startedAt": "2026-09-12T17:00:28.809Z",
+      "status": "passed",
+      "checks": 238,
+      "reportSHA256": "d7ac694e303ea4324a582941b56d580bb716e80e9b2a1e1c663fccbeeec7e314",
+      "endedAt": "2026-09-12T17:09:47.768Z"
+    }
+  ],
+  "startedAt": "2026-09-12T16:49:49.764Z",
+  "passed": true,
+  "actualChecks": 1429,
+  "completedAt": "2026-09-12T17:09:47.771Z",
+  "scope": "Six runtime suites. Trust183 comprises179 simulation checks and4 ABI-absence checks; these are not183 mined transactions. Proofs and profiling disabled."
+}

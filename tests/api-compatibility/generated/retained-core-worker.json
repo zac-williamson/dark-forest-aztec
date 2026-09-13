@@ -1,0 +1,7 @@
+{
+  "scope": "CoreWorker retained for deployment compatibility; selected full Core settles in-process and compact Core calls Backend directly. System class is build-generated.",
+  "files": {
+    "contracts/settlement_workers/core/src/main.nr": "a6bda69231867e9d6f3433b52189bfa602d069b2c3a3317392d6a381f11c09a9",
+    "contracts/settlement_workers/core/Nargo.toml": "8481fc4a88f4aa022824486bd8c7a865ea7916a3208b61979cb6fe0303641d08"
+  }
+}

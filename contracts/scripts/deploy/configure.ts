@@ -86,6 +86,21 @@ const isLocalSandbox =
 
 const CONTRACT_SPECS = [
     {
+        name: 'CoreSettlementWorker',
+        modulePath: './artifacts/CoreSettlementWorker.ts',
+        exportName: 'CoreSettlementWorkerContract',
+    },
+    {
+        name: 'VaultSettlementWorker',
+        modulePath: './artifacts/VaultSettlementWorker.ts',
+        exportName: 'VaultSettlementWorkerContract',
+    },
+    {
+        name: 'GameStateBackend',
+        modulePath: './artifacts/GameStateBackend.ts',
+        exportName: 'GameStateBackendContract',
+    },
+    {
         name: 'Config',
         modulePath: './artifacts/Config.ts',
         exportName: 'ConfigContract',
@@ -218,6 +233,9 @@ const ARTIFACT_POINTER_FIELDS = [
 
 function addressesFromEnv(): Record<string, string> {
     const envKeys: Array<[string, string]> = [
+        ['CoreSettlementWorker', 'CORE_SETTLEMENT_WORKER_CONTRACT_ADDRESS'],
+        ['VaultSettlementWorker', 'VAULT_SETTLEMENT_WORKER_CONTRACT_ADDRESS'],
+        ['GameStateBackend', 'GAME_STATE_BACKEND_CONTRACT_ADDRESS'],
         ['Config', 'CONFIG_CONTRACT_ADDRESS'],
         ['WorldStorage', 'WORLD_STORAGE_CONTRACT_ADDRESS'],
         ['PlayerStorage', 'PLAYER_STORAGE_CONTRACT_ADDRESS'],
@@ -403,6 +421,51 @@ async function main() {
 
     const opts = buildSendOpts(deployer, feeCtx);
     const simOpts = { from: deployer };
+
+    // Fresh-game wiring precedes every original setup step. Facade bindings are
+    // one-time; never silently replace an existing game's canonical backend.
+    const backendAddress = AztecAddress.fromStringUnsafe(addresses.GameStateBackend);
+    for (const [name, contract] of [
+        ...Object.entries(storageByName),
+        ...Object.entries(systemInstances),
+    ]) {
+        const current = normalizeAddressLoose(
+            unwrapSimulateResult(await contract.methods.get_state_backend().simulate(simOpts))
+        );
+        if (current === normalizeAddressLoose(backendAddress)) continue;
+        if (current !== normalizeAddressLoose(AztecAddress.zero())) {
+            throw new Error(`${name} is already configured with a different state backend`);
+        }
+        await contract.methods.set_state_backend(backendAddress).send(opts);
+        const bound = normalizeAddressLoose(
+            unwrapSimulateResult(await contract.methods.get_state_backend().simulate(simOpts))
+        );
+        if (bound !== normalizeAddressLoose(backendAddress)) {
+            throw new Error(`${name} state backend binding did not persist`);
+        }
+    }
+
+    for (const [name, workerName] of [
+        ['Core', 'CoreSettlementWorker'],
+        ['ArtifactValut', 'VaultSettlementWorker'],
+    ]) {
+        const contract = contracts[name];
+        const workerAddress = AztecAddress.fromStringUnsafe(addresses[workerName]);
+        const current = normalizeAddressLoose(
+            unwrapSimulateResult(await contract.methods.get_state_worker().simulate(simOpts))
+        );
+        if (current === normalizeAddressLoose(workerAddress)) continue;
+        if (current !== normalizeAddressLoose(AztecAddress.zero())) {
+            throw new Error(`${name} is already configured with a different settlement worker`);
+        }
+        await contract.methods.set_state_worker(workerAddress).send(opts);
+        const bound = normalizeAddressLoose(
+            unwrapSimulateResult(await contract.methods.get_state_worker().simulate(simOpts))
+        );
+        if (bound !== normalizeAddressLoose(workerAddress)) {
+            throw new Error(`${name} settlement worker binding did not persist`);
+        }
+    }
 
     /** Batch authorize contracts on a storage contract (idempotent, handles >3 via multiple batches). */
     const addAuthorizedBatchIfNeeded = async (

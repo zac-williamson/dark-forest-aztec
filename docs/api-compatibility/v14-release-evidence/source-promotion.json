@@ -1,0 +1,25 @@
+{
+  "scope": "Completed local source installation, not a Git commit or network deployment",
+  "passed": true,
+  "changedSourcePaths": 561,
+  "replacedFilesBackedUp": 81,
+  "addedFiles": 480,
+  "retainedAllowlistFiles": 202,
+  "allowlistFiles": 763,
+  "sourcePromotionJournal": "/private/tmp/df-v14-promotion-executor/runs/promotion-20260912T115350-7a9505a74aeb4554a856e8de3fd01c27/journal.json",
+  "sourcePromotionJournalSHA256": "c06bbde5be72ca5ea3c0b830069e7ddc4a01aa7e2dc09c7ea42052a8e0d13d81",
+  "sourceBackupsRetained": true,
+  "previousGeneratedBackup": "/tmp/df-v14-post-promotion/previous-generated",
+  "postPromotionReportSHA256": "a7829e0b43c4620ec3f3af50c67dd45568835266ae07d34df60ffcf8d2e17c53",
+  "rootCompiledAPIGate": {
+    "originalMethods": 447,
+    "breakingChanges": 0,
+    "staleArtifacts": 0,
+    "unresolvedCalls": 0
+  },
+  "preservedDeploymentIndex": "d122c21edc5f0d343fedeabe1c8fbd539938edd2ed2b39d2ec135798311a4e6c",
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0,
+  "networkCalls": 0,
+  "commitsCreated": 0
+}

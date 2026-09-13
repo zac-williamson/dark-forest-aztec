@@ -1,0 +1,3 @@
+
+// Explicit public-dispatch opt-in; all Serialize/Deserialize bodies remain unchanged.
+impl<let WIDTH: u32> aztec::macros::dispatch::SinglePublicArgumentDirectDeserialize for FieldBuffer<WIDTH> {}

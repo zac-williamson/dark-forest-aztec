@@ -1,0 +1,62 @@
+{
+  "planSHA256": "b32c0cdecf7d497e3507feb1cd1442143c925a6efabbb61892f042cab420aaa2",
+  "readinessSHA256": "990d46e3ce23c45ec19b42654ac70e3b153a0a27de924b49d5ab944fc7b72524",
+  "dispatcherSHA256": "fff188bd55bf14bc7e8284990fc2d6e155da13bea55132d5b57b3893dc1a79d4",
+  "loaderSHA256": "0b1c5b86192772fe9257710e739959cee5947c11ae1f93b61abfaa9b80c6def1",
+  "coverageSHA256": "fb7d45bff8782f19513f031205f91e9c65c6942fb4fec63d497554a446ec43f3",
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "steps": [
+    {
+      "id": "read-only",
+      "program": "/tmp/df-v14-final-runtime-suites/tests/api-compatible-storage/read-only.mjs",
+      "arguments": [
+        "candidate-v14",
+        "/tmp/df-v14-touch-order-native-r1/codegen",
+        "/tmp/df-v14-final-runtime-suites/results/reader-regressions-candidate-v14.json"
+      ],
+      "log": "/tmp/df-v14-final-runtime-suites/logs/read-only.log",
+      "startedAt": "2026-09-12T18:49:36.125Z",
+      "status": "passed",
+      "checks": 162,
+      "reportSHA256": "db1f5b357243edbe8782a5142d160fda8af344a05bf0f3f1dcb8962cb030afcd",
+      "endedAt": "2026-09-12T18:49:47.561Z"
+    },
+    {
+      "id": "trust",
+      "program": "/tmp/df-v14-final-runtime-suites/tests/api-compatible-storage/trust.mjs",
+      "arguments": [
+        "candidate-v14",
+        "/tmp/df-v14-touch-order-native-r1/codegen",
+        "/tmp/df-v14-final-runtime-suites/results/trust-regressions-candidate-v14.json"
+      ],
+      "log": "/tmp/df-v14-final-runtime-suites/logs/trust.log",
+      "startedAt": "2026-09-12T18:49:47.600Z",
+      "status": "passed",
+      "checks": 183,
+      "reportSHA256": "fb1f1e3321fc31bd5de394646e54fba2900d5e4fa72512f46283422076dc5eaf",
+      "endedAt": "2026-09-12T18:50:09.721Z"
+    },
+    {
+      "id": "batch-caller",
+      "program": "/tmp/df-v14-final-runtime-suites/tests/api-compatible-storage/batch-caller.mjs",
+      "arguments": [
+        "candidate-v14",
+        "/tmp/df-v14-touch-order-native-r1/codegen",
+        "/tmp/df-v14-final-runtime-suites/results/batch-caller-regressions-candidate-v14.json"
+      ],
+      "log": "/tmp/df-v14-final-runtime-suites/logs/batch-caller.log",
+      "startedAt": "2026-09-12T18:50:09.762Z",
+      "status": "passed",
+      "checks": 36,
+      "reportSHA256": "1c6c1acc783b0e49927c7b43729c73cae79b225e8827bbcdd128abd9822d09e8",
+      "endedAt": "2026-09-12T18:52:40.076Z"
+    }
+  ],
+  "startedAt": "2026-09-12T18:49:36.098Z",
+  "passed": true,
+  "actualChecks": 381,
+  "completedAt": "2026-09-12T18:52:40.077Z",
+  "scope": "Targeted V14 only: reader162, trust183 (179sim/4ABI),Give36 (12private+12direct-caller simulations/12rollback checks). Setup sends isolated; no gameplay sends,proofs or profiling. V12historical1429 and dedicatedtouch/full58 are separate evidence."
+}

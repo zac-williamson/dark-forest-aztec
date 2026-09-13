@@ -1,0 +1,314 @@
+{
+  "candidate": "candidate-v12",
+  "preparedOnly": true,
+  "status": "HELD until fee owner releases after58 cases; no runtime execution",
+  "transactionProofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "harnessManifestSHA256": "538f5ab0d31f713054320f6894c311042cab417a4211022d9a160b26a16c78d0",
+  "sdkNodeModules": "/tmp/df-fee-tools/node_modules",
+  "externalRuntimePins": [
+    {
+      "path": "/private/tmp/df-fee-tools/package.json",
+      "sha256": "dab0dfa598b001bf417239640e3a6bf431bd170848d62672a2e057beaa29b1e3"
+    },
+    {
+      "path": "/private/tmp/df-fee-tools/package-lock.json",
+      "sha256": "d3d3bfa4bbf609d4ba1dba2d2814ec21b7c475bbfb022b007c4130deaf222420"
+    },
+    {
+      "path": "/private/tmp/df-fee-tools/node_modules/@aztec/stdlib/package.json",
+      "sha256": "589ae48b19c30dcc76f38b24f16128f78f25f1e5f89b89d24359134109dae65f"
+    },
+    {
+      "path": "/private/tmp/df-fee-tools/node_modules/@aztec/wallets/package.json",
+      "sha256": "3cff57a43286e611012cc81f9ec005d557d4cd07b83a6926a1add9e0075ba441"
+    }
+  ],
+  "fixtureInputs": [
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-initialize_player-ordinary.json",
+      "sha256": "b9d7c59d160ee4bc2f77b23342d077305d07c990a489ee7f3ce0fd376cdf4350"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+      "sha256": "137847e671166affba2160e00aa5399276ce642ff44fa2792a06262862d55e3b"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-move-20.json",
+      "sha256": "89a6e2267fd59af038b68d39e724d48e7d6863bbfd6104e078aad720ba25477b"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-upgrade_planet-ordinary.json",
+      "sha256": "f23bd1bccba1f2455b566b2362b116e98191f837799bf70093256a8306b5a926"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-withdraw_silver-ordinary.json",
+      "sha256": "de7aa18a3fcfa4f6d38ee93ae478958dd19639917b48e024bb6b7b7e67a64a51"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-reveal_location-ordinary.json",
+      "sha256": "d841d24630d43cb53e3451c21089df448525b16ce0977526ecd3dfb9b1d353ce"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-ordinary.json",
+      "sha256": "32b118150c0e9a0a33a7e27618b7b975c14b7512bcc69c6d3a9bb0e2f8d45ce3"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-1.json",
+      "sha256": "4120cd2ad74c22ee2b8d97de90b31a6c5376bb4801a9da9842781a1569b45e08"
+    },
+    {
+      "path": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-give_spaceships-ordinary.json",
+      "sha256": "68ef0392c85f4121ee4a0b5f4421e3ad604214de24fef1de536eb5a2b56e54fc"
+    }
+  ],
+  "fixtureArtifacts": [
+    {
+      "role": "config",
+      "path": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-config/target/caller_sensitive_config-CallerSensitiveConfig.json",
+      "sha256": "47264b90280147944a5cb4a3edeada0f89707b5a91f4e9e2ffcf83758f3cf0ab"
+    },
+    {
+      "role": "location",
+      "path": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-location/target/caller_sensitive_location-CallerSensitiveLocation.json",
+      "sha256": "13ee9a88baed6e0b1ca0012df078efe040cc735432ee3e593dc9d725895f083e"
+    },
+    {
+      "role": "batch",
+      "path": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+      "sha256": "45f6140d11b04d203b447fd5c95e20e3ca090b5ec36fc54de3133b6dea8dd76b"
+    }
+  ],
+  "steps": [
+    {
+      "id": "read-only",
+      "cwd": "/tmp/df-v12-runtime-suites",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/read-only.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/reader-regressions-candidate-v12.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-api-compatible-v12-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v12-deployments.json",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v12",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-api-compatible-v12-shared-native-r3/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+        "STORAGE_REVIEWED_PLAN_SHA256": "58cd6c88535403abc4236d60fab222fcb76c3363d3cde04f715289e796bd98ca",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-api-compatible-v12-shared-core-worktree/.probe/production-inputs.json"
+      },
+      "log": "/tmp/df-v12-runtime-suites/logs/read-only.log",
+      "plannedChecks": 162
+    },
+    {
+      "id": "trust",
+      "cwd": "/tmp/df-v12-runtime-suites",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/trust.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/trust-regressions-candidate-v12.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-api-compatible-v12-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v12-deployments.json",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v12",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-api-compatible-v12-shared-native-r3/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+        "STORAGE_REVIEWED_PLAN_SHA256": "58cd6c88535403abc4236d60fab222fcb76c3363d3cde04f715289e796bd98ca",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-api-compatible-v12-shared-core-worktree/.probe/production-inputs.json"
+      },
+      "log": "/tmp/df-v12-runtime-suites/logs/trust.log",
+      "plannedChecks": 183
+    },
+    {
+      "id": "run",
+      "cwd": "/tmp/df-v12-runtime-suites",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/run.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/storage-regressions-candidate-v12.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-api-compatible-v12-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v12-deployments.json",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v12",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-api-compatible-v12-shared-native-r3/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+        "STORAGE_REVIEWED_PLAN_SHA256": "58cd6c88535403abc4236d60fab222fcb76c3363d3cde04f715289e796bd98ca",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-api-compatible-v12-shared-core-worktree/.probe/production-inputs.json"
+      },
+      "log": "/tmp/df-v12-runtime-suites/logs/run.log",
+      "plannedChecks": 792
+    },
+    {
+      "id": "config-caller",
+      "cwd": "/tmp/df-v12-runtime-suites",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/config-caller.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/config-caller-regressions-candidate-v12.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-api-compatible-v12-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v12-deployments.json",
+        "CALLER_CONFIG_ARTIFACT": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-config/target/caller_sensitive_config-CallerSensitiveConfig.json",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v12",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-api-compatible-v12-shared-native-r3/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+        "STORAGE_REVIEWED_PLAN_SHA256": "58cd6c88535403abc4236d60fab222fcb76c3363d3cde04f715289e796bd98ca",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-api-compatible-v12-shared-core-worktree/.probe/production-inputs.json",
+        "CALLER_INITIALIZE_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-initialize_player-ordinary.json",
+        "CALLER_MOVE_EMPTY_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+        "CALLER_MOVE_FULL_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-move-20.json",
+        "CALLER_UPGRADE_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-upgrade_planet-ordinary.json",
+        "CALLER_WITHDRAW_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-withdraw_silver-ordinary.json",
+        "CALLER_REVEAL_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-reveal_location-ordinary.json"
+      },
+      "log": "/tmp/df-v12-runtime-suites/logs/config-caller.log",
+      "plannedChecks": 34
+    },
+    {
+      "id": "location-caller",
+      "cwd": "/tmp/df-v12-runtime-suites",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/location-caller.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/location-caller-regressions-candidate-v12.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-api-compatible-v12-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v12-deployments.json",
+        "CALLER_LOCATION_ARTIFACT": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-location/target/caller_sensitive_location-CallerSensitiveLocation.json",
+        "RUN_CALLER_LOCATION": "1",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v12",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-api-compatible-v12-shared-native-r3/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+        "STORAGE_REVIEWED_PLAN_SHA256": "58cd6c88535403abc4236d60fab222fcb76c3363d3cde04f715289e796bd98ca",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-api-compatible-v12-shared-core-worktree/.probe/production-inputs.json",
+        "CALLER_REFRESH_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-ordinary.json",
+        "CALLER_MOVE_EMPTY_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json"
+      },
+      "log": "/tmp/df-v12-runtime-suites/logs/location-caller.log",
+      "plannedChecks": 20
+    },
+    {
+      "id": "batch-caller",
+      "cwd": "/tmp/df-v12-runtime-suites",
+      "program": "/tmp/df-v12-runtime-suites/tests/api-compatible-storage/batch-caller.mjs",
+      "arguments": [
+        "candidate-v12",
+        "/tmp/df-api-compatible-v12-shared-native-r3/codegen",
+        "/tmp/df-v12-runtime-suites/results/batch-caller-regressions-candidate-v12.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/tmp/df-api-compatible-v12-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v12-deployments.json",
+        "CALLER_BATCH_ARTIFACT": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+        "RUN_CALLER_BATCH": "1",
+        "STORAGE_RUNTIME_RELEASE": "candidate-v12",
+        "STORAGE_BUILD_MANIFEST": "/tmp/df-api-compatible-v12-shared-native-r3/build-provenance.json",
+        "STORAGE_BUILD_MANIFEST_SHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+        "STORAGE_REVIEWED_PLAN_SHA256": "58cd6c88535403abc4236d60fab222fcb76c3363d3cde04f715289e796bd98ca",
+        "STORAGE_SOURCE_MANIFEST": "/tmp/df-api-compatible-v12-shared-core-worktree/.probe/production-inputs.json",
+        "CALLER_BATCH_CORE_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-ordinary.json",
+        "CALLER_BATCH_MOVE_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+        "CALLER_BATCH_QUEUEDMOVE_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-1.json",
+        "CALLER_BATCH_ARTIFACT_VALUT_FIXTURE": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-give_spaceships-ordinary.json"
+      },
+      "log": "/tmp/df-v12-runtime-suites/logs/batch-caller.log",
+      "plannedChecks": 238
+    }
+  ],
+  "plannedChecks": 1429,
+  "priorV8ActualChecks": 1423,
+  "actualV12Checks": 0,
+  "finalBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+  "conditions": [
+    "Fee58 complete and explicit coordinator release",
+    "Serial six suites with fresh separate PXEs",
+    "All20 final live class IDs match pinned build before each wallet",
+    "No inherited resume; absent outputs; uncertain setup transactions reconciled",
+    "No proofs, profiling, compiler or native processing"
+  ],
+  "originalArtifactInputs": [
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/world-WorldStorage.json",
+      "sha256": "f2c5e0a51c2d5b4db628bf97a1bc65bec4e90f172447d821b7705ea50a4f8c44"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/player-PlayerStorage.json",
+      "sha256": "7f3f98e5e1d084c479705d3dc14eb4f454aed82475d787a15f41f51b80cfc9de"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet-PlanetStorage.json",
+      "sha256": "1532636585e9e79857ac8db0ce00f58c1d65d9a32e114ce1e6e1c7750dc3d926"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+      "sha256": "63892e5b9edb0eb325ea56164cefcf6becd410b8e1856e798c13a71e7cd504fd"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet_events-PlanetEventsStorage.json",
+      "sha256": "2176e311ee720f719acc23075122626b933a61e045066073322eecd65be92f12"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/planet_artifacts-PlanetArtifactsStorage.json",
+      "sha256": "e2647fa5d973fcc658e8bf9a57d3efa5635e53666d348ac8392fabbda0a4cf03"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/arrival-ArrivalStorage.json",
+      "sha256": "763627846ff01e3ba854011e6287f5320c307367bf3ca2e35ff0fce37e92bbc3"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/artifact-ArtifactStorage.json",
+      "sha256": "f962e4229e7963190b1159b8a60a188765faa073ec8af545c7df3b08117cb9b3"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/artifact_location-ArtifactLocationStorage.json",
+      "sha256": "58b0ca15120be56f6de4e372bc4786230e9d152c8888e0f09b781d1c16a884d3"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/core-Core.json",
+      "sha256": "b952eaaa2342ab5fa86f369191d584e0aca0502c36ca6ea1405091d3d92022ab"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/move-Move.json",
+      "sha256": "308f0612d0419e8513d084e5a9bed7e49f7d3a75af1872e0e934369938dfd309"
+    },
+    {
+      "path": "/tmp/df-fee-tools/artifacts/baseline/artifact_valut-ArtifactValut.json",
+      "sha256": "7a8c3f7aebb644259168375bb910c379c215d9ceae610a109e81d0b469c7f1d5"
+    }
+  ],
+  "readinessRevision": 2
+}

@@ -1,0 +1,9 @@
+[package]
+name = "state_backend_readonly"
+type = "lib"
+authors = [""]
+
+[dependencies]
+aztec = { path = "../../vendor/aztec" }
+types = { path = "../types" }
+libs = { path = "../libs" }

@@ -1,0 +1,3861 @@
+{
+  "additions": [
+    {
+      "contract": "Admin",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "Admin",
+      "kind": "added_functions",
+      "member": "get_backend_admin"
+    },
+    {
+      "contract": "Admin",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArrivalStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "ArrivalStorage",
+      "kind": "added_functions",
+      "member": "emit_arrival_fields"
+    },
+    {
+      "contract": "ArrivalStorage",
+      "kind": "added_functions",
+      "member": "emit_arrival_update"
+    },
+    {
+      "contract": "ArrivalStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArrivalStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "ArtifactAction",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "ArtifactAction",
+      "kind": "added_functions",
+      "member": "get_backend_admin"
+    },
+    {
+      "contract": "ArtifactAction",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArtifactFind",
+      "kind": "added_functions",
+      "member": "get_backend_admin"
+    },
+    {
+      "contract": "ArtifactFind",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "ArtifactFind",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "emit_artifact_location_batch_max5"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "touch"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "emit_artifact_location_fields"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "emit_artifact_location_batch_max20"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "emit_artifact_location_update"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "ArtifactProspect",
+      "kind": "added_functions",
+      "member": "get_backend_admin"
+    },
+    {
+      "contract": "ArtifactProspect",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "ArtifactProspect",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "emit_artifact_batch_max5"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "emit_artifact_fields"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "touch"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "emit_artifact_update"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "kind": "added_functions",
+      "member": "verify_hashes_three"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "give_spaceships_public_prepared"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "get_backend_admin"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "set_state_worker"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "get_state_worker"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "withdraw_artifact_public_prepared"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "deposit_artifact_public_prepared"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "ArtifactValut",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "Config",
+      "kind": "added_functions",
+      "member": "verify_move_configuration"
+    },
+    {
+      "contract": "Config",
+      "kind": "added_functions",
+      "member": "get_move_configuration_root_unconstrained"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "set_state_worker"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "get_state_worker"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "refresh_planet_empty_public_prepared"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "withdraw_silver_public_prepared"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "refresh_planet_public_prepared"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "initialize_player_public_prepared"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "upgrade_planet_public_prepared"
+    },
+    {
+      "contract": "Core",
+      "kind": "added_functions",
+      "member": "initialize_player_new_public_prepared"
+    },
+    {
+      "contract": "Move",
+      "kind": "added_functions",
+      "member": "get_backend_admin"
+    },
+    {
+      "contract": "Move",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "Move",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "Move",
+      "kind": "added_functions",
+      "member": "move_public_prepared"
+    },
+    {
+      "contract": "Move",
+      "kind": "added_functions",
+      "member": "move_public_empty_prepared"
+    },
+    {
+      "contract": "PlanetArtifactsStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_artifacts_fields"
+    },
+    {
+      "contract": "PlanetArtifactsStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "PlanetArtifactsStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "PlanetArtifactsStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "PlanetArtifactsStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_artifacts_update"
+    },
+    {
+      "contract": "PlanetEventsStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "PlanetEventsStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_events_update"
+    },
+    {
+      "contract": "PlanetEventsStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_events_fields"
+    },
+    {
+      "contract": "PlanetEventsStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "PlanetEventsStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "PlanetRevealedCoordsStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_revealed_coords_update"
+    },
+    {
+      "contract": "PlanetRevealedCoordsStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "PlanetRevealedCoordsStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_revealed_coords_fields"
+    },
+    {
+      "contract": "PlanetRevealedCoordsStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "PlanetRevealedCoordsStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "PlanetStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_fields"
+    },
+    {
+      "contract": "PlanetStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "PlanetStorage",
+      "kind": "added_functions",
+      "member": "emit_planet_update"
+    },
+    {
+      "contract": "PlanetStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "PlanetStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "PlayerStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "PlayerStorage",
+      "kind": "added_functions",
+      "member": "emit_player_update"
+    },
+    {
+      "contract": "PlayerStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "PlayerStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    },
+    {
+      "contract": "PlayerStorage",
+      "kind": "added_functions",
+      "member": "emit_player_fields"
+    },
+    {
+      "contract": "WorldStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend"
+    },
+    {
+      "contract": "WorldStorage",
+      "kind": "added_functions",
+      "member": "emit_world_update"
+    },
+    {
+      "contract": "WorldStorage",
+      "kind": "added_functions",
+      "member": "emit_world_fields"
+    },
+    {
+      "contract": "WorldStorage",
+      "kind": "added_functions",
+      "member": "get_state_backend_unconstrained"
+    },
+    {
+      "contract": "WorldStorage",
+      "kind": "added_functions",
+      "member": "set_state_backend"
+    }
+  ],
+  "baselineCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a",
+  "behaviorChangesRequiringReview": [
+    {
+      "afterLine": 128,
+      "assertionsChanged": false,
+      "beforeLine": 119,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Admin",
+      "function": "pause",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 143,
+      "assertionsChanged": false,
+      "beforeLine": 134,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Admin",
+      "function": "unpause",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 157,
+      "assertionsChanged": false,
+      "beforeLine": 148,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Admin",
+      "function": "set_owner",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 170,
+      "assertionsChanged": false,
+      "beforeLine": 161,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Admin",
+      "function": "deduct_score",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 192,
+      "assertionsChanged": false,
+      "beforeLine": 183,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Admin",
+      "function": "add_score",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 341,
+      "assertionsChanged": true,
+      "beforeLine": 332,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Admin",
+      "function": "safe_set_owner_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 381,
+      "assertionsChanged": false,
+      "beforeLine": 371,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Admin",
+      "function": "admin_set_world_radius",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 43,
+      "assertionsChanged": false,
+      "beforeLine": 48,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 72,
+      "assertionsChanged": true,
+      "beforeLine": 73,
+      "callerExpressionsChanged": true,
+      "callsChanged": true,
+      "contract": "ArrivalStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 85,
+      "assertionsChanged": true,
+      "beforeLine": 87,
+      "callerExpressionsChanged": true,
+      "callsChanged": true,
+      "contract": "ArrivalStorage",
+      "function": "allocate_event_id",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 159,
+      "assertionsChanged": false,
+      "beforeLine": 158,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 183,
+      "assertionsChanged": false,
+      "beforeLine": 180,
+      "callerExpressionsChanged": true,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "get_arrival",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 192,
+      "assertionsChanged": false,
+      "beforeLine": 186,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 200,
+      "assertionsChanged": false,
+      "beforeLine": 193,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 207,
+      "assertionsChanged": false,
+      "beforeLine": 199,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 215,
+      "assertionsChanged": false,
+      "beforeLine": 206,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "verify_hashes_batch",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 233,
+      "assertionsChanged": false,
+      "beforeLine": 223,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 255,
+      "assertionsChanged": false,
+      "beforeLine": 243,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 293,
+      "assertionsChanged": false,
+      "beforeLine": 275,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 300,
+      "assertionsChanged": false,
+      "beforeLine": 281,
+      "callerExpressionsChanged": true,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "get_arrival_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 308,
+      "assertionsChanged": false,
+      "beforeLine": 286,
+      "callerExpressionsChanged": true,
+      "callsChanged": false,
+      "contract": "ArrivalStorage",
+      "function": "get_event_id_counter_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 452,
+      "assertionsChanged": true,
+      "beforeLine": 443,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "ArtifactAction",
+      "function": "activate_artifact_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 767,
+      "assertionsChanged": true,
+      "beforeLine": 738,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "ArtifactAction",
+      "function": "deactivate_artifact_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 435,
+      "assertionsChanged": true,
+      "beforeLine": 426,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "ArtifactFind",
+      "function": "find_artifact_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 69,
+      "assertionsChanged": false,
+      "beforeLine": 63,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 100,
+      "assertionsChanged": false,
+      "beforeLine": 72,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "set_arrival_locations_max20",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 121,
+      "assertionsChanged": false,
+      "beforeLine": 92,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "set_spaceship_locations_max5",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 208,
+      "assertionsChanged": false,
+      "beforeLine": 174,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 232,
+      "assertionsChanged": false,
+      "beforeLine": 196,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 240,
+      "assertionsChanged": false,
+      "beforeLine": 203,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 247,
+      "assertionsChanged": false,
+      "beforeLine": 209,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 255,
+      "assertionsChanged": false,
+      "beforeLine": 216,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "verify_hashes_batch",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 273,
+      "assertionsChanged": false,
+      "beforeLine": 233,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 295,
+      "assertionsChanged": false,
+      "beforeLine": 253,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 333,
+      "assertionsChanged": false,
+      "beforeLine": 285,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactLocationStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 344,
+      "assertionsChanged": true,
+      "beforeLine": 335,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "ArtifactProspect",
+      "function": "prospect_planet_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 69,
+      "assertionsChanged": false,
+      "beforeLine": 63,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 100,
+      "assertionsChanged": false,
+      "beforeLine": 72,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "set_spaceships_max5",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 183,
+      "assertionsChanged": false,
+      "beforeLine": 150,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 207,
+      "assertionsChanged": false,
+      "beforeLine": 172,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 215,
+      "assertionsChanged": false,
+      "beforeLine": 179,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 222,
+      "assertionsChanged": false,
+      "beforeLine": 185,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 230,
+      "assertionsChanged": false,
+      "beforeLine": 192,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "verify_hashes_batch",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 248,
+      "assertionsChanged": false,
+      "beforeLine": 209,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 270,
+      "assertionsChanged": false,
+      "beforeLine": 229,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 308,
+      "assertionsChanged": false,
+      "beforeLine": 261,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 219,
+      "assertionsChanged": false,
+      "beforeLine": 208,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "ArtifactValut",
+      "function": "update_artifact",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 261,
+      "assertionsChanged": false,
+      "beforeLine": 230,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactValut",
+      "function": "deposit_artifact",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 544,
+      "assertionsChanged": false,
+      "beforeLine": 480,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactValut",
+      "function": "withdraw_artifact",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 822,
+      "assertionsChanged": false,
+      "beforeLine": 725,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "ArtifactValut",
+      "function": "give_spaceships",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 79,
+      "assertionsChanged": false,
+      "beforeLine": 77,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 124,
+      "assertionsChanged": false,
+      "beforeLine": 92,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_world_config",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 132,
+      "assertionsChanged": false,
+      "beforeLine": 99,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_snark_config",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 140,
+      "assertionsChanged": false,
+      "beforeLine": 106,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_game_config_core",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 148,
+      "assertionsChanged": false,
+      "beforeLine": 113,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_planet_level_thresholds",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 156,
+      "assertionsChanged": false,
+      "beforeLine": 120,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_default_game_config_planet_type_weights_tier",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 179,
+      "assertionsChanged": false,
+      "beforeLine": 142,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_planet_type_weights_tier",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 201,
+      "assertionsChanged": false,
+      "beforeLine": 163,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_artifacts_config",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 216,
+      "assertionsChanged": false,
+      "beforeLine": 177,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_space_junk_config",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 424,
+      "assertionsChanged": false,
+      "beforeLine": 384,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_default_configs_batch_1",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 455,
+      "assertionsChanged": false,
+      "beforeLine": 414,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Config",
+      "function": "set_default_configs_batch_2",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 221,
+      "assertionsChanged": false,
+      "beforeLine": 210,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Core",
+      "function": "refresh_planet",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 353,
+      "assertionsChanged": true,
+      "beforeLine": 290,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Core",
+      "function": "refresh_planet_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 374,
+      "assertionsChanged": false,
+      "beforeLine": 369,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Core",
+      "function": "upgrade_planet",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 513,
+      "assertionsChanged": true,
+      "beforeLine": 479,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Core",
+      "function": "upgrade_planet_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 540,
+      "assertionsChanged": false,
+      "beforeLine": 583,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Core",
+      "function": "withdraw_silver",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 687,
+      "assertionsChanged": true,
+      "beforeLine": 700,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Core",
+      "function": "withdraw_silver_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 860,
+      "assertionsChanged": true,
+      "beforeLine": 947,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Core",
+      "function": "reveal_location_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 929,
+      "assertionsChanged": false,
+      "beforeLine": 1015,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Core",
+      "function": "initialize_player",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 1206,
+      "assertionsChanged": true,
+      "beforeLine": 1236,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Core",
+      "function": "initialize_player_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 205,
+      "assertionsChanged": false,
+      "beforeLine": 201,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "Move",
+      "function": "move",
+      "kind": "private",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 993,
+      "assertionsChanged": true,
+      "beforeLine": 850,
+      "callerExpressionsChanged": false,
+      "callsChanged": true,
+      "contract": "Move",
+      "function": "move_public",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 69,
+      "assertionsChanged": false,
+      "beforeLine": 63,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 150,
+      "assertionsChanged": false,
+      "beforeLine": 134,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 174,
+      "assertionsChanged": false,
+      "beforeLine": 156,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 182,
+      "assertionsChanged": false,
+      "beforeLine": 163,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 189,
+      "assertionsChanged": false,
+      "beforeLine": 169,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 198,
+      "assertionsChanged": false,
+      "beforeLine": 177,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 220,
+      "assertionsChanged": false,
+      "beforeLine": 197,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 258,
+      "assertionsChanged": false,
+      "beforeLine": 229,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetArtifactsStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 69,
+      "assertionsChanged": false,
+      "beforeLine": 63,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 145,
+      "assertionsChanged": false,
+      "beforeLine": 134,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 169,
+      "assertionsChanged": false,
+      "beforeLine": 156,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 177,
+      "assertionsChanged": false,
+      "beforeLine": 163,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 184,
+      "assertionsChanged": false,
+      "beforeLine": 169,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 193,
+      "assertionsChanged": false,
+      "beforeLine": 177,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 215,
+      "assertionsChanged": false,
+      "beforeLine": 197,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 253,
+      "assertionsChanged": false,
+      "beforeLine": 229,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetEventsStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 69,
+      "assertionsChanged": false,
+      "beforeLine": 63,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 144,
+      "assertionsChanged": false,
+      "beforeLine": 133,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 168,
+      "assertionsChanged": false,
+      "beforeLine": 155,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 176,
+      "assertionsChanged": false,
+      "beforeLine": 162,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 183,
+      "assertionsChanged": false,
+      "beforeLine": 168,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 192,
+      "assertionsChanged": false,
+      "beforeLine": 176,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 214,
+      "assertionsChanged": false,
+      "beforeLine": 196,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 252,
+      "assertionsChanged": false,
+      "beforeLine": 228,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetRevealedCoordsStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 69,
+      "assertionsChanged": false,
+      "beforeLine": 63,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 150,
+      "assertionsChanged": false,
+      "beforeLine": 134,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 174,
+      "assertionsChanged": false,
+      "beforeLine": 156,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 182,
+      "assertionsChanged": false,
+      "beforeLine": 163,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 189,
+      "assertionsChanged": false,
+      "beforeLine": 169,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 198,
+      "assertionsChanged": false,
+      "beforeLine": 177,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 220,
+      "assertionsChanged": false,
+      "beforeLine": 197,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 258,
+      "assertionsChanged": false,
+      "beforeLine": 229,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlanetStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 69,
+      "assertionsChanged": false,
+      "beforeLine": 63,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 145,
+      "assertionsChanged": false,
+      "beforeLine": 134,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 169,
+      "assertionsChanged": false,
+      "beforeLine": 156,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "is_initialized",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 177,
+      "assertionsChanged": false,
+      "beforeLine": 163,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 184,
+      "assertionsChanged": false,
+      "beforeLine": 169,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 193,
+      "assertionsChanged": false,
+      "beforeLine": 177,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 215,
+      "assertionsChanged": false,
+      "beforeLine": 197,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 253,
+      "assertionsChanged": false,
+      "beforeLine": 229,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "PlayerStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 42,
+      "assertionsChanged": false,
+      "beforeLine": 40,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "constructor",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 74,
+      "assertionsChanged": false,
+      "beforeLine": 68,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "set",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": true
+    },
+    {
+      "afterLine": 150,
+      "assertionsChanged": false,
+      "beforeLine": 139,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "verify",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 174,
+      "assertionsChanged": false,
+      "beforeLine": 161,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "get_state_root",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 181,
+      "assertionsChanged": false,
+      "beforeLine": 167,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "verify_hash",
+      "kind": "public",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 190,
+      "assertionsChanged": false,
+      "beforeLine": 175,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "verify_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 212,
+      "assertionsChanged": false,
+      "beforeLine": 195,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "get_state_root_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    },
+    {
+      "afterLine": 250,
+      "assertionsChanged": false,
+      "beforeLine": 227,
+      "callerExpressionsChanged": false,
+      "callsChanged": false,
+      "contract": "WorldStorage",
+      "function": "is_initialized_unconstrained",
+      "kind": "utility",
+      "reviewRequired": true,
+      "writesChanged": false
+    }
+  ],
+  "breakingChanges": [],
+  "compatible": true,
+  "compiledAbi": {
+    "additions": [
+      {
+        "contract": "Admin",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "Admin",
+        "kind": "added_functions",
+        "member": "get_backend_admin"
+      },
+      {
+        "contract": "Admin",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "ArrivalStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "ArrivalStorage",
+        "kind": "added_functions",
+        "member": "emit_arrival_fields"
+      },
+      {
+        "contract": "ArrivalStorage",
+        "kind": "added_functions",
+        "member": "emit_arrival_update"
+      },
+      {
+        "contract": "ArrivalStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "ArrivalStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "ArtifactAction",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "ArtifactAction",
+        "kind": "added_functions",
+        "member": "get_backend_admin"
+      },
+      {
+        "contract": "ArtifactAction",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "ArtifactFind",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "ArtifactFind",
+        "kind": "added_functions",
+        "member": "get_backend_admin"
+      },
+      {
+        "contract": "ArtifactFind",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "emit_artifact_location_batch_max5"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "touch"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "emit_artifact_location_fields"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "emit_artifact_location_batch_max20"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "emit_artifact_location_update"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "ArtifactLocationStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "ArtifactProspect",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "ArtifactProspect",
+        "kind": "added_functions",
+        "member": "get_backend_admin"
+      },
+      {
+        "contract": "ArtifactProspect",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "emit_artifact_batch_max5"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "emit_artifact_fields"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "touch"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "emit_artifact_update"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "ArtifactStorage",
+        "kind": "added_functions",
+        "member": "verify_hashes_three"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "get_backend_admin"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "get_state_worker"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "give_spaceships_public_prepared"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "set_state_worker"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "withdraw_artifact_public_prepared"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "deposit_artifact_public_prepared"
+      },
+      {
+        "contract": "ArtifactValut",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "Config",
+        "kind": "added_functions",
+        "member": "verify_move_configuration"
+      },
+      {
+        "contract": "Config",
+        "kind": "added_functions",
+        "member": "get_move_configuration_root_unconstrained"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "set_state_worker"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "get_state_worker"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "refresh_planet_empty_public_prepared"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "withdraw_silver_public_prepared"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "refresh_planet_public_prepared"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "initialize_player_public_prepared"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "upgrade_planet_public_prepared"
+      },
+      {
+        "contract": "Core",
+        "kind": "added_functions",
+        "member": "initialize_player_new_public_prepared"
+      },
+      {
+        "contract": "Move",
+        "kind": "added_functions",
+        "member": "get_backend_admin"
+      },
+      {
+        "contract": "Move",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "Move",
+        "kind": "added_functions",
+        "member": "move_public_prepared"
+      },
+      {
+        "contract": "Move",
+        "kind": "added_functions",
+        "member": "move_public_empty_prepared"
+      },
+      {
+        "contract": "Move",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "PlanetArtifactsStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_artifacts_fields"
+      },
+      {
+        "contract": "PlanetArtifactsStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "PlanetArtifactsStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "PlanetArtifactsStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "PlanetArtifactsStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_artifacts_update"
+      },
+      {
+        "contract": "PlanetEventsStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "PlanetEventsStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_events_update"
+      },
+      {
+        "contract": "PlanetEventsStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_events_fields"
+      },
+      {
+        "contract": "PlanetEventsStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "PlanetEventsStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "PlanetRevealedCoordsStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_revealed_coords_update"
+      },
+      {
+        "contract": "PlanetRevealedCoordsStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "PlanetRevealedCoordsStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_revealed_coords_fields"
+      },
+      {
+        "contract": "PlanetRevealedCoordsStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "PlanetRevealedCoordsStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "PlanetStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_fields"
+      },
+      {
+        "contract": "PlanetStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "PlanetStorage",
+        "kind": "added_functions",
+        "member": "emit_planet_update"
+      },
+      {
+        "contract": "PlanetStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "PlanetStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "PlayerStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "PlayerStorage",
+        "kind": "added_functions",
+        "member": "emit_player_update"
+      },
+      {
+        "contract": "PlayerStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "PlayerStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      },
+      {
+        "contract": "PlayerStorage",
+        "kind": "added_functions",
+        "member": "emit_player_fields"
+      },
+      {
+        "contract": "WorldStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend"
+      },
+      {
+        "contract": "WorldStorage",
+        "kind": "added_functions",
+        "member": "emit_world_update"
+      },
+      {
+        "contract": "WorldStorage",
+        "kind": "added_functions",
+        "member": "emit_world_fields"
+      },
+      {
+        "contract": "WorldStorage",
+        "kind": "added_functions",
+        "member": "get_state_backend_unconstrained"
+      },
+      {
+        "contract": "WorldStorage",
+        "kind": "added_functions",
+        "member": "set_state_backend"
+      }
+    ],
+    "breakingChanges": [],
+    "compatible": true,
+    "stageNote": "Noir-generated outputs.structs.functions supplies the user ABI at either raw or transpiled stage. Compiler-generated protocol methods are retained separately, not compared across compiler stages.",
+    "staleArtifacts": []
+  },
+  "scope": "Structural compatibility only. Matching APIs and body hashes do not prove whole-game semantics, fees, migration safety, or external address continuity.",
+  "sourceTreeSha256": "aca155c0a7128147de453578e11833f90a4a03527136204b51dca0358857cefb",
+  "storageLayoutChanges": [
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "contract": "Admin"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "stored_arrivals",
+          "type": "Map < Field , PublicMutable < Arrival , Context > , Context >"
+        },
+        {
+          "name": "event_id_counter",
+          "type": "PublicMutable < Field , Context >"
+        }
+      ],
+      "contract": "ArrivalStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "contract": "ArtifactAction"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "contract": "ArtifactFind"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "ArtifactLocationStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "contract": "ArtifactProspect"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "ArtifactStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_worker",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "contract": "ArtifactValut"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_config",
+          "type": "PublicMutable < WorldConfig , Context >"
+        },
+        {
+          "name": "snark_config",
+          "type": "PublicMutable < SnarkConfig , Context >"
+        },
+        {
+          "name": "game_config_core",
+          "type": "PublicMutable < GameConfigCore , Context >"
+        },
+        {
+          "name": "planet_level_thresholds",
+          "type": "PublicMutable < PlanetLevelThresholds , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_0",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_1",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_2",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_3",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "artifacts_config",
+          "type": "PublicMutable < ArtifactsConfig , Context >"
+        },
+        {
+          "name": "spaceships_config",
+          "type": "PublicMutable < SpaceshipsConfig , Context >"
+        },
+        {
+          "name": "space_junk_config",
+          "type": "PublicMutable < SpaceJunkConfig , Context >"
+        },
+        {
+          "name": "capture_zones_config",
+          "type": "PublicMutable < CaptureZonesConfig , Context >"
+        },
+        {
+          "name": "upgrade_config",
+          "type": "PublicMutable < UpgradeConfig , Context >"
+        },
+        {
+          "name": "world_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "snark_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "game_config_core_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_level_thresholds_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_0_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_1_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_2_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_3_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "artifacts_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "spaceships_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "space_junk_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "capture_zones_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "upgrade_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_default_stats_hash",
+          "type": "Map < u8 , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "planet_default_stats",
+          "type": "Map < u8 , PublicMutable < PlanetDefaultStats , Context > , Context >"
+        },
+        {
+          "name": "upgrades",
+          "type": "Map < u128 , PublicMutable < Upgrade , Context > , Context >"
+        },
+        {
+          "name": "upgrades_hash",
+          "type": "Map < u128 , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "cumulative_rarities",
+          "type": "Map < u128 , PublicMutable < u128 , Context > , Context >"
+        },
+        {
+          "name": "move_configuration_root",
+          "type": "PublicMutable < Field , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_config",
+          "type": "PublicMutable < WorldConfig , Context >"
+        },
+        {
+          "name": "snark_config",
+          "type": "PublicMutable < SnarkConfig , Context >"
+        },
+        {
+          "name": "game_config_core",
+          "type": "PublicMutable < GameConfigCore , Context >"
+        },
+        {
+          "name": "planet_level_thresholds",
+          "type": "PublicMutable < PlanetLevelThresholds , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_0",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_1",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_2",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_3",
+          "type": "PublicMutable < PlanetTypeWeightsTier , Context >"
+        },
+        {
+          "name": "artifacts_config",
+          "type": "PublicMutable < ArtifactsConfig , Context >"
+        },
+        {
+          "name": "spaceships_config",
+          "type": "PublicMutable < SpaceshipsConfig , Context >"
+        },
+        {
+          "name": "space_junk_config",
+          "type": "PublicMutable < SpaceJunkConfig , Context >"
+        },
+        {
+          "name": "capture_zones_config",
+          "type": "PublicMutable < CaptureZonesConfig , Context >"
+        },
+        {
+          "name": "upgrade_config",
+          "type": "PublicMutable < UpgradeConfig , Context >"
+        },
+        {
+          "name": "world_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "snark_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "game_config_core_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_level_thresholds_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_0_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_1_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_2_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_type_weights_tier_3_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "artifacts_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "spaceships_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "space_junk_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "capture_zones_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "upgrade_config_hash",
+          "type": "PublicMutable < Field , Context >"
+        },
+        {
+          "name": "planet_default_stats_hash",
+          "type": "Map < u8 , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "planet_default_stats",
+          "type": "Map < u8 , PublicMutable < PlanetDefaultStats , Context > , Context >"
+        },
+        {
+          "name": "upgrades",
+          "type": "Map < u128 , PublicMutable < Upgrade , Context > , Context >"
+        },
+        {
+          "name": "upgrades_hash",
+          "type": "Map < u128 , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "cumulative_rarities",
+          "type": "Map < u128 , PublicMutable < u128 , Context > , Context >"
+        }
+      ],
+      "contract": "Config"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_revealed_coords_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_worker",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_revealed_coords_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "contract": "Core"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "appendOnly": true,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "config_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "world_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "player_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_events_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "planet_artifacts_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "arrivals_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "artifact_location_storage_address",
+          "type": "PublicMutable < AztecAddress , Context >"
+        }
+      ],
+      "contract": "Move"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "PlanetArtifactsStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "PlanetEventsStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "PlanetRevealedCoordsStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "PlanetStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < AztecAddress , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "PlayerStorage"
+    },
+    {
+      "after": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "state_backend",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "local_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        }
+      ],
+      "appendOnly": false,
+      "before": [
+        {
+          "name": "admin",
+          "type": "PublicMutable < AztecAddress , Context >"
+        },
+        {
+          "name": "authorized_map",
+          "type": "Map < AztecAddress , PublicMutable < bool , Context > , Context >"
+        },
+        {
+          "name": "authorized_index",
+          "type": "Map < AztecAddress , PublicMutable < u32 , Context > , Context >"
+        },
+        {
+          "name": "authorized_list",
+          "type": "Map < u32 , PublicMutable < AztecAddress , Context > , Context >"
+        },
+        {
+          "name": "authorized_count",
+          "type": "PublicMutable < u32 , Context >"
+        },
+        {
+          "name": "state_roots",
+          "type": "Map < Field , PublicMutable < Field , Context > , Context >"
+        }
+      ],
+      "contract": "WorldStorage"
+    }
+  ]
+}

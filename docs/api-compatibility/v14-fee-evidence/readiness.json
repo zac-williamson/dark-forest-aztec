@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "scope": "Full58 source/input readiness only; execution held pending touch closure and exact coordinator review. No broad fee calls made.",
+  "executionManifestSHA256": "3847409a200941d724960eb9d4017e42ef819ef4d3872d1ff292cd1449946cf4",
+  "files": 205,
+  "externalPins": 3,
+  "sourceTests": 6,
+  "sourceTestsLogSHA256": "24047147f7192d1ba5d133b4061a043ee0631be89819cee8715319c2e457b96e",
+  "nativeManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "nativeReadinessSHA256": "8162a1e48bb73a315ba96182a5eb5c6fbe4a7c298d655c0059f95c071460b77e",
+  "coverage": 58,
+  "remainingCandidateSends": 56,
+  "reusedExactCandidateReceipts": 2,
+  "cachedOriginalNonFind": 52,
+  "freshOriginalFindPairs": 6,
+  "originalArrivalCounterExpected": 16,
+  "candidateMoveIDs": "2..14 main;15 carried5;16 carried20",
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "missingExecutionSHARejection": {
+    "path": "/tmp/df-v14-full58-missing-freeze-rejection.log",
+    "sha256": "6a1a7c7277aa0343467d691d811989d0501659e1fb0305f175b48bc7b12e43f7",
+    "beforeChildRPCWallet": true
+  },
+  "immutableFirst2SnapshotSHA256": "fc69fe50a2990db326e4ff8631a36ef55b48ef810c42e020dd164825d2b5642d"
+}

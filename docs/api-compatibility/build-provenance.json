@@ -1,0 +1,175 @@
+{
+  "passed": true,
+  "scope": "Native bytecode admission and immutable class binding; no deployment or fee claim",
+  "limits": {
+    "publicBytes": 96000,
+    "packedFields": 3000
+  },
+  "facadeClassIds": [
+    "0x03148ba889e0bde2f34b0cbe7b2cc7d1b70d204fd489a58490183c19136d0c53",
+    "0x2a65af147af47ec012cd504d965fc32d3c5c1cc3fb7543595fd40e869a7bed29",
+    "0x157d7b1f3cda5e25b14404cdf5f90e2d0f2fcca244df9d86ea6829b5028a71fe",
+    "0x16de336239cd7a03431c47623fd3bbaf16ff096eaf7b616d0b412e83e31de7d5",
+    "0x2b0dbccefb2dc49b228234440a5c0d78b5787d68171ecf2607987b58bff12d7b",
+    "0x26992334093b422096def8109f31e4665c4adf241f96823c856b2a76b422f76a",
+    "0x037139d482be6425ea9ba3534c01450b6d037e031b6c9a78c57e629654850fc3",
+    "0x086f670ff5c23b541d1363a8a06a57c6b985ae3e3ac63548104d0d6e0231ae44",
+    "0x233b0e83e3a1026d416d861d7b3b18a3c44ade18b25bb46d6b6621bbb413928f"
+  ],
+  "systemClassIds": [
+    "0x09c4542d27dee97e210b8c7ee28dbfaa00344db483763a6b96d42028a2bd0faf",
+    "0x1d74b5a4cae222951969513a4bc01d50ab14021450eb0f2ffd34a159e34e2d12",
+    "0x16b4d889412f294c17c2b3f3d97fddd5ec66010259345b630fa596135ad82c2a",
+    "0x2cbb4f70946cd6281dcb22ca2fdea5276c2be07a97b7326b3a1063aebcac214a",
+    "0x0fda63c5867a7b8ffacba390e6a2fd4ad8b1590f528350d867d00cd6f2b1a163",
+    "0x1b080bb244be90eb1901d410c5cd1c3e80c16ac8bb86d0c971be603f88350d4c",
+    "0x19f2f642eac53dfdab24e1f0200cb62f929c6227c841c061ebb7ac7ff03d037d"
+  ],
+  "workerClassIds": [
+    "0x204f05c2c7b5f827638f16cd810486639d273cb773217ba9cba740b8fa355f62",
+    "0x300a5701c0073f1eeb9ccac55ebfadd05537413f6b545a1528f69df0227ef6bf"
+  ],
+  "configClassId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8",
+  "artifacts": [
+    {
+      "file": "config-Config.json",
+      "sha256": "ff4442859e4309954504911b18a8ef414908343abc1e29044685cb88ba89e00c",
+      "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8",
+      "publicBytes": 70562,
+      "packedFields": 2278
+    },
+    {
+      "file": "world-WorldStorage.json",
+      "sha256": "439c657af5427c6ca46b6f5d6d015cf4972df2994bf3f0093690e540c91562e4",
+      "classId": "0x03148ba889e0bde2f34b0cbe7b2cc7d1b70d204fd489a58490183c19136d0c53",
+      "publicBytes": 11637,
+      "packedFields": 377
+    },
+    {
+      "file": "player-PlayerStorage.json",
+      "sha256": "b631299d7d228b35fef5f911af6f05766d1bb29f96b5661fa056ac21c74c6c8d",
+      "classId": "0x2a65af147af47ec012cd504d965fc32d3c5c1cc3fb7543595fd40e869a7bed29",
+      "publicBytes": 12511,
+      "packedFields": 405
+    },
+    {
+      "file": "planet-PlanetStorage.json",
+      "sha256": "6416b8038e8a8bedb1ee019c7cf3854d586672f33d3f5e4d2f224646ce276c9c",
+      "classId": "0x157d7b1f3cda5e25b14404cdf5f90e2d0f2fcca244df9d86ea6829b5028a71fe",
+      "publicBytes": 16577,
+      "packedFields": 536
+    },
+    {
+      "file": "planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+      "sha256": "3a84c447fbb866c9b665c059ac59c9bd77c8f1d3f10bcdb694facd8271027567",
+      "classId": "0x16de336239cd7a03431c47623fd3bbaf16ff096eaf7b616d0b412e83e31de7d5",
+      "publicBytes": 11495,
+      "packedFields": 372
+    },
+    {
+      "file": "planet_events-PlanetEventsStorage.json",
+      "sha256": "d0440a5da2dd1f5212c1aa3acd77431cbbc9e26986121a7b88dc212cf285d763",
+      "classId": "0x2b0dbccefb2dc49b228234440a5c0d78b5787d68171ecf2607987b58bff12d7b",
+      "publicBytes": 15380,
+      "packedFields": 498
+    },
+    {
+      "file": "planet_artifacts-PlanetArtifactsStorage.json",
+      "sha256": "a3d6124fc39411f1a8a2ccefb2148c87b2bf098dec76884eb6ac5975f769eaa7",
+      "classId": "0x26992334093b422096def8109f31e4665c4adf241f96823c856b2a76b422f76a",
+      "publicBytes": 15380,
+      "packedFields": 498
+    },
+    {
+      "file": "arrival-ArrivalStorage.json",
+      "sha256": "bfda6d05b5636116da6446c7b8601205ad1002a9ea2f0970e7d7f11d009b222c",
+      "classId": "0x037139d482be6425ea9ba3534c01450b6d037e031b6c9a78c57e629654850fc3",
+      "publicBytes": 16208,
+      "packedFields": 524
+    },
+    {
+      "file": "artifact-ArtifactStorage.json",
+      "sha256": "89c1b7501efd5c9e15708e6c6445fde0e778df187d3a4af75ec63d7a411c0cbd",
+      "classId": "0x086f670ff5c23b541d1363a8a06a57c6b985ae3e3ac63548104d0d6e0231ae44",
+      "publicBytes": 20898,
+      "packedFields": 676
+    },
+    {
+      "file": "artifact_location-ArtifactLocationStorage.json",
+      "sha256": "2b5993dcbd0276287913f5d89a224afcc7d1a2b0e1b4174cc1febb563301151a",
+      "classId": "0x233b0e83e3a1026d416d861d7b3b18a3c44ade18b25bb46d6b6621bbb413928f",
+      "publicBytes": 18350,
+      "packedFields": 593
+    },
+    {
+      "file": "admin-Admin.json",
+      "sha256": "6fcfde97bd45c19a8dc09d596584eb7045562dada58366a8c4b4c981c73f37b4",
+      "classId": "0x09c4542d27dee97e210b8c7ee28dbfaa00344db483763a6b96d42028a2bd0faf",
+      "publicBytes": 59270,
+      "packedFields": 1913
+    },
+    {
+      "file": "core-Core.json",
+      "sha256": "9402b5af7b361e0b474ddc149b029c5a4084a5d7f1ce1950bd18b854d6123358",
+      "classId": "0x1d74b5a4cae222951969513a4bc01d50ab14021450eb0f2ffd34a159e34e2d12",
+      "publicBytes": 92762,
+      "packedFields": 2994
+    },
+    {
+      "file": "move-Move.json",
+      "sha256": "b332e656383c9eb7888f9699e042c061590f7d14597b2348ae2aeaaafb1c8179",
+      "classId": "0x16b4d889412f294c17c2b3f3d97fddd5ec66010259345b630fa596135ad82c2a",
+      "publicBytes": 83194,
+      "packedFields": 2685
+    },
+    {
+      "file": "artifact_action-ArtifactAction.json",
+      "sha256": "b4d727f6d775da02eb200d7b883ecc05e1e0494863c0c770956a88efafa4f741",
+      "classId": "0x2cbb4f70946cd6281dcb22ca2fdea5276c2be07a97b7326b3a1063aebcac214a",
+      "publicBytes": 90939,
+      "packedFields": 2935
+    },
+    {
+      "file": "artifact_find-ArtifactFind.json",
+      "sha256": "15c03b68b0911753ca4f92b4fd3177ed1fad7dd31b4f63b956d61c4ac8501c78",
+      "classId": "0x0fda63c5867a7b8ffacba390e6a2fd4ad8b1590f528350d867d00cd6f2b1a163",
+      "publicBytes": 70447,
+      "packedFields": 2274
+    },
+    {
+      "file": "artifact_prospect-ArtifactProspect.json",
+      "sha256": "8e4de2b79e6b3518d83ced641556fa366c9797893d44273d44059f3723f77386",
+      "classId": "0x1b080bb244be90eb1901d410c5cd1c3e80c16ac8bb86d0c971be603f88350d4c",
+      "publicBytes": 61552,
+      "packedFields": 1987
+    },
+    {
+      "file": "artifact_valut-ArtifactValut.json",
+      "sha256": "8583a6092c16bf3a104ea4236032cdc0fb77846a31448b79d75b0ca2dab5a0e2",
+      "classId": "0x19f2f642eac53dfdab24e1f0200cb62f929c6227c841c061ebb7ac7ff03d037d",
+      "publicBytes": 91404,
+      "packedFields": 2950
+    },
+    {
+      "file": "core_settlement_worker-CoreSettlementWorker.json",
+      "sha256": "85da587af3a1a71736c375bf0f16bf1a0cbc459df76261a375b5b2056fe46766",
+      "classId": "0x204f05c2c7b5f827638f16cd810486639d273cb773217ba9cba740b8fa355f62",
+      "publicBytes": 81460,
+      "packedFields": 2629
+    },
+    {
+      "file": "vault_settlement_worker-VaultSettlementWorker.json",
+      "sha256": "24dd536baebe46c2889b17c9ebfa683a13e70f980fcb05e78fc15c56a8c5857d",
+      "classId": "0x300a5701c0073f1eeb9ccac55ebfadd05537413f6b545a1528f69df0227ef6bf",
+      "publicBytes": 68835,
+      "packedFields": 2222
+    },
+    {
+      "file": "game_state_backend-GameStateBackend.json",
+      "sha256": "333778037b3f2329e1b08fb6736f34c26eb9954494ce47339da8a3ccc91fbe63",
+      "classId": "0x12242fdaa7290bc7aaa91d7e720849b67124f871f4c1661d549615fecdae4390",
+      "publicBytes": 90857,
+      "packedFields": 2932
+    }
+  ]
+}

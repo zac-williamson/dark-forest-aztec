@@ -1,0 +1,2035 @@
+{
+  "source_loc": "19163033434863101369373075514320638235471921054390040431199243683573937251001",
+  "target_loc": "4925234744530858171417654075256589666688346860022878524242846880227987649233",
+  "target_perlin": "15",
+  "target_level": "0",
+  "max_dist": "1",
+  "x1": "0",
+  "y1": "0",
+  "x2": "1",
+  "y2": "0",
+  "pop_moved": "10000",
+  "silver_moved": "0",
+  "moved_artifact_id": "0",
+  "source_activated_artifact_id": "0",
+  "target_activated_artifact_id": "0",
+  "is_abandoning": false,
+  "timestamp": "1789099311",
+  "snark_config": {
+    "disable_zk_checks": false,
+    "planethash_key": "0",
+    "spacetype_key": "0",
+    "biomebase_key": "0",
+    "perlin_mirror_x": false,
+    "perlin_mirror_y": false,
+    "perlin_length_scale": "32"
+  },
+  "planet_default_stats": {
+    "population_cap": "0",
+    "population_growth": "0",
+    "range": "0",
+    "speed": "0",
+    "defense": "0",
+    "silver_growth": "0",
+    "silver_cap": "0",
+    "barbarian_percentage": "0"
+  },
+  "world_config": {
+    "start_paused": false,
+    "time_factor_hundredths": "0",
+    "spawn_rim_area": "0",
+    "world_radius_locked": false,
+    "world_radius_min": "0",
+    "location_reveal_cooldown": "0",
+    "silver_score_value": "0",
+    "planet_transfer_enabled": false,
+    "admin_can_add_planets": false
+  },
+  "game_config_core": {
+    "max_natural_planet_level": "0",
+    "perlin_threshold_1": "0",
+    "perlin_threshold_2": "0",
+    "perlin_threshold_3": "0",
+    "init_perlin_min": "0",
+    "init_perlin_max": "0",
+    "biome_threshold_1": "0",
+    "biome_threshold_2": "0",
+    "planet_rarity": "0",
+    "max_location_id": "0"
+  },
+  "planet_level_thresholds": {
+    "thresholds": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "space_junk_config": {
+    "space_junk_enabled": false,
+    "space_junk_limit": "0",
+    "planet_level_junk": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "abandon_speed_change_percent": "0",
+    "abandon_range_change_percent": "0"
+  },
+  "planet_type_weights_tier_0": {
+    "weights": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "planet_type_weights_tier_1": {
+    "weights": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "planet_type_weights_tier_2": {
+    "weights": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "planet_type_weights_tier_3": {
+    "weights": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "artifacts_config": {
+    "token_mint_end_timestamp": "0",
+    "artifact_point_values": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "photoid_activation_delay": "0"
+  },
+  "source_planet": {
+    "perlin": "0",
+    "created_at": "1",
+    "owner": "0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+    "planet_level": "0",
+    "planet_type": "0",
+    "space_type": "0",
+    "is_home_planet": false,
+    "is_initialized": true,
+    "destroyed": false,
+    "invader": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "capturer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "invade_start_block": "0",
+    "population_cap": "100000",
+    "population_growth": "1",
+    "range": "1000",
+    "speed": "100",
+    "defense": "100",
+    "silver_cap": "100000",
+    "silver_growth": "0",
+    "population": "50000",
+    "silver": "0",
+    "upgrade_state_0": "0",
+    "upgrade_state_1": "0",
+    "upgrade_state_2": "0",
+    "last_updated": "1",
+    "pausers": "0",
+    "energy_gro_doublers": "0",
+    "silver_gro_doublers": "0",
+    "hat_level": "0",
+    "space_junk": "0",
+    "has_tried_finding_artifact": false,
+    "prospected_block_number": "0"
+  },
+  "source_planet_artifacts_state": {
+    "ids": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "count": "0",
+    "last_updated": "1"
+  },
+  "source_planet_events_state": {
+    "events": [
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      }
+    ],
+    "count": "0",
+    "last_updated": "1"
+  },
+  "source_arrivals": [
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    }
+  ],
+  "source_arrival_artifacts": [
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    }
+  ],
+  "source_arrival_artifact_locations": [
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    }
+  ],
+  "target_planet": {
+    "perlin": "0",
+    "created_at": "1",
+    "owner": "0x2be3a51cfda73e700533c859d75abe1292f84081d95411627c4ff51a0c2d178a",
+    "planet_level": "0",
+    "planet_type": "0",
+    "space_type": "0",
+    "is_home_planet": false,
+    "is_initialized": true,
+    "destroyed": false,
+    "invader": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "capturer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "invade_start_block": "0",
+    "population_cap": "100000",
+    "population_growth": "1",
+    "range": "1000",
+    "speed": "100",
+    "defense": "100",
+    "silver_cap": "100000",
+    "silver_growth": "0",
+    "population": "50000",
+    "silver": "0",
+    "upgrade_state_0": "0",
+    "upgrade_state_1": "0",
+    "upgrade_state_2": "0",
+    "last_updated": "1",
+    "pausers": "0",
+    "energy_gro_doublers": "0",
+    "silver_gro_doublers": "0",
+    "hat_level": "0",
+    "space_junk": "0",
+    "has_tried_finding_artifact": false,
+    "prospected_block_number": "0"
+  },
+  "target_planet_artifacts_state": {
+    "ids": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "count": "0",
+    "last_updated": "1"
+  },
+  "target_planet_events_state": {
+    "events": [
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      },
+      {
+        "id": "0"
+      }
+    ],
+    "count": "0",
+    "last_updated": "1"
+  },
+  "target_arrivals": [
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    },
+    {
+      "id": "0",
+      "player": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "from_planet": "0",
+      "to_planet": "0",
+      "pop_arriving": "0",
+      "silver_moved": "0",
+      "departure_time": "0",
+      "arrival_time": "0",
+      "arrival_type": "0",
+      "carried_artifact_id": "0",
+      "distance": "0"
+    }
+  ],
+  "target_arrival_artifacts": [
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    },
+    {
+      "planet_discovered_on": "0",
+      "rarity": "0",
+      "planet_biome": "0",
+      "minted_at_timestamp": "0",
+      "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "artifact_type": "0",
+      "activations": "0",
+      "last_activated": "0",
+      "last_deactivated": "0",
+      "wormhole_to": "0",
+      "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "last_updated": "0"
+    }
+  ],
+  "target_arrival_artifact_locations": [
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    },
+    {
+      "planet_id": "0",
+      "voyage_id": "0",
+      "last_updated": "0"
+    }
+  ],
+  "world": {
+    "paused": false,
+    "radius": "10000",
+    "misc_nonce": "0",
+    "next_change_block": "0"
+  },
+  "moved_artifact": {
+    "planet_discovered_on": "0",
+    "rarity": "0",
+    "planet_biome": "0",
+    "minted_at_timestamp": "0",
+    "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "artifact_type": "0",
+    "activations": "0",
+    "last_activated": "0",
+    "last_deactivated": "0",
+    "wormhole_to": "0",
+    "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "last_updated": "0"
+  },
+  "source_activated_artifact": {
+    "planet_discovered_on": "0",
+    "rarity": "0",
+    "planet_biome": "0",
+    "minted_at_timestamp": "0",
+    "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "artifact_type": "0",
+    "activations": "0",
+    "last_activated": "0",
+    "last_deactivated": "0",
+    "wormhole_to": "0",
+    "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "last_updated": "0"
+  },
+  "target_activated_artifact": {
+    "planet_discovered_on": "0",
+    "rarity": "0",
+    "planet_biome": "0",
+    "minted_at_timestamp": "0",
+    "discoverer": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "artifact_type": "0",
+    "activations": "0",
+    "last_activated": "0",
+    "last_deactivated": "0",
+    "wormhole_to": "0",
+    "owner": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "controller": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "last_updated": "0"
+  }
+}

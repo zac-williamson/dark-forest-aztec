@@ -1,0 +1,7 @@
+[package]
+name = "state_facade_interface"
+type = "contract"
+authors = [""]
+[dependencies]
+aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
+types = { path="../types" }

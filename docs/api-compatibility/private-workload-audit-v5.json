@@ -1,0 +1,924 @@
+{
+  "scope": "Read-only cached-native private workload audit. No new proof, profiling, compiler, BB, chain or wallet invocation. Circuit bucket metadata and source work are not proof latency or Fee Juice.",
+  "originalCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a",
+  "v5BuildManifestPresentAtAudit": false,
+  "methodsCompared": 14,
+  "v4ToV5BytecodesAndVKsAllIdentical": true,
+  "originalToV5BucketIncreases": 0,
+  "bucketReductions": [
+    "initialize_player"
+  ],
+  "originalArtifactHashesMatchPinnedBenchmarkManifest": true,
+  "sdkGetterCaveat": "SDK CIRCUIT_SIZE_INDEX=0/circuitSize getter names do not exponentiate: exact pinned C++ serialization identifies this stored field as log_circuit_size. Dyadic size here is explicitly 2^field0, not an exact gate count.",
+  "primarySources": [
+    {
+      "description": "Verification-key field order and dyadic size",
+      "path": "/Users/zac/nargo/github.com/AztecProtocol/aztec-packages/v5.0.1/barretenberg/cpp/src/barretenberg/flavor/flavor.hpp",
+      "line": 184,
+      "endLine": 220,
+      "sha256": "243a2f99773c377253cb6fbfc2f2128194e58d5a483fc6ca4f171792bed87f74",
+      "tag": "v5.0.1"
+    },
+    {
+      "description": "Solidity key writer explicitly uses 1 << log_circuit_size",
+      "path": "/Users/zac/nargo/github.com/AztecProtocol/aztec-packages/v5.0.1/barretenberg/cpp/src/barretenberg/honk/utils/honk_key_gen.hpp",
+      "line": 72,
+      "endLine": 80,
+      "sha256": "320daf1d22f9cd1f56836529789491a6e3a16a25c44b6b7e44574cd17677f890",
+      "tag": "v5.0.1"
+    },
+    {
+      "description": "Private enqueue hashes selector plus every argument",
+      "path": "/Users/zac/nargo/github.com/AztecProtocol/aztec-packages/v5.0.1/noir-projects/aztec-nr/aztec/src/context/private_context.nr",
+      "line": 1236,
+      "endLine": 1245,
+      "sha256": "249ce5d44be63ba99f5fd7a98b2eeb335e9f8b29c246a1b14e256ba7369ae7eb",
+      "tag": "v5.0.1"
+    },
+    {
+      "description": "Public calldata Poseidon2 hash domain",
+      "path": "/Users/zac/nargo/github.com/AztecProtocol/aztec-packages/v5.0.1/noir-projects/aztec-nr/aztec/src/hash.nr",
+      "line": 65,
+      "endLine": 66,
+      "sha256": "a9bdeadb57611483ba34fe75819dd9cb5a01c1e4ffc37942fae5f87a3485bea8",
+      "tag": "v5.0.1"
+    }
+  ],
+  "artifactProvenance": {
+    "admin-Admin.json": {
+      "original": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/admin-Admin.json",
+        "sha256": "aa08ac637514f0da2e6a41b14ff00fc2c5914d22a890ae6ea256d6ae30dfb399",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v4": {
+        "file": "/tmp/df-api-compatible-v4-native/admin-Admin.json",
+        "sha256": "cddd14db94a2e7bfd063606c81cf979f83c8b1cc956e525ec983492c496dba4e",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v5": {
+        "file": "/tmp/df-api-compatible-v5-native/admin-Admin.json",
+        "sha256": "592382c272ad0d28f9212d9170c977b173b1117d733604ae754d0879e87f7f46",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      }
+    },
+    "core-Core.json": {
+      "original": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/core-Core.json",
+        "sha256": "b952eaaa2342ab5fa86f369191d584e0aca0502c36ca6ea1405091d3d92022ab",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v4": {
+        "file": "/tmp/df-api-compatible-v4-native/core-Core.json",
+        "sha256": "c078d380a97b0b9da3d08419d7f8480b93211303a86c28500c90454b5ec17b7b",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v5": {
+        "file": "/tmp/df-api-compatible-v5-native/core-Core.json",
+        "sha256": "b8832a7a20ead05a699431bdfa1747adcd758042a6b8957e4e8cafe1b85a9664",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      }
+    },
+    "move-Move.json": {
+      "original": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/move-Move.json",
+        "sha256": "308f0612d0419e8513d084e5a9bed7e49f7d3a75af1872e0e934369938dfd309",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v4": {
+        "file": "/tmp/df-api-compatible-v4-native/move-Move.json",
+        "sha256": "4b7545a6d1164d44b63d93a01ee515f3b95e78a6964c4b1c721697d306d5dd04",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v5": {
+        "file": "/tmp/df-api-compatible-v5-native/move-Move.json",
+        "sha256": "935d14f138e0b721c8479225b3fb13c7d7fc8e1239ae81e4f1c4e2df46d817a3",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      }
+    },
+    "artifact_action-ArtifactAction.json": {
+      "original": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/artifact_action-ArtifactAction.json",
+        "sha256": "71349e50bbf7a45da8f555b7b510da01aac3ff19dd905b9065eb97086c032589",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v4": {
+        "file": "/tmp/df-api-compatible-v4-native/artifact_action-ArtifactAction.json",
+        "sha256": "b13858f6d6d684a0c3248026bf22e9ec984df6a97093ca804d9c09b084e49707",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v5": {
+        "file": "/tmp/df-api-compatible-v5-native/artifact_action-ArtifactAction.json",
+        "sha256": "29e710c9a182972a4e30d7e20bebaa3daf4f77e15ce01557a804adca8631d490",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      }
+    },
+    "artifact_find-ArtifactFind.json": {
+      "original": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/artifact_find-ArtifactFind.json",
+        "sha256": "dc1a58c1d24d0ca7c108a65788da349c2905046be1283611de3a58e48a8ac676",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v4": {
+        "file": "/tmp/df-api-compatible-v4-native/artifact_find-ArtifactFind.json",
+        "sha256": "019174ee1cc41289217dc1f8aefce9d67d3e9bd7370fd78c01af466499aaa95b",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v5": {
+        "file": "/tmp/df-api-compatible-v5-native/artifact_find-ArtifactFind.json",
+        "sha256": "2e1b16fea6d6861359f55dab5e3a494302f5dd430390a1b5be5dfd69bff34b1f",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      }
+    },
+    "artifact_prospect-ArtifactProspect.json": {
+      "original": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/artifact_prospect-ArtifactProspect.json",
+        "sha256": "57d2552bbcb12ee28e3b6ba05bb8b1ba7475dfbade8a61bcc9dbfa6eb35a0e1a",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v4": {
+        "file": "/tmp/df-api-compatible-v4-native/artifact_prospect-ArtifactProspect.json",
+        "sha256": "e2058420eb986d478b1a6eb5add10c069093abcfeb06316211efe0901b5783f4",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v5": {
+        "file": "/tmp/df-api-compatible-v5-native/artifact_prospect-ArtifactProspect.json",
+        "sha256": "036ec85cadef7b54a86b719448ec6ac1857595e070892a89618147ffd112e94d",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      }
+    },
+    "artifact_valut-ArtifactValut.json": {
+      "original": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/artifact_valut-ArtifactValut.json",
+        "sha256": "7a8c3f7aebb644259168375bb910c379c215d9ceae610a109e81d0b469c7f1d5",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v4": {
+        "file": "/tmp/df-api-compatible-v4-native/artifact_valut-ArtifactValut.json",
+        "sha256": "1fdc49f580fa3ea7ad8454b497ffa39f676b5c7096cef11bccccbb9d105ccbcc",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      },
+      "v5": {
+        "file": "/tmp/df-api-compatible-v5-native/artifact_valut-ArtifactValut.json",
+        "sha256": "dcbaca7af0012d3c94a94097735c2251765cda2c2f5fb3f28bdf7db386f2797f",
+        "noirVersion": "1.0.0-beta.22+c57152f91260ecdb9faad4efc20abb14b6d2ece7"
+      }
+    }
+  },
+  "methods": [
+    {
+      "package": "admin",
+      "method": "safe_set_owner",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "2ff785f927da19620f8f8e4fdfc95c73651f1fe959b9a6439e851addfd759932",
+          "cachedVerificationKeySHA256": "3825fdd717eb369bb8f1ee546827d850c95220e2d53444ccf1fa56c1172df2c1",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "5474e8fcd3a26fce6235ae4910891430fdd660543dea0f9d0eb86e2c913ced3d",
+          "cachedVerificationKeySHA256": "e809f166169d1a863c042ea96a3db98b2b356a9c568bc4d6343a9e85002f788e",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "5474e8fcd3a26fce6235ae4910891430fdd660543dea0f9d0eb86e2c913ced3d",
+          "cachedVerificationKeySHA256": "e809f166169d1a863c042ea96a3db98b2b356a9c568bc4d6343a9e85002f788e",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 48,
+        "generalV5ArgumentFields": 49,
+        "generalFieldDelta": 1,
+        "newGeneralOutputHashCount": 1,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "core",
+      "method": "initialize_player",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "003cd4e0faee04996291e38c443185e842c781f1770349e92b3c2d77f3e14a72",
+          "cachedVerificationKeySHA256": "9fbb03598890fb5295214b3e229a679018e40424b1c6de67cde5734239b7686b",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "7577335312c3ee337b587490e86870fe5a901c12e825f5bb7f13d8dd047749ab",
+          "cachedVerificationKeySHA256": "64ab9cd8bdb909bb532bf9e1669f4eeb67c8281a1c1f9cfd1f095feb3d85d18f",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "7577335312c3ee337b587490e86870fe5a901c12e825f5bb7f13d8dd047749ab",
+          "cachedVerificationKeySHA256": "64ab9cd8bdb909bb532bf9e1669f4eeb67c8281a1c1f9cfd1f095feb3d85d18f",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 263,
+        "generalV5ArgumentFields": 267,
+        "generalFieldDelta": 4,
+        "newGeneralOutputHashCount": 4,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_player_root"
+        ],
+        "compactV5": {
+          "condition": "Existing fresh-planet compact eligibility",
+          "argumentFields": 56,
+          "newOutputHashes": 2
+        },
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "core",
+      "method": "refresh_planet",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "a540b8943c50c636ce7a8bf5973d1472322a3f27084c09af451da83bd5d942ef",
+          "cachedVerificationKeySHA256": "a059af23a77fe0ecf857772f7b15e9ca81c460192b0941ef078529e9db923a68",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "643341c62bc81b7301e025fa0d3fd1d1799a011c8e34492ba45363fe6bdd8a12",
+          "cachedVerificationKeySHA256": "a22c154016467007fb36f451a52e78ead6e82ed2d3ba8d04ef85bd1d17667b10",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "643341c62bc81b7301e025fa0d3fd1d1799a011c8e34492ba45363fe6bdd8a12",
+          "cachedVerificationKeySHA256": "a22c154016467007fb36f451a52e78ead6e82ed2d3ba8d04ef85bd1d17667b10",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 242,
+        "generalV5ArgumentFields": 245,
+        "generalFieldDelta": 3,
+        "newGeneralOutputHashCount": 3,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_planet_events_state_root"
+        ],
+        "compactV5": {
+          "condition": "Original arrival count is zero",
+          "argumentFields": 144,
+          "newOutputHashes": 3
+        },
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "core",
+      "method": "reveal_location",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "2e564ce951b10f10dd3e14bd271926c70887db8f3583e2946ed5be74aeeedaf1",
+          "cachedVerificationKeySHA256": "276aba939a1011014b001af031f5df547f68ab98ca67f4d58f73159e50740046",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "83f4081c02841ceca0b4ea79bb4df0fe62570bebd48510472bb6dd6de950729d",
+          "cachedVerificationKeySHA256": "2bd31200d6503a37b4f6c425410cb883edceebce7edf1fa2d1751f5ba940f200",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "83f4081c02841ceca0b4ea79bb4df0fe62570bebd48510472bb6dd6de950729d",
+          "cachedVerificationKeySHA256": "2bd31200d6503a37b4f6c425410cb883edceebce7edf1fa2d1751f5ba940f200",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 62,
+        "generalV5ArgumentFields": 65,
+        "generalFieldDelta": 3,
+        "newGeneralOutputHashCount": 3,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_revealed_coords_root",
+          "prepared_new_player_state_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "core",
+      "method": "upgrade_planet",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "13bcf4eb682e21e2b6572510cff46c61032204ab794bf6d5c66236104552fd78",
+          "cachedVerificationKeySHA256": "13f51b59590269ccf26aba249b8c8eacf33a2b99c2ae0a28e14f4d45c61f4059",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "497c9034966a898f2342b4c749a85159ec00c11869affcf7e8ecca55d08e5d3f",
+          "cachedVerificationKeySHA256": "8957c0fa03fcbf7cbb451dedb030fa03997f55aa8b66b48b7dde08783565be22",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "497c9034966a898f2342b4c749a85159ec00c11869affcf7e8ecca55d08e5d3f",
+          "cachedVerificationKeySHA256": "8957c0fa03fcbf7cbb451dedb030fa03997f55aa8b66b48b7dde08783565be22",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 248,
+        "generalV5ArgumentFields": 251,
+        "generalFieldDelta": 3,
+        "newGeneralOutputHashCount": 3,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_planet_artifacts_state_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "core",
+      "method": "withdraw_silver",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "8c7f18534a62ee34c6f0587e62a2e7150c1a364211f3dac07922bbd8572e794a",
+          "cachedVerificationKeySHA256": "affa5e9ced1744e94cb393812c2fd7b9f0f457124c59ea3fd87f952dd0620c62",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "21f4ce8beb3ac0dcd0cd1befcf71877e32407bcc633ae79fe5ffeef578f274a1",
+          "cachedVerificationKeySHA256": "31cc363b2f2568cf624c875725cfb00845e49998cc663ae1f355fbcedbca2c89",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "21f4ce8beb3ac0dcd0cd1befcf71877e32407bcc633ae79fe5ffeef578f274a1",
+          "cachedVerificationKeySHA256": "31cc363b2f2568cf624c875725cfb00845e49998cc663ae1f355fbcedbca2c89",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 254,
+        "generalV5ArgumentFields": 258,
+        "generalFieldDelta": 4,
+        "newGeneralOutputHashCount": 4,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_player_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "move",
+      "method": "move",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "6843c3417965e56e66654bd9f30bf612c28d322c9a6f3c16b93a6706f07ca818",
+          "cachedVerificationKeySHA256": "f4eae76dcad6d2cfca6ccab793b8b655d4ce9e74ca8a89423106005a167c60e1",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "80bd22efede537c82d5988456c9f3032c9e052c94d434f7f82e7f5d1eb5eda4e",
+          "cachedVerificationKeySHA256": "2a36cf4082616ab438c482cd26f98f294726d141b0546913828c36e6ab60ad1d",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "80bd22efede537c82d5988456c9f3032c9e052c94d434f7f82e7f5d1eb5eda4e",
+          "cachedVerificationKeySHA256": "2a36cf4082616ab438c482cd26f98f294726d141b0546913828c36e6ab60ad1d",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 532,
+        "generalV5ArgumentFields": 539,
+        "generalFieldDelta": 7,
+        "newGeneralOutputHashCount": 7,
+        "newGeneralOutputRoots": [
+          "new_source_planet",
+          "new_source_planet_artifacts_state",
+          "new_source_planet_events_state",
+          "new_target_planet",
+          "new_target_planet_artifacts_state",
+          "new_source_activated_artifact",
+          "new_source_activated_artifact_location"
+        ],
+        "compactV5": {
+          "condition": "Both original arrival counts are zero",
+          "argumentFields": 337,
+          "newOutputHashes": 7
+        },
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "artifact_action",
+      "method": "activate_artifact",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "31edc82034de45d68ea47b1b2ba4ea5341f4f056b87156a6527881d607f3a5b4",
+          "cachedVerificationKeySHA256": "1cbfd22e7629bcca5d2022522f3068f5693d80f858b343e73d90fdc1b9999398",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "caa575823480361cc091f540b0e951a54fa70f697686db5047e95aa718e154e3",
+          "cachedVerificationKeySHA256": "1897dac2fe903079eae9592a8c04947596ce2a8bcb72d6d467c217a28c7d3a43",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "caa575823480361cc091f540b0e951a54fa70f697686db5047e95aa718e154e3",
+          "cachedVerificationKeySHA256": "1897dac2fe903079eae9592a8c04947596ce2a8bcb72d6d467c217a28c7d3a43",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 286,
+        "generalV5ArgumentFields": 291,
+        "generalFieldDelta": 5,
+        "newGeneralOutputHashCount": 5,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_artifact_root",
+          "prepared_new_artifact_location_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "artifact_action",
+      "method": "deactivate_artifact",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "25fe5c6dacca47d66fd232192436b75fb76b10bc715d043ed1ce026fe763584a",
+          "cachedVerificationKeySHA256": "791a380aaacf7f27705e5695d2012e798dd81639dd7c0542c164e94feb8379dc",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "db5e8279785d78ae1087852d0e577526de8bbd0a6d587f04074091ec12e933fb",
+          "cachedVerificationKeySHA256": "c7391cece22870f2af147c935d90cd721c7f0d4bf427507fd9098213dc6cc933",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "db5e8279785d78ae1087852d0e577526de8bbd0a6d587f04074091ec12e933fb",
+          "cachedVerificationKeySHA256": "c7391cece22870f2af147c935d90cd721c7f0d4bf427507fd9098213dc6cc933",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 283,
+        "generalV5ArgumentFields": 288,
+        "generalFieldDelta": 5,
+        "newGeneralOutputHashCount": 5,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_artifact_root",
+          "prepared_new_artifact_location_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "artifact_find",
+      "method": "find_artifact",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "75e16566f61ef5871ac78c892bdf1e7d8be47d08ff503cd1d4aed7db00502653",
+          "cachedVerificationKeySHA256": "bddb2dacc7d12f4268c500f96d6c6d001041e81b22d048fd8fffec1d51d11671",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "88c72a455a03ba104ac4f39405b53cd72ed3b586a74002bf0e861d52fe7b3c92",
+          "cachedVerificationKeySHA256": "3fe9b193595cb56d637ec8cfc3d2d03129adc812d39bab2df50646b8c34dd9f4",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "88c72a455a03ba104ac4f39405b53cd72ed3b586a74002bf0e861d52fe7b3c92",
+          "cachedVerificationKeySHA256": "3fe9b193595cb56d637ec8cfc3d2d03129adc812d39bab2df50646b8c34dd9f4",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 355,
+        "generalV5ArgumentFields": 361,
+        "generalFieldDelta": 6,
+        "newGeneralOutputHashCount": 6,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_artifact_root",
+          "prepared_new_artifact_location_root",
+          "prepared_new_player_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "artifact_prospect",
+      "method": "prospect_planet",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "4c44cc4e9f33cab9837de82b0dffe9e826d23a1be59fec37b5cbc80c8bb13705",
+          "cachedVerificationKeySHA256": "2f2137d25bd36d91b3231f3f02a559fb4c990ac5237905adc5636115fb6441eb",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "0bb541de2b89436ea24c9bc5bd719d00a64936b7bada683132df1312a5b4464a",
+          "cachedVerificationKeySHA256": "13be59cda43a893c4899b9cecd43990b47bfcfcac7bab0b713641ade35449033",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "0bb541de2b89436ea24c9bc5bd719d00a64936b7bada683132df1312a5b4464a",
+          "cachedVerificationKeySHA256": "13be59cda43a893c4899b9cecd43990b47bfcfcac7bab0b713641ade35449033",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 19,
+          "dyadicSize": 524288,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 325,
+        "generalV5ArgumentFields": 327,
+        "generalFieldDelta": 2,
+        "newGeneralOutputHashCount": 2,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_planet_events_state_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "artifact_valut",
+      "method": "deposit_artifact",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "ffec7cd6dfe24c3cb94c00f6d166c783f8e716635fb4f9993e4728a53676f1ce",
+          "cachedVerificationKeySHA256": "4fd3db07cee29457aba4e98cd0479f105f6ceece0de0dd8e24c86a675dd7e307",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "19b66dc99cd9897df70633b8d8734e58b46caa50488099e7e1b60ef397fe4e53",
+          "cachedVerificationKeySHA256": "90d580a9b745c9d46fd3209d657a2ab32697de04833bf9117fd4f40edcd3ad9a",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "19b66dc99cd9897df70633b8d8734e58b46caa50488099e7e1b60ef397fe4e53",
+          "cachedVerificationKeySHA256": "90d580a9b745c9d46fd3209d657a2ab32697de04833bf9117fd4f40edcd3ad9a",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 262,
+        "generalV5ArgumentFields": 267,
+        "generalFieldDelta": 5,
+        "newGeneralOutputHashCount": 5,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_artifact_root",
+          "prepared_new_artifact_location_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "artifact_valut",
+      "method": "give_spaceships",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "2c9b1b35742b049ce6ee8451d3e1bb396e520c6eb5c2086fbcaf132fb87af3fa",
+          "cachedVerificationKeySHA256": "d692dc913262b4111817d923b7d57a67ab5be33b8d68d66addb1fa41973a037f",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "320c223cac118a913214a8001f6f20f444510f2faa7366a7ccc842a50bb1e34d",
+          "cachedVerificationKeySHA256": "8a094596dd48c8dfda2ec857dc24fe975a933c1d21097b2bee75bd0f9ddd7387",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "320c223cac118a913214a8001f6f20f444510f2faa7366a7ccc842a50bb1e34d",
+          "cachedVerificationKeySHA256": "8a094596dd48c8dfda2ec857dc24fe975a933c1d21097b2bee75bd0f9ddd7387",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 15,
+          "dyadicSize": 32768,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 337,
+        "generalV5ArgumentFields": 341,
+        "generalFieldDelta": 4,
+        "newGeneralOutputHashCount": 4,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_player_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    },
+    {
+      "package": "artifact_valut",
+      "method": "withdraw_artifact",
+      "artifacts": {
+        "original": {
+          "privateBytecodeSHA256": "857f3e450528b120668995c990c48df494c42674c0e6ebf35a327e3e25a916d1",
+          "cachedVerificationKeySHA256": "b281e49849ecfe6df60b2c2142e3f9fcee868dbc3cb040df2c88c08bac5e0d67",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v4": {
+          "privateBytecodeSHA256": "12d2f281332df7bd89170f8bedf79d9b184fc36ba57c5cf0c12896d3c654eedd",
+          "cachedVerificationKeySHA256": "33b3eb45992adbbff8f7b9e8399e38ef853e8780f25c0e9331895c251c9fbc56",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        },
+        "v5": {
+          "privateBytecodeSHA256": "12d2f281332df7bd89170f8bedf79d9b184fc36ba57c5cf0c12896d3c654eedd",
+          "cachedVerificationKeySHA256": "33b3eb45992adbbff8f7b9e8399e38ef853e8780f25c0e9331895c251c9fbc56",
+          "verificationKeyBytes": 5216,
+          "logCircuitSize": 18,
+          "dyadicSize": 262144,
+          "publicInputs": 8,
+          "publicInputsOffset": 1
+        }
+      },
+      "v4ToV5PrivateBytecodeIdentical": true,
+      "v4ToV5VerificationKeyIdentical": true,
+      "publicEnqueue": {
+        "originalArgumentFields": 262,
+        "generalV5ArgumentFields": 267,
+        "generalFieldDelta": 5,
+        "newGeneralOutputHashCount": 5,
+        "newGeneralOutputRoots": [
+          "prepared_new_planet_root",
+          "prepared_new_planet_artifacts_state_root",
+          "prepared_new_planet_events_state_root",
+          "prepared_new_artifact_root",
+          "prepared_new_artifact_location_root"
+        ],
+        "compactV5": null,
+        "selectedEnqueuesPerActionOriginal": 1,
+        "selectedEnqueuesPerActionV5": 1,
+        "fieldCountsExcludeSelectorAndDomainSeparator": true
+      },
+      "originalToV5BucketIncrease": false
+    }
+  ],
+  "conclusions": [
+    "No recorded application VK dyadic-size bucket increased from original; Initialize fell from 2^19 to 2^18. This does not establish non-increasing witness generation, Chonk/whole-transaction proving time, peak memory or browser latency.",
+    "All fourteen current V5 private bytecodes and verification keys exactly match V4; this establishes no new compiled private computation in V5 relative to V4, not original equivalence.",
+    "All general prepared paths add one to seven output Poseidon2 hashes and append those roots to the original enqueued argument values. General/nonempty paths have no calldata-length reduction to offset that added hashing. Other earlier gameplay/library and serialization optimizations may offset it; this audit cannot determine net proof time.",
+    "SafeSetOwner (one hash,48\u219249), Reveal (three hashes,62\u219265) and GiveSpaceships (four hashes,337\u2192341) are concrete paths with added private hash/message work and no compact private-enqueue reduction. Their VKs remain in the same 2^15 bucket.",
+    "Compact private enqueues reduce argument fields: Init263\u219256 with two output hashes, empty Refresh242\u2192144 with three, empty Move532\u2192337 with seven. These message savings are source observations, not measured whole-proof savings.",
+    "All paths retain one selected public enqueue and the original user private API. There is no extra player transaction or prompt. No all-path no-UX-regression conclusion is established without authorized representative whole-transaction native/browser measurements."
+  ],
+  "transactionProofsGenerated": 0,
+  "verificationKeysGenerated": 0,
+  "compilerInvoked": false,
+  "bbInvoked": false,
+  "chainCalls": 0
+}

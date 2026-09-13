@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "variant": "candidate-v14",
+  "runtimeChecks": 75,
+  "canonicalTransactionsIncludingSetup": 55,
+  "freshContracts": 10,
+  "logicalChecksAreNotTransactionCount": true,
+  "scope": "Isolated direct touch semantics and original-versus-V14 custom setter compatibility. No Fee Juice savings or proof-speed claim from these tests.",
+  "checks": [
+    "Artifact and Location zero/high/full-Field/maximum typed vectors",
+    "Absent root0 versus explicit full hash of zero state",
+    "Actual current admin and explicitly granted account success; revoked and previous admin rejected",
+    "Authorization rejected before stale-state check for unauthorized wrong preimage",
+    "Same-block exact original setter event controls and no target-root leaf write for isolated touch",
+    "Independent physical facade slot3 roots and local admin/grant observations",
+    "Same-transaction set then current touch success; old-preimage rejection and state rollback",
+    "Original and V14 mixed first-setter Location mutation followed by original second setter restoration",
+    "Wrong admin, both original hash checks, and both Location writer-grant failures with complete rollback"
+  ],
+  "mixedSuccess": {
+    "txHash": "0x2d500cb50457ecc5be14208aa52e31310d2e83b6503d96bfdfb4f5a4319c44ab",
+    "blockNumber": 4661,
+    "originalAndCandidateSameAccountTransaction": true,
+    "eventsPerPair": [
+      "Artifact(requested)",
+      "Location(replacement)",
+      "Location(requested)"
+    ],
+    "seenSetsPerPair": 1,
+    "finalLocationRoot": "Actual full hash of requested original state independently verified"
+  },
+  "negativeScope": "Rejections are explicitly no-send account-address public simulations, not mined transactions. Successful behavior uses real account transactions.",
+  "writeScope": "55 setup/test receipts on10 new instances; existing Backend receives only fresh namespace binding entries. No fee System/Config/World/Arrival or existing gameplay namespace mutation.",
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "walletClosed": true,
+  "uncertainSends": 0,
+  "buildManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "fixtureArtifactSHA256": "3136912b64545cbd2b47dfe5bfd054528baa774cbc5d5d7aebbfafbbb4dc913f",
+  "executionManifestSHA256": "d3a3d9c2241ceeaed0e125464c3b47a477d54e0c3e916bb4e9834368085232b5",
+  "inheritedChecks": "V12 historical1429 remains separate; no V12 check is relabeled V14 and this75 is additional targeted coverage."
+}

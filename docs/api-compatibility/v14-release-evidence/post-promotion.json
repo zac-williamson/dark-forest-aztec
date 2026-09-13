@@ -1,0 +1,108 @@
+{
+  "scope": "Actual primary V14 installation and API/source/deployment integration; no compilation/proofs/keys/wallets/chain",
+  "passed": true,
+  "buildManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "steps": [
+    {
+      "name": "publish-check",
+      "command": [
+        "python3",
+        "contracts/scripts/dev/api-compatible-build/publish.py",
+        "--root",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec",
+        "--native",
+        "/tmp/df-v14-touch-order-native-r1",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "/tmp/df-v14-post-promotion/publish-check.log",
+      "logSHA256": "a8b474cddedbb3cca262916616d3c61d172ef687c835c1ddd6c19f866310c30d"
+    },
+    {
+      "name": "publish",
+      "command": [
+        "python3",
+        "contracts/scripts/dev/api-compatible-build/publish.py",
+        "--root",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec",
+        "--native",
+        "/tmp/df-v14-touch-order-native-r1"
+      ],
+      "exitCode": 0,
+      "log": "/tmp/df-v14-post-promotion/publish.log",
+      "logSHA256": "5898901f39ff3aabc865830a4b113163ed49d86edf47a9b5637f461235c78460"
+    },
+    {
+      "name": "codegen",
+      "command": [
+        "node",
+        "contracts/scripts/dev/api-compatible-build/artifacts.mjs",
+        "codegen"
+      ],
+      "exitCode": 0,
+      "log": "/tmp/df-v14-post-promotion/codegen.log",
+      "logSHA256": "151eff167bdf1d7c953720cc9fa5ddecbae7e4bd1367494088578e040e06fa41"
+    },
+    {
+      "name": "copy",
+      "command": [
+        "node",
+        "contracts/scripts/dev/api-compatible-build/artifacts.mjs",
+        "copy"
+      ],
+      "exitCode": 0,
+      "log": "/tmp/df-v14-post-promotion/copy.log",
+      "logSHA256": "45369e640d08e7041b87dc5ce7d02bbe9ad4ff6ecaae033a18823f7b84663a34"
+    },
+    {
+      "name": "deployment-typecheck",
+      "command": [
+        "pnpm",
+        "--filter",
+        "contracts",
+        "scripts:typecheck"
+      ],
+      "exitCode": 0,
+      "log": "/tmp/df-v14-post-promotion/deployment-typecheck.log",
+      "logSHA256": "d3d021c593c92ab5ecc7cd5fabfaba4d372d9f7a58e5522f5c5bd2bebf15b3f6"
+    },
+    {
+      "name": "compiled-api",
+      "command": [
+        "python3",
+        "tests/api-compatibility/check.py",
+        "check",
+        "--artifacts",
+        "contracts/target/api-compatible",
+        "--strict"
+      ],
+      "exitCode": 0,
+      "log": "/tmp/df-v14-post-promotion/compiled-api.log",
+      "logSHA256": "71738f26bad3b0c3d475064881983839dcc5b04a078c4a6808b840cb3d804973"
+    },
+    {
+      "name": "selected-source",
+      "command": [
+        "python3",
+        "tests/api-compatibility/validate-selected-source.py",
+        "--root",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec"
+      ],
+      "exitCode": 0,
+      "log": "/tmp/df-v14-post-promotion/selected-source.log",
+      "logSHA256": "87b93872d484dfe083dd1cdc371169eb633e19ad5de240aadbe146ad58fd7d82"
+    }
+  ],
+  "preservedFiles": {
+    "contracts/.env.example": "30578edd3a4f2a56c69f5f81546ada540b8169aa8db1b5b07e2fbf098b4c8da4",
+    "packages/contracts/src/index.ts": "d122c21edc5f0d343fedeabe1c8fbd539938edd2ed2b39d2ec135798311a4e6c",
+    "client/src/Session/WalletManager/WalletManager.ts": "840635db151ad4d857c9d2d64bf03012d33172541105a5754ca67322fae0304d",
+    "packages/indexer-core/src/index.ts": "4a371e49f6f9570c7241f61b1a8f0e37e9042229db0019c083e66921c14a8add"
+  },
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0,
+  "chainCalls": 0,
+  "sourceFilesVerified": 349,
+  "nativeArtifactsVerified": 20,
+  "generatedFilesVerified": 40
+}

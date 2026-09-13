@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "actualV14Checks": 381,
+  "suites": [
+    {
+      "suite": "read-only",
+      "passed": true,
+      "checks": 162,
+      "report": "reader-regressions-candidate-v14.json",
+      "reportSHA256": "db1f5b357243edbe8782a5142d160fda8af344a05bf0f3f1dcb8962cb030afcd",
+      "liveClassChecks": 20,
+      "scope": "Read-only original store methods on a fresh SDK5.2 wallet registering only the nine facade artifacts; no backend artifact, no utility authorization hook, no sends.",
+      "proofsEnabled": false
+    },
+    {
+      "suite": "trust",
+      "passed": true,
+      "checks": 183,
+      "report": "trust-regressions-candidate-v14.json",
+      "reportSHA256": "fb1f1e3321fc31bd5de394646e54fba2900d5e4fa72512f46283422076dc5eaf",
+      "liveClassChecks": 20,
+      "scope": "Simulated hostile calls only; no sends or game state changes. V5/V6 additionally isolate AVM caller/pair guards with clearly labelled injected msg_sender; those synthetic calls are not valid account transactions, proof evidence, or fee measurements. Exact live artifact classes recorded.",
+      "proofsEnabled": false,
+      "simulationChecks": 179,
+      "abiAbsenceChecks": 4
+    },
+    {
+      "suite": "batch-caller",
+      "passed": true,
+      "checks": 36,
+      "report": "batch-caller-regressions-candidate-v14.json",
+      "reportSHA256": "1c6c1acc783b0e49927c7b43729c73cae79b225e8827bbcdd128abd9822d09e8",
+      "liveClassChecks": 20,
+      "scope": "V14 targeted original/candidate Give private APIs only: empty Arrival/Artifact/Location verifier calls, exact callers/41 input words, false/sentinel and rollback.12 private simulations +12 direct-caller simulations +12 state checks. Fresh setup transactions are isolated, not fee or proof evidence.",
+      "proofsEnabled": false,
+      "privateEntryRejectionSimulations": 12,
+      "directCallerRejectionSimulations": 12,
+      "rollbackComparisons": 12,
+      "setupTransactions": 46,
+      "freshInstances": 13,
+      "gameplayTransactionsSubmitted": 0
+    }
+  ],
+  "scope": "Three targeted suites on the exact fee-measured V14 native classes, using separate fresh proof-disabled PXEs. Check counts are not transaction counts. Trust183 contains179 diagnostic simulations and4 ABI-absence checks. Give36 contains12 original/candidate private-entry rejection simulations,12 direct-caller rejection simulations and12 unchanged-state comparisons. No gameplay transaction was submitted by these suites.",
+  "setupTransactions": 46,
+  "freshIsolatedInstances": 13,
+  "setupJournalScope": "Before each isolated setup broadcast, the actual final transaction bytes and hash were persisted. Deployment intent also records actual address, salt and class. Every returned successful receipt identifies that same journaled hash. No retry or extra fee/public simulation is performed by this setup journal.",
+  "feeNamespaces": "Reader/trust are read-only. Give setup uses fresh stores, Config, original/candidate Vault and caller verifiers. It registers only the new namespaces with the existing Backend; measured game namespaces remain unchanged.",
+  "historicalEvidence": "The completed V12 1429 checks remain V12 evidence and are not relabeled as fresh V14 execution. The 792 unchanged storage checks were not repeated. The separate completed V14 touch75 and fee58 packages are not included in this381 count.",
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "nativeBuildSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "planSHA256": "b32c0cdecf7d497e3507feb1cd1442143c925a6efabbb61892f042cab420aaa2",
+  "readinessSHA256": "990d46e3ce23c45ec19b42654ac70e3b153a0a27de924b49d5ab944fc7b72524",
+  "dispatcherSHA256": "fff188bd55bf14bc7e8284990fc2d6e155da13bea55132d5b57b3893dc1a79d4",
+  "coverageSHA256": "fb7d45bff8782f19513f031205f91e9c65c6942fb4fec63d497554a446ec43f3"
+}

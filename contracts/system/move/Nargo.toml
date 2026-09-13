@@ -4,7 +4,7 @@ type = "contract"
 authors = [""]
 
 [dependencies]
-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
+aztec = { path = "../../../vendor/aztec" }
 
 circuits = { path = "../../circuits" }
 config = { path = "../../config" }
@@ -20,3 +20,4 @@ planet_events_storage = { path = "../../storage/planet_events" }
 planet_revealed_coords_storage = { path = "../../storage/planet_revealed_coords" }
 player_storage = { path = "../../storage/player" }
 world_storage = { path = "../../storage/world" }
+game_state_backend = { path = "../../state_backend" }

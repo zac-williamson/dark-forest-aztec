@@ -1,0 +1,48 @@
+{
+  "candidate": "candidate-v6",
+  "passed": true,
+  "transactionProofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "planSHA256": "0727f7022ff1d9d88e5a2173161904b948996ae01820ac7b22b219610b6c578c",
+  "buildManifestSHA256": "c82a15868e364e78618ad8e85459dc8f62aab602a44c723007f17c8b170023da",
+  "reports": [
+    {
+      "suite": "read-only",
+      "report": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/reader-regressions-candidate-v6.json",
+      "reportSHA256": "8e72d01869b715e4e10032e502a6c86e7404f96b27807368b3ec62b928c74619",
+      "passedChecks": 162
+    },
+    {
+      "suite": "trust",
+      "report": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/trust-regressions-candidate-v6.json",
+      "reportSHA256": "a2ca8bc3302270d5e0d15c866930dc98489e315e990a8d6df1e50f863759ce2c",
+      "passedChecks": 156
+    },
+    {
+      "suite": "run",
+      "report": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/storage-regressions-candidate-v6.json",
+      "reportSHA256": "e42225b5428d73192766275b4e4e831e7ef093c81c40c934334852c1225ad017",
+      "passedChecks": 792
+    },
+    {
+      "suite": "config-caller",
+      "report": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/config-caller-regressions-candidate-v6.json",
+      "reportSHA256": "694f920aa09e788fa4211cba677c7418d7e195268bb8699c97d387ba434d06c0",
+      "passedChecks": 34
+    },
+    {
+      "suite": "location-caller",
+      "report": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/location-caller-regressions-candidate-v6.json",
+      "reportSHA256": "395daf568fa9a7396275e773d08125e2909a850c1210acbdf54612bf3b144d6a",
+      "passedChecks": 20
+    },
+    {
+      "suite": "batch-caller",
+      "report": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/batch-caller-regressions-candidate-v6.json",
+      "reportSHA256": "697a6a1c9cb0b692da30799faec03fb83e6bc9d76354470c3aab1c057c928d5a",
+      "passedChecks": 238
+    }
+  ],
+  "totalPassedChecks": 1402
+}

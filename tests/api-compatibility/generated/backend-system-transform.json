@@ -1,0 +1,1282 @@
+{
+  "scope": "Fresh deployment centralized settlement with exact original API fallback. Source checks only.",
+  "continuations": [
+    {
+      "package": "core",
+      "private": "refresh_planet",
+      "method": "try_settle_core_refresh_planet",
+      "requiredMask": 1000,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location, planet_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location, planet_state_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    original_arrivals_count,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_hashes,\n                        original_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_location_hashes,\n                        original_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            arrival_artifact_ids,\n            new_arrival_artifact_locations,\n            original_arrivals_count,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, arrival_artifact_ids, new_arrival_artifact_locations, original_arrivals_count)"
+        }
+      ],
+      "originalBodyHash": "4ece67bd18fe47fe1fccc577527fe3060261ab29b712042f7ffcd661496a29af",
+      "wrapperBodyHash": "02bdb812042f030ab66a786734a4bc7064694816558f9946896d4e8c0c225464",
+      "prepared": "refresh_planet_public_prepared"
+    },
+    {
+      "package": "core",
+      "private": "upgrade_planet",
+      "method": "try_settle_core_upgrade_planet",
+      "requiredMask": 1002,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location, planet_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location, planet_state_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    original_arrivals_count,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_hashes,\n                        original_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_location_hashes,\n                        original_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            arrival_artifact_ids,\n            new_arrival_artifact_locations,\n            original_arrivals_count,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, arrival_artifact_ids, new_arrival_artifact_locations, original_arrivals_count)"
+        }
+      ],
+      "originalBodyHash": "70296502d3d8afcc0281b43fe4d069d588487ca6049fb4968e7e45f2fe4d614b",
+      "wrapperBodyHash": "56fd81d5a208b77fc8a1940d7db138899a229945f68ea9dd189e992f4e81b233",
+      "prepared": "upgrade_planet_public_prepared"
+    },
+    {
+      "package": "core",
+      "private": "withdraw_silver",
+      "method": "try_settle_core_withdraw_silver",
+      "requiredMask": 1006,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location, planet_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location, planet_state_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    original_arrivals_count,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_hashes,\n                        original_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_location_hashes,\n                        original_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "verify_hash",
+          "source": "self.view(player_storage.verify_hash(sender, player_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[2], (sender).to_field(), player_state_hash)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            arrival_artifact_ids,\n            new_arrival_artifact_locations,\n            original_arrivals_count,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, arrival_artifact_ids, new_arrival_artifact_locations, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "set",
+          "source": "self.call(player_storage.set(sender, new_player))",
+          "replacement": "self.internal._set_player(addresses[2], actor, (sender).to_field(), new_player, prepared_new_player_root, true)"
+        }
+      ],
+      "originalBodyHash": "836873fdaece2038c45881c42efcf273ee6f9ecae9880df7c275f26910ea789b",
+      "wrapperBodyHash": "29e04ea0d86683d651230fd20d92b7d4b92b3ef6a30cafb583556e6bba1b29b7",
+      "prepared": "withdraw_silver_public_prepared"
+    },
+    {
+      "package": "core",
+      "private": "reveal_location",
+      "method": "try_settle_core_reveal_location",
+      "requiredMask": 30,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location, planet_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location, planet_state_hash)"
+        },
+        {
+          "namespaceIndex": 4,
+          "namespaceKind": "planet_revealed_coords",
+          "method": "is_initialized",
+          "source": "self.view(planet_revealed_coords_storage.is_initialized(location))",
+          "replacement": "self.internal._is_initialized(addresses[4], location)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "verify_hash",
+          "source": "self.view(player_storage.verify_hash(sender, player_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[2], (sender).to_field(), player_state_hash)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 4,
+          "namespaceKind": "planet_revealed_coords",
+          "method": "set",
+          "source": "self.call(planet_revealed_coords_storage.set(location, new_planet_revealed_coords))",
+          "replacement": "self.internal._set_planet_revealed_coords(addresses[4], actor, location, new_planet_revealed_coords, prepared_new_planet_revealed_coords_root, true)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "set",
+          "source": "self.call(player_storage.set(sender, new_player_state))",
+          "replacement": "self.internal._set_player(addresses[2], actor, (sender).to_field(), new_player_state, prepared_new_player_state_root, true)"
+        }
+      ],
+      "originalBodyHash": "a2ab35bb77b12a7d603a2fe8b13a694e0b82fcff3b09a6c72810ce0aa109ae75",
+      "wrapperBodyHash": "4cd72a984e533d85c1174a5c5622fc57d5f62f76bb099d1841a31f86ff7fddd5",
+      "prepared": "reveal_location_public_prepared"
+    },
+    {
+      "package": "core",
+      "private": "initialize_player",
+      "method": "try_settle_core_initialize_player",
+      "requiredMask": 1006,
+      "operations": [
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "is_initialized",
+          "source": "self.view(player_storage.is_initialized(sender))",
+          "replacement": "self.internal._is_initialized(addresses[2], (sender).to_field())"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_state_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(\n                    location_id,\n                    planet_artifacts_state_hash,\n                ))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                        arrival_ids,\n                        arrival_hashes,\n                        original_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                            arrival_artifact_ids,\n                            arrival_artifact_hashes,\n                            original_arrivals_count,\n                        ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                            arrival_artifact_ids,\n                            arrival_artifact_location_hashes,\n                            original_arrivals_count,\n                        ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n                arrival_artifact_ids,\n                new_arrival_artifact_locations,\n                original_arrivals_count,\n            ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, arrival_artifact_ids, new_arrival_artifact_locations, original_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "set",
+          "source": "self.call(player_storage.set(sender, new_player))",
+          "replacement": "self.internal._set_player(addresses[2], actor, (sender).to_field(), new_player, prepared_new_player_root, true)"
+        }
+      ],
+      "originalBodyHash": "6bc04021585213b325350e125c71e4cf834c3bd6adbe4414c65c7626bb768693",
+      "wrapperBodyHash": "ef0ec249e6f84f938fe9bf754a91f47c70ba0b9cb98a7b2115f41c3923e2c0df",
+      "prepared": "initialize_player_public_prepared"
+    },
+    {
+      "package": "artifact_action",
+      "private": "activate_artifact",
+      "method": "try_settle_artifact_action_activate_artifact",
+      "requiredMask": 1002,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location_id, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    origin_arrivals_count,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_hashes,\n                        origin_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], arrival_artifact_ids, arrival_artifact_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_location_hashes,\n                        origin_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hash",
+          "source": "self.view(artifact_storage.verify_hash(artifact_id, artifact_hash))",
+          "replacement": "self.internal._verify_hash(addresses[8], artifact_id, artifact_hash)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hash",
+          "source": "self.view(artifact_location_storage.verify_hash(artifact_id, artifact_location_hash))",
+          "replacement": "self.internal._verify_hash(addresses[9], artifact_id, artifact_location_hash)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            change_artifact_location_ids,\n            change_artifact_locations,\n            change_artifact_location_count,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, change_artifact_location_ids, change_artifact_locations, change_artifact_location_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "set",
+          "source": "self.call(artifact_storage.set(artifact_id, new_artifact))",
+          "replacement": "self.internal._set_artifact(addresses[8], actor, artifact_id, new_artifact, prepared_new_artifact_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set",
+          "source": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location))",
+          "replacement": "self.internal._set_artifact_location(addresses[9], actor, artifact_id, new_artifact_location, prepared_new_artifact_location_root, true)"
+        }
+      ],
+      "originalBodyHash": "7f1271cd0773e4ab13deab0c561ea966002bf1893e4d26550e0c288f12106534",
+      "wrapperBodyHash": "ba96e076e4e10deeaf0aa3d69c109cd8dba5a75830c8dd268720aa2a05f6b12e",
+      "prepared": "activate_artifact_public_prepared"
+    },
+    {
+      "package": "artifact_action",
+      "private": "deactivate_artifact",
+      "method": "try_settle_artifact_action_deactivate_artifact",
+      "requiredMask": 1002,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location_id, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    origin_arrivals_count,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_hashes,\n                        origin_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], arrival_artifact_ids, arrival_artifact_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_location_hashes,\n                        origin_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hash",
+          "source": "self.view(artifact_storage.verify_hash(artifact_id, artifact_hash))",
+          "replacement": "self.internal._verify_hash(addresses[8], artifact_id, artifact_hash)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hash",
+          "source": "self.view(artifact_location_storage.verify_hash(artifact_id, artifact_location_hash))",
+          "replacement": "self.internal._verify_hash(addresses[9], artifact_id, artifact_location_hash)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            change_artifact_location_ids,\n            change_artifact_locations,\n            change_artifact_location_count,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, change_artifact_location_ids, change_artifact_locations, change_artifact_location_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "set",
+          "source": "self.call(artifact_storage.set(artifact_id, new_artifact))",
+          "replacement": "self.internal._set_artifact(addresses[8], actor, artifact_id, new_artifact, prepared_new_artifact_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set",
+          "source": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location))",
+          "replacement": "self.internal._set_artifact_location(addresses[9], actor, artifact_id, new_artifact_location, prepared_new_artifact_location_root, true)"
+        }
+      ],
+      "originalBodyHash": "73be2bc953087bafb5f87a8854e985ecfe59aba30754efc26864781d7b7d2b63",
+      "wrapperBodyHash": "bfb953fc06d4ef058371ea374b6a70d979a2c78e9515f4146a37203723094fc2",
+      "prepared": "deactivate_artifact_public_prepared"
+    },
+    {
+      "package": "artifact_find",
+      "private": "find_artifact",
+      "method": "try_settle_artifact_find_find_artifact",
+      "requiredMask": 1006,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location_id, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    origin_arrivals_count,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_hashes,\n                        origin_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], arrival_artifact_ids, arrival_artifact_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        arrival_artifact_ids,\n                        arrival_artifact_location_hashes,\n                        origin_arrivals_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, origin_arrivals_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        owned_artifact_ids,\n                        owned_artifact_hashes,\n                        owned_artifact_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], owned_artifact_ids, owned_artifact_hashes, owned_artifact_count)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        owned_artifact_ids,\n                        owned_artifact_location_hashes,\n                        owned_artifact_count,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], owned_artifact_ids, owned_artifact_location_hashes, owned_artifact_count)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "verify_hash",
+          "source": "self.view(player_storage.verify_hash(sender, player_hash))",
+          "replacement": "self.internal._verify_hash(addresses[2], (sender).to_field(), player_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            change_artifact_location_ids,\n            change_artifact_locations,\n            change_artifact_location_count,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, change_artifact_location_ids, change_artifact_locations, change_artifact_location_count)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "set",
+          "source": "self.call(artifact_storage.set(artifact_id, new_artifact))",
+          "replacement": "self.internal._set_artifact(addresses[8], actor, artifact_id, new_artifact, prepared_new_artifact_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set",
+          "source": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location))",
+          "replacement": "self.internal._set_artifact_location(addresses[9], actor, artifact_id, new_artifact_location, prepared_new_artifact_location_root, true)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "set",
+          "source": "self.call(player_storage.set(sender, new_player))",
+          "replacement": "self.internal._set_player(addresses[2], actor, (sender).to_field(), new_player, prepared_new_player_root, true)"
+        }
+      ],
+      "originalBodyHash": "7e8e2300c70b5f2164372db0e6dc264991fbb3f6e3f2b680f9739f56a426219d",
+      "wrapperBodyHash": "722f2b0e6b72889e03a8edfa1ae87539020907dae7f3bd45b5629f6d72a86e4e",
+      "prepared": "find_artifact_public_prepared"
+    },
+    {
+      "package": "artifact_prospect",
+      "private": "prospect_planet",
+      "method": "try_settle_artifact_prospect_prospect_planet",
+      "requiredMask": 1002,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location_id, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    origin_arrivals_count as u32,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], artifact_ids, artifact_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_location_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], artifact_ids, artifact_location_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                            owned_artifact_ids,\n                            owned_artifact_hashes,\n                            owned_artifact_count as u32,\n                        ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], owned_artifact_ids, owned_artifact_hashes, owned_artifact_count as u32)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                            owned_artifact_ids,\n                            owned_artifact_location_hashes,\n                            owned_artifact_count as u32,\n                        ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], owned_artifact_ids, owned_artifact_location_hashes, owned_artifact_count as u32)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, prospect_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, prospect_planet, 0, false)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            change_artifact_location_ids,\n            change_artifact_locations,\n            change_artifact_location_count,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, change_artifact_location_ids, change_artifact_locations, change_artifact_location_count)"
+        }
+      ],
+      "originalBodyHash": "080925c63ca543a1ec69ea2aa134543efc0470c741b020c02299572295cec4d4",
+      "wrapperBodyHash": "56dbefa8892687bb113a4b924570865ff3d9a1f1357461ac817bd3df5dba3dba",
+      "prepared": "prospect_planet_public_prepared"
+    },
+    {
+      "package": "artifact_valut",
+      "private": "deposit_artifact",
+      "method": "try_settle_artifact_valut_deposit_artifact",
+      "requiredMask": 1002,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location_id, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    origin_arrivals_count as u32,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], artifact_ids, artifact_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_location_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], artifact_ids, artifact_location_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hash",
+          "source": "self.view(artifact_storage.verify_hash(artifact_id, artifact_hash))",
+          "replacement": "self.internal._verify_hash(addresses[8], artifact_id, artifact_hash)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hash",
+          "source": "self.view(artifact_location_storage.verify_hash(artifact_id, artifact_location_hash))",
+          "replacement": "self.internal._verify_hash(addresses[9], artifact_id, artifact_location_hash)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            artifact_ids,\n            new_artifact_locations,\n            origin_arrivals_count as u32,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, artifact_ids, new_artifact_locations, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "set",
+          "source": "self.call(artifact_storage.set(artifact_id, new_artifact))",
+          "replacement": "self.internal._set_artifact(addresses[8], actor, artifact_id, new_artifact, prepared_new_artifact_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set",
+          "source": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location))",
+          "replacement": "self.internal._set_artifact_location(addresses[9], actor, artifact_id, new_artifact_location, prepared_new_artifact_location_root, true)"
+        }
+      ],
+      "originalBodyHash": "69ef80c20b23f97cf7aef1720c4a5a8fc9efc68cdbb7ec530b2122be421f68ff",
+      "wrapperBodyHash": "d2b531d401eed9b913d6f6abb80b25d09ec5f99788df5d5a4d653cd00592b8da",
+      "prepared": "deposit_artifact_public_prepared"
+    },
+    {
+      "package": "artifact_valut",
+      "private": "withdraw_artifact",
+      "method": "try_settle_artifact_valut_withdraw_artifact",
+      "requiredMask": 1002,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location_id, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    origin_arrivals_count as u32,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], artifact_ids, artifact_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_location_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], artifact_ids, artifact_location_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hash",
+          "source": "self.view(artifact_storage.verify_hash(artifact_id, artifact_hash))",
+          "replacement": "self.internal._verify_hash(addresses[8], artifact_id, artifact_hash)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hash",
+          "source": "self.view(artifact_location_storage.verify_hash(artifact_id, artifact_location_hash))",
+          "replacement": "self.internal._verify_hash(addresses[9], artifact_id, artifact_location_hash)"
+        },
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            artifact_ids,\n            new_artifact_locations,\n            origin_arrivals_count as u32,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, artifact_ids, new_artifact_locations, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "set",
+          "source": "self.call(artifact_storage.set(artifact_id, new_artifact))",
+          "replacement": "self.internal._set_artifact(addresses[8], actor, artifact_id, new_artifact, prepared_new_artifact_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set",
+          "source": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location))",
+          "replacement": "self.internal._set_artifact_location(addresses[9], actor, artifact_id, new_artifact_location, prepared_new_artifact_location_root, true)"
+        }
+      ],
+      "originalBodyHash": "69ef80c20b23f97cf7aef1720c4a5a8fc9efc68cdbb7ec530b2122be421f68ff",
+      "wrapperBodyHash": "7cce27543a9ab744209fc3102f61cbdb126d136c4533b1d7cda6ac910325a196",
+      "prepared": "withdraw_artifact_public_prepared"
+    },
+    {
+      "package": "artifact_valut",
+      "private": "give_spaceships",
+      "method": "try_settle_artifact_valut_give_spaceships",
+      "requiredMask": 1004,
+      "operations": [
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_hash)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "verify_hash",
+          "source": "self.view(planet_artifacts_storage.verify_hash(location_id, planet_artifacts_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[6], location_id, planet_artifacts_state_hash)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "verify_hash",
+          "source": "self.view(planet_events_storage.verify_hash(location_id, planet_events_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[5], location_id, planet_events_state_hash)"
+        },
+        {
+          "namespaceIndex": 7,
+          "namespaceKind": "arrival",
+          "method": "verify_hashes_batch",
+          "source": "self.view(arrival_storage.verify_hashes_batch(\n                    arrival_ids,\n                    arrival_hashes,\n                    origin_arrivals_count as u32,\n                ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[8], artifact_ids, artifact_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "verify_hashes_batch",
+          "source": "self.view(artifact_location_storage.verify_hashes_batch(\n                        artifact_ids,\n                        artifact_location_hashes,\n                        origin_arrivals_count as u32,\n                    ))",
+          "replacement": "self.internal._verify_hashes_batch(addresses[9], artifact_ids, artifact_location_hashes, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "verify_hash",
+          "source": "self.view(player_storage.verify_hash(sender, player_hash))",
+          "replacement": "self.internal._verify_hash(addresses[2], (sender).to_field(), player_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        },
+        {
+          "namespaceIndex": 5,
+          "namespaceKind": "planet_events",
+          "method": "set",
+          "source": "self.call(planet_events_storage.set(location_id, new_planet_events_state))",
+          "replacement": "self.internal._set_planet_events(addresses[5], actor, location_id, new_planet_events_state, prepared_new_planet_events_state_root, true)"
+        },
+        {
+          "namespaceIndex": 6,
+          "namespaceKind": "planet_artifacts",
+          "method": "set",
+          "source": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state))",
+          "replacement": "self.internal._set_planet_artifacts(addresses[6], actor, location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root, true)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_arrival_locations_max20",
+          "source": "self.call(artifact_location_storage.set_arrival_locations_max20(\n            artifact_ids,\n            new_artifact_locations,\n            origin_arrivals_count as u32,\n        ))",
+          "replacement": "self.internal._set_arrival_locations_max20(addresses[9], actor, artifact_ids, new_artifact_locations, origin_arrivals_count as u32)"
+        },
+        {
+          "namespaceIndex": 2,
+          "namespaceKind": "player",
+          "method": "set",
+          "source": "self.call(player_storage.set(sender, new_player))",
+          "replacement": "self.internal._set_player(addresses[2], actor, (sender).to_field(), new_player, prepared_new_player_root, true)"
+        },
+        {
+          "namespaceIndex": 8,
+          "namespaceKind": "artifact",
+          "method": "set_spaceships_max5",
+          "source": "self.call(artifact_storage.set_spaceships_max5(spaceships_ids, spaceships, 5))",
+          "replacement": "self.internal._set_spaceships_max5(addresses[8], actor, spaceships_ids, spaceships, 5)"
+        },
+        {
+          "namespaceIndex": 9,
+          "namespaceKind": "artifact_location",
+          "method": "set_spaceship_locations_max5",
+          "source": "self.call(artifact_location_storage.set_spaceship_locations_max5(\n            spaceships_ids,\n            spaceships_locations,\n            5,\n        ))",
+          "replacement": "self.internal._set_spaceship_locations_max5(addresses[9], actor, spaceships_ids, spaceships_locations, 5)"
+        }
+      ],
+      "originalBodyHash": "d5bdf5ac8d145b58dff064a2a87203a4c3e245f6af73a21c9fb3e051d38196fe",
+      "wrapperBodyHash": "54b0deb4a4ae79d67ea01a02bd6e03acf364ee2e44dad21fe2cf4a2b5554e080",
+      "prepared": "give_spaceships_public_prepared"
+    },
+    {
+      "package": "admin",
+      "private": "safe_set_owner",
+      "method": "try_settle_admin_safe_set_owner",
+      "requiredMask": 10,
+      "operations": [
+        {
+          "namespaceIndex": 1,
+          "namespaceKind": "world",
+          "method": "verify_hash",
+          "source": "self.view(world_storage.verify_hash(0, world_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[1], 0, world_state_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "verify_hash",
+          "source": "self.view(planet_storage.verify_hash(location_id, planet_state_hash))",
+          "replacement": "self.internal._verify_hash(addresses[3], location_id, planet_state_hash)"
+        },
+        {
+          "namespaceIndex": 3,
+          "namespaceKind": "planet",
+          "method": "set",
+          "source": "self.call(planet_storage.set(location_id, new_planet))",
+          "replacement": "self.internal._set_planet(addresses[3], actor, location_id, new_planet, prepared_new_planet_root, true)"
+        }
+      ],
+      "originalBodyHash": "fb6ecd0d2d9bd7d9f2cfef73def9f225e68171395d04ce5c9cc518ced432a3f4",
+      "wrapperBodyHash": "88651e7cbbeeb8af7f3d1864d57884e305399d0945cc1d4a3f17876267cdc3b8",
+      "prepared": "safe_set_owner_public_prepared"
+    }
+  ]
+}

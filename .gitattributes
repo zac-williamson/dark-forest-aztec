@@ -1,0 +1,8 @@
+# Keep generated evidence and reference snapshots collapsed in code review.
+contracts/scripts/dev/api-compatible-build/reference/** linguist-generated=true
+tests/api-compatibility/baseline/** linguist-generated=true
+tests/api-compatibility/generated/** linguist-generated=true
+docs/api-compatibility/**/*.json linguist-generated=true
+experiments/api-compatible-benchmark/seed-fixtures/** linguist-generated=true
+vendor/** linguist-vendored=true
+vendor/aztec/src/macros/dispatch.nr linguist-vendored=false

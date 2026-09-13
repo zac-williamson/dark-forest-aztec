@@ -2,6 +2,14 @@ use ::aztec::macros::aztec;
 
 #[aztec]
 contract ArtifactFind {
+    use aztec::protocol::traits::FromField;
+
+    use aztec::protocol::traits::Deserialize;
+
+    use aztec::protocol::traits::ToField;
+
+    use ::game_state_backend::GameStateBackend;
+
     use ::aztec::{
         macros::{functions::{external, initializer, internal, only_self, view}, storage::storage},
         oracle::block_header::get_block_header_at,
@@ -72,6 +80,7 @@ contract ArtifactFind {
         planet_events_storage_address: PublicMutable<AztecAddress, Context>,
         player_storage_address: PublicMutable<AztecAddress, Context>,
         world_storage_address: PublicMutable<AztecAddress, Context>,
+        state_backend: PublicMutable<AztecAddress, Context>,
     }
 
     #[internal("public")]
@@ -456,6 +465,202 @@ contract ArtifactFind {
         new_artifact_location: ArtifactLocation,
         new_player: Player,
     ) {
+        let state_backend_address = self.storage.state_backend.read();
+        let mut settled_by_backend = false;
+        if state_backend_address != AztecAddress::zero() {
+            let plan_addresses = [
+                self.storage.config_storage_address.read(),
+                self.storage.world_storage_address.read(),
+                self.storage.player_storage_address.read(),
+                self.storage.planet_storage_address.read(),
+                AztecAddress::zero(),
+                self.storage.planet_events_storage_address.read(),
+                self.storage.planet_artifacts_storage_address.read(),
+                self.storage.arrivals_storage_address.read(),
+                self.storage.artifact_storage_address.read(),
+                self.storage.artifact_location_storage_address.read(),
+            ];
+
+            let supported = ::state_backend_readonly::public_read::can_settle(state_backend_address, plan_addresses, 1006);
+            if supported {
+                let mut write_plan = ::libs::state_plan::WritePlan::new();
+
+        let actual_timestamp = self.context.timestamp();
+        assert_public_timestamp(timestamp, actual_timestamp);
+
+        let block_number = self.context.block_number();
+
+        assert(
+            new_planet.prospected_block_number < block_number,
+            "can only find artifact after prospected block",
+        );
+        assert(
+            (block_number - new_planet.prospected_block_number) < 256,
+            "planet prospect expired",
+        );
+
+
+
+
+
+
+
+
+
+        let config = Config::at(plan_addresses[0]);
+
+        assert(
+            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[3], location_id, planet_hash),
+            "planet hash mismatch",
+        );
+        assert(
+            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[5], location_id, planet_events_state_hash),
+            "planet_events hash mismatch",
+        );
+        assert(
+            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[6], location_id, planet_artifacts_state_hash),
+            "planet_artifacts hash mismatch",
+        );
+
+        if origin_arrivals_count != 0 {
+            assert(
+                ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count),
+                "arrivals hash mismatch",
+            );
+            if ::libs::batch_utils::has_nonzero_ids(arrival_artifact_ids, origin_arrivals_count) {
+                assert(
+                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[8], arrival_artifact_ids, arrival_artifact_hashes, origin_arrivals_count),
+                    "arrival artifacts hash mismatch",
+                );
+
+                assert(
+                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[9], arrival_artifact_ids, arrival_artifact_location_hashes, origin_arrivals_count),
+                    "arrival artifact locations hash mismatch",
+                );
+            }
+        }
+
+        if owned_artifact_count != 0 {
+            if ::libs::batch_utils::has_nonzero_ids(owned_artifact_ids, owned_artifact_count) {
+                assert(
+                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[8], owned_artifact_ids, owned_artifact_hashes, owned_artifact_count),
+                    "owned artifact hashes mismatch",
+                );
+
+                assert(
+                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[9], owned_artifact_ids, owned_artifact_location_hashes, owned_artifact_count),
+                    "owned artifact locations hash mismatch",
+                );
+            }
+        }
+
+        assert(::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[1], 0, world_hash), "world hash mismatch");
+
+        assert(
+            self.view(config.verify_snark_config_hash(snark_config_hash)),
+            "snark config hash mismatch",
+        );
+        assert(
+            self.view(config.verify_game_config_core_hash(game_config_core_hash)),
+            "game config core hash mismatch",
+        );
+        assert(
+            self.view(config.verify_world_config_hash(world_config_hash)),
+            "world config hash mismatch",
+        );
+        assert(
+            self.view(config.verify_artifacts_config_hash(artifacts_config_hash)),
+            "artifacts config hash mismatch",
+        );
+
+        let sender = new_planet.owner;
+        assert(::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[2], (sender).to_field(), player_hash), "player hash mismatch");
+
+        write_plan.set(3, location_id, 0, false, new_planet.serialize());
+        write_plan.set(5, location_id, 0, false, new_planet_events_state.serialize());
+        write_plan.set(6, location_id, 0, false, new_planet_artifacts_state.serialize());
+
+        {
+            let batch_start=write_plan.start_batch(9, change_artifact_location_count, 20);
+            let bounded_count = if (change_artifact_location_count) <= 20 { change_artifact_location_count } else { 20 };
+            for plan_i in 0..bounded_count { if change_artifact_location_ids[plan_i] != 0 {
+                write_plan.append_batch_item(batch_start, change_artifact_location_ids[plan_i], change_artifact_locations[plan_i].serialize());
+            } }
+        };
+
+        write_plan.set(8, artifact_id, 0, false, new_artifact.serialize());
+        write_plan.set(9, artifact_id, 0, false, new_artifact_location.serialize());
+
+        write_plan.set(2, (sender).to_field(), 0, false, new_player.serialize());
+
+                _commit_plan_for_system(self.context, state_backend_address, plan_addresses, 1006, write_plan);
+                settled_by_backend = true;
+            }
+        }
+        if !settled_by_backend {
+            self.internal._legacy_find_artifact_public(location_id, artifact_id, timestamp, snark_config_hash, game_config_core_hash, world_config_hash, artifacts_config_hash, player_hash, planet_hash, planet_events_state_hash, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, origin_arrivals_count, planet_artifacts_state_hash, owned_artifact_ids, owned_artifact_hashes, owned_artifact_location_hashes, owned_artifact_count, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, change_artifact_location_count, change_artifact_location_ids, change_artifact_locations, new_artifact, new_artifact_location, new_player);
+        }
+}
+
+
+
+    // Additional hashes are bound by the existing private gameplay proof.
+
+
+    #[external("public")]
+    fn set_state_backend(state_backend: AztecAddress) {
+        self.internal.assert_admin();
+        self.storage.state_backend.write(state_backend);
+    }
+
+    #[external("public")]
+    #[view]
+    fn get_backend_admin() -> AztecAddress {
+        self.storage.admin.read()
+    }
+
+    #[external("public")]
+    #[view]
+    fn get_state_backend() -> AztecAddress {
+        self.storage.state_backend.read()
+    }
+
+
+    #[internal("public")]
+
+    fn _legacy_find_artifact_public(
+        location_id: Field,
+        artifact_id: Field,
+        timestamp: u64,
+        snark_config_hash: Field,
+        game_config_core_hash: Field,
+        world_config_hash: Field,
+        artifacts_config_hash: Field,
+        player_hash: Field,
+        planet_hash: Field,
+        planet_events_state_hash: Field,
+        arrival_ids: [Field; 20],
+        arrival_hashes: [Field; 20],
+        arrival_artifact_ids: [Field; 20],
+        arrival_artifact_hashes: [Field; 20],
+        arrival_artifact_location_hashes: [Field; 20],
+        origin_arrivals_count: u32,
+        planet_artifacts_state_hash: Field,
+        owned_artifact_ids: [Field; 20],
+        owned_artifact_hashes: [Field; 20],
+        owned_artifact_location_hashes: [Field; 20],
+        owned_artifact_count: u32,
+        world_hash: Field,
+        new_planet: Planet,
+        new_planet_events_state: PlanetEvents,
+        new_planet_artifacts_state: PlanetArtifacts,
+        change_artifact_location_count: u32,
+        change_artifact_location_ids: [Field; 20],
+        change_artifact_locations: [ArtifactLocation; 20],
+        new_artifact: Artifact,
+        new_artifact_location: ArtifactLocation,
+        new_player: Player,
+    ) {
         let actual_timestamp = self.context.timestamp();
         assert_public_timestamp(timestamp, actual_timestamp);
 
@@ -574,6 +779,36 @@ contract ArtifactFind {
         self.call(artifact_location_storage.set(artifact_id, new_artifact_location));
 
         self.call(player_storage.set(sender, new_player));
+    }
+    #[inline_never]
+    #[contract_library_method]
+    unconstrained fn _commit_plan_for_system(
+        context: aztec::context::PublicContext,
+        backend_address: AztecAddress,
+        addresses: [AztecAddress;10],
+        required_mask: u16,
+        plan: ::libs::state_plan::WritePlan,
+    ) {
+        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
+        if plan.length <= 128 {
+            let selector = comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("commit_plan_small(([Field;141]))") };
+            let calldata=[selector.to_field(), self.msg_sender().to_field(), addresses[0].to_field(), addresses[1].to_field(), addresses[2].to_field(), addresses[3].to_field(), addresses[4].to_field(), addresses[5].to_field(), addresses[6].to_field(), addresses[7].to_field(), addresses[8].to_field(), addresses[9].to_field(), required_mask as Field, plan.words[0], plan.words[1], plan.words[2], plan.words[3], plan.words[4], plan.words[5], plan.words[6], plan.words[7], plan.words[8], plan.words[9], plan.words[10], plan.words[11], plan.words[12], plan.words[13], plan.words[14], plan.words[15], plan.words[16], plan.words[17], plan.words[18], plan.words[19], plan.words[20], plan.words[21], plan.words[22], plan.words[23], plan.words[24], plan.words[25], plan.words[26], plan.words[27], plan.words[28], plan.words[29], plan.words[30], plan.words[31], plan.words[32], plan.words[33], plan.words[34], plan.words[35], plan.words[36], plan.words[37], plan.words[38], plan.words[39], plan.words[40], plan.words[41], plan.words[42], plan.words[43], plan.words[44], plan.words[45], plan.words[46], plan.words[47], plan.words[48], plan.words[49], plan.words[50], plan.words[51], plan.words[52], plan.words[53], plan.words[54], plan.words[55], plan.words[56], plan.words[57], plan.words[58], plan.words[59], plan.words[60], plan.words[61], plan.words[62], plan.words[63], plan.words[64], plan.words[65], plan.words[66], plan.words[67], plan.words[68], plan.words[69], plan.words[70], plan.words[71], plan.words[72], plan.words[73], plan.words[74], plan.words[75], plan.words[76], plan.words[77], plan.words[78], plan.words[79], plan.words[80], plan.words[81], plan.words[82], plan.words[83], plan.words[84], plan.words[85], plan.words[86], plan.words[87], plan.words[88], plan.words[89], plan.words[90], plan.words[91], plan.words[92], plan.words[93], plan.words[94], plan.words[95], plan.words[96], plan.words[97], plan.words[98], plan.words[99], plan.words[100], plan.words[101], plan.words[102], plan.words[103], plan.words[104], plan.words[105], plan.words[106], plan.words[107], plan.words[108], plan.words[109], plan.words[110], plan.words[111], plan.words[112], plan.words[113], plan.words[114], plan.words[115], plan.words[116], plan.words[117], plan.words[118], plan.words[119], plan.words[120], plan.words[121], plan.words[122], plan.words[123], plan.words[124], plan.words[125], plan.words[126], plan.words[127], plan.length as Field];
+
+            let result=::libs::public_call::call(backend_address,calldata);
+            assert(result.len()==0, "Unexpected settlement result");
+        } else if plan.length <= 172 {
+            let selector = comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("commit_plan_medium(([Field;185]))") };
+            let calldata=[selector.to_field(), self.msg_sender().to_field(), addresses[0].to_field(), addresses[1].to_field(), addresses[2].to_field(), addresses[3].to_field(), addresses[4].to_field(), addresses[5].to_field(), addresses[6].to_field(), addresses[7].to_field(), addresses[8].to_field(), addresses[9].to_field(), required_mask as Field, plan.words[0], plan.words[1], plan.words[2], plan.words[3], plan.words[4], plan.words[5], plan.words[6], plan.words[7], plan.words[8], plan.words[9], plan.words[10], plan.words[11], plan.words[12], plan.words[13], plan.words[14], plan.words[15], plan.words[16], plan.words[17], plan.words[18], plan.words[19], plan.words[20], plan.words[21], plan.words[22], plan.words[23], plan.words[24], plan.words[25], plan.words[26], plan.words[27], plan.words[28], plan.words[29], plan.words[30], plan.words[31], plan.words[32], plan.words[33], plan.words[34], plan.words[35], plan.words[36], plan.words[37], plan.words[38], plan.words[39], plan.words[40], plan.words[41], plan.words[42], plan.words[43], plan.words[44], plan.words[45], plan.words[46], plan.words[47], plan.words[48], plan.words[49], plan.words[50], plan.words[51], plan.words[52], plan.words[53], plan.words[54], plan.words[55], plan.words[56], plan.words[57], plan.words[58], plan.words[59], plan.words[60], plan.words[61], plan.words[62], plan.words[63], plan.words[64], plan.words[65], plan.words[66], plan.words[67], plan.words[68], plan.words[69], plan.words[70], plan.words[71], plan.words[72], plan.words[73], plan.words[74], plan.words[75], plan.words[76], plan.words[77], plan.words[78], plan.words[79], plan.words[80], plan.words[81], plan.words[82], plan.words[83], plan.words[84], plan.words[85], plan.words[86], plan.words[87], plan.words[88], plan.words[89], plan.words[90], plan.words[91], plan.words[92], plan.words[93], plan.words[94], plan.words[95], plan.words[96], plan.words[97], plan.words[98], plan.words[99], plan.words[100], plan.words[101], plan.words[102], plan.words[103], plan.words[104], plan.words[105], plan.words[106], plan.words[107], plan.words[108], plan.words[109], plan.words[110], plan.words[111], plan.words[112], plan.words[113], plan.words[114], plan.words[115], plan.words[116], plan.words[117], plan.words[118], plan.words[119], plan.words[120], plan.words[121], plan.words[122], plan.words[123], plan.words[124], plan.words[125], plan.words[126], plan.words[127], plan.words[128], plan.words[129], plan.words[130], plan.words[131], plan.words[132], plan.words[133], plan.words[134], plan.words[135], plan.words[136], plan.words[137], plan.words[138], plan.words[139], plan.words[140], plan.words[141], plan.words[142], plan.words[143], plan.words[144], plan.words[145], plan.words[146], plan.words[147], plan.words[148], plan.words[149], plan.words[150], plan.words[151], plan.words[152], plan.words[153], plan.words[154], plan.words[155], plan.words[156], plan.words[157], plan.words[158], plan.words[159], plan.words[160], plan.words[161], plan.words[162], plan.words[163], plan.words[164], plan.words[165], plan.words[166], plan.words[167], plan.words[168], plan.words[169], plan.words[170], plan.words[171], plan.length as Field];
+
+            let result=::libs::public_call::call(backend_address,calldata);
+            assert(result.len()==0, "Unexpected settlement result");
+        } else {
+            let selector = comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("commit_plan(([Field;397]))") };
+            let calldata=[selector.to_field(), self.msg_sender().to_field(), addresses[0].to_field(), addresses[1].to_field(), addresses[2].to_field(), addresses[3].to_field(), addresses[4].to_field(), addresses[5].to_field(), addresses[6].to_field(), addresses[7].to_field(), addresses[8].to_field(), addresses[9].to_field(), required_mask as Field, plan.words[0], plan.words[1], plan.words[2], plan.words[3], plan.words[4], plan.words[5], plan.words[6], plan.words[7], plan.words[8], plan.words[9], plan.words[10], plan.words[11], plan.words[12], plan.words[13], plan.words[14], plan.words[15], plan.words[16], plan.words[17], plan.words[18], plan.words[19], plan.words[20], plan.words[21], plan.words[22], plan.words[23], plan.words[24], plan.words[25], plan.words[26], plan.words[27], plan.words[28], plan.words[29], plan.words[30], plan.words[31], plan.words[32], plan.words[33], plan.words[34], plan.words[35], plan.words[36], plan.words[37], plan.words[38], plan.words[39], plan.words[40], plan.words[41], plan.words[42], plan.words[43], plan.words[44], plan.words[45], plan.words[46], plan.words[47], plan.words[48], plan.words[49], plan.words[50], plan.words[51], plan.words[52], plan.words[53], plan.words[54], plan.words[55], plan.words[56], plan.words[57], plan.words[58], plan.words[59], plan.words[60], plan.words[61], plan.words[62], plan.words[63], plan.words[64], plan.words[65], plan.words[66], plan.words[67], plan.words[68], plan.words[69], plan.words[70], plan.words[71], plan.words[72], plan.words[73], plan.words[74], plan.words[75], plan.words[76], plan.words[77], plan.words[78], plan.words[79], plan.words[80], plan.words[81], plan.words[82], plan.words[83], plan.words[84], plan.words[85], plan.words[86], plan.words[87], plan.words[88], plan.words[89], plan.words[90], plan.words[91], plan.words[92], plan.words[93], plan.words[94], plan.words[95], plan.words[96], plan.words[97], plan.words[98], plan.words[99], plan.words[100], plan.words[101], plan.words[102], plan.words[103], plan.words[104], plan.words[105], plan.words[106], plan.words[107], plan.words[108], plan.words[109], plan.words[110], plan.words[111], plan.words[112], plan.words[113], plan.words[114], plan.words[115], plan.words[116], plan.words[117], plan.words[118], plan.words[119], plan.words[120], plan.words[121], plan.words[122], plan.words[123], plan.words[124], plan.words[125], plan.words[126], plan.words[127], plan.words[128], plan.words[129], plan.words[130], plan.words[131], plan.words[132], plan.words[133], plan.words[134], plan.words[135], plan.words[136], plan.words[137], plan.words[138], plan.words[139], plan.words[140], plan.words[141], plan.words[142], plan.words[143], plan.words[144], plan.words[145], plan.words[146], plan.words[147], plan.words[148], plan.words[149], plan.words[150], plan.words[151], plan.words[152], plan.words[153], plan.words[154], plan.words[155], plan.words[156], plan.words[157], plan.words[158], plan.words[159], plan.words[160], plan.words[161], plan.words[162], plan.words[163], plan.words[164], plan.words[165], plan.words[166], plan.words[167], plan.words[168], plan.words[169], plan.words[170], plan.words[171], plan.words[172], plan.words[173], plan.words[174], plan.words[175], plan.words[176], plan.words[177], plan.words[178], plan.words[179], plan.words[180], plan.words[181], plan.words[182], plan.words[183], plan.words[184], plan.words[185], plan.words[186], plan.words[187], plan.words[188], plan.words[189], plan.words[190], plan.words[191], plan.words[192], plan.words[193], plan.words[194], plan.words[195], plan.words[196], plan.words[197], plan.words[198], plan.words[199], plan.words[200], plan.words[201], plan.words[202], plan.words[203], plan.words[204], plan.words[205], plan.words[206], plan.words[207], plan.words[208], plan.words[209], plan.words[210], plan.words[211], plan.words[212], plan.words[213], plan.words[214], plan.words[215], plan.words[216], plan.words[217], plan.words[218], plan.words[219], plan.words[220], plan.words[221], plan.words[222], plan.words[223], plan.words[224], plan.words[225], plan.words[226], plan.words[227], plan.words[228], plan.words[229], plan.words[230], plan.words[231], plan.words[232], plan.words[233], plan.words[234], plan.words[235], plan.words[236], plan.words[237], plan.words[238], plan.words[239], plan.words[240], plan.words[241], plan.words[242], plan.words[243], plan.words[244], plan.words[245], plan.words[246], plan.words[247], plan.words[248], plan.words[249], plan.words[250], plan.words[251], plan.words[252], plan.words[253], plan.words[254], plan.words[255], plan.words[256], plan.words[257], plan.words[258], plan.words[259], plan.words[260], plan.words[261], plan.words[262], plan.words[263], plan.words[264], plan.words[265], plan.words[266], plan.words[267], plan.words[268], plan.words[269], plan.words[270], plan.words[271], plan.words[272], plan.words[273], plan.words[274], plan.words[275], plan.words[276], plan.words[277], plan.words[278], plan.words[279], plan.words[280], plan.words[281], plan.words[282], plan.words[283], plan.words[284], plan.words[285], plan.words[286], plan.words[287], plan.words[288], plan.words[289], plan.words[290], plan.words[291], plan.words[292], plan.words[293], plan.words[294], plan.words[295], plan.words[296], plan.words[297], plan.words[298], plan.words[299], plan.words[300], plan.words[301], plan.words[302], plan.words[303], plan.words[304], plan.words[305], plan.words[306], plan.words[307], plan.words[308], plan.words[309], plan.words[310], plan.words[311], plan.words[312], plan.words[313], plan.words[314], plan.words[315], plan.words[316], plan.words[317], plan.words[318], plan.words[319], plan.words[320], plan.words[321], plan.words[322], plan.words[323], plan.words[324], plan.words[325], plan.words[326], plan.words[327], plan.words[328], plan.words[329], plan.words[330], plan.words[331], plan.words[332], plan.words[333], plan.words[334], plan.words[335], plan.words[336], plan.words[337], plan.words[338], plan.words[339], plan.words[340], plan.words[341], plan.words[342], plan.words[343], plan.words[344], plan.words[345], plan.words[346], plan.words[347], plan.words[348], plan.words[349], plan.words[350], plan.words[351], plan.words[352], plan.words[353], plan.words[354], plan.words[355], plan.words[356], plan.words[357], plan.words[358], plan.words[359], plan.words[360], plan.words[361], plan.words[362], plan.words[363], plan.words[364], plan.words[365], plan.words[366], plan.words[367], plan.words[368], plan.words[369], plan.words[370], plan.words[371], plan.words[372], plan.words[373], plan.words[374], plan.words[375], plan.words[376], plan.words[377], plan.words[378], plan.words[379], plan.words[380], plan.words[381], plan.words[382], plan.words[383], plan.length as Field];
+
+            let result=::libs::public_call::call(backend_address,calldata);
+            assert(result.len()==0, "Unexpected settlement result");
+        }
     }
 
 }

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "scope": "Actual V14 native archive extraction and checked installation into fresh final source; no compilation, wallets, proofs or chain",
+  "archiveFiles": 370,
+  "archiveSHA256": "667528d80786643a23b1d20441cd8ba8d8f035d728caf272025a550b72325f7b",
+  "archiveBytes": 23039264,
+  "buildManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "publisherSHA256": "555ece39677f5e3f41ef4376a183c3062847cacf0344d7b5769e8242c6f57266",
+  "packagerSHA256": "87b00195ccc471a35df7430fd65fa3135a18d40a9133a3cdf9dd35b7cf54169b",
+  "result": {
+    "passed": true,
+    "artifacts": 20,
+    "bindings": 5,
+    "buildProvenanceSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+    "codegenDirectory": "/private/tmp/df-v14-actual-archive-check/final-source/contracts/target/api-compatible",
+    "proofsGenerated": 0
+  },
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0
+}

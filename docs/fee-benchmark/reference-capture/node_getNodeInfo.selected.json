@@ -1,0 +1,11 @@
+{
+  "selectedResult": {
+    "nodeVersion": "5.2.0",
+    "l1ChainId": 1,
+    "rollupVersion": 4248422647,
+    "realProofs": true,
+    "rollupAddress": "0x91ff8bbd8ebb07893010d50a48a1609e5ebd8e34"
+  },
+  "sourceSha256": "22eded215e92b5e9d4285f8d4f7eb8b788e990ef88e3e531f020836e788e2dfc",
+  "selection": "Only node/network/version/rollup identity fields. Raw ENR and all unselected fields are omitted."
+}

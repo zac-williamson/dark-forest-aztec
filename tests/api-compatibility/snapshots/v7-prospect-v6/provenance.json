@@ -1,0 +1,36 @@
+{
+  "scope": "Prospect-only dependency snapshot. No compilation or private bytecode identity claim. Other Systems keep the V6 libs dependency.",
+  "packageAlias": "libs",
+  "packageName": "libs",
+  "changedManifest": "contracts/system/artifact_prospect/Nargo.toml",
+  "restoredOriginalFiles": {
+    "contracts/prospect_original_libs/src/lazy_update.nr": "e299bbe30510a1aa6ab4edb72f5b6e59ee8d8087b4a1b5e077883997ef0eabd5"
+  },
+  "originalReference": "00bfa05c18862cce1c5adb362e4ecebe084c329a",
+  "v6ProspectSnapshot": {
+    "path": "tests/api-compatibility/snapshots/v7-prospect-v6/artifact_prospect.nr",
+    "sha256": "9f0beba10f94b9cdaa1c130581d123cd4583b2fd9e1426bd722513be13cfa0fc"
+  },
+  "remainingIdentityChecks": [
+    "Pinned Nargo must resolve same-name libs packages at distinct dependency paths without conflict.",
+    "Compare restored Prospect private bytecode and VK with the original native artifact; body and call-graph source identity alone is insufficient.",
+    "Regenerate all immutable class constants after the new System class is compiled."
+  ],
+  "copiedLibraryHashes": {
+    "contracts/prospect_original_libs/Nargo.toml": "e8f14bfa42855740e2c964a0de8fa44ba580b21a4456e8e763650c76149cfd71",
+    "contracts/prospect_original_libs/src/lib.nr": "28ac1d9a12f7d2fd80ccd075607d0be19a46ed52a8e6e6f0155b8fad2627cfcf",
+    "contracts/prospect_original_libs/src/public_call.nr": "ec5ab46d0f25201b377c0210141a8d57ccf906b703de78a26f06b2b3d5eec47d",
+    "contracts/prospect_original_libs/src/batch_utils.nr": "8319d0742cf1f53e7060e46badd08cdd74e4c57ec0e2ae6599816ffe393d4f05",
+    "contracts/prospect_original_libs/src/artifact_utils.nr": "f32d3b66b3e5a6e09c672d9fc0df32638296bb2efddb93647ef94017919d5baf",
+    "contracts/prospect_original_libs/src/game_utils.nr": "5922e1a0723741175bb853fe49ab163c9ecc50bc2bdb33ed8a483e8fead5c7c8",
+    "contracts/prospect_original_libs/src/planet.nr": "01ef4a6df160aef97ae515d889243558d97e045aae787fa9124d381cf70a3157",
+    "contracts/prospect_original_libs/src/lazy_update.nr": "e299bbe30510a1aa6ab4edb72f5b6e59ee8d8087b4a1b5e077883997ef0eabd5",
+    "contracts/prospect_original_libs/src/state_plan.nr": "3695c890d1a122848014bebecd81085c9e96e93bef867d2f7b5e4cab7dcfa0fc",
+    "contracts/prospect_original_libs/src/config_recognition.nr": "86207816f637ffa49edbfb9f16e2d456e51982288becd9770152892d601ba43b",
+    "contracts/prospect_original_libs/src/config_class.nr": "8029688a3b545a44474ab95c22a66a5d32b295b275426f751d96767e3c5705a6",
+    "contracts/prospect_original_libs/src/field_buffer.nr": "b8ab3dac672cb33137ec8952a2ddd8a091e21c68f5393b2dedc4a4fa48c070f2",
+    "contracts/prospect_original_libs/src/arrival_codec.nr": "f9b399d1507f24324b0af8acd004abfd00efaf354d4acc23eec92abdfa1b1714",
+    "contracts/prospect_original_libs/src/arrival_codec/keyed.nr": "d0bcad0033346f81ea204e44c4e480e99375c0551cac546939eb082c84910e0e",
+    "contracts/prospect_original_libs/src/arrival_codec/full.nr": "e88b9e0dcff51d61fc88cbf11ac606627c4b5095fdb2d10b4344343011e0d017"
+  }
+}

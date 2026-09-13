@@ -1,0 +1,8 @@
+[package]
+name = "field_buffer_tests"
+type = "lib"
+authors = [""]
+
+[dependencies]
+aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
+libs = { path = "../../../contracts/libs" }

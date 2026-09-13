@@ -1,0 +1,1815 @@
+{
+  "selectedCore": {
+    "scope": "V7 cached Core private definitions and compact paths; exact V8 full typed public bodies shared in process. Proof latency remains unmeasured.",
+    "privateOrigin": "V7",
+    "privateMethods": [
+      "initialize_player",
+      "refresh_planet",
+      "reveal_location",
+      "upgrade_planet",
+      "withdraw_silver"
+    ],
+    "compactExactV7": [
+      "initialize_player_new_public_prepared",
+      "refresh_planet_empty_public_prepared"
+    ],
+    "fullPublicLayouts": {
+      "initialize_player": {
+        "originalTypedWords": 263,
+        "preparedWords": 267,
+        "ignoredPreparedRootOffsets": [
+          263,
+          264,
+          265,
+          266
+        ],
+        "arguments": [
+          {
+            "name": "sender",
+            "type": "AztecAddress",
+            "offset": 0,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[0]])"
+          },
+          {
+            "name": "location_id",
+            "type": "Field",
+            "offset": 1,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[1]])"
+          },
+          {
+            "name": "timestamp",
+            "type": "u64",
+            "offset": 2,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[2]])"
+          },
+          {
+            "name": "config_hashes",
+            "type": "[Field; 9]",
+            "offset": 3,
+            "width": 9,
+            "expression": "[words[3], words[4], words[5], words[6], words[7], words[8], words[9], words[10], words[11]]"
+          },
+          {
+            "name": "planet_default_stats_hash",
+            "type": "Field",
+            "offset": 12,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[12]])"
+          },
+          {
+            "name": "planet_state_hash",
+            "type": "Field",
+            "offset": 13,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[13]])"
+          },
+          {
+            "name": "planet_artifacts_state_hash",
+            "type": "Field",
+            "offset": 14,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[14]])"
+          },
+          {
+            "name": "planet_events_state_hash",
+            "type": "Field",
+            "offset": 15,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[15]])"
+          },
+          {
+            "name": "original_arrivals_count",
+            "type": "u32",
+            "offset": 16,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[16]])"
+          },
+          {
+            "name": "arrival_ids",
+            "type": "[Field; 20]",
+            "offset": 17,
+            "width": 20,
+            "expression": "[words[17], words[18], words[19], words[20], words[21], words[22], words[23], words[24], words[25], words[26], words[27], words[28], words[29], words[30], words[31], words[32], words[33], words[34], words[35], words[36]]"
+          },
+          {
+            "name": "arrival_hashes",
+            "type": "[Field; 20]",
+            "offset": 37,
+            "width": 20,
+            "expression": "[words[37], words[38], words[39], words[40], words[41], words[42], words[43], words[44], words[45], words[46], words[47], words[48], words[49], words[50], words[51], words[52], words[53], words[54], words[55], words[56]]"
+          },
+          {
+            "name": "arrival_artifact_ids",
+            "type": "[Field; 20]",
+            "offset": 57,
+            "width": 20,
+            "expression": "[words[57], words[58], words[59], words[60], words[61], words[62], words[63], words[64], words[65], words[66], words[67], words[68], words[69], words[70], words[71], words[72], words[73], words[74], words[75], words[76]]"
+          },
+          {
+            "name": "arrival_artifact_hashes",
+            "type": "[Field; 20]",
+            "offset": 77,
+            "width": 20,
+            "expression": "[words[77], words[78], words[79], words[80], words[81], words[82], words[83], words[84], words[85], words[86], words[87], words[88], words[89], words[90], words[91], words[92], words[93], words[94], words[95], words[96]]"
+          },
+          {
+            "name": "arrival_artifact_location_hashes",
+            "type": "[Field; 20]",
+            "offset": 97,
+            "width": 20,
+            "expression": "[words[97], words[98], words[99], words[100], words[101], words[102], words[103], words[104], words[105], words[106], words[107], words[108], words[109], words[110], words[111], words[112], words[113], words[114], words[115], words[116]]"
+          },
+          {
+            "name": "player_state_hash",
+            "type": "Field",
+            "offset": 117,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[117]])"
+          },
+          {
+            "name": "world_hash",
+            "type": "Field",
+            "offset": 118,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[118]])"
+          },
+          {
+            "name": "new_planet",
+            "type": "Planet",
+            "offset": 119,
+            "width": 32,
+            "expression": "Deserialize::deserialize([words[119], words[120], words[121], words[122], words[123], words[124], words[125], words[126], words[127], words[128], words[129], words[130], words[131], words[132], words[133], words[134], words[135], words[136], words[137], words[138], words[139], words[140], words[141], words[142], words[143], words[144], words[145], words[146], words[147], words[148], words[149], words[150]])"
+          },
+          {
+            "name": "new_planet_events_state",
+            "type": "PlanetEvents",
+            "offset": 151,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[151], words[152], words[153], words[154], words[155], words[156], words[157], words[158], words[159], words[160], words[161], words[162], words[163], words[164], words[165], words[166], words[167], words[168], words[169], words[170], words[171], words[172]])"
+          },
+          {
+            "name": "new_planet_artifacts_state",
+            "type": "PlanetArtifacts",
+            "offset": 173,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[173], words[174], words[175], words[176], words[177], words[178], words[179], words[180], words[181], words[182], words[183], words[184], words[185], words[186], words[187], words[188], words[189], words[190], words[191], words[192], words[193], words[194]])"
+          },
+          {
+            "name": "new_arrival_artifact_locations",
+            "type": "[ArtifactLocation; 20]",
+            "offset": 195,
+            "width": 60,
+            "expression": "Deserialize::deserialize([words[195], words[196], words[197], words[198], words[199], words[200], words[201], words[202], words[203], words[204], words[205], words[206], words[207], words[208], words[209], words[210], words[211], words[212], words[213], words[214], words[215], words[216], words[217], words[218], words[219], words[220], words[221], words[222], words[223], words[224], words[225], words[226], words[227], words[228], words[229], words[230], words[231], words[232], words[233], words[234], words[235], words[236], words[237], words[238], words[239], words[240], words[241], words[242], words[243], words[244], words[245], words[246], words[247], words[248], words[249], words[250], words[251], words[252], words[253], words[254]])"
+          },
+          {
+            "name": "new_player",
+            "type": "Player",
+            "offset": 255,
+            "width": 8,
+            "expression": "Deserialize::deserialize([words[255], words[256], words[257], words[258], words[259], words[260], words[261], words[262]])"
+          }
+        ],
+        "bodySource": "exact frozen V8 initialize_player_public",
+        "bodySha256": "5db970653b74564477b29335db65378ce5846bc64e4843cb43c8c5802f33dc81",
+        "helper": "_initialize_player_public_local"
+      },
+      "refresh_planet": {
+        "originalTypedWords": 242,
+        "preparedWords": 245,
+        "ignoredPreparedRootOffsets": [
+          242,
+          243,
+          244
+        ],
+        "arguments": [
+          {
+            "name": "location",
+            "type": "Field",
+            "offset": 0,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[0]])"
+          },
+          {
+            "name": "timestamp",
+            "type": "u64",
+            "offset": 1,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[1]])"
+          },
+          {
+            "name": "planet_state_hash",
+            "type": "Field",
+            "offset": 2,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[2]])"
+          },
+          {
+            "name": "planet_artifacts_state_hash",
+            "type": "Field",
+            "offset": 3,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[3]])"
+          },
+          {
+            "name": "planet_events_state_hash",
+            "type": "Field",
+            "offset": 4,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[4]])"
+          },
+          {
+            "name": "original_arrivals_count",
+            "type": "u32",
+            "offset": 5,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[5]])"
+          },
+          {
+            "name": "arrival_ids",
+            "type": "[Field; 20]",
+            "offset": 6,
+            "width": 20,
+            "expression": "[words[6], words[7], words[8], words[9], words[10], words[11], words[12], words[13], words[14], words[15], words[16], words[17], words[18], words[19], words[20], words[21], words[22], words[23], words[24], words[25]]"
+          },
+          {
+            "name": "arrival_hashes",
+            "type": "[Field; 20]",
+            "offset": 26,
+            "width": 20,
+            "expression": "[words[26], words[27], words[28], words[29], words[30], words[31], words[32], words[33], words[34], words[35], words[36], words[37], words[38], words[39], words[40], words[41], words[42], words[43], words[44], words[45]]"
+          },
+          {
+            "name": "arrival_artifact_ids",
+            "type": "[Field; 20]",
+            "offset": 46,
+            "width": 20,
+            "expression": "[words[46], words[47], words[48], words[49], words[50], words[51], words[52], words[53], words[54], words[55], words[56], words[57], words[58], words[59], words[60], words[61], words[62], words[63], words[64], words[65]]"
+          },
+          {
+            "name": "arrival_artifact_hashes",
+            "type": "[Field; 20]",
+            "offset": 66,
+            "width": 20,
+            "expression": "[words[66], words[67], words[68], words[69], words[70], words[71], words[72], words[73], words[74], words[75], words[76], words[77], words[78], words[79], words[80], words[81], words[82], words[83], words[84], words[85]]"
+          },
+          {
+            "name": "arrival_artifact_location_hashes",
+            "type": "[Field; 20]",
+            "offset": 86,
+            "width": 20,
+            "expression": "[words[86], words[87], words[88], words[89], words[90], words[91], words[92], words[93], words[94], words[95], words[96], words[97], words[98], words[99], words[100], words[101], words[102], words[103], words[104], words[105]]"
+          },
+          {
+            "name": "new_planet",
+            "type": "Planet",
+            "offset": 106,
+            "width": 32,
+            "expression": "Deserialize::deserialize([words[106], words[107], words[108], words[109], words[110], words[111], words[112], words[113], words[114], words[115], words[116], words[117], words[118], words[119], words[120], words[121], words[122], words[123], words[124], words[125], words[126], words[127], words[128], words[129], words[130], words[131], words[132], words[133], words[134], words[135], words[136], words[137]])"
+          },
+          {
+            "name": "new_planet_artifacts_state",
+            "type": "PlanetArtifacts",
+            "offset": 138,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[138], words[139], words[140], words[141], words[142], words[143], words[144], words[145], words[146], words[147], words[148], words[149], words[150], words[151], words[152], words[153], words[154], words[155], words[156], words[157], words[158], words[159]])"
+          },
+          {
+            "name": "new_planet_events_state",
+            "type": "PlanetEvents",
+            "offset": 160,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[160], words[161], words[162], words[163], words[164], words[165], words[166], words[167], words[168], words[169], words[170], words[171], words[172], words[173], words[174], words[175], words[176], words[177], words[178], words[179], words[180], words[181]])"
+          },
+          {
+            "name": "new_arrival_artifact_locations",
+            "type": "[ArtifactLocation; 20]",
+            "offset": 182,
+            "width": 60,
+            "expression": "Deserialize::deserialize([words[182], words[183], words[184], words[185], words[186], words[187], words[188], words[189], words[190], words[191], words[192], words[193], words[194], words[195], words[196], words[197], words[198], words[199], words[200], words[201], words[202], words[203], words[204], words[205], words[206], words[207], words[208], words[209], words[210], words[211], words[212], words[213], words[214], words[215], words[216], words[217], words[218], words[219], words[220], words[221], words[222], words[223], words[224], words[225], words[226], words[227], words[228], words[229], words[230], words[231], words[232], words[233], words[234], words[235], words[236], words[237], words[238], words[239], words[240], words[241]])"
+          }
+        ],
+        "bodySource": "exact frozen V8 refresh_planet_public",
+        "bodySha256": "9c05d96aafdefc3e3fd64837e03bd0e9db8aa4c5f930812e02032e3dd37a2d9f",
+        "helper": "_refresh_planet_public_local"
+      },
+      "upgrade_planet": {
+        "originalTypedWords": 248,
+        "preparedWords": 251,
+        "ignoredPreparedRootOffsets": [
+          248,
+          249,
+          250
+        ],
+        "arguments": [
+          {
+            "name": "location",
+            "type": "Field",
+            "offset": 0,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[0]])"
+          },
+          {
+            "name": "sender",
+            "type": "AztecAddress",
+            "offset": 1,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[1]])"
+          },
+          {
+            "name": "branch",
+            "type": "u8",
+            "offset": 2,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[2]])"
+          },
+          {
+            "name": "current_branch_level",
+            "type": "u8",
+            "offset": 3,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[3]])"
+          },
+          {
+            "name": "timestamp",
+            "type": "u64",
+            "offset": 4,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[4]])"
+          },
+          {
+            "name": "planet_state_hash",
+            "type": "Field",
+            "offset": 5,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[5]])"
+          },
+          {
+            "name": "planet_artifacts_state_hash",
+            "type": "Field",
+            "offset": 6,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[6]])"
+          },
+          {
+            "name": "planet_events_state_hash",
+            "type": "Field",
+            "offset": 7,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[7]])"
+          },
+          {
+            "name": "original_arrivals_count",
+            "type": "u32",
+            "offset": 8,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[8]])"
+          },
+          {
+            "name": "arrival_ids",
+            "type": "[Field; 20]",
+            "offset": 9,
+            "width": 20,
+            "expression": "[words[9], words[10], words[11], words[12], words[13], words[14], words[15], words[16], words[17], words[18], words[19], words[20], words[21], words[22], words[23], words[24], words[25], words[26], words[27], words[28]]"
+          },
+          {
+            "name": "arrival_hashes",
+            "type": "[Field; 20]",
+            "offset": 29,
+            "width": 20,
+            "expression": "[words[29], words[30], words[31], words[32], words[33], words[34], words[35], words[36], words[37], words[38], words[39], words[40], words[41], words[42], words[43], words[44], words[45], words[46], words[47], words[48]]"
+          },
+          {
+            "name": "arrival_artifact_ids",
+            "type": "[Field; 20]",
+            "offset": 49,
+            "width": 20,
+            "expression": "[words[49], words[50], words[51], words[52], words[53], words[54], words[55], words[56], words[57], words[58], words[59], words[60], words[61], words[62], words[63], words[64], words[65], words[66], words[67], words[68]]"
+          },
+          {
+            "name": "arrival_artifact_hashes",
+            "type": "[Field; 20]",
+            "offset": 69,
+            "width": 20,
+            "expression": "[words[69], words[70], words[71], words[72], words[73], words[74], words[75], words[76], words[77], words[78], words[79], words[80], words[81], words[82], words[83], words[84], words[85], words[86], words[87], words[88]]"
+          },
+          {
+            "name": "arrival_artifact_location_hashes",
+            "type": "[Field; 20]",
+            "offset": 89,
+            "width": 20,
+            "expression": "[words[89], words[90], words[91], words[92], words[93], words[94], words[95], words[96], words[97], words[98], words[99], words[100], words[101], words[102], words[103], words[104], words[105], words[106], words[107], words[108]]"
+          },
+          {
+            "name": "upgrade_config_hash",
+            "type": "Field",
+            "offset": 109,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[109]])"
+          },
+          {
+            "name": "upgrade_hash",
+            "type": "Field",
+            "offset": 110,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[110]])"
+          },
+          {
+            "name": "world_hash",
+            "type": "Field",
+            "offset": 111,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[111]])"
+          },
+          {
+            "name": "new_planet",
+            "type": "Planet",
+            "offset": 112,
+            "width": 32,
+            "expression": "Deserialize::deserialize([words[112], words[113], words[114], words[115], words[116], words[117], words[118], words[119], words[120], words[121], words[122], words[123], words[124], words[125], words[126], words[127], words[128], words[129], words[130], words[131], words[132], words[133], words[134], words[135], words[136], words[137], words[138], words[139], words[140], words[141], words[142], words[143]])"
+          },
+          {
+            "name": "new_planet_events_state",
+            "type": "PlanetEvents",
+            "offset": 144,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[144], words[145], words[146], words[147], words[148], words[149], words[150], words[151], words[152], words[153], words[154], words[155], words[156], words[157], words[158], words[159], words[160], words[161], words[162], words[163], words[164], words[165]])"
+          },
+          {
+            "name": "new_planet_artifacts_state",
+            "type": "PlanetArtifacts",
+            "offset": 166,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[166], words[167], words[168], words[169], words[170], words[171], words[172], words[173], words[174], words[175], words[176], words[177], words[178], words[179], words[180], words[181], words[182], words[183], words[184], words[185], words[186], words[187]])"
+          },
+          {
+            "name": "new_arrival_artifact_locations",
+            "type": "[ArtifactLocation; 20]",
+            "offset": 188,
+            "width": 60,
+            "expression": "Deserialize::deserialize([words[188], words[189], words[190], words[191], words[192], words[193], words[194], words[195], words[196], words[197], words[198], words[199], words[200], words[201], words[202], words[203], words[204], words[205], words[206], words[207], words[208], words[209], words[210], words[211], words[212], words[213], words[214], words[215], words[216], words[217], words[218], words[219], words[220], words[221], words[222], words[223], words[224], words[225], words[226], words[227], words[228], words[229], words[230], words[231], words[232], words[233], words[234], words[235], words[236], words[237], words[238], words[239], words[240], words[241], words[242], words[243], words[244], words[245], words[246], words[247]])"
+          }
+        ],
+        "bodySource": "exact frozen V8 upgrade_planet_public",
+        "bodySha256": "2a6ea926a53515fca1a8f414a51aa06d1927f825c8960c139f9dc394af92a14d",
+        "helper": "_upgrade_planet_public_local"
+      },
+      "withdraw_silver": {
+        "originalTypedWords": 254,
+        "preparedWords": 258,
+        "ignoredPreparedRootOffsets": [
+          254,
+          255,
+          256,
+          257
+        ],
+        "arguments": [
+          {
+            "name": "location",
+            "type": "Field",
+            "offset": 0,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[0]])"
+          },
+          {
+            "name": "sender",
+            "type": "AztecAddress",
+            "offset": 1,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[1]])"
+          },
+          {
+            "name": "timestamp",
+            "type": "u64",
+            "offset": 2,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[2]])"
+          },
+          {
+            "name": "planet_state_hash",
+            "type": "Field",
+            "offset": 3,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[3]])"
+          },
+          {
+            "name": "planet_artifacts_state_hash",
+            "type": "Field",
+            "offset": 4,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[4]])"
+          },
+          {
+            "name": "planet_events_state_hash",
+            "type": "Field",
+            "offset": 5,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[5]])"
+          },
+          {
+            "name": "original_arrivals_count",
+            "type": "u32",
+            "offset": 6,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[6]])"
+          },
+          {
+            "name": "arrival_ids",
+            "type": "[Field; 20]",
+            "offset": 7,
+            "width": 20,
+            "expression": "[words[7], words[8], words[9], words[10], words[11], words[12], words[13], words[14], words[15], words[16], words[17], words[18], words[19], words[20], words[21], words[22], words[23], words[24], words[25], words[26]]"
+          },
+          {
+            "name": "arrival_hashes",
+            "type": "[Field; 20]",
+            "offset": 27,
+            "width": 20,
+            "expression": "[words[27], words[28], words[29], words[30], words[31], words[32], words[33], words[34], words[35], words[36], words[37], words[38], words[39], words[40], words[41], words[42], words[43], words[44], words[45], words[46]]"
+          },
+          {
+            "name": "arrival_artifact_ids",
+            "type": "[Field; 20]",
+            "offset": 47,
+            "width": 20,
+            "expression": "[words[47], words[48], words[49], words[50], words[51], words[52], words[53], words[54], words[55], words[56], words[57], words[58], words[59], words[60], words[61], words[62], words[63], words[64], words[65], words[66]]"
+          },
+          {
+            "name": "arrival_artifact_hashes",
+            "type": "[Field; 20]",
+            "offset": 67,
+            "width": 20,
+            "expression": "[words[67], words[68], words[69], words[70], words[71], words[72], words[73], words[74], words[75], words[76], words[77], words[78], words[79], words[80], words[81], words[82], words[83], words[84], words[85], words[86]]"
+          },
+          {
+            "name": "arrival_artifact_location_hashes",
+            "type": "[Field; 20]",
+            "offset": 87,
+            "width": 20,
+            "expression": "[words[87], words[88], words[89], words[90], words[91], words[92], words[93], words[94], words[95], words[96], words[97], words[98], words[99], words[100], words[101], words[102], words[103], words[104], words[105], words[106]]"
+          },
+          {
+            "name": "player_state_hash",
+            "type": "Field",
+            "offset": 107,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[107]])"
+          },
+          {
+            "name": "world_config_hash",
+            "type": "Field",
+            "offset": 108,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[108]])"
+          },
+          {
+            "name": "world_hash",
+            "type": "Field",
+            "offset": 109,
+            "width": 1,
+            "expression": "Deserialize::deserialize([words[109]])"
+          },
+          {
+            "name": "new_planet",
+            "type": "Planet",
+            "offset": 110,
+            "width": 32,
+            "expression": "Deserialize::deserialize([words[110], words[111], words[112], words[113], words[114], words[115], words[116], words[117], words[118], words[119], words[120], words[121], words[122], words[123], words[124], words[125], words[126], words[127], words[128], words[129], words[130], words[131], words[132], words[133], words[134], words[135], words[136], words[137], words[138], words[139], words[140], words[141]])"
+          },
+          {
+            "name": "new_planet_events_state",
+            "type": "PlanetEvents",
+            "offset": 142,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[142], words[143], words[144], words[145], words[146], words[147], words[148], words[149], words[150], words[151], words[152], words[153], words[154], words[155], words[156], words[157], words[158], words[159], words[160], words[161], words[162], words[163]])"
+          },
+          {
+            "name": "new_planet_artifacts_state",
+            "type": "PlanetArtifacts",
+            "offset": 164,
+            "width": 22,
+            "expression": "Deserialize::deserialize([words[164], words[165], words[166], words[167], words[168], words[169], words[170], words[171], words[172], words[173], words[174], words[175], words[176], words[177], words[178], words[179], words[180], words[181], words[182], words[183], words[184], words[185]])"
+          },
+          {
+            "name": "new_arrival_artifact_locations",
+            "type": "[ArtifactLocation; 20]",
+            "offset": 186,
+            "width": 60,
+            "expression": "Deserialize::deserialize([words[186], words[187], words[188], words[189], words[190], words[191], words[192], words[193], words[194], words[195], words[196], words[197], words[198], words[199], words[200], words[201], words[202], words[203], words[204], words[205], words[206], words[207], words[208], words[209], words[210], words[211], words[212], words[213], words[214], words[215], words[216], words[217], words[218], words[219], words[220], words[221], words[222], words[223], words[224], words[225], words[226], words[227], words[228], words[229], words[230], words[231], words[232], words[233], words[234], words[235], words[236], words[237], words[238], words[239], words[240], words[241], words[242], words[243], words[244], words[245]])"
+          },
+          {
+            "name": "new_player",
+            "type": "Player",
+            "offset": 246,
+            "width": 8,
+            "expression": "Deserialize::deserialize([words[246], words[247], words[248], words[249], words[250], words[251], words[252], words[253]])"
+          }
+        ],
+        "bodySource": "exact frozen V8 withdraw_silver_public",
+        "bodySha256": "0dcbe570f9c5afe0d335df56817de52d7671b4df618ca69e9b395c569e4baaef",
+        "helper": "_withdraw_silver_public_local"
+      }
+    },
+    "sourceSHA256": "c30f93ca7a3bcc02aa884846f42f7bea586dcad45987054a7b4b2bacb578fef4"
+  },
+  "scope": "Source generation only; runtime fee and behavioral verification required. Core uses exact V7 cached private bodies and compact routes; its four full routes share exact V8 typed public bodies in process. Reveal, Safe Owner, Prospect, Find, Activate and Deactivate retain byte-identical original private bodies. The unused CoreWorker source is retained and hash checked; only Vault routes through a worker. Other original public continuations restore the immutable Git baseline; historical canonical-only read guards are independently checked.",
+  "originalPrivateActions": [
+    {
+      "package": "core",
+      "private": "reveal_location",
+      "public": "reveal_location_public"
+    },
+    {
+      "package": "artifact_action",
+      "private": "activate_artifact",
+      "public": "activate_artifact_public"
+    },
+    {
+      "package": "artifact_action",
+      "private": "deactivate_artifact",
+      "public": "deactivate_artifact_public"
+    },
+    {
+      "package": "artifact_find",
+      "private": "find_artifact",
+      "public": "find_artifact_public"
+    },
+    {
+      "package": "artifact_prospect",
+      "private": "prospect_planet",
+      "public": "prospect_planet_public"
+    },
+    {
+      "package": "admin",
+      "private": "safe_set_owner",
+      "public": "safe_set_owner_public"
+    }
+  ],
+  "legacyOrigins": {
+    "refresh_planet_public": {
+      "source": "contracts/system/core/src/main.nr",
+      "sourceSha256": "f2197ca379633faba8f018e605a672c22f6d3b827307612f6e6cfbc093b02938",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "upgrade_planet_public": {
+      "source": "contracts/system/core/src/main.nr",
+      "sourceSha256": "f2197ca379633faba8f018e605a672c22f6d3b827307612f6e6cfbc093b02938",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "withdraw_silver_public": {
+      "source": "contracts/system/core/src/main.nr",
+      "sourceSha256": "f2197ca379633faba8f018e605a672c22f6d3b827307612f6e6cfbc093b02938",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "reveal_location_public": {
+      "source": "contracts/system/core/src/main.nr",
+      "sourceSha256": "f2197ca379633faba8f018e605a672c22f6d3b827307612f6e6cfbc093b02938",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "initialize_player_public": {
+      "source": "contracts/system/core/src/main.nr",
+      "sourceSha256": "f2197ca379633faba8f018e605a672c22f6d3b827307612f6e6cfbc093b02938",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "activate_artifact_public": {
+      "source": "contracts/system/artifact_action/src/main.nr",
+      "sourceSha256": "469ddec94cf68f2bc2ddfbbd191a1f3a93e84e24a54c76d95d99ee7ea8dd270a",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "deactivate_artifact_public": {
+      "source": "contracts/system/artifact_action/src/main.nr",
+      "sourceSha256": "469ddec94cf68f2bc2ddfbbd191a1f3a93e84e24a54c76d95d99ee7ea8dd270a",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "find_artifact_public": {
+      "source": "contracts/system/artifact_find/src/main.nr",
+      "sourceSha256": "6d620aae61c70a01d18e12f8282c632629d4cf0dcd5a461e505fec06252b16d3",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "prospect_planet_public": {
+      "source": "contracts/system/artifact_prospect/src/main.nr",
+      "sourceSha256": "66cf2c14b982a6a5ceaad56e555c73eeb231e85ea2c4fefe75d4f350d83dde94",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "deposit_artifact_public": {
+      "source": "contracts/system/artifact_valut/src/main.nr",
+      "sourceSha256": "97034e03caa421d578d1403ac7fd11c7795870c73f19989db1152ad255dcfda7",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "withdraw_artifact_public": {
+      "source": "contracts/system/artifact_valut/src/main.nr",
+      "sourceSha256": "97034e03caa421d578d1403ac7fd11c7795870c73f19989db1152ad255dcfda7",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "give_spaceships_public": {
+      "source": "contracts/system/artifact_valut/src/main.nr",
+      "sourceSha256": "97034e03caa421d578d1403ac7fd11c7795870c73f19989db1152ad255dcfda7",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    },
+    "safe_set_owner_public": {
+      "source": "contracts/system/admin/src/main.nr",
+      "sourceSha256": "2faa36c79f8623fc6959098c3e01ce274dad268eb00c930d2fa90adc1e95723f",
+      "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a"
+    }
+  },
+  "continuations": [
+    {
+      "flatEnqueue": "{\n            let mut prepared_payload: [Field;267] = [0;267];\n            let prepared_part_0 = (location_id).serialize();\n            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }\n            let prepared_part_1 = (artifact_id).serialize();\n            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }\n            let prepared_part_2 = (timestamp).serialize();\n            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }\n            let prepared_part_3 = (planet_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }\n            let prepared_part_4 = (planet_artifacts_state_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }\n            let prepared_part_5 = (planet_events_state_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }\n            let prepared_part_6 = (origin_arrivals_count).serialize();\n            for prepared_i in 0..1 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }\n            let prepared_part_7 = (arrival_ids).serialize();\n            for prepared_i in 0..20 { prepared_payload[7 + prepared_i] = prepared_part_7[prepared_i]; }\n            let prepared_part_8 = (arrival_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[27 + prepared_i] = prepared_part_8[prepared_i]; }\n            let prepared_part_9 = (artifact_ids).serialize();\n            for prepared_i in 0..20 { prepared_payload[47 + prepared_i] = prepared_part_9[prepared_i]; }\n            let prepared_part_10 = (artifact_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[67 + prepared_i] = prepared_part_10[prepared_i]; }\n            let prepared_part_11 = (artifact_location_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[87 + prepared_i] = prepared_part_11[prepared_i]; }\n            let prepared_part_12 = (artifact_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[107 + prepared_i] = prepared_part_12[prepared_i]; }\n            let prepared_part_13 = (artifact_location_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[108 + prepared_i] = prepared_part_13[prepared_i]; }\n            let prepared_part_14 = (world_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[109 + prepared_i] = prepared_part_14[prepared_i]; }\n            let prepared_part_15 = (new_planet).serialize();\n            for prepared_i in 0..32 { prepared_payload[110 + prepared_i] = prepared_part_15[prepared_i]; }\n            let prepared_part_16 = (new_planet_artifacts_state).serialize();\n            for prepared_i in 0..22 { prepared_payload[142 + prepared_i] = prepared_part_16[prepared_i]; }\n            let prepared_part_17 = (new_planet_events_state).serialize();\n            for prepared_i in 0..22 { prepared_payload[164 + prepared_i] = prepared_part_17[prepared_i]; }\n            let prepared_part_18 = (new_artifact_locations).serialize();\n            for prepared_i in 0..60 { prepared_payload[186 + prepared_i] = prepared_part_18[prepared_i]; }\n            let prepared_part_19 = (new_artifact).serialize();\n            for prepared_i in 0..13 { prepared_payload[246 + prepared_i] = prepared_part_19[prepared_i]; }\n            let prepared_part_20 = (new_artifact_location).serialize();\n            for prepared_i in 0..3 { prepared_payload[259 + prepared_i] = prepared_part_20[prepared_i]; }\n            let prepared_part_21 = (poseidon2_hash((new_planet).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[262 + prepared_i] = prepared_part_21[prepared_i]; }\n            let prepared_part_22 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[263 + prepared_i] = prepared_part_22[prepared_i]; }\n            let prepared_part_23 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[264 + prepared_i] = prepared_part_23[prepared_i]; }\n            let prepared_part_24 = (poseidon2_hash((new_artifact).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[265 + prepared_i] = prepared_part_24[prepared_i]; }\n            let prepared_part_25 = (poseidon2_hash((new_artifact_location).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[266 + prepared_i] = prepared_part_25[prepared_i]; }\n            self.enqueue_self.deposit_artifact_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });\n        }",
+      "flatSchema": [
+        {
+          "name": "location_id",
+          "type": "Field",
+          "offset": 0,
+          "width": 1
+        },
+        {
+          "name": "artifact_id",
+          "type": "Field",
+          "offset": 1,
+          "width": 1
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "offset": 2,
+          "width": 1
+        },
+        {
+          "name": "planet_hash",
+          "type": "Field",
+          "offset": 3,
+          "width": 1
+        },
+        {
+          "name": "planet_artifacts_state_hash",
+          "type": "Field",
+          "offset": 4,
+          "width": 1
+        },
+        {
+          "name": "planet_events_state_hash",
+          "type": "Field",
+          "offset": 5,
+          "width": 1
+        },
+        {
+          "name": "origin_arrivals_count",
+          "type": "u32",
+          "offset": 6,
+          "width": 1
+        },
+        {
+          "name": "arrival_ids",
+          "type": "[Field; 20]",
+          "offset": 7,
+          "width": 20
+        },
+        {
+          "name": "arrival_hashes",
+          "type": "[Field; 20]",
+          "offset": 27,
+          "width": 20
+        },
+        {
+          "name": "artifact_ids",
+          "type": "[Field; 20]",
+          "offset": 47,
+          "width": 20
+        },
+        {
+          "name": "artifact_hashes",
+          "type": "[Field; 20]",
+          "offset": 67,
+          "width": 20
+        },
+        {
+          "name": "artifact_location_hashes",
+          "type": "[Field; 20]",
+          "offset": 87,
+          "width": 20
+        },
+        {
+          "name": "artifact_hash",
+          "type": "Field",
+          "offset": 107,
+          "width": 1
+        },
+        {
+          "name": "artifact_location_hash",
+          "type": "Field",
+          "offset": 108,
+          "width": 1
+        },
+        {
+          "name": "world_hash",
+          "type": "Field",
+          "offset": 109,
+          "width": 1
+        },
+        {
+          "name": "new_planet",
+          "type": "Planet",
+          "offset": 110,
+          "width": 32
+        },
+        {
+          "name": "new_planet_artifacts_state",
+          "type": "PlanetArtifacts",
+          "offset": 142,
+          "width": 22
+        },
+        {
+          "name": "new_planet_events_state",
+          "type": "PlanetEvents",
+          "offset": 164,
+          "width": 22
+        },
+        {
+          "name": "new_artifact_locations",
+          "type": "[ArtifactLocation; 20]",
+          "offset": 186,
+          "width": 60
+        },
+        {
+          "name": "new_artifact",
+          "type": "Artifact",
+          "offset": 246,
+          "width": 13
+        },
+        {
+          "name": "new_artifact_location",
+          "type": "ArtifactLocation",
+          "offset": 259,
+          "width": 3
+        },
+        {
+          "name": "prepared_new_planet_root",
+          "type": "Field",
+          "offset": 262,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_planet_artifacts_state_root",
+          "type": "Field",
+          "offset": 263,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_planet_events_state_root",
+          "type": "Field",
+          "offset": 264,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_artifact_root",
+          "type": "Field",
+          "offset": 265,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_artifact_location_root",
+          "type": "Field",
+          "offset": 266,
+          "width": 1
+        }
+      ],
+      "flatWidth": 267,
+      "package": "artifact_valut",
+      "private": "deposit_artifact",
+      "prepared": "deposit_artifact_public_prepared",
+      "mask": 1002,
+      "readGroups": 9,
+      "operations": [
+        {
+          "start": 919,
+          "end": 982,
+          "mode": "view",
+          "store": "planet_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_hash"
+          ],
+          "index": 3,
+          "kind": "planet"
+        },
+        {
+          "start": 1059,
+          "end": 1148,
+          "mode": "view",
+          "store": "planet_artifacts_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_artifacts_state_hash"
+          ],
+          "index": 6,
+          "kind": "planet_artifacts"
+        },
+        {
+          "start": 1235,
+          "end": 1318,
+          "mode": "view",
+          "store": "planet_events_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_events_state_hash"
+          ],
+          "index": 5,
+          "kind": "planet_events"
+        },
+        {
+          "start": 1451,
+          "end": 1635,
+          "mode": "view",
+          "store": "arrival_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "arrival_ids",
+            "arrival_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 7,
+          "kind": "arrival"
+        },
+        {
+          "start": 1836,
+          "end": 2039,
+          "mode": "view",
+          "store": "artifact_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "artifact_ids",
+            "artifact_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 2152,
+          "end": 2373,
+          "mode": "view",
+          "store": "artifact_location_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "artifact_ids",
+            "artifact_location_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 2503,
+          "end": 2570,
+          "mode": "view",
+          "store": "artifact_storage",
+          "method": "verify_hash",
+          "args": [
+            "artifact_id",
+            "artifact_hash"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 2649,
+          "end": 2734,
+          "mode": "view",
+          "store": "artifact_location_storage",
+          "method": "verify_hash",
+          "args": [
+            "artifact_id",
+            "artifact_location_hash"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 2810,
+          "end": 2861,
+          "mode": "view",
+          "store": "world_storage",
+          "method": "verify_hash",
+          "args": [
+            "0",
+            "world_hash"
+          ],
+          "index": 1,
+          "kind": "world"
+        },
+        {
+          "start": 2896,
+          "end": 2950,
+          "mode": "call",
+          "store": "planet_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet"
+          ],
+          "index": 3,
+          "kind": "planet"
+        },
+        {
+          "start": 2960,
+          "end": 3040,
+          "mode": "call",
+          "store": "planet_artifacts_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet_artifacts_state"
+          ],
+          "index": 6,
+          "kind": "planet_artifacts"
+        },
+        {
+          "start": 3050,
+          "end": 3124,
+          "mode": "call",
+          "store": "planet_events_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet_events_state"
+          ],
+          "index": 5,
+          "kind": "planet_events"
+        },
+        {
+          "start": 3134,
+          "end": 3313,
+          "mode": "call",
+          "store": "artifact_location_storage",
+          "method": "set_arrival_locations_max20",
+          "args": [
+            "artifact_ids",
+            "new_artifact_locations",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 3324,
+          "end": 3382,
+          "mode": "call",
+          "store": "artifact_storage",
+          "method": "set",
+          "args": [
+            "artifact_id",
+            "new_artifact"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 3392,
+          "end": 3468,
+          "mode": "call",
+          "store": "artifact_location_storage",
+          "method": "set",
+          "args": [
+            "artifact_id",
+            "new_artifact_location"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        }
+      ],
+      "bodyHash": "6c48fecd12becea71ddadd3bac46d9c1bcdfcf331cc2ed49fbf60cee1d2eb325",
+      "originalBodyHash": "62f76f62fee0551282c20ded146c20565c901086588215ce1277ba56a7db32ce",
+      "workerFunction": "    #[external(\"public\")]\n    fn try_deposit_artifact_public_prepared(payload: ::libs::field_buffer::FieldBuffer<279>) -> bool {\n        let caller_class = aztec::oracle::get_contract_instance::get_contract_instance_current_class_id_avm(self.msg_sender());\n        assert(caller_class.is_some(), \"Only audited system\");\n        assert(caller_class.unwrap().to_field() == super::system_class::SYSTEM_CLASS, \"Only audited system\");\n        let state_backend_address=AztecAddress::from_field(payload.words[0]);\n        let plan_addresses=[AztecAddress::from_field(payload.words[1]), AztecAddress::from_field(payload.words[2]), AztecAddress::from_field(payload.words[3]), AztecAddress::from_field(payload.words[4]), AztecAddress::from_field(payload.words[5]), AztecAddress::from_field(payload.words[6]), AztecAddress::from_field(payload.words[7]), AztecAddress::from_field(payload.words[8]), AztecAddress::from_field(payload.words[9]), AztecAddress::from_field(payload.words[10])];\n        let system_admin=AztecAddress::from_field(payload.words[11]);\n        let location_id: Field = payload.words[12];\n        let artifact_id: Field = payload.words[13];\n        let timestamp: u64 = (payload.words[14] as u64);\n        let planet_hash: Field = payload.words[15];\n        let planet_artifacts_state_hash: Field = payload.words[16];\n        let planet_events_state_hash: Field = payload.words[17];\n        let origin_arrivals_count: u32 = (payload.words[18] as u32);\n        let arrival_ids: [Field; 20] = [payload.words[19], payload.words[20], payload.words[21], payload.words[22], payload.words[23], payload.words[24], payload.words[25], payload.words[26], payload.words[27], payload.words[28], payload.words[29], payload.words[30], payload.words[31], payload.words[32], payload.words[33], payload.words[34], payload.words[35], payload.words[36], payload.words[37], payload.words[38]];\n        let arrival_hashes: [Field; 20] = [payload.words[39], payload.words[40], payload.words[41], payload.words[42], payload.words[43], payload.words[44], payload.words[45], payload.words[46], payload.words[47], payload.words[48], payload.words[49], payload.words[50], payload.words[51], payload.words[52], payload.words[53], payload.words[54], payload.words[55], payload.words[56], payload.words[57], payload.words[58]];\n        let artifact_ids: [Field; 20] = [payload.words[59], payload.words[60], payload.words[61], payload.words[62], payload.words[63], payload.words[64], payload.words[65], payload.words[66], payload.words[67], payload.words[68], payload.words[69], payload.words[70], payload.words[71], payload.words[72], payload.words[73], payload.words[74], payload.words[75], payload.words[76], payload.words[77], payload.words[78]];\n        let artifact_hashes: [Field; 20] = [payload.words[79], payload.words[80], payload.words[81], payload.words[82], payload.words[83], payload.words[84], payload.words[85], payload.words[86], payload.words[87], payload.words[88], payload.words[89], payload.words[90], payload.words[91], payload.words[92], payload.words[93], payload.words[94], payload.words[95], payload.words[96], payload.words[97], payload.words[98]];\n        let artifact_location_hashes: [Field; 20] = [payload.words[99], payload.words[100], payload.words[101], payload.words[102], payload.words[103], payload.words[104], payload.words[105], payload.words[106], payload.words[107], payload.words[108], payload.words[109], payload.words[110], payload.words[111], payload.words[112], payload.words[113], payload.words[114], payload.words[115], payload.words[116], payload.words[117], payload.words[118]];\n        let artifact_hash: Field = payload.words[119];\n        let artifact_location_hash: Field = payload.words[120];\n        let world_hash: Field = payload.words[121];\n        let new_planet: Planet = ::types::storage::planet::Planet { perlin: (payload.words[122] as u8), created_at: (payload.words[123] as u64), owner: AztecAddress::from_field(payload.words[124]), planet_level: (payload.words[125] as u8), planet_type: (payload.words[126] as u8), space_type: (payload.words[127] as u8), is_home_planet: (payload.words[128] == 1), is_initialized: (payload.words[129] == 1), destroyed: (payload.words[130] == 1), invader: AztecAddress::from_field(payload.words[131]), capturer: AztecAddress::from_field(payload.words[132]), invade_start_block: (payload.words[133] as u32), population_cap: (payload.words[134] as u128), population_growth: (payload.words[135] as u128), range: (payload.words[136] as u128), speed: (payload.words[137] as u128), defense: (payload.words[138] as u128), silver_cap: (payload.words[139] as u128), silver_growth: (payload.words[140] as u128), population: (payload.words[141] as u128), silver: (payload.words[142] as u128), upgrade_state_0: (payload.words[143] as u8), upgrade_state_1: (payload.words[144] as u8), upgrade_state_2: (payload.words[145] as u8), last_updated: (payload.words[146] as u64), pausers: (payload.words[147] as u128), energy_gro_doublers: (payload.words[148] as u128), silver_gro_doublers: (payload.words[149] as u128), hat_level: (payload.words[150] as u128), space_junk: (payload.words[151] as u128), has_tried_finding_artifact: (payload.words[152] == 1), prospected_block_number: (payload.words[153] as u32) };\n        let new_planet_artifacts_state: PlanetArtifacts = ::types::storage::planet::PlanetArtifacts { ids: [payload.words[154], payload.words[155], payload.words[156], payload.words[157], payload.words[158], payload.words[159], payload.words[160], payload.words[161], payload.words[162], payload.words[163], payload.words[164], payload.words[165], payload.words[166], payload.words[167], payload.words[168], payload.words[169], payload.words[170], payload.words[171], payload.words[172], payload.words[173]], count: (payload.words[174] as u32), last_updated: (payload.words[175] as u64) };\n        let new_planet_events_state: PlanetEvents = ::types::storage::planet::PlanetEvents { events: [::types::storage::planet::PlanetEventMetadata { id: payload.words[176] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[177] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[178] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[179] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[180] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[181] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[182] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[183] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[184] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[185] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[186] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[187] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[188] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[189] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[190] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[191] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[192] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[193] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[194] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[195] }], count: (payload.words[196] as u32), last_updated: (payload.words[197] as u64) };\n        let new_artifact_locations: [ArtifactLocation; 20] = [::types::storage::artifact::ArtifactLocation { planet_id: payload.words[198], voyage_id: payload.words[199], last_updated: (payload.words[200] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[201], voyage_id: payload.words[202], last_updated: (payload.words[203] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[204], voyage_id: payload.words[205], last_updated: (payload.words[206] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[207], voyage_id: payload.words[208], last_updated: (payload.words[209] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[210], voyage_id: payload.words[211], last_updated: (payload.words[212] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[213], voyage_id: payload.words[214], last_updated: (payload.words[215] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[216], voyage_id: payload.words[217], last_updated: (payload.words[218] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[219], voyage_id: payload.words[220], last_updated: (payload.words[221] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[222], voyage_id: payload.words[223], last_updated: (payload.words[224] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[225], voyage_id: payload.words[226], last_updated: (payload.words[227] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[228], voyage_id: payload.words[229], last_updated: (payload.words[230] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[231], voyage_id: payload.words[232], last_updated: (payload.words[233] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[234], voyage_id: payload.words[235], last_updated: (payload.words[236] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[237], voyage_id: payload.words[238], last_updated: (payload.words[239] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[240], voyage_id: payload.words[241], last_updated: (payload.words[242] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[243], voyage_id: payload.words[244], last_updated: (payload.words[245] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[246], voyage_id: payload.words[247], last_updated: (payload.words[248] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[249], voyage_id: payload.words[250], last_updated: (payload.words[251] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[252], voyage_id: payload.words[253], last_updated: (payload.words[254] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[255], voyage_id: payload.words[256], last_updated: (payload.words[257] as u64) }];\n        let new_artifact: Artifact = ::types::storage::artifact::Artifact { planet_discovered_on: payload.words[258], rarity: (payload.words[259] as u8), planet_biome: (payload.words[260] as u8), minted_at_timestamp: (payload.words[261] as u64), discoverer: AztecAddress::from_field(payload.words[262]), artifact_type: (payload.words[263] as u8), activations: (payload.words[264] as u128), last_activated: (payload.words[265] as u64), last_deactivated: (payload.words[266] as u64), wormhole_to: payload.words[267], owner: AztecAddress::from_field(payload.words[268]), controller: AztecAddress::from_field(payload.words[269]), last_updated: (payload.words[270] as u64) };\n        let new_artifact_location: ArtifactLocation = ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[271], voyage_id: payload.words[272], last_updated: (payload.words[273] as u64) };\n        let prepared_new_planet_root: Field = payload.words[274];\n        let prepared_new_planet_artifacts_state_root: Field = payload.words[275];\n        let prepared_new_planet_events_state_root: Field = payload.words[276];\n        let prepared_new_artifact_root: Field = payload.words[277];\n        let prepared_new_artifact_location_root: Field = payload.words[278];\n        let supported = ::state_backend_readonly::public_read::can_settle(state_backend_address, plan_addresses, 1002);\n        if supported {\n            let mut write_plan = ::libs::state_plan::WritePlan::new();\n\n        let actual_timestamp = self.context.timestamp();\n\n        assert_public_timestamp(timestamp, actual_timestamp);\n\n        \n        \n        \n        \n        \n        \n        \n\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[3], location_id, planet_hash),\n            \"planet hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[6], location_id, planet_artifacts_state_hash),\n            \"planet_artifacts hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[5], location_id, planet_events_state_hash),\n            \"planet_events hash mismatch\",\n        );\n\n        if origin_arrivals_count != 0 {\n            assert(\n                ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count as u32),\n                \"arrivals hash mismatch\",\n            );\n            if ::libs::batch_utils::has_nonzero_ids(artifact_ids, origin_arrivals_count as u32) {\n                assert(\n                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[8], artifact_ids, artifact_hashes, origin_arrivals_count as u32),\n                    \"artifacts hash mismatch\",\n                );\n\n                assert(\n                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[9], artifact_ids, artifact_location_hashes, origin_arrivals_count as u32),\n                    \"artifact locations hash mismatch\",\n                );\n            }\n        }\n\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[8], artifact_id, artifact_hash),\n            \"artifact hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[9], artifact_id, artifact_location_hash),\n            \"artifact location hash mismatch\",\n        );\n\n        assert(::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[1], 0, world_hash), \"world hash mismatch\");\n\n        write_plan.set(3, location_id, prepared_new_planet_root, true, new_planet.serialize());\n        write_plan.set(6, location_id, prepared_new_planet_artifacts_state_root, true, new_planet_artifacts_state.serialize());\n        write_plan.set(5, location_id, prepared_new_planet_events_state_root, true, new_planet_events_state.serialize());\n        {\n            let batch_start=write_plan.start_batch(9, origin_arrivals_count as u32, 20);\n            let bounded_count = if (origin_arrivals_count as u32) <= 20 { origin_arrivals_count as u32 } else { 20 };\n            for plan_i in 0..bounded_count { if artifact_ids[plan_i] != 0 {\n                write_plan.append_batch_item(batch_start, artifact_ids[plan_i], new_artifact_locations[plan_i].serialize());\n            } }\n        };\n\n        write_plan.set(8, artifact_id, prepared_new_artifact_root, true, new_artifact.serialize());\n        write_plan.set(9, artifact_id, prepared_new_artifact_location_root, true, new_artifact_location.serialize());\n    \n            _commit_plan_for_system(self.context, state_backend_address, plan_addresses, 1002, write_plan);\n        }\n        supported\n    }\n"
+    },
+    {
+      "flatEnqueue": "{\n            let mut prepared_payload: [Field;267] = [0;267];\n            let prepared_part_0 = (location_id).serialize();\n            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }\n            let prepared_part_1 = (artifact_id).serialize();\n            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }\n            let prepared_part_2 = (timestamp).serialize();\n            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }\n            let prepared_part_3 = (planet_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }\n            let prepared_part_4 = (planet_artifacts_state_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }\n            let prepared_part_5 = (planet_events_state_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }\n            let prepared_part_6 = (origin_arrivals_count).serialize();\n            for prepared_i in 0..1 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }\n            let prepared_part_7 = (arrival_ids).serialize();\n            for prepared_i in 0..20 { prepared_payload[7 + prepared_i] = prepared_part_7[prepared_i]; }\n            let prepared_part_8 = (arrival_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[27 + prepared_i] = prepared_part_8[prepared_i]; }\n            let prepared_part_9 = (artifact_ids).serialize();\n            for prepared_i in 0..20 { prepared_payload[47 + prepared_i] = prepared_part_9[prepared_i]; }\n            let prepared_part_10 = (artifact_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[67 + prepared_i] = prepared_part_10[prepared_i]; }\n            let prepared_part_11 = (artifact_location_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[87 + prepared_i] = prepared_part_11[prepared_i]; }\n            let prepared_part_12 = (artifact_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[107 + prepared_i] = prepared_part_12[prepared_i]; }\n            let prepared_part_13 = (artifact_location_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[108 + prepared_i] = prepared_part_13[prepared_i]; }\n            let prepared_part_14 = (world_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[109 + prepared_i] = prepared_part_14[prepared_i]; }\n            let prepared_part_15 = (new_planet).serialize();\n            for prepared_i in 0..32 { prepared_payload[110 + prepared_i] = prepared_part_15[prepared_i]; }\n            let prepared_part_16 = (new_planet_artifacts_state).serialize();\n            for prepared_i in 0..22 { prepared_payload[142 + prepared_i] = prepared_part_16[prepared_i]; }\n            let prepared_part_17 = (new_planet_events_state).serialize();\n            for prepared_i in 0..22 { prepared_payload[164 + prepared_i] = prepared_part_17[prepared_i]; }\n            let prepared_part_18 = (new_artifact_locations).serialize();\n            for prepared_i in 0..60 { prepared_payload[186 + prepared_i] = prepared_part_18[prepared_i]; }\n            let prepared_part_19 = (new_artifact).serialize();\n            for prepared_i in 0..13 { prepared_payload[246 + prepared_i] = prepared_part_19[prepared_i]; }\n            let prepared_part_20 = (new_artifact_location).serialize();\n            for prepared_i in 0..3 { prepared_payload[259 + prepared_i] = prepared_part_20[prepared_i]; }\n            let prepared_part_21 = (poseidon2_hash((new_planet).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[262 + prepared_i] = prepared_part_21[prepared_i]; }\n            let prepared_part_22 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[263 + prepared_i] = prepared_part_22[prepared_i]; }\n            let prepared_part_23 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[264 + prepared_i] = prepared_part_23[prepared_i]; }\n            let prepared_part_24 = (poseidon2_hash((new_artifact).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[265 + prepared_i] = prepared_part_24[prepared_i]; }\n            let prepared_part_25 = (poseidon2_hash((new_artifact_location).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[266 + prepared_i] = prepared_part_25[prepared_i]; }\n            self.enqueue_self.withdraw_artifact_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });\n        }",
+      "flatSchema": [
+        {
+          "name": "location_id",
+          "type": "Field",
+          "offset": 0,
+          "width": 1
+        },
+        {
+          "name": "artifact_id",
+          "type": "Field",
+          "offset": 1,
+          "width": 1
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "offset": 2,
+          "width": 1
+        },
+        {
+          "name": "planet_hash",
+          "type": "Field",
+          "offset": 3,
+          "width": 1
+        },
+        {
+          "name": "planet_artifacts_state_hash",
+          "type": "Field",
+          "offset": 4,
+          "width": 1
+        },
+        {
+          "name": "planet_events_state_hash",
+          "type": "Field",
+          "offset": 5,
+          "width": 1
+        },
+        {
+          "name": "origin_arrivals_count",
+          "type": "u32",
+          "offset": 6,
+          "width": 1
+        },
+        {
+          "name": "arrival_ids",
+          "type": "[Field; 20]",
+          "offset": 7,
+          "width": 20
+        },
+        {
+          "name": "arrival_hashes",
+          "type": "[Field; 20]",
+          "offset": 27,
+          "width": 20
+        },
+        {
+          "name": "artifact_ids",
+          "type": "[Field; 20]",
+          "offset": 47,
+          "width": 20
+        },
+        {
+          "name": "artifact_hashes",
+          "type": "[Field; 20]",
+          "offset": 67,
+          "width": 20
+        },
+        {
+          "name": "artifact_location_hashes",
+          "type": "[Field; 20]",
+          "offset": 87,
+          "width": 20
+        },
+        {
+          "name": "artifact_hash",
+          "type": "Field",
+          "offset": 107,
+          "width": 1
+        },
+        {
+          "name": "artifact_location_hash",
+          "type": "Field",
+          "offset": 108,
+          "width": 1
+        },
+        {
+          "name": "world_hash",
+          "type": "Field",
+          "offset": 109,
+          "width": 1
+        },
+        {
+          "name": "new_planet",
+          "type": "Planet",
+          "offset": 110,
+          "width": 32
+        },
+        {
+          "name": "new_planet_artifacts_state",
+          "type": "PlanetArtifacts",
+          "offset": 142,
+          "width": 22
+        },
+        {
+          "name": "new_planet_events_state",
+          "type": "PlanetEvents",
+          "offset": 164,
+          "width": 22
+        },
+        {
+          "name": "new_artifact_locations",
+          "type": "[ArtifactLocation; 20]",
+          "offset": 186,
+          "width": 60
+        },
+        {
+          "name": "new_artifact",
+          "type": "Artifact",
+          "offset": 246,
+          "width": 13
+        },
+        {
+          "name": "new_artifact_location",
+          "type": "ArtifactLocation",
+          "offset": 259,
+          "width": 3
+        },
+        {
+          "name": "prepared_new_planet_root",
+          "type": "Field",
+          "offset": 262,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_planet_artifacts_state_root",
+          "type": "Field",
+          "offset": 263,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_planet_events_state_root",
+          "type": "Field",
+          "offset": 264,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_artifact_root",
+          "type": "Field",
+          "offset": 265,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_artifact_location_root",
+          "type": "Field",
+          "offset": 266,
+          "width": 1
+        }
+      ],
+      "flatWidth": 267,
+      "package": "artifact_valut",
+      "private": "withdraw_artifact",
+      "prepared": "withdraw_artifact_public_prepared",
+      "mask": 1002,
+      "readGroups": 9,
+      "operations": [
+        {
+          "start": 918,
+          "end": 981,
+          "mode": "view",
+          "store": "planet_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_hash"
+          ],
+          "index": 3,
+          "kind": "planet"
+        },
+        {
+          "start": 1058,
+          "end": 1147,
+          "mode": "view",
+          "store": "planet_artifacts_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_artifacts_state_hash"
+          ],
+          "index": 6,
+          "kind": "planet_artifacts"
+        },
+        {
+          "start": 1234,
+          "end": 1317,
+          "mode": "view",
+          "store": "planet_events_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_events_state_hash"
+          ],
+          "index": 5,
+          "kind": "planet_events"
+        },
+        {
+          "start": 1450,
+          "end": 1634,
+          "mode": "view",
+          "store": "arrival_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "arrival_ids",
+            "arrival_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 7,
+          "kind": "arrival"
+        },
+        {
+          "start": 1835,
+          "end": 2038,
+          "mode": "view",
+          "store": "artifact_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "artifact_ids",
+            "artifact_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 2151,
+          "end": 2372,
+          "mode": "view",
+          "store": "artifact_location_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "artifact_ids",
+            "artifact_location_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 2502,
+          "end": 2569,
+          "mode": "view",
+          "store": "artifact_storage",
+          "method": "verify_hash",
+          "args": [
+            "artifact_id",
+            "artifact_hash"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 2648,
+          "end": 2733,
+          "mode": "view",
+          "store": "artifact_location_storage",
+          "method": "verify_hash",
+          "args": [
+            "artifact_id",
+            "artifact_location_hash"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 2809,
+          "end": 2860,
+          "mode": "view",
+          "store": "world_storage",
+          "method": "verify_hash",
+          "args": [
+            "0",
+            "world_hash"
+          ],
+          "index": 1,
+          "kind": "world"
+        },
+        {
+          "start": 2895,
+          "end": 2949,
+          "mode": "call",
+          "store": "planet_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet"
+          ],
+          "index": 3,
+          "kind": "planet"
+        },
+        {
+          "start": 2959,
+          "end": 3039,
+          "mode": "call",
+          "store": "planet_artifacts_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet_artifacts_state"
+          ],
+          "index": 6,
+          "kind": "planet_artifacts"
+        },
+        {
+          "start": 3049,
+          "end": 3123,
+          "mode": "call",
+          "store": "planet_events_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet_events_state"
+          ],
+          "index": 5,
+          "kind": "planet_events"
+        },
+        {
+          "start": 3133,
+          "end": 3312,
+          "mode": "call",
+          "store": "artifact_location_storage",
+          "method": "set_arrival_locations_max20",
+          "args": [
+            "artifact_ids",
+            "new_artifact_locations",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 3323,
+          "end": 3381,
+          "mode": "call",
+          "store": "artifact_storage",
+          "method": "set",
+          "args": [
+            "artifact_id",
+            "new_artifact"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 3391,
+          "end": 3467,
+          "mode": "call",
+          "store": "artifact_location_storage",
+          "method": "set",
+          "args": [
+            "artifact_id",
+            "new_artifact_location"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        }
+      ],
+      "bodyHash": "40458db4c0606f9f4d683f8dbfc27c0c79c27e1b3b4444636aa493ff5caf6884",
+      "originalBodyHash": "62f76f62fee0551282c20ded146c20565c901086588215ce1277ba56a7db32ce",
+      "workerFunction": "    #[external(\"public\")]\n    fn try_withdraw_artifact_public_prepared(payload: ::libs::field_buffer::FieldBuffer<279>) -> bool {\n        let caller_class = aztec::oracle::get_contract_instance::get_contract_instance_current_class_id_avm(self.msg_sender());\n        assert(caller_class.is_some(), \"Only audited system\");\n        assert(caller_class.unwrap().to_field() == super::system_class::SYSTEM_CLASS, \"Only audited system\");\n        let state_backend_address=AztecAddress::from_field(payload.words[0]);\n        let plan_addresses=[AztecAddress::from_field(payload.words[1]), AztecAddress::from_field(payload.words[2]), AztecAddress::from_field(payload.words[3]), AztecAddress::from_field(payload.words[4]), AztecAddress::from_field(payload.words[5]), AztecAddress::from_field(payload.words[6]), AztecAddress::from_field(payload.words[7]), AztecAddress::from_field(payload.words[8]), AztecAddress::from_field(payload.words[9]), AztecAddress::from_field(payload.words[10])];\n        let system_admin=AztecAddress::from_field(payload.words[11]);\n        let location_id: Field = payload.words[12];\n        let artifact_id: Field = payload.words[13];\n        let timestamp: u64 = (payload.words[14] as u64);\n        let planet_hash: Field = payload.words[15];\n        let planet_artifacts_state_hash: Field = payload.words[16];\n        let planet_events_state_hash: Field = payload.words[17];\n        let origin_arrivals_count: u32 = (payload.words[18] as u32);\n        let arrival_ids: [Field; 20] = [payload.words[19], payload.words[20], payload.words[21], payload.words[22], payload.words[23], payload.words[24], payload.words[25], payload.words[26], payload.words[27], payload.words[28], payload.words[29], payload.words[30], payload.words[31], payload.words[32], payload.words[33], payload.words[34], payload.words[35], payload.words[36], payload.words[37], payload.words[38]];\n        let arrival_hashes: [Field; 20] = [payload.words[39], payload.words[40], payload.words[41], payload.words[42], payload.words[43], payload.words[44], payload.words[45], payload.words[46], payload.words[47], payload.words[48], payload.words[49], payload.words[50], payload.words[51], payload.words[52], payload.words[53], payload.words[54], payload.words[55], payload.words[56], payload.words[57], payload.words[58]];\n        let artifact_ids: [Field; 20] = [payload.words[59], payload.words[60], payload.words[61], payload.words[62], payload.words[63], payload.words[64], payload.words[65], payload.words[66], payload.words[67], payload.words[68], payload.words[69], payload.words[70], payload.words[71], payload.words[72], payload.words[73], payload.words[74], payload.words[75], payload.words[76], payload.words[77], payload.words[78]];\n        let artifact_hashes: [Field; 20] = [payload.words[79], payload.words[80], payload.words[81], payload.words[82], payload.words[83], payload.words[84], payload.words[85], payload.words[86], payload.words[87], payload.words[88], payload.words[89], payload.words[90], payload.words[91], payload.words[92], payload.words[93], payload.words[94], payload.words[95], payload.words[96], payload.words[97], payload.words[98]];\n        let artifact_location_hashes: [Field; 20] = [payload.words[99], payload.words[100], payload.words[101], payload.words[102], payload.words[103], payload.words[104], payload.words[105], payload.words[106], payload.words[107], payload.words[108], payload.words[109], payload.words[110], payload.words[111], payload.words[112], payload.words[113], payload.words[114], payload.words[115], payload.words[116], payload.words[117], payload.words[118]];\n        let artifact_hash: Field = payload.words[119];\n        let artifact_location_hash: Field = payload.words[120];\n        let world_hash: Field = payload.words[121];\n        let new_planet: Planet = ::types::storage::planet::Planet { perlin: (payload.words[122] as u8), created_at: (payload.words[123] as u64), owner: AztecAddress::from_field(payload.words[124]), planet_level: (payload.words[125] as u8), planet_type: (payload.words[126] as u8), space_type: (payload.words[127] as u8), is_home_planet: (payload.words[128] == 1), is_initialized: (payload.words[129] == 1), destroyed: (payload.words[130] == 1), invader: AztecAddress::from_field(payload.words[131]), capturer: AztecAddress::from_field(payload.words[132]), invade_start_block: (payload.words[133] as u32), population_cap: (payload.words[134] as u128), population_growth: (payload.words[135] as u128), range: (payload.words[136] as u128), speed: (payload.words[137] as u128), defense: (payload.words[138] as u128), silver_cap: (payload.words[139] as u128), silver_growth: (payload.words[140] as u128), population: (payload.words[141] as u128), silver: (payload.words[142] as u128), upgrade_state_0: (payload.words[143] as u8), upgrade_state_1: (payload.words[144] as u8), upgrade_state_2: (payload.words[145] as u8), last_updated: (payload.words[146] as u64), pausers: (payload.words[147] as u128), energy_gro_doublers: (payload.words[148] as u128), silver_gro_doublers: (payload.words[149] as u128), hat_level: (payload.words[150] as u128), space_junk: (payload.words[151] as u128), has_tried_finding_artifact: (payload.words[152] == 1), prospected_block_number: (payload.words[153] as u32) };\n        let new_planet_artifacts_state: PlanetArtifacts = ::types::storage::planet::PlanetArtifacts { ids: [payload.words[154], payload.words[155], payload.words[156], payload.words[157], payload.words[158], payload.words[159], payload.words[160], payload.words[161], payload.words[162], payload.words[163], payload.words[164], payload.words[165], payload.words[166], payload.words[167], payload.words[168], payload.words[169], payload.words[170], payload.words[171], payload.words[172], payload.words[173]], count: (payload.words[174] as u32), last_updated: (payload.words[175] as u64) };\n        let new_planet_events_state: PlanetEvents = ::types::storage::planet::PlanetEvents { events: [::types::storage::planet::PlanetEventMetadata { id: payload.words[176] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[177] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[178] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[179] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[180] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[181] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[182] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[183] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[184] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[185] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[186] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[187] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[188] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[189] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[190] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[191] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[192] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[193] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[194] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[195] }], count: (payload.words[196] as u32), last_updated: (payload.words[197] as u64) };\n        let new_artifact_locations: [ArtifactLocation; 20] = [::types::storage::artifact::ArtifactLocation { planet_id: payload.words[198], voyage_id: payload.words[199], last_updated: (payload.words[200] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[201], voyage_id: payload.words[202], last_updated: (payload.words[203] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[204], voyage_id: payload.words[205], last_updated: (payload.words[206] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[207], voyage_id: payload.words[208], last_updated: (payload.words[209] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[210], voyage_id: payload.words[211], last_updated: (payload.words[212] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[213], voyage_id: payload.words[214], last_updated: (payload.words[215] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[216], voyage_id: payload.words[217], last_updated: (payload.words[218] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[219], voyage_id: payload.words[220], last_updated: (payload.words[221] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[222], voyage_id: payload.words[223], last_updated: (payload.words[224] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[225], voyage_id: payload.words[226], last_updated: (payload.words[227] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[228], voyage_id: payload.words[229], last_updated: (payload.words[230] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[231], voyage_id: payload.words[232], last_updated: (payload.words[233] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[234], voyage_id: payload.words[235], last_updated: (payload.words[236] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[237], voyage_id: payload.words[238], last_updated: (payload.words[239] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[240], voyage_id: payload.words[241], last_updated: (payload.words[242] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[243], voyage_id: payload.words[244], last_updated: (payload.words[245] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[246], voyage_id: payload.words[247], last_updated: (payload.words[248] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[249], voyage_id: payload.words[250], last_updated: (payload.words[251] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[252], voyage_id: payload.words[253], last_updated: (payload.words[254] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[255], voyage_id: payload.words[256], last_updated: (payload.words[257] as u64) }];\n        let new_artifact: Artifact = ::types::storage::artifact::Artifact { planet_discovered_on: payload.words[258], rarity: (payload.words[259] as u8), planet_biome: (payload.words[260] as u8), minted_at_timestamp: (payload.words[261] as u64), discoverer: AztecAddress::from_field(payload.words[262]), artifact_type: (payload.words[263] as u8), activations: (payload.words[264] as u128), last_activated: (payload.words[265] as u64), last_deactivated: (payload.words[266] as u64), wormhole_to: payload.words[267], owner: AztecAddress::from_field(payload.words[268]), controller: AztecAddress::from_field(payload.words[269]), last_updated: (payload.words[270] as u64) };\n        let new_artifact_location: ArtifactLocation = ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[271], voyage_id: payload.words[272], last_updated: (payload.words[273] as u64) };\n        let prepared_new_planet_root: Field = payload.words[274];\n        let prepared_new_planet_artifacts_state_root: Field = payload.words[275];\n        let prepared_new_planet_events_state_root: Field = payload.words[276];\n        let prepared_new_artifact_root: Field = payload.words[277];\n        let prepared_new_artifact_location_root: Field = payload.words[278];\n        let supported = ::state_backend_readonly::public_read::can_settle(state_backend_address, plan_addresses, 1002);\n        if supported {\n            let mut write_plan = ::libs::state_plan::WritePlan::new();\n\n        let actual_timestamp = self.context.timestamp();\n        assert_public_timestamp(timestamp, actual_timestamp);\n\n        \n        \n        \n        \n        \n        \n        \n\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[3], location_id, planet_hash),\n            \"planet hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[6], location_id, planet_artifacts_state_hash),\n            \"planet_artifacts hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[5], location_id, planet_events_state_hash),\n            \"planet_events hash mismatch\",\n        );\n\n        if origin_arrivals_count != 0 {\n            assert(\n                ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count as u32),\n                \"arrivals hash mismatch\",\n            );\n            if ::libs::batch_utils::has_nonzero_ids(artifact_ids, origin_arrivals_count as u32) {\n                assert(\n                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[8], artifact_ids, artifact_hashes, origin_arrivals_count as u32),\n                    \"artifacts hash mismatch\",\n                );\n\n                assert(\n                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[9], artifact_ids, artifact_location_hashes, origin_arrivals_count as u32),\n                    \"artifact locations hash mismatch\",\n                );\n            }\n        }\n\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[8], artifact_id, artifact_hash),\n            \"artifact hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[9], artifact_id, artifact_location_hash),\n            \"artifact location hash mismatch\",\n        );\n\n        assert(::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[1], 0, world_hash), \"world hash mismatch\");\n\n        write_plan.set(3, location_id, prepared_new_planet_root, true, new_planet.serialize());\n        write_plan.set(6, location_id, prepared_new_planet_artifacts_state_root, true, new_planet_artifacts_state.serialize());\n        write_plan.set(5, location_id, prepared_new_planet_events_state_root, true, new_planet_events_state.serialize());\n        {\n            let batch_start=write_plan.start_batch(9, origin_arrivals_count as u32, 20);\n            let bounded_count = if (origin_arrivals_count as u32) <= 20 { origin_arrivals_count as u32 } else { 20 };\n            for plan_i in 0..bounded_count { if artifact_ids[plan_i] != 0 {\n                write_plan.append_batch_item(batch_start, artifact_ids[plan_i], new_artifact_locations[plan_i].serialize());\n            } }\n        };\n\n        write_plan.set(8, artifact_id, prepared_new_artifact_root, true, new_artifact.serialize());\n        write_plan.set(9, artifact_id, prepared_new_artifact_location_root, true, new_artifact_location.serialize());\n    \n            _commit_plan_for_system(self.context, state_backend_address, plan_addresses, 1002, write_plan);\n        }\n        supported\n    }\n"
+    },
+    {
+      "flatEnqueue": "{\n            let mut prepared_payload: [Field;341] = [0;341];\n            let prepared_part_0 = (sender).serialize();\n            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }\n            let prepared_part_1 = (location_id).serialize();\n            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }\n            let prepared_part_2 = (timestamp).serialize();\n            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }\n            let prepared_part_3 = (planet_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }\n            let prepared_part_4 = (planet_artifacts_state_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }\n            let prepared_part_5 = (planet_events_state_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }\n            let prepared_part_6 = (arrival_ids).serialize();\n            for prepared_i in 0..20 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }\n            let prepared_part_7 = (arrival_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[26 + prepared_i] = prepared_part_7[prepared_i]; }\n            let prepared_part_8 = (artifact_ids).serialize();\n            for prepared_i in 0..20 { prepared_payload[46 + prepared_i] = prepared_part_8[prepared_i]; }\n            let prepared_part_9 = (artifact_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[66 + prepared_i] = prepared_part_9[prepared_i]; }\n            let prepared_part_10 = (artifact_location_hashes).serialize();\n            for prepared_i in 0..20 { prepared_payload[86 + prepared_i] = prepared_part_10[prepared_i]; }\n            let prepared_part_11 = (origin_arrivals_count).serialize();\n            for prepared_i in 0..1 { prepared_payload[106 + prepared_i] = prepared_part_11[prepared_i]; }\n            let prepared_part_12 = (player_hash).serialize();\n            for prepared_i in 0..1 { prepared_payload[107 + prepared_i] = prepared_part_12[prepared_i]; }\n            let prepared_part_13 = (new_planet).serialize();\n            for prepared_i in 0..32 { prepared_payload[108 + prepared_i] = prepared_part_13[prepared_i]; }\n            let prepared_part_14 = (new_planet_events_state).serialize();\n            for prepared_i in 0..22 { prepared_payload[140 + prepared_i] = prepared_part_14[prepared_i]; }\n            let prepared_part_15 = (new_planet_artifacts_state).serialize();\n            for prepared_i in 0..22 { prepared_payload[162 + prepared_i] = prepared_part_15[prepared_i]; }\n            let prepared_part_16 = (new_artifact_locations).serialize();\n            for prepared_i in 0..60 { prepared_payload[184 + prepared_i] = prepared_part_16[prepared_i]; }\n            let prepared_part_17 = (new_player).serialize();\n            for prepared_i in 0..8 { prepared_payload[244 + prepared_i] = prepared_part_17[prepared_i]; }\n            let prepared_part_18 = (spaceships_ids).serialize();\n            for prepared_i in 0..5 { prepared_payload[252 + prepared_i] = prepared_part_18[prepared_i]; }\n            let prepared_part_19 = (spaceships).serialize();\n            for prepared_i in 0..65 { prepared_payload[257 + prepared_i] = prepared_part_19[prepared_i]; }\n            let prepared_part_20 = (spaceships_locations).serialize();\n            for prepared_i in 0..15 { prepared_payload[322 + prepared_i] = prepared_part_20[prepared_i]; }\n            let prepared_part_21 = (poseidon2_hash((new_planet).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[337 + prepared_i] = prepared_part_21[prepared_i]; }\n            let prepared_part_22 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[338 + prepared_i] = prepared_part_22[prepared_i]; }\n            let prepared_part_23 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[339 + prepared_i] = prepared_part_23[prepared_i]; }\n            let prepared_part_24 = (poseidon2_hash((new_player).serialize())).serialize();\n            for prepared_i in 0..1 { prepared_payload[340 + prepared_i] = prepared_part_24[prepared_i]; }\n            self.enqueue_self.give_spaceships_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });\n        }",
+      "flatSchema": [
+        {
+          "name": "sender",
+          "type": "AztecAddress",
+          "offset": 0,
+          "width": 1
+        },
+        {
+          "name": "location_id",
+          "type": "Field",
+          "offset": 1,
+          "width": 1
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "offset": 2,
+          "width": 1
+        },
+        {
+          "name": "planet_hash",
+          "type": "Field",
+          "offset": 3,
+          "width": 1
+        },
+        {
+          "name": "planet_artifacts_state_hash",
+          "type": "Field",
+          "offset": 4,
+          "width": 1
+        },
+        {
+          "name": "planet_events_state_hash",
+          "type": "Field",
+          "offset": 5,
+          "width": 1
+        },
+        {
+          "name": "arrival_ids",
+          "type": "[Field; 20]",
+          "offset": 6,
+          "width": 20
+        },
+        {
+          "name": "arrival_hashes",
+          "type": "[Field; 20]",
+          "offset": 26,
+          "width": 20
+        },
+        {
+          "name": "artifact_ids",
+          "type": "[Field; 20]",
+          "offset": 46,
+          "width": 20
+        },
+        {
+          "name": "artifact_hashes",
+          "type": "[Field; 20]",
+          "offset": 66,
+          "width": 20
+        },
+        {
+          "name": "artifact_location_hashes",
+          "type": "[Field; 20]",
+          "offset": 86,
+          "width": 20
+        },
+        {
+          "name": "origin_arrivals_count",
+          "type": "u32",
+          "offset": 106,
+          "width": 1
+        },
+        {
+          "name": "player_hash",
+          "type": "Field",
+          "offset": 107,
+          "width": 1
+        },
+        {
+          "name": "new_planet",
+          "type": "Planet",
+          "offset": 108,
+          "width": 32
+        },
+        {
+          "name": "new_planet_events_state",
+          "type": "PlanetEvents",
+          "offset": 140,
+          "width": 22
+        },
+        {
+          "name": "new_planet_artifacts_state",
+          "type": "PlanetArtifacts",
+          "offset": 162,
+          "width": 22
+        },
+        {
+          "name": "new_artifact_locations",
+          "type": "[ArtifactLocation; 20]",
+          "offset": 184,
+          "width": 60
+        },
+        {
+          "name": "new_player",
+          "type": "Player",
+          "offset": 244,
+          "width": 8
+        },
+        {
+          "name": "spaceships_ids",
+          "type": "[Field; 5]",
+          "offset": 252,
+          "width": 5
+        },
+        {
+          "name": "spaceships",
+          "type": "[Artifact; 5]",
+          "offset": 257,
+          "width": 65
+        },
+        {
+          "name": "spaceships_locations",
+          "type": "[ArtifactLocation; 5]",
+          "offset": 322,
+          "width": 15
+        },
+        {
+          "name": "prepared_new_planet_root",
+          "type": "Field",
+          "offset": 337,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_planet_events_state_root",
+          "type": "Field",
+          "offset": 338,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_planet_artifacts_state_root",
+          "type": "Field",
+          "offset": 339,
+          "width": 1
+        },
+        {
+          "name": "prepared_new_player_root",
+          "type": "Field",
+          "offset": 340,
+          "width": 1
+        }
+      ],
+      "flatWidth": 341,
+      "package": "artifact_valut",
+      "private": "give_spaceships",
+      "prepared": "give_spaceships_public_prepared",
+      "mask": 1004,
+      "readGroups": 7,
+      "operations": [
+        {
+          "start": 921,
+          "end": 984,
+          "mode": "view",
+          "store": "planet_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_hash"
+          ],
+          "index": 3,
+          "kind": "planet"
+        },
+        {
+          "start": 1061,
+          "end": 1150,
+          "mode": "view",
+          "store": "planet_artifacts_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_artifacts_state_hash"
+          ],
+          "index": 6,
+          "kind": "planet_artifacts"
+        },
+        {
+          "start": 1237,
+          "end": 1320,
+          "mode": "view",
+          "store": "planet_events_storage",
+          "method": "verify_hash",
+          "args": [
+            "location_id",
+            "planet_events_state_hash"
+          ],
+          "index": 5,
+          "kind": "planet_events"
+        },
+        {
+          "start": 1453,
+          "end": 1637,
+          "mode": "view",
+          "store": "arrival_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "arrival_ids",
+            "arrival_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 7,
+          "kind": "arrival"
+        },
+        {
+          "start": 1839,
+          "end": 2042,
+          "mode": "view",
+          "store": "artifact_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "artifact_ids",
+            "artifact_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 2155,
+          "end": 2376,
+          "mode": "view",
+          "store": "artifact_location_storage",
+          "method": "verify_hashes_batch",
+          "args": [
+            "artifact_ids",
+            "artifact_location_hashes",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 2493,
+          "end": 2551,
+          "mode": "view",
+          "store": "player_storage",
+          "method": "verify_hash",
+          "args": [
+            "sender",
+            "player_hash"
+          ],
+          "index": 2,
+          "kind": "player"
+        },
+        {
+          "start": 2587,
+          "end": 2641,
+          "mode": "call",
+          "store": "planet_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet"
+          ],
+          "index": 3,
+          "kind": "planet"
+        },
+        {
+          "start": 2651,
+          "end": 2725,
+          "mode": "call",
+          "store": "planet_events_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet_events_state"
+          ],
+          "index": 5,
+          "kind": "planet_events"
+        },
+        {
+          "start": 2735,
+          "end": 2815,
+          "mode": "call",
+          "store": "planet_artifacts_storage",
+          "method": "set",
+          "args": [
+            "location_id",
+            "new_planet_artifacts_state"
+          ],
+          "index": 6,
+          "kind": "planet_artifacts"
+        },
+        {
+          "start": 2825,
+          "end": 3004,
+          "mode": "call",
+          "store": "artifact_location_storage",
+          "method": "set_arrival_locations_max20",
+          "args": [
+            "artifact_ids",
+            "new_artifact_locations",
+            "origin_arrivals_count as u32"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        },
+        {
+          "start": 3014,
+          "end": 3063,
+          "mode": "call",
+          "store": "player_storage",
+          "method": "set",
+          "args": [
+            "sender",
+            "new_player"
+          ],
+          "index": 2,
+          "kind": "player"
+        },
+        {
+          "start": 3074,
+          "end": 3152,
+          "mode": "call",
+          "store": "artifact_storage",
+          "method": "set_spaceships_max5",
+          "args": [
+            "spaceships_ids",
+            "spaceships",
+            "5"
+          ],
+          "index": 8,
+          "kind": "artifact"
+        },
+        {
+          "start": 3163,
+          "end": 3316,
+          "mode": "call",
+          "store": "artifact_location_storage",
+          "method": "set_spaceship_locations_max5",
+          "args": [
+            "spaceships_ids",
+            "spaceships_locations",
+            "5"
+          ],
+          "index": 9,
+          "kind": "artifact_location"
+        }
+      ],
+      "bodyHash": "effd025c5bdac106fae9899114bc120106a17701db1de757a42d0c73587e0bcd",
+      "originalBodyHash": "e3f7a798ecd0806a5a270e42ea5b34958843428112eac73c71bd8a6d7ab0d376",
+      "workerFunction": "    #[external(\"public\")]\n    fn try_give_spaceships_public_prepared(payload: ::libs::field_buffer::FieldBuffer<353>) -> bool {\n        let caller_class = aztec::oracle::get_contract_instance::get_contract_instance_current_class_id_avm(self.msg_sender());\n        assert(caller_class.is_some(), \"Only audited system\");\n        assert(caller_class.unwrap().to_field() == super::system_class::SYSTEM_CLASS, \"Only audited system\");\n        let state_backend_address=AztecAddress::from_field(payload.words[0]);\n        let plan_addresses=[AztecAddress::from_field(payload.words[1]), AztecAddress::from_field(payload.words[2]), AztecAddress::from_field(payload.words[3]), AztecAddress::from_field(payload.words[4]), AztecAddress::from_field(payload.words[5]), AztecAddress::from_field(payload.words[6]), AztecAddress::from_field(payload.words[7]), AztecAddress::from_field(payload.words[8]), AztecAddress::from_field(payload.words[9]), AztecAddress::from_field(payload.words[10])];\n        let system_admin=AztecAddress::from_field(payload.words[11]);\n        let sender: AztecAddress = AztecAddress::from_field(payload.words[12]);\n        let location_id: Field = payload.words[13];\n        let timestamp: u64 = (payload.words[14] as u64);\n        let planet_hash: Field = payload.words[15];\n        let planet_artifacts_state_hash: Field = payload.words[16];\n        let planet_events_state_hash: Field = payload.words[17];\n        let arrival_ids: [Field; 20] = [payload.words[18], payload.words[19], payload.words[20], payload.words[21], payload.words[22], payload.words[23], payload.words[24], payload.words[25], payload.words[26], payload.words[27], payload.words[28], payload.words[29], payload.words[30], payload.words[31], payload.words[32], payload.words[33], payload.words[34], payload.words[35], payload.words[36], payload.words[37]];\n        let arrival_hashes: [Field; 20] = [payload.words[38], payload.words[39], payload.words[40], payload.words[41], payload.words[42], payload.words[43], payload.words[44], payload.words[45], payload.words[46], payload.words[47], payload.words[48], payload.words[49], payload.words[50], payload.words[51], payload.words[52], payload.words[53], payload.words[54], payload.words[55], payload.words[56], payload.words[57]];\n        let artifact_ids: [Field; 20] = [payload.words[58], payload.words[59], payload.words[60], payload.words[61], payload.words[62], payload.words[63], payload.words[64], payload.words[65], payload.words[66], payload.words[67], payload.words[68], payload.words[69], payload.words[70], payload.words[71], payload.words[72], payload.words[73], payload.words[74], payload.words[75], payload.words[76], payload.words[77]];\n        let artifact_hashes: [Field; 20] = [payload.words[78], payload.words[79], payload.words[80], payload.words[81], payload.words[82], payload.words[83], payload.words[84], payload.words[85], payload.words[86], payload.words[87], payload.words[88], payload.words[89], payload.words[90], payload.words[91], payload.words[92], payload.words[93], payload.words[94], payload.words[95], payload.words[96], payload.words[97]];\n        let artifact_location_hashes: [Field; 20] = [payload.words[98], payload.words[99], payload.words[100], payload.words[101], payload.words[102], payload.words[103], payload.words[104], payload.words[105], payload.words[106], payload.words[107], payload.words[108], payload.words[109], payload.words[110], payload.words[111], payload.words[112], payload.words[113], payload.words[114], payload.words[115], payload.words[116], payload.words[117]];\n        let origin_arrivals_count: u32 = (payload.words[118] as u32);\n        let player_hash: Field = payload.words[119];\n        let new_planet: Planet = ::types::storage::planet::Planet { perlin: (payload.words[120] as u8), created_at: (payload.words[121] as u64), owner: AztecAddress::from_field(payload.words[122]), planet_level: (payload.words[123] as u8), planet_type: (payload.words[124] as u8), space_type: (payload.words[125] as u8), is_home_planet: (payload.words[126] == 1), is_initialized: (payload.words[127] == 1), destroyed: (payload.words[128] == 1), invader: AztecAddress::from_field(payload.words[129]), capturer: AztecAddress::from_field(payload.words[130]), invade_start_block: (payload.words[131] as u32), population_cap: (payload.words[132] as u128), population_growth: (payload.words[133] as u128), range: (payload.words[134] as u128), speed: (payload.words[135] as u128), defense: (payload.words[136] as u128), silver_cap: (payload.words[137] as u128), silver_growth: (payload.words[138] as u128), population: (payload.words[139] as u128), silver: (payload.words[140] as u128), upgrade_state_0: (payload.words[141] as u8), upgrade_state_1: (payload.words[142] as u8), upgrade_state_2: (payload.words[143] as u8), last_updated: (payload.words[144] as u64), pausers: (payload.words[145] as u128), energy_gro_doublers: (payload.words[146] as u128), silver_gro_doublers: (payload.words[147] as u128), hat_level: (payload.words[148] as u128), space_junk: (payload.words[149] as u128), has_tried_finding_artifact: (payload.words[150] == 1), prospected_block_number: (payload.words[151] as u32) };\n        let new_planet_events_state: PlanetEvents = ::types::storage::planet::PlanetEvents { events: [::types::storage::planet::PlanetEventMetadata { id: payload.words[152] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[153] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[154] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[155] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[156] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[157] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[158] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[159] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[160] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[161] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[162] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[163] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[164] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[165] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[166] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[167] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[168] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[169] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[170] }, ::types::storage::planet::PlanetEventMetadata { id: payload.words[171] }], count: (payload.words[172] as u32), last_updated: (payload.words[173] as u64) };\n        let new_planet_artifacts_state: PlanetArtifacts = ::types::storage::planet::PlanetArtifacts { ids: [payload.words[174], payload.words[175], payload.words[176], payload.words[177], payload.words[178], payload.words[179], payload.words[180], payload.words[181], payload.words[182], payload.words[183], payload.words[184], payload.words[185], payload.words[186], payload.words[187], payload.words[188], payload.words[189], payload.words[190], payload.words[191], payload.words[192], payload.words[193]], count: (payload.words[194] as u32), last_updated: (payload.words[195] as u64) };\n        let new_artifact_locations: [ArtifactLocation; 20] = [::types::storage::artifact::ArtifactLocation { planet_id: payload.words[196], voyage_id: payload.words[197], last_updated: (payload.words[198] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[199], voyage_id: payload.words[200], last_updated: (payload.words[201] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[202], voyage_id: payload.words[203], last_updated: (payload.words[204] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[205], voyage_id: payload.words[206], last_updated: (payload.words[207] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[208], voyage_id: payload.words[209], last_updated: (payload.words[210] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[211], voyage_id: payload.words[212], last_updated: (payload.words[213] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[214], voyage_id: payload.words[215], last_updated: (payload.words[216] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[217], voyage_id: payload.words[218], last_updated: (payload.words[219] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[220], voyage_id: payload.words[221], last_updated: (payload.words[222] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[223], voyage_id: payload.words[224], last_updated: (payload.words[225] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[226], voyage_id: payload.words[227], last_updated: (payload.words[228] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[229], voyage_id: payload.words[230], last_updated: (payload.words[231] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[232], voyage_id: payload.words[233], last_updated: (payload.words[234] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[235], voyage_id: payload.words[236], last_updated: (payload.words[237] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[238], voyage_id: payload.words[239], last_updated: (payload.words[240] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[241], voyage_id: payload.words[242], last_updated: (payload.words[243] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[244], voyage_id: payload.words[245], last_updated: (payload.words[246] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[247], voyage_id: payload.words[248], last_updated: (payload.words[249] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[250], voyage_id: payload.words[251], last_updated: (payload.words[252] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[253], voyage_id: payload.words[254], last_updated: (payload.words[255] as u64) }];\n        let new_player: Player = ::types::storage::player::Player { init_timestamp: (payload.words[256] as u64), home_planet_id: payload.words[257], last_reveal_timestamp: (payload.words[258] as u64), score: (payload.words[259] as u128), space_junk: (payload.words[260] as u128), space_junk_limit: (payload.words[261] as u128), claimed_ships: (payload.words[262] == 1), last_updated: (payload.words[263] as u64) };\n        let spaceships_ids: [Field; 5] = [payload.words[264], payload.words[265], payload.words[266], payload.words[267], payload.words[268]];\n        let spaceships: [Artifact; 5] = [::types::storage::artifact::Artifact { planet_discovered_on: payload.words[269], rarity: (payload.words[270] as u8), planet_biome: (payload.words[271] as u8), minted_at_timestamp: (payload.words[272] as u64), discoverer: AztecAddress::from_field(payload.words[273]), artifact_type: (payload.words[274] as u8), activations: (payload.words[275] as u128), last_activated: (payload.words[276] as u64), last_deactivated: (payload.words[277] as u64), wormhole_to: payload.words[278], owner: AztecAddress::from_field(payload.words[279]), controller: AztecAddress::from_field(payload.words[280]), last_updated: (payload.words[281] as u64) }, ::types::storage::artifact::Artifact { planet_discovered_on: payload.words[282], rarity: (payload.words[283] as u8), planet_biome: (payload.words[284] as u8), minted_at_timestamp: (payload.words[285] as u64), discoverer: AztecAddress::from_field(payload.words[286]), artifact_type: (payload.words[287] as u8), activations: (payload.words[288] as u128), last_activated: (payload.words[289] as u64), last_deactivated: (payload.words[290] as u64), wormhole_to: payload.words[291], owner: AztecAddress::from_field(payload.words[292]), controller: AztecAddress::from_field(payload.words[293]), last_updated: (payload.words[294] as u64) }, ::types::storage::artifact::Artifact { planet_discovered_on: payload.words[295], rarity: (payload.words[296] as u8), planet_biome: (payload.words[297] as u8), minted_at_timestamp: (payload.words[298] as u64), discoverer: AztecAddress::from_field(payload.words[299]), artifact_type: (payload.words[300] as u8), activations: (payload.words[301] as u128), last_activated: (payload.words[302] as u64), last_deactivated: (payload.words[303] as u64), wormhole_to: payload.words[304], owner: AztecAddress::from_field(payload.words[305]), controller: AztecAddress::from_field(payload.words[306]), last_updated: (payload.words[307] as u64) }, ::types::storage::artifact::Artifact { planet_discovered_on: payload.words[308], rarity: (payload.words[309] as u8), planet_biome: (payload.words[310] as u8), minted_at_timestamp: (payload.words[311] as u64), discoverer: AztecAddress::from_field(payload.words[312]), artifact_type: (payload.words[313] as u8), activations: (payload.words[314] as u128), last_activated: (payload.words[315] as u64), last_deactivated: (payload.words[316] as u64), wormhole_to: payload.words[317], owner: AztecAddress::from_field(payload.words[318]), controller: AztecAddress::from_field(payload.words[319]), last_updated: (payload.words[320] as u64) }, ::types::storage::artifact::Artifact { planet_discovered_on: payload.words[321], rarity: (payload.words[322] as u8), planet_biome: (payload.words[323] as u8), minted_at_timestamp: (payload.words[324] as u64), discoverer: AztecAddress::from_field(payload.words[325]), artifact_type: (payload.words[326] as u8), activations: (payload.words[327] as u128), last_activated: (payload.words[328] as u64), last_deactivated: (payload.words[329] as u64), wormhole_to: payload.words[330], owner: AztecAddress::from_field(payload.words[331]), controller: AztecAddress::from_field(payload.words[332]), last_updated: (payload.words[333] as u64) }];\n        let spaceships_locations: [ArtifactLocation; 5] = [::types::storage::artifact::ArtifactLocation { planet_id: payload.words[334], voyage_id: payload.words[335], last_updated: (payload.words[336] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[337], voyage_id: payload.words[338], last_updated: (payload.words[339] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[340], voyage_id: payload.words[341], last_updated: (payload.words[342] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[343], voyage_id: payload.words[344], last_updated: (payload.words[345] as u64) }, ::types::storage::artifact::ArtifactLocation { planet_id: payload.words[346], voyage_id: payload.words[347], last_updated: (payload.words[348] as u64) }];\n        let prepared_new_planet_root: Field = payload.words[349];\n        let prepared_new_planet_events_state_root: Field = payload.words[350];\n        let prepared_new_planet_artifacts_state_root: Field = payload.words[351];\n        let prepared_new_player_root: Field = payload.words[352];\n        let supported = ::state_backend_readonly::public_read::can_settle(state_backend_address, plan_addresses, 1004);\n        if supported {\n            let mut write_plan = ::libs::state_plan::WritePlan::new();\n\n        let actual_timestamp = self.context.timestamp();\n        assert_public_timestamp(timestamp, actual_timestamp);\n\n        \n        \n        \n        \n        \n        \n        \n\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[3], location_id, planet_hash),\n            \"planet hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[6], location_id, planet_artifacts_state_hash),\n            \"planet_artifacts hash mismatch\",\n        );\n        assert(\n            ::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[5], location_id, planet_events_state_hash),\n            \"planet_events hash mismatch\",\n        );\n\n        if origin_arrivals_count != 0 {\n            assert(\n                ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[7], arrival_ids, arrival_hashes, origin_arrivals_count as u32),\n                \"arrivals hash mismatch\",\n            );\n\n            if ::libs::batch_utils::has_nonzero_ids(artifact_ids, origin_arrivals_count as u32) {\n                assert(\n                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[8], artifact_ids, artifact_hashes, origin_arrivals_count as u32),\n                    \"artifacts hash mismatch\",\n                );\n\n                assert(\n                    ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, plan_addresses[9], artifact_ids, artifact_location_hashes, origin_arrivals_count as u32),\n                    \"artifact locations hash mismatch\",\n                );\n            }\n        }\n\n        assert(::state_backend_readonly::public_read::verify_hash(state_backend_address, plan_addresses[2], (sender).to_field(), player_hash), \"player hash mismatch\");\n\n        write_plan.set(3, location_id, prepared_new_planet_root, true, new_planet.serialize());\n        write_plan.set(5, location_id, prepared_new_planet_events_state_root, true, new_planet_events_state.serialize());\n        write_plan.set(6, location_id, prepared_new_planet_artifacts_state_root, true, new_planet_artifacts_state.serialize());\n        {\n            let batch_start=write_plan.start_batch(9, origin_arrivals_count as u32, 20);\n            let bounded_count = if (origin_arrivals_count as u32) <= 20 { origin_arrivals_count as u32 } else { 20 };\n            for plan_i in 0..bounded_count { if artifact_ids[plan_i] != 0 {\n                write_plan.append_batch_item(batch_start, artifact_ids[plan_i], new_artifact_locations[plan_i].serialize());\n            } }\n        };\n        write_plan.set(2, (sender).to_field(), prepared_new_player_root, true, new_player.serialize());\n\n        {\n            let batch_start=write_plan.start_batch(8, 5, 5);\n            let bounded_count = if (5) <= 5 { 5 } else { 5 };\n            for plan_i in 0..bounded_count { if spaceships_ids[plan_i] != 0 {\n                write_plan.append_batch_item(batch_start, spaceships_ids[plan_i], spaceships[plan_i].serialize());\n            } }\n        };\n\n        {\n            let batch_start=write_plan.start_batch(9, 5, 5);\n            let bounded_count = if (5) <= 5 { 5 } else { 5 };\n            for plan_i in 0..bounded_count { if spaceships_ids[plan_i] != 0 {\n                write_plan.append_batch_item(batch_start, spaceships_ids[plan_i], spaceships_locations[plan_i].serialize());\n            } }\n        };\n    \n            _commit_plan_for_system(self.context, state_backend_address, plan_addresses, 1004, write_plan);\n        }\n        supported\n    }\n"
+    }
+  ]
+}

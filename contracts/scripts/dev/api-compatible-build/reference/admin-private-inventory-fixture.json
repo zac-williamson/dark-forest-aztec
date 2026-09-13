@@ -1,0 +1,22 @@
+{
+  "scope": "Actual stopped Admin raw and accepted V8 native private function subset; circuit/key bytes unchanged",
+  "sourceArtifacts": {
+    "scope": "Read-only actual stopped Admin raw artifact versus pinned V8 native reference; no native processing",
+    "raw": {
+      "path": "/tmp/df-api-compatible-v12-shared-native-r2/build-source/contracts/target/admin-Admin.json",
+      "sha256": "639d1ff64d86fc52666b4f047dfad195f41bf10490a43f352c7caaa06f558fd3"
+    },
+    "reference": {
+      "path": "/tmp/df-api-compatible-v8-native/admin-Admin.json",
+      "sha256": "d7cee690534fffbb03bd33c8fa29dc7733ec69a3d99ba27e7a9fddf50ba9e894"
+    }
+  },
+  "raw": {
+    "file": "admin-private-raw.json",
+    "sha256": "b1ef5c692bf8a36e315291db9174833bf1357d5dee3cc6daba88b993d066ce15"
+  },
+  "reference": {
+    "file": "admin-private-reference.json",
+    "sha256": "ea50dc93babae83b612c1e539000508b37fc407a464cefe12d290eec45ed9917"
+  }
+}

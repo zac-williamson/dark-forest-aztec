@@ -1,0 +1,70 @@
+{
+  "scope": "Immutable fee-only primary report; completed touch checks and subsequent targeted runtime results are separate packages.",
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "8b40efb5b5a48c4029cc11f63374665972aeb6bcb7a8ffe330f97046ea53f7bc",
+      "bytes": 6207
+    },
+    {
+      "file": "RUNBOOK.md",
+      "sha256": "8e7c01c60013305586b4e06c447c8b01f1be124d52f29e192af954181722039e",
+      "bytes": 2406
+    },
+    {
+      "file": "coverage-full-candidate-v14.json",
+      "sha256": "fb7d45bff8782f19513f031205f91e9c65c6942fb4fec63d497554a446ec43f3",
+      "bytes": 204872
+    },
+    {
+      "file": "deployments.json",
+      "sha256": "80b70909065d1488718a02f79a9407d050f8039780276b72d5e2951680471035",
+      "bytes": 1752
+    },
+    {
+      "file": "execution-inputs-manifest.json",
+      "sha256": "3847409a200941d724960eb9d4017e42ef819ef4d3872d1ff292cd1449946cf4",
+      "bytes": 37466
+    },
+    {
+      "file": "fee-summary.json",
+      "sha256": "4d0e63089bb3eba32b9e6a056fb55627f65a035c9d80b17fd350804654630af5",
+      "bytes": 64674
+    },
+    {
+      "file": "first2-runtime.log",
+      "sha256": "81c6ca5731dce5f1d486726e7f973cdaedef7173c35e1ec78f68febb29d503d2",
+      "bytes": 2767
+    },
+    {
+      "file": "native-build-provenance.json",
+      "sha256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+      "bytes": 147622
+    },
+    {
+      "file": "paired-transactions.json",
+      "sha256": "266221979d1814e42f687cb7513cd0d158a64cea51803d62cf30b30404e7c55a",
+      "bytes": 3161184
+    },
+    {
+      "file": "readiness.json",
+      "sha256": "522258321ff7d9d2d04f39b45188bc02d4496c9b1a2f5fa94128198e106cc28f",
+      "bytes": 1244
+    },
+    {
+      "file": "root-native-readiness.json",
+      "sha256": "8162a1e48bb73a315ba96182a5eb5c6fbe4a7c298d655c0059f95c071460b77e",
+      "bytes": 877
+    },
+    {
+      "file": "runtime.log",
+      "sha256": "6013a65e1f9993ce55724e173d76dcf424f230ee9b3e01f20cb49cbb1d8eedec",
+      "bytes": 7862
+    },
+    {
+      "file": "snapshot.json",
+      "sha256": "9c4727ebcb7da43b70108e0346a6120923971ee77a419cc5cceaed808ea4bd6b",
+      "bytes": 196186
+    }
+  ]
+}

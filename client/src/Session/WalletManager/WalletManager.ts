@@ -45,6 +45,8 @@ import {
   PLANET_ARTIFACTS_STORAGE_DEPLOYMENT_SALT,
   PLANET_EVENTS_STORAGE_DEPLOYER_ADDRESS,
   PLANET_EVENTS_STORAGE_DEPLOYMENT_SALT,
+  PLANET_REVEALED_COORDS_STORAGE_DEPLOYER_ADDRESS,
+  PLANET_REVEALED_COORDS_STORAGE_DEPLOYMENT_SALT,
   PLANET_STORAGE_DEPLOYER_ADDRESS,
   PLANET_STORAGE_DEPLOYMENT_SALT,
   PLAYER_STORAGE_DEPLOYER_ADDRESS,
@@ -65,6 +67,7 @@ import { CoreContractArtifact } from "@dfpunk/contracts/artifacts/Core";
 import { MoveContractArtifact } from "@dfpunk/contracts/artifacts/Move";
 import { PlanetArtifactsStorageContractArtifact } from "@dfpunk/contracts/artifacts/PlanetArtifactsStorage";
 import { PlanetEventsStorageContractArtifact } from "@dfpunk/contracts/artifacts/PlanetEventsStorage";
+import { PlanetRevealedCoordsStorageContractArtifact } from "@dfpunk/contracts/artifacts/PlanetRevealedCoordsStorage";
 import { PlanetStorageContractArtifact } from "@dfpunk/contracts/artifacts/PlanetStorage";
 import { PlayerStorageContractArtifact } from "@dfpunk/contracts/artifacts/PlayerStorage";
 import { WorldStorageContractArtifact } from "@dfpunk/contracts/artifacts/WorldStorage";
@@ -97,7 +100,7 @@ function fqFromHex(signingKeyHex: string): Fq {
 }
 const GENESIS_PENDING_SENTINEL = "genesis-pending";
 
-const WALLET_INIT_TOTAL_STEPS_BASE = 21;
+const WALLET_INIT_TOTAL_STEPS_BASE = 22;
 const WALLET_INIT_SPONSOR_EXTRA_STEPS = 1;
 
 /**
@@ -201,6 +204,12 @@ async function registerGameContractsWithPxe(
       salt: PLAYER_STORAGE_DEPLOYMENT_SALT,
       artifact: PlayerStorageContractArtifact,
       name: "PlayerStorage",
+    },
+    {
+      deployer: PLANET_REVEALED_COORDS_STORAGE_DEPLOYER_ADDRESS,
+      salt: PLANET_REVEALED_COORDS_STORAGE_DEPLOYMENT_SALT,
+      artifact: PlanetRevealedCoordsStorageContractArtifact,
+      name: "PlanetRevealedCoordsStorage",
     },
     {
       deployer: PLANET_EVENTS_STORAGE_DEPLOYER_ADDRESS,

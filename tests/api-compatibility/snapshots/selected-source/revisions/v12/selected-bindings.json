@@ -1,0 +1,32 @@
+{
+  "originBuildSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+  "files": {
+    "contracts/libs/src/config_class.nr": "8029688a3b545a44474ab95c22a66a5d32b295b275426f751d96767e3c5705a6",
+    "contracts/prospect_original_libs/src/config_class.nr": "8029688a3b545a44474ab95c22a66a5d32b295b275426f751d96767e3c5705a6",
+    "contracts/settlement_workers/core/src/system_class.nr": "2156280c63e89f7ab32d6cecc9b2b9eb4c2aebdd7e0a0d7f90ee8b27821fb0f6",
+    "contracts/settlement_workers/vault/src/system_class.nr": "30181b15f1c0a1f80209ebe4a42d60914b673ef9e1d0b925b867bf6efb1bd74b",
+    "contracts/state_backend/src/trusted_classes.nr": "07b08a71bf23b1ccb93ced9e4e7583858e006d2f449e9169a7b0b5ec250690ea"
+  },
+  "classIds": {
+    "config-Config.json": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8",
+    "world-WorldStorage.json": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934",
+    "player-PlayerStorage.json": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9",
+    "planet-PlanetStorage.json": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03",
+    "planet_revealed_coords-PlanetRevealedCoordsStorage.json": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb",
+    "planet_events-PlanetEventsStorage.json": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918",
+    "planet_artifacts-PlanetArtifactsStorage.json": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4",
+    "arrival-ArrivalStorage.json": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603",
+    "artifact-ArtifactStorage.json": "0x25b211541c0c9f8972fece4ff1c49e1d25ddae8d7331373d38793fa844dd9658",
+    "artifact_location-ArtifactLocationStorage.json": "0x0f58cb15292b177f6a14d7f70a5c7b56ef622b6cf44048ec52fd5d3d5c849752",
+    "admin-Admin.json": "0x1a9a196ce606e50d345c869d22f92231a4c9fad33e62efbb676188b5154941a5",
+    "core-Core.json": "0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72",
+    "move-Move.json": "0x28eb74154d163fe2f6e930d446715c05bac0c76629bb168e458370d164259dd4",
+    "artifact_action-ArtifactAction.json": "0x0e6a9bd340ea2f520046657277a3cedb9fefad2c9ed062b66b1d3df1462b5cbf",
+    "artifact_find-ArtifactFind.json": "0x27493770b04fa49fb89c99c0d532f5377f248168e3cc8d7f0e6b557d779f9254",
+    "artifact_prospect-ArtifactProspect.json": "0x0bd13431758a496e5fc5d23e90f0048e14f2adcf7582a9f73e527b6d2f3d06e8",
+    "artifact_valut-ArtifactValut.json": "0x270c5cda4782fa62754836c42c34f4b2c5ecd7026429e0de682e86e34276f71a",
+    "core_settlement_worker-CoreSettlementWorker.json": "0x00fcab2a469bf2e21ef15b44fecdbc65bf23cb208756510043634d274f64e872",
+    "vault_settlement_worker-VaultSettlementWorker.json": "0x29f587ab737b62b214715689bbc7f647f2b66dbc4f4c13d0ca2d2765a55a7cc7",
+    "game_state_backend-GameStateBackend.json": "0x248db02ba34a4388b738b54c985a828b193988820a5386ae180a143a70d275b8"
+  }
+}

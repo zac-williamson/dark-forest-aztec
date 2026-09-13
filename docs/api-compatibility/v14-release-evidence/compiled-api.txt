@@ -1,0 +1,14 @@
+{
+  "contracts": 21,
+  "originalExternalFunctions": 447,
+  "currentExternalFunctions": 577,
+  "breakingChanges": 0,
+  "behaviorReviews": 127,
+  "unresolvedExternalCalls": 0,
+  "compiledAbi": {
+    "compatible": true,
+    "breakingChanges": 0,
+    "additions": 88,
+    "staleArtifacts": 0
+  }
+}

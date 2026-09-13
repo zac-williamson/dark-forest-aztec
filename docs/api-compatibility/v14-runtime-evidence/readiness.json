@@ -1,0 +1,17 @@
+{
+  "candidate": "candidate-v14",
+  "status": "source-only frozen; execution held after full58 and explicit release",
+  "runtimeCalls": 0,
+  "walletsCreated": 0,
+  "transactionProofsGenerated": 0,
+  "nativeCalls": 0,
+  "plannedChecks": 381,
+  "actualV14TargetedChecks": 0,
+  "offlineChecksPassed": 42,
+  "offlineLogSHA256": "9e03ffa83525b8a42291092c293baea30cf60d72f2ca34667cf9cb28b4527c66",
+  "sourceManifestSHA256": "a8b6aeb8db1fad32e2a1e9dabe42a336a3d496c7441b51430f34122758b161e1",
+  "planSHA256": "b32c0cdecf7d497e3507feb1cd1442143c925a6efabbb61892f042cab420aaa2",
+  "sourceFiles": 40,
+  "scope": "Offline tests exercise source/ABIs and inert actual setup only. They do not claim runtime acceptance.",
+  "revision": 2
+}

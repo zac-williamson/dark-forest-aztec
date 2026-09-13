@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "scope": "Offline attribution of the unchanged fixed benchmark reference price. No new RPC call, network validation, fee measurement or proof was performed.",
+  "fixedBenchmarkSchedule": {
+    "feePerDaGas": "0",
+    "feePerL2Gas": "2229141013672"
+  },
+  "scheduleFile": "common-fee-schedule.json",
+  "scheduleSha256": "75f36be77a71b5ccab0dd3bc2bc7431edb009168bb8c644d2cc81b71af664d0f",
+  "exactSavedRpcResultMatchesSchedule": true,
+  "capture": {
+    "method": "node_getCurrentMinFees",
+    "embeddedCaptureTimestamp": null,
+    "embeddedBlockNumber": null,
+    "embeddedBlockHash": null,
+    "networkIdentityFromAdjacentSavedNodeInfo": {
+      "nodeVersion": "5.2.0",
+      "l1ChainId": 1,
+      "rollupVersion": 4248422647,
+      "realProofs": true,
+      "rollupAddress": "0x91ff8bbd8ebb07893010d50a48a1609e5ebd8e34"
+    },
+    "files": {
+      "node_getCurrentMinFees": {
+        "sourceFile": "/tmp/df-live-node_getCurrentMinFees.json",
+        "sha256": "7ce56ec51bb9797107dbb4a611776cb27506a58ecf014d70a3a92a7d6f5a581b",
+        "filesystemMtimeNanoseconds": "1789073572120569272",
+        "filesystemMtimeUtc": "2026-09-10T20:52:52.120569+00:00",
+        "timestampMeaning": "Filesystem modification metadata only; not a timestamp embedded in the RPC response.",
+        "retainedFile": "reference-capture/node_getCurrentMinFees.json"
+      },
+      "node_getBlockNumber": {
+        "sourceFile": "/tmp/df-live-node_getBlockNumber.json",
+        "sha256": "8a83c2d3df17f370d85521e5ea39cf5a15fdff1d4776fe834a948a2a266c0835",
+        "filesystemMtimeNanoseconds": "1789073572387396959",
+        "filesystemMtimeUtc": "2026-09-10T20:52:52.387397+00:00",
+        "timestampMeaning": "Filesystem modification metadata only; not a timestamp embedded in the RPC response.",
+        "retainedFile": "reference-capture/node_getBlockNumber.json"
+      },
+      "node_getNodeInfo": {
+        "sourceFile": "/tmp/df-live-node_getNodeInfo.json",
+        "sha256": "22eded215e92b5e9d4285f8d4f7eb8b788e990ef88e3e531f020836e788e2dfc",
+        "filesystemMtimeNanoseconds": "1789073572728969153",
+        "filesystemMtimeUtc": "2026-09-10T20:52:52.728969+00:00",
+        "timestampMeaning": "Filesystem modification metadata only; not a timestamp embedded in the RPC response.",
+        "retainedFile": "reference-capture/node_getNodeInfo.selected.json",
+        "retention": "Selected identity fields only; source SHA256 covers the entire original response."
+      }
+    }
+  },
+  "contemporaneousBlockNumberSample": {
+    "method": "node_getBlockNumber",
+    "result": 79426,
+    "relationship": "Separate saved RPC response, with a filesystem modification time within one second of the min-fee and node-info files. It is not a block anchor for the price quote.",
+    "priceAttributedToThisBlock": false
+  },
+  "laterLiveReceiptSample": {
+    "file": "live-receipts.json",
+    "sha256": "729bc4494125d06157480a0abd06ff268a419e6814f63b71072c4582a7060787",
+    "originalCaptureFile": "/tmp/df-live-receipts.json",
+    "originalCaptureSha256": "a301b1bdb1f0cbb88ae2c73a9504c4f8219a51af987d581c3de147aa328b70a7",
+    "embeddedSampledAt": "2026-09-10T20:54:52.671Z",
+    "feeSchedule": {
+      "feePerDaGas": "0",
+      "feePerL2Gas": "2238514407141"
+    },
+    "equalsFixedBenchmarkSchedule": false,
+    "explanation": "A later live fee quote accompanying three older finalized receipt samples. Neither that quote nor the sampled blocks supplies the fixed reference value.",
+    "historicalReceipts": [
+      {
+        "txHash": "0x101aea1864c837b42e0c6665fba6803400741600128cb317142c920113307e50",
+        "blockNumber": 74620,
+        "savedStatus": "finalized",
+        "savedExecutionResult": "success",
+        "receiptFeeJuiceBaseUnits": "8244070438383137264",
+        "blockFeeSchedule": {
+          "feePerDaGas": "0",
+          "feePerL2Gas": "2161655650039"
+        },
+        "inferredBilledL2GasAtZeroPriorityFee": 3813776,
+        "savedEffectFeeMatchesReceipt": true,
+        "zeroPriorityArithmeticMatches": true,
+        "priceEqualsBenchmarkReference": false
+      },
+      {
+        "txHash": "0x094f9931a174f80d71f00ebec68ea8d1ca894872712254a063ec62b12fad887f",
+        "blockNumber": 74624,
+        "savedStatus": "finalized",
+        "savedExecutionResult": "success",
+        "receiptFeeJuiceBaseUnits": "8392648189504074155",
+        "blockFeeSchedule": {
+          "feePerDaGas": "0",
+          "feePerL2Gas": "2166720888035"
+        },
+        "inferredBilledL2GasAtZeroPriorityFee": 3873433,
+        "savedEffectFeeMatchesReceipt": true,
+        "zeroPriorityArithmeticMatches": true,
+        "priceEqualsBenchmarkReference": false
+      },
+      {
+        "txHash": "0x0f4c8368355833cd59c9843e1ea94bbc9aca8a335ad2a7adc968a771969a7a15",
+        "blockNumber": 76995,
+        "savedStatus": "finalized",
+        "savedExecutionResult": "success",
+        "receiptFeeJuiceBaseUnits": "8529564531283515720",
+        "blockFeeSchedule": {
+          "feePerDaGas": "0",
+          "feePerL2Gas": "2153489950612"
+        },
+        "inferredBilledL2GasAtZeroPriorityFee": 3960810,
+        "savedEffectFeeMatchesReceipt": true,
+        "zeroPriorityArithmeticMatches": true,
+        "priceEqualsBenchmarkReference": false
+      }
+    ],
+    "gasInterpretation": "Live receipt gas is inferred under the saved zero-priority-fee assumption; exact division is an arithmetic check, not a separately captured gas-meter result."
+  },
+  "attributionLimits": [
+    "The fee RPC response itself contains no timestamp, block identifier or network identity.",
+    "Capture timing relies on explicitly labeled filesystem metadata. Adjacent node-info and block-number responses provide associated context, not a cryptographic same-block assertion.",
+    "The price is historical and held fixed for controlled billed-gas comparisons; it is not a current fee quote, future fee forecast, or the actual fee price of each local receipt.",
+    "No RPC URL, credential or node ENR is retained in these added artifacts."
+  ],
+  "recommendedDescription": "A fixed benchmark reference price matching the saved live node_getCurrentMinFees response; associated filesystem save metadata is approximately 2026-09-10 20:52:52 UTC. The separately sampled block number was 79426, without proof that this was that block\u2019s fee price."
+}

@@ -1,0 +1,2412 @@
+{
+  "status": "complete",
+  "passed": true,
+  "configuration": {
+    "variant": "candidate-v14",
+    "deployment": "/tmp/df-v14-touch-fee-runtime/experiments/api-compatible-benchmark/.state/candidate-v14-deployments.json",
+    "artifacts": "/tmp/df-v14-touch-order-native-r1/codegen",
+    "output": "/tmp/df-v14-final-runtime-suites/results/batch-caller-regressions-candidate-v14.json",
+    "nodeUrl": "http://127.0.0.1:8097",
+    "artifactGate": {
+      "buildManifest": "/tmp/df-v14-touch-order-native-r1/build-provenance.json",
+      "buildManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+      "reviewedPlanSHA256": "5bdf5d181e9165a611fe3521ad0330416362cb15a7f9420f51b1ca1f6c34cb5e",
+      "inputManifestSHA256": "5184ec853dc6b5d46007ab7727cca74ab6c12ef4d51c37241f176c3592e26461",
+      "classes": {
+        "config": {
+          "file": "config-Config.json",
+          "sha256": "2ac06fe5ca5d49e8b970e7168220354f25ba5c6822de5bef5e2fb1a525d2fb9a",
+          "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8"
+        },
+        "world": {
+          "file": "world-WorldStorage.json",
+          "sha256": "3c311a698e829bde9ca08e11139bccf25537f9686466ce908e3738178d205d6a",
+          "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934"
+        },
+        "player": {
+          "file": "player-PlayerStorage.json",
+          "sha256": "0eb88afdcc3584c4eee0bc1df7a8b7e2bffc5c4b2bc66dd5979b1cf74fb7e84a",
+          "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9"
+        },
+        "planet": {
+          "file": "planet-PlanetStorage.json",
+          "sha256": "0b1723bfcf4c3abae7525602fad0bc5323c27b58d3a132cbf2ed6b3700a71888",
+          "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03"
+        },
+        "planet_revealed_coords": {
+          "file": "planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+          "sha256": "824debb7d430d7b20786cd7a32fc748ea28278bb59f169a5bb4631d321294ef6",
+          "classId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb"
+        },
+        "planet_events": {
+          "file": "planet_events-PlanetEventsStorage.json",
+          "sha256": "1dba4f3efa73ea56e9cc6ef3b03df426e3adacbefcc66ff2bae3f36e95e0d7d9",
+          "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918"
+        },
+        "planet_artifacts": {
+          "file": "planet_artifacts-PlanetArtifactsStorage.json",
+          "sha256": "86b785ba03ccf6939ac75d7b401530f75a21f6f8b22559222a3480f464365020",
+          "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4"
+        },
+        "arrival": {
+          "file": "arrival-ArrivalStorage.json",
+          "sha256": "25df2092f3f187d299edd3aa18ffde5a2fea68d3a954b43882f349d021969809",
+          "classId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603"
+        },
+        "artifact": {
+          "file": "artifact-ArtifactStorage.json",
+          "sha256": "81eb5e1138470cfc9b2bd8b37a7b8e4bfe9f30ac02ce9d963e07a63c37ed8545",
+          "classId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332"
+        },
+        "artifact_location": {
+          "file": "artifact_location-ArtifactLocationStorage.json",
+          "sha256": "ea1f6aef5792d73b0edc1ebc654da05f5e96d08e64ae144d3837f1cd0e0b8d8a",
+          "classId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b"
+        },
+        "admin": {
+          "file": "admin-Admin.json",
+          "sha256": "60013e0cb1a24bf58ce46448b47b86ebf74dcf956f1e8be78ec1ae4006d20029",
+          "classId": "0x1a9a196ce606e50d345c869d22f92231a4c9fad33e62efbb676188b5154941a5"
+        },
+        "core": {
+          "file": "core-Core.json",
+          "sha256": "810b8bd4358e03b19bc15d4e5e74e20ad3aecf6ca12dedde93ff0e3168c378d5",
+          "classId": "0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72"
+        },
+        "move": {
+          "file": "move-Move.json",
+          "sha256": "a5f0ae2999f46a3b01d57c43f8754a324d6e5aa1294edd270da1c36438b8c1af",
+          "classId": "0x28eb74154d163fe2f6e930d446715c05bac0c76629bb168e458370d164259dd4"
+        },
+        "artifact_action": {
+          "file": "artifact_action-ArtifactAction.json",
+          "sha256": "f4eec7991712eb94e182830048016030485006baae7fbb8a741bc1a93425b6bc",
+          "classId": "0x0e6a9bd340ea2f520046657277a3cedb9fefad2c9ed062b66b1d3df1462b5cbf"
+        },
+        "artifact_find": {
+          "file": "artifact_find-ArtifactFind.json",
+          "sha256": "d471b514b52a6d9d7bb1c24c5e13197a521b2d22cae8317c84dee7ff436c6576",
+          "classId": "0x27493770b04fa49fb89c99c0d532f5377f248168e3cc8d7f0e6b557d779f9254"
+        },
+        "artifact_prospect": {
+          "file": "artifact_prospect-ArtifactProspect.json",
+          "sha256": "9b55febd14f1066033d808682f2280500421af0d73d49fca3c193ad9dbeed14c",
+          "classId": "0x0bd13431758a496e5fc5d23e90f0048e14f2adcf7582a9f73e527b6d2f3d06e8"
+        },
+        "artifact_valut": {
+          "file": "artifact_valut-ArtifactValut.json",
+          "sha256": "d211ced4f4e42dc379fa3aeeaebc1c6a1bd2d72832b78f44b4899d9a4d7db859",
+          "classId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484"
+        },
+        "core_settlement_worker": {
+          "file": "core_settlement_worker-CoreSettlementWorker.json",
+          "sha256": "bd842720d4c7c107938cca1c5cd075a5f70ab3e33f943ab0f261b21cd9ba57da",
+          "classId": "0x00fcab2a469bf2e21ef15b44fecdbc65bf23cb208756510043634d274f64e872"
+        },
+        "vault_settlement_worker": {
+          "file": "vault_settlement_worker-VaultSettlementWorker.json",
+          "sha256": "89691d8083417027ac4b34efee6235d454e27aa1e4ac9a5cdaa5eb7f204f83fa",
+          "classId": "0x0fb0e0a4bf49f80419a66c8768038aa9a6e0286d91282f34b6efef2c3fddc1e2"
+        },
+        "backend": {
+          "file": "game_state_backend-GameStateBackend.json",
+          "sha256": "23b3f8f4ac5ecb063b4bb47b6a4c441df1551f8e0f415b984508736f9d3cab8b",
+          "classId": "0x1526cea11a475af86152fed567c6e9344568b5ad1dcc2ee654b353b121e433ac"
+        }
+      }
+    },
+    "liveClassGate": {
+      "config": {
+        "address": "0x0d886d7549dab933420e9ce22661a71625f997ea4e4e6bdc61586ad9bc2d3ae6",
+        "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8"
+      },
+      "world": {
+        "address": "0x149b61072fdbff69969153519252d7dae655304774209f71160175023ad0a86e",
+        "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934"
+      },
+      "player": {
+        "address": "0x040e458509a7e700f37c05cc9dc6d055fb1594092741f4c7ba07d742406e96fa",
+        "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9"
+      },
+      "planet": {
+        "address": "0x05d9bedf35d9f9827d989a0e7ad8d5141c44e906a3a9f710b5c2e4b4626a3a6f",
+        "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03"
+      },
+      "planet_revealed_coords": {
+        "address": "0x04526963e87086639a4250b37d9ad1a37be06957834d64a327f468c240315544",
+        "classId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb"
+      },
+      "planet_events": {
+        "address": "0x1b0ea66beba1d491093c981a57828b8a544e8176eef4487326b2dbacc67e9e18",
+        "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918"
+      },
+      "planet_artifacts": {
+        "address": "0x225e5c47a8ccc6ec623cd4a498ceed3e619796b4a57a4899b932d1c0e322bc2a",
+        "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4"
+      },
+      "arrival": {
+        "address": "0x23712679e919c20b2f66610f4a1437720d8eade1d0930683587e03ba2c68cfbf",
+        "classId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603"
+      },
+      "artifact": {
+        "address": "0x280149b05594bd9f759d8108fa4abbb90505ce51f945db9baa982eeaa7eabdaa",
+        "classId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332"
+      },
+      "artifact_location": {
+        "address": "0x0bcbe29d8b89454b74acefa191ba12adee6191a1754d636c3cb0ee3a15881095",
+        "classId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b"
+      },
+      "admin": {
+        "address": "0x1c5a37b24b43e35051cd959c8874cbd13dc25edb1f54b8f8ed8e365a06473882",
+        "classId": "0x1a9a196ce606e50d345c869d22f92231a4c9fad33e62efbb676188b5154941a5"
+      },
+      "core": {
+        "address": "0x2b7a56b3859ec8b4500cfaed1d81755bc46bbaedc5ca0f0e2b898967bde252ca",
+        "classId": "0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72"
+      },
+      "move": {
+        "address": "0x241c967422d3ec8661bca97d2db08d54a1e0143952444d6cc6e0f2b26d294b5d",
+        "classId": "0x28eb74154d163fe2f6e930d446715c05bac0c76629bb168e458370d164259dd4"
+      },
+      "artifact_action": {
+        "address": "0x301eefa5ed7dcb1effb4f86437cd68cc6c1612bd4a177f0120659ee0237d4f78",
+        "classId": "0x0e6a9bd340ea2f520046657277a3cedb9fefad2c9ed062b66b1d3df1462b5cbf"
+      },
+      "artifact_find": {
+        "address": "0x066d7d88feb4f608c0b153d0157fd8308e99dfe2902a34d0a25eb5cb026f5662",
+        "classId": "0x27493770b04fa49fb89c99c0d532f5377f248168e3cc8d7f0e6b557d779f9254"
+      },
+      "artifact_prospect": {
+        "address": "0x10261f8e8d579ade7617ee83cf935b157a09500f7e6cbcd0979d6e0d14543666",
+        "classId": "0x0bd13431758a496e5fc5d23e90f0048e14f2adcf7582a9f73e527b6d2f3d06e8"
+      },
+      "artifact_valut": {
+        "address": "0x03180555ad378030b1a615db377e08a04e752e76764c953811b262059dcedebd",
+        "classId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484"
+      },
+      "core_settlement_worker": {
+        "address": "0x1c53f045654eda50a28ca4316031db1fc834c578458e4d76e43a0565f916fd73",
+        "classId": "0x00fcab2a469bf2e21ef15b44fecdbc65bf23cb208756510043634d274f64e872"
+      },
+      "vault_settlement_worker": {
+        "address": "0x071afbcd8c582d7a04d81f4dda2accce0eee760ae7f11cf169abab8e3969bf3e",
+        "classId": "0x0fb0e0a4bf49f80419a66c8768038aa9a6e0286d91282f34b6efef2c3fddc1e2"
+      },
+      "backend": {
+        "address": "0x1cda708f3580d3868651d5facee1a0f1347683ec04fa7de407353d4c3acd44f5",
+        "classId": "0x1526cea11a475af86152fed567c6e9344568b5ad1dcc2ee654b353b121e433ac"
+      }
+    }
+  },
+  "proverEnabled": false,
+  "gameplayTransactionsSubmitted": 0,
+  "scope": "V14 targeted original/candidate Give private APIs only: empty Arrival/Artifact/Location verifier calls, exact callers/41 input words, false/sentinel and rollback.12 private simulations +12 direct-caller simulations +12 state checks. Fresh setup transactions are isolated, not fee or proof evidence.",
+  "artifactProvenance": {
+    "original": {
+      "move": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/move-Move.json",
+        "sha256": "308f0612d0419e8513d084e5a9bed7e49f7d3a75af1872e0e934369938dfd309"
+      },
+      "artifact_valut": {
+        "file": "/tmp/df-fee-tools/artifacts/baseline/artifact_valut-ArtifactValut.json",
+        "sha256": "7a8c3f7aebb644259168375bb910c379c215d9ceae610a109e81d0b469c7f1d5"
+      }
+    },
+    "candidate": {
+      "admin": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/admin-Admin.json",
+        "sha256": "60013e0cb1a24bf58ce46448b47b86ebf74dcf956f1e8be78ec1ae4006d20029"
+      },
+      "arrival": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/arrival-ArrivalStorage.json",
+        "sha256": "25df2092f3f187d299edd3aa18ffde5a2fea68d3a954b43882f349d021969809"
+      },
+      "artifact": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/artifact-ArtifactStorage.json",
+        "sha256": "81eb5e1138470cfc9b2bd8b37a7b8e4bfe9f30ac02ce9d963e07a63c37ed8545"
+      },
+      "artifact_action": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/artifact_action-ArtifactAction.json",
+        "sha256": "f4eec7991712eb94e182830048016030485006baae7fbb8a741bc1a93425b6bc"
+      },
+      "artifact_find": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/artifact_find-ArtifactFind.json",
+        "sha256": "d471b514b52a6d9d7bb1c24c5e13197a521b2d22cae8317c84dee7ff436c6576"
+      },
+      "artifact_location": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/artifact_location-ArtifactLocationStorage.json",
+        "sha256": "ea1f6aef5792d73b0edc1ebc654da05f5e96d08e64ae144d3837f1cd0e0b8d8a"
+      },
+      "artifact_prospect": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/artifact_prospect-ArtifactProspect.json",
+        "sha256": "9b55febd14f1066033d808682f2280500421af0d73d49fca3c193ad9dbeed14c"
+      },
+      "artifact_valut": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/artifact_valut-ArtifactValut.json",
+        "sha256": "d211ced4f4e42dc379fa3aeeaebc1c6a1bd2d72832b78f44b4899d9a4d7db859"
+      },
+      "config": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/config-Config.json",
+        "sha256": "2ac06fe5ca5d49e8b970e7168220354f25ba5c6822de5bef5e2fb1a525d2fb9a"
+      },
+      "core": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/core-Core.json",
+        "sha256": "810b8bd4358e03b19bc15d4e5e74e20ad3aecf6ca12dedde93ff0e3168c378d5"
+      },
+      "move": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/move-Move.json",
+        "sha256": "a5f0ae2999f46a3b01d57c43f8754a324d6e5aa1294edd270da1c36438b8c1af"
+      },
+      "planet": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/planet-PlanetStorage.json",
+        "sha256": "0b1723bfcf4c3abae7525602fad0bc5323c27b58d3a132cbf2ed6b3700a71888"
+      },
+      "planet_artifacts": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/planet_artifacts-PlanetArtifactsStorage.json",
+        "sha256": "86b785ba03ccf6939ac75d7b401530f75a21f6f8b22559222a3480f464365020"
+      },
+      "planet_events": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/planet_events-PlanetEventsStorage.json",
+        "sha256": "1dba4f3efa73ea56e9cc6ef3b03df426e3adacbefcc66ff2bae3f36e95e0d7d9"
+      },
+      "planet_revealed_coords": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/planet_revealed_coords-PlanetRevealedCoordsStorage.json",
+        "sha256": "824debb7d430d7b20786cd7a32fc748ea28278bb59f169a5bb4631d321294ef6"
+      },
+      "player": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/player-PlayerStorage.json",
+        "sha256": "0eb88afdcc3584c4eee0bc1df7a8b7e2bffc5c4b2bc66dd5979b1cf74fb7e84a"
+      },
+      "world": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/world-WorldStorage.json",
+        "sha256": "3c311a698e829bde9ca08e11139bccf25537f9686466ce908e3738178d205d6a"
+      },
+      "backend": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/game_state_backend-GameStateBackend.json",
+        "sha256": "23b3f8f4ac5ecb063b4bb47b6a4c441df1551f8e0f415b984508736f9d3cab8b"
+      },
+      "core_settlement_worker": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/core_settlement_worker-CoreSettlementWorker.json",
+        "sha256": "bd842720d4c7c107938cca1c5cd075a5f70ab3e33f943ab0f261b21cd9ba57da"
+      },
+      "vault_settlement_worker": {
+        "file": "/tmp/df-v14-touch-order-native-r1/codegen/vault_settlement_worker-VaultSettlementWorker.json",
+        "sha256": "89691d8083417027ac4b34efee6235d454e27aa1e4ac9a5cdaa5eb7f204f83fa"
+      }
+    },
+    "customBatch": {
+      "file": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+      "sha256": "45f6140d11b04d203b447fd5c95e20e3ca090b5ec36fc54de3133b6dea8dd76b"
+    }
+  },
+  "fixtures": {
+    "move": {
+      "file": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+      "sha256": "137847e671166affba2160e00aa5399276ce642ff44fa2792a06262862d55e3b"
+    },
+    "artifact_valut": {
+      "file": "/tmp/df-api-compatible-v8-fee-runtime/experiments/api-compatible-benchmark/.state/baseline-v2-give_spaceships-ordinary.json",
+      "sha256": "68ef0392c85f4121ee4a0b5f4421e3ad604214de24fef1de536eb5a2b56e54fc"
+    }
+  },
+  "isolated": {
+    "isolated world": {
+      "address": "0x16ab6bd5cbc8a8e6221206c74a0c8469b69f087b31506f8c1036f174cb00bd9c",
+      "salt": "0x2d06abb67859eb73f967b0bf38e65226ac56d144d6c3cc6bf5f6d3cd2ddde7c0",
+      "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934",
+      "phase": "deployed",
+      "currentClassId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934"
+    },
+    "isolated planet": {
+      "address": "0x1b027d53da429311ed785b90802651a74c9b72006c7cd4d197d70e32a7b62d4d",
+      "salt": "0x1c00014772986818c79daca393537fdea170ba3195d82bd1ab08f30468ec8c7d",
+      "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03",
+      "phase": "deployed",
+      "currentClassId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03"
+    },
+    "isolated planet_artifacts": {
+      "address": "0x04d7d207bbbe23f64728e426d2312ed9db14e13e62f225c26d13c25f5342f37c",
+      "salt": "0x16fc924a8501978a1bc707d3db881998b9a3dfaf1265ddcb17a6372a4121727a",
+      "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4",
+      "phase": "deployed",
+      "currentClassId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4"
+    },
+    "isolated planet_events": {
+      "address": "0x00d560cd84370a76c34f9e7d3ed9534ee1a81816ff5be865f2d8eebba7ef9cfb",
+      "salt": "0x029c14c51889cb796576aa14f3131b8c10c3bd61eacc796d4d67078ca5befa52",
+      "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918",
+      "phase": "deployed",
+      "currentClassId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918"
+    },
+    "isolated arrival": {
+      "address": "0x1ad72de7391098514b772cdde6a7cc8e89abedf496332253f946f1e120b70187",
+      "salt": "0x03923ef1f172d89115fd3ac687b552ff46d5d62d841b0411e69af41f79c54057",
+      "classId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603",
+      "phase": "deployed",
+      "currentClassId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603"
+    },
+    "isolated artifact": {
+      "address": "0x26eb82c173b70cdf7fa53e978f8c311c383d0a23d769a2da1214ec9c0186078b",
+      "salt": "0x2729c2858eadaa37a015e7cf5fda24118423d5b50720f6f80e9c3bb8fb259774",
+      "classId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332",
+      "phase": "deployed",
+      "currentClassId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332"
+    },
+    "isolated artifact_location": {
+      "address": "0x1bccfb7327cbf855290edd91e67517e82b5de67dd8d6ae57f9bcc8dc9f39654e",
+      "salt": "0x0d33c78ae709dec1f677f78822b280fd8ba2f64312c15b064584ce2aa615b1fb",
+      "classId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b",
+      "phase": "deployed",
+      "currentClassId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b"
+    },
+    "isolated player": {
+      "address": "0x101307fce34ba802d8689c2debd1836a7302d711f4bfeb195e9e2ca57fd4a84f",
+      "salt": "0x0d6ad61fb9a46dbd4c2818fa784059aa64d623b89654801b8550b00551c6213a",
+      "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9",
+      "phase": "deployed",
+      "currentClassId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9"
+    },
+    "isolated canonical Config": {
+      "address": "0x17fb6e9a73dcc4c78b6e952824a13253395f00795591d092933c9aa27592431c",
+      "salt": "0x235cf89b40c808e4fd0ffa376344ec1fc05c67d9a7b39d5f4ab213a68fd3a3e4",
+      "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8",
+      "phase": "deployed",
+      "currentClassId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8"
+    },
+    "original custom batch verifier": {
+      "address": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "salt": "0x2dbdee6ee9490037c82273ac6a3b4d2aefcd2a24a546efc7001398f8c3b75da2",
+      "classId": "0x1e219b9b0545e9cb1bef40bf89c1077371fdb5a378b1bc232198aa2b360a56fa",
+      "phase": "deployed",
+      "currentClassId": "0x1e219b9b0545e9cb1bef40bf89c1077371fdb5a378b1bc232198aa2b360a56fa"
+    },
+    "original artifact_valut": {
+      "address": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "salt": "0x0f42d58727bb8d93cc28cff90594ff90bbbee95057cb21750c46ba67cdaf0df9",
+      "classId": "0x137be48e4b46d17a633725c2c5a51ada6eb4ac555eeb6506e3ad8b4d42d0f0e4",
+      "phase": "deployed",
+      "currentClassId": "0x137be48e4b46d17a633725c2c5a51ada6eb4ac555eeb6506e3ad8b4d42d0f0e4"
+    },
+    "candidate custom batch verifier": {
+      "address": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "salt": "0x0cc30cff496bbd1370cf936ef11877b7240618e3a993c1d69a8d998fc6d3f69e",
+      "classId": "0x1e219b9b0545e9cb1bef40bf89c1077371fdb5a378b1bc232198aa2b360a56fa",
+      "phase": "deployed",
+      "currentClassId": "0x1e219b9b0545e9cb1bef40bf89c1077371fdb5a378b1bc232198aa2b360a56fa"
+    },
+    "candidate artifact_valut": {
+      "address": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "salt": "0x2d5b6607d90255ea3bc9357a8c82ea1a4dfda0886906860d92ce9e462d0d06c1",
+      "classId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484",
+      "phase": "deployed",
+      "currentClassId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484"
+    }
+  },
+  "receipts": [
+    {
+      "label": "isolated world",
+      "phase": "receipt-returned",
+      "address": "0x16ab6bd5cbc8a8e6221206c74a0c8469b69f087b31506f8c1036f174cb00bd9c",
+      "salt": "0x2d06abb67859eb73f967b0bf38e65226ac56d144d6c3cc6bf5f6d3cd2ddde7c0",
+      "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934",
+      "txHash": "0x0bf11674e08eb978f608df2fd3d4dde36327a69c6cea2463a6eeff6f59bb7504",
+      "serializedTransaction": {
+        "file": "setup-transaction-001.bin",
+        "sha256": "dfec980c553ac122effe5481978334426d359c427d0d319adec609692c74642f"
+      },
+      "receipt": {
+        "txHash": "0x0bf11674e08eb978f608df2fd3d4dde36327a69c6cea2463a6eeff6f59bb7504",
+        "executionResult": "success",
+        "transactionFee": "8616266400000",
+        "blockHash": "0x265629a8fcb82ac9aa6efc14460e986ffe75f048c221600e38e78ee1241d162d",
+        "blockNumber": 5020,
+        "slotNumber": 5021,
+        "txIndexInBlock": 0,
+        "epochNumber": 1255,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated planet",
+      "phase": "receipt-returned",
+      "address": "0x1b027d53da429311ed785b90802651a74c9b72006c7cd4d197d70e32a7b62d4d",
+      "salt": "0x1c00014772986818c79daca393537fdea170ba3195d82bd1ab08f30468ec8c7d",
+      "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03",
+      "txHash": "0x24befa16003dceae95bef20b7aab916565a596dd3b204907fe0704fb047a6429",
+      "serializedTransaction": {
+        "file": "setup-transaction-002.bin",
+        "sha256": "becac6ec3fc98c0b3ac0a93a293a7718d7ab37c955293c995198aa0a009f31dc"
+      },
+      "receipt": {
+        "txHash": "0x24befa16003dceae95bef20b7aab916565a596dd3b204907fe0704fb047a6429",
+        "executionResult": "success",
+        "transactionFee": "8268232200000",
+        "blockHash": "0x2d05640f47bf9579aa15dc47699a1b71990c3e6438af1cc5ce83ce1a0bd61f1e",
+        "blockNumber": 5021,
+        "slotNumber": 5022,
+        "txIndexInBlock": 0,
+        "epochNumber": 1255,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated planet_artifacts",
+      "phase": "receipt-returned",
+      "address": "0x04d7d207bbbe23f64728e426d2312ed9db14e13e62f225c26d13c25f5342f37c",
+      "salt": "0x16fc924a8501978a1bc707d3db881998b9a3dfaf1265ddcb17a6372a4121727a",
+      "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4",
+      "txHash": "0x1cb5665c1da7ebb1223f9f991d3e07936d8ddf364a4677ff5435c3ad1432ba57",
+      "serializedTransaction": {
+        "file": "setup-transaction-003.bin",
+        "sha256": "e6b4f8430d0b7b0b0149a28dfca24fe0e4a8f1e586455244d93dc82c4eb02560"
+      },
+      "receipt": {
+        "txHash": "0x1cb5665c1da7ebb1223f9f991d3e07936d8ddf364a4677ff5435c3ad1432ba57",
+        "executionResult": "success",
+        "transactionFee": "8268232200000",
+        "blockHash": "0x1c4a2c68df0019c87d50831444c87953dd7126faa0cddf2e6dffa9f825791ac5",
+        "blockNumber": 5022,
+        "slotNumber": 5023,
+        "txIndexInBlock": 0,
+        "epochNumber": 1255,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "isolated planet_events",
+      "phase": "receipt-returned",
+      "address": "0x00d560cd84370a76c34f9e7d3ed9534ee1a81816ff5be865f2d8eebba7ef9cfb",
+      "salt": "0x029c14c51889cb796576aa14f3131b8c10c3bd61eacc796d4d67078ca5befa52",
+      "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918",
+      "txHash": "0x0d815a52aa6dc08c81356600e5d2fcb773c27e08633d712fcc728c73a9f4dee1",
+      "serializedTransaction": {
+        "file": "setup-transaction-004.bin",
+        "sha256": "109857e600565a25399efc212721bc393fbb79cbdb67e43210a9b84b7d4354ef"
+      },
+      "receipt": {
+        "txHash": "0x0d815a52aa6dc08c81356600e5d2fcb773c27e08633d712fcc728c73a9f4dee1",
+        "executionResult": "success",
+        "transactionFee": "8268232200000",
+        "blockHash": "0x1e905956b8e6303e0bc20d66d8a0ce541fa76d04d3e4db23cd8f2f46738f26eb",
+        "blockNumber": 5023,
+        "slotNumber": 5024,
+        "txIndexInBlock": 0,
+        "epochNumber": 1256,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "isolated arrival",
+      "phase": "receipt-returned",
+      "address": "0x1ad72de7391098514b772cdde6a7cc8e89abedf496332253f946f1e120b70187",
+      "salt": "0x03923ef1f172d89115fd3ac687b552ff46d5d62d841b0411e69af41f79c54057",
+      "classId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603",
+      "txHash": "0x0d996b5ad163ff10ad9f370dca7c00e8ac79f2c6a54d10af25b6b8dac1fa5ce9",
+      "serializedTransaction": {
+        "file": "setup-transaction-005.bin",
+        "sha256": "20d6cee5f17053f4e02011599a5059963ef758d735579416db7f419162d0ac37"
+      },
+      "receipt": {
+        "txHash": "0x0d996b5ad163ff10ad9f370dca7c00e8ac79f2c6a54d10af25b6b8dac1fa5ce9",
+        "executionResult": "success",
+        "transactionFee": "8271781800000",
+        "blockHash": "0x2a33b9f2b07fadbcb16cfdae5ab5e231cd7536309d3cc4386d3e1c885caf8b2f",
+        "blockNumber": 5024,
+        "slotNumber": 5025,
+        "txIndexInBlock": 0,
+        "epochNumber": 1256,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated artifact",
+      "phase": "receipt-returned",
+      "address": "0x26eb82c173b70cdf7fa53e978f8c311c383d0a23d769a2da1214ec9c0186078b",
+      "salt": "0x2729c2858eadaa37a015e7cf5fda24118423d5b50720f6f80e9c3bb8fb259774",
+      "classId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332",
+      "txHash": "0x1be1a467ae559e3f5a2391c0b68780b3bdb1df9e3a8b14d8280e122266d33b92",
+      "serializedTransaction": {
+        "file": "setup-transaction-006.bin",
+        "sha256": "420724a67d313c7203e9cdba3b7e0e2fa5bd6ec62e58db9bd96505b7fa7b5c3d"
+      },
+      "receipt": {
+        "txHash": "0x1be1a467ae559e3f5a2391c0b68780b3bdb1df9e3a8b14d8280e122266d33b92",
+        "executionResult": "success",
+        "transactionFee": "8268599400000",
+        "blockHash": "0x1c28d2e932029328d8a674e9cd7f33de79996703a982e539f7e716f038834d81",
+        "blockNumber": 5025,
+        "slotNumber": 5026,
+        "txIndexInBlock": 0,
+        "epochNumber": 1256,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated artifact_location",
+      "phase": "receipt-returned",
+      "address": "0x1bccfb7327cbf855290edd91e67517e82b5de67dd8d6ae57f9bcc8dc9f39654e",
+      "salt": "0x0d33c78ae709dec1f677f78822b280fd8ba2f64312c15b064584ce2aa615b1fb",
+      "classId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b",
+      "txHash": "0x108dd939ccf7ce7d88469149d7ecd20f67dd5f2ab6355eb62dcd3ba8ded643f5",
+      "serializedTransaction": {
+        "file": "setup-transaction-007.bin",
+        "sha256": "b644c9bf5e52ecfb8d5e3b02e6ac86509edca0dcb5003e1943d40211d1200f6a"
+      },
+      "receipt": {
+        "txHash": "0x108dd939ccf7ce7d88469149d7ecd20f67dd5f2ab6355eb62dcd3ba8ded643f5",
+        "executionResult": "success",
+        "transactionFee": "8271996000000",
+        "blockHash": "0x18b9cf145e947fd395386e6635dc380f172b0261621c6a4deda44809819fcd3a",
+        "blockNumber": 5026,
+        "slotNumber": 5027,
+        "txIndexInBlock": 0,
+        "epochNumber": 1256,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated player",
+      "phase": "receipt-returned",
+      "address": "0x101307fce34ba802d8689c2debd1836a7302d711f4bfeb195e9e2ca57fd4a84f",
+      "salt": "0x0d6ad61fb9a46dbd4c2818fa784059aa64d623b89654801b8550b00551c6213a",
+      "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9",
+      "txHash": "0x10a970986597fd77f8f86c03e3e88ea38bcc677b7953f05f940683753e4e873c",
+      "serializedTransaction": {
+        "file": "setup-transaction-008.bin",
+        "sha256": "e4b83cfe9ec0a4c576a9b6dd0804ac59606ada89ed87e481819962d1090229da"
+      },
+      "receipt": {
+        "txHash": "0x10a970986597fd77f8f86c03e3e88ea38bcc677b7953f05f940683753e4e873c",
+        "executionResult": "success",
+        "transactionFee": "8268599400000",
+        "blockHash": "0x2694037833eb1bb8d82a525976c3c2cacdb75e068ba6cdeefb4b5f4e24c7ace8",
+        "blockNumber": 5027,
+        "slotNumber": 5028,
+        "txIndexInBlock": 0,
+        "epochNumber": 1257,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "bind isolated namespaces 0",
+      "phase": "receipt-returned",
+      "txHash": "0x04edf003c95ae0998301de9cc855c73cb8875b3d850f6d49e807cb2f2241363a",
+      "serializedTransaction": {
+        "file": "setup-transaction-009.bin",
+        "sha256": "1e2055b2b2abf972eee46e721ccb5ea3098a8d8a299fe9c5f48ecb24a7942f02"
+      },
+      "receipt": {
+        "txHash": "0x04edf003c95ae0998301de9cc855c73cb8875b3d850f6d49e807cb2f2241363a",
+        "executionResult": "success",
+        "transactionFee": "10915377000000",
+        "blockHash": "0x2014991254c77b6f811db5c11b69e69385af6645c223174bc5e1a8cadc001b5f",
+        "blockNumber": 5028,
+        "slotNumber": 5029,
+        "txIndexInBlock": 0,
+        "epochNumber": 1257,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "bind isolated namespaces 1",
+      "phase": "receipt-returned",
+      "txHash": "0x26031846928a6bc419338825a1ceecff56164f13b8df4b8b8722e2f88437454b",
+      "serializedTransaction": {
+        "file": "setup-transaction-010.bin",
+        "sha256": "186a29f982f42c7b1ac15e251f4c2dd0b1656786d9d2bfef73d07a45990a9ae1"
+      },
+      "receipt": {
+        "txHash": "0x26031846928a6bc419338825a1ceecff56164f13b8df4b8b8722e2f88437454b",
+        "executionResult": "success",
+        "transactionFee": "11270204400000",
+        "blockHash": "0x07f9ea3d73353b44a11e19593edaed8ce2bc1673f8a136140535469caf89fa7c",
+        "blockNumber": 5029,
+        "slotNumber": 5030,
+        "txIndexInBlock": 0,
+        "epochNumber": 1257,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "isolated canonical Config",
+      "phase": "receipt-returned",
+      "address": "0x17fb6e9a73dcc4c78b6e952824a13253395f00795591d092933c9aa27592431c",
+      "salt": "0x235cf89b40c808e4fd0ffa376344ec1fc05c67d9a7b39d5f4ab213a68fd3a3e4",
+      "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8",
+      "txHash": "0x172c4f3b14ae1981eb2da5307e4365fb3ea306a694224380b6cc456b30b63610",
+      "serializedTransaction": {
+        "file": "setup-transaction-011.bin",
+        "sha256": "4accd2f238e2837b45df6983f152fdac975c92dd378719f3da74e19b3bc358e3"
+      },
+      "receipt": {
+        "txHash": "0x172c4f3b14ae1981eb2da5307e4365fb3ea306a694224380b6cc456b30b63610",
+        "executionResult": "success",
+        "transactionFee": "8113559400000",
+        "blockHash": "0x20625941da780c0f2a72891b18ad6f6ab781a89bdd724f4e02081179669c7b0a",
+        "blockNumber": 5030,
+        "slotNumber": 5031,
+        "txIndexInBlock": 0,
+        "epochNumber": 1257,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated Move config 0",
+      "phase": "receipt-returned",
+      "txHash": "0x19063784a7769b7b04442807c3a9163898e9f1ead0b0f5b52cf19c96521680ba",
+      "serializedTransaction": {
+        "file": "setup-transaction-012.bin",
+        "sha256": "3820a6a2047891ff4051ce3b886d57ab2a910d406a0782713911b2ee5fbcf28d"
+      },
+      "receipt": {
+        "txHash": "0x19063784a7769b7b04442807c3a9163898e9f1ead0b0f5b52cf19c96521680ba",
+        "executionResult": "success",
+        "transactionFee": "22954365600000",
+        "blockHash": "0x1d855f87410024eff98b59384b01d199a16be07657924b7bb11b1976efd16d75",
+        "blockNumber": 5031,
+        "slotNumber": 5032,
+        "txIndexInBlock": 0,
+        "epochNumber": 1258,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated Move config 1",
+      "phase": "receipt-returned",
+      "txHash": "0x14b37170b477814a7fa29037c11e33efb025f606541a55ef611359b89ff7ef52",
+      "serializedTransaction": {
+        "file": "setup-transaction-013.bin",
+        "sha256": "2b34d98de649e10a9dbd04fdda82d6c4603bb17c41c1cd18546416efd77124a4"
+      },
+      "receipt": {
+        "txHash": "0x14b37170b477814a7fa29037c11e33efb025f606541a55ef611359b89ff7ef52",
+        "executionResult": "success",
+        "transactionFee": "15941233200000",
+        "blockHash": "0x301049bd44b5510fd96d2b621c4b2f67b992f60b2fae1fb34fc0ceab75974ead",
+        "blockNumber": 5032,
+        "slotNumber": 5033,
+        "txIndexInBlock": 0,
+        "epochNumber": 1258,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "isolated config tier0",
+      "phase": "receipt-returned",
+      "txHash": "0x2ae212c192306339eae421299366245a123a92287d6df32d7cec81544b30c6ab",
+      "serializedTransaction": {
+        "file": "setup-transaction-014.bin",
+        "sha256": "f903e64b20916e7095b6ad343ff05c18891c603dda33065137ec4affa9132581"
+      },
+      "receipt": {
+        "txHash": "0x2ae212c192306339eae421299366245a123a92287d6df32d7cec81544b30c6ab",
+        "executionResult": "success",
+        "transactionFee": "25411770000000",
+        "blockHash": "0x2b357773c25e3a7f2ddda9633a9c785156db7fc8ddc0b49c4a17efdc7b0e69d7",
+        "blockNumber": 5033,
+        "slotNumber": 5034,
+        "txIndexInBlock": 0,
+        "epochNumber": 1258,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "isolated config tier1",
+      "phase": "receipt-returned",
+      "txHash": "0x202260c991ecb57be85da815885a932bd9103df5027c495b84d02f46b60332bf",
+      "serializedTransaction": {
+        "file": "setup-transaction-015.bin",
+        "sha256": "445ad65cb1c20967e1ca90da3ffecf13c1f7269d73b61bcd997da3a29e69bde6"
+      },
+      "receipt": {
+        "txHash": "0x202260c991ecb57be85da815885a932bd9103df5027c495b84d02f46b60332bf",
+        "executionResult": "success",
+        "transactionFee": "25412259600000",
+        "blockHash": "0x2b42f164bafa9a060b503318160afe6332d9e270918fe23413001868b5a10f11",
+        "blockNumber": 5034,
+        "slotNumber": 5035,
+        "txIndexInBlock": 0,
+        "epochNumber": 1258,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "isolated config tier2",
+      "phase": "receipt-returned",
+      "txHash": "0x1d4e0f1950c91e93eca98a3c59684b02c3144b2f57d668c93022351dd4d9f1b7",
+      "serializedTransaction": {
+        "file": "setup-transaction-016.bin",
+        "sha256": "c9f99d0529e72e7b5cfb8359e3fb532f2be83bbd98318411cc0df46f214fc652"
+      },
+      "receipt": {
+        "txHash": "0x1d4e0f1950c91e93eca98a3c59684b02c3144b2f57d668c93022351dd4d9f1b7",
+        "executionResult": "success",
+        "transactionFee": "25412749200000",
+        "blockHash": "0x00b66ed2298e2468099ea6b6336cd3bf988789d7db6aec3ecdea987ed9b64f11",
+        "blockNumber": 5035,
+        "slotNumber": 5036,
+        "txIndexInBlock": 0,
+        "epochNumber": 1259,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "isolated config tier3",
+      "phase": "receipt-returned",
+      "txHash": "0x04de856c5a14964e257862e02ed24734464f76cc4ba46d92f97506fe79fe5165",
+      "serializedTransaction": {
+        "file": "setup-transaction-017.bin",
+        "sha256": "83d7b023e43a9aba4601fb69c7dad197a394520bded98e7c09f132ba85d5ce35"
+      },
+      "receipt": {
+        "txHash": "0x04de856c5a14964e257862e02ed24734464f76cc4ba46d92f97506fe79fe5165",
+        "executionResult": "success",
+        "transactionFee": "25413238800000",
+        "blockHash": "0x2608d76954ef9eeddc7f917bbf2e729830ea7ca88da4cea22e6db65021bb8be9",
+        "blockNumber": 5036,
+        "slotNumber": 5037,
+        "txIndexInBlock": 0,
+        "epochNumber": 1259,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "isolated target stats",
+      "phase": "receipt-returned",
+      "txHash": "0x20c9c28213c402f1474b4ca3f5ece1253e6f3b87f76e803d37b55a9be5794d30",
+      "serializedTransaction": {
+        "file": "setup-transaction-018.bin",
+        "sha256": "bfc8d9fa218af19294b4d3c60b6debfe256ca6c5a1304e7642862376c2b44642"
+      },
+      "receipt": {
+        "txHash": "0x20c9c28213c402f1474b4ca3f5ece1253e6f3b87f76e803d37b55a9be5794d30",
+        "executionResult": "success",
+        "transactionFee": "9257795400000",
+        "blockHash": "0x2ba1c6dda8a94a8c49f6a3d6a18e05e0b2ec429fe2e29c887b08b741380e1b56",
+        "blockNumber": 5037,
+        "slotNumber": 5038,
+        "txIndexInBlock": 0,
+        "epochNumber": 1259,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "original custom batch verifier",
+      "phase": "receipt-returned",
+      "address": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "salt": "0x2dbdee6ee9490037c82273ac6a3b4d2aefcd2a24a546efc7001398f8c3b75da2",
+      "classId": "0x1e219b9b0545e9cb1bef40bf89c1077371fdb5a378b1bc232198aa2b360a56fa",
+      "txHash": "0x18ee94a788e67866de73266e4dbabd133b6b86b5c74a5885b95f15296c62309d",
+      "serializedTransaction": {
+        "file": "setup-transaction-019.bin",
+        "sha256": "ec3794341c228b7d1dd845cba2e5ac22693716eccd740687022d19d12b986e6d"
+      },
+      "receipt": {
+        "txHash": "0x18ee94a788e67866de73266e4dbabd133b6b86b5c74a5885b95f15296c62309d",
+        "executionResult": "success",
+        "transactionFee": "9280725000000",
+        "blockHash": "0x0aa0409b7cdde22d4e0a4aa91e1d7d207ca2352740e02f0878fa4d7734ec37bc",
+        "blockNumber": 5038,
+        "slotNumber": 5039,
+        "txIndexInBlock": 0,
+        "epochNumber": 1259,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original artifact_valut",
+      "phase": "receipt-returned",
+      "address": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "salt": "0x0f42d58727bb8d93cc28cff90594ff90bbbee95057cb21750c46ba67cdaf0df9",
+      "classId": "0x137be48e4b46d17a633725c2c5a51ada6eb4ac555eeb6506e3ad8b4d42d0f0e4",
+      "txHash": "0x15ef1d3335670032baf191c34e34387213be6f79dff91457b134f213820bc3e7",
+      "serializedTransaction": {
+        "file": "setup-transaction-020.bin",
+        "sha256": "94b69eeae84b37529ed518c3a9be24f00deb51fcccdbab759ce2c872508b64be"
+      },
+      "receipt": {
+        "txHash": "0x15ef1d3335670032baf191c34e34387213be6f79dff91457b134f213820bc3e7",
+        "executionResult": "success",
+        "transactionFee": "7599275400000",
+        "blockHash": "0x2583a53eafd30583b065e10b6915efd7a1e21e1736f4072cab6969a00d3871a0",
+        "blockNumber": 5039,
+        "slotNumber": 5040,
+        "txIndexInBlock": 0,
+        "epochNumber": 1260,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original artifact_valut writer grants 0",
+      "phase": "receipt-returned",
+      "txHash": "0x0197097a46bd280d557cf60541d0682a6475b03387806bd888199ed09e23f2c9",
+      "serializedTransaction": {
+        "file": "setup-transaction-021.bin",
+        "sha256": "eec1b8f559a534b28b06d4bc21b5a19366137e2919e6081e91a314b6af2575c7"
+      },
+      "receipt": {
+        "txHash": "0x0197097a46bd280d557cf60541d0682a6475b03387806bd888199ed09e23f2c9",
+        "executionResult": "success",
+        "transactionFee": "12573968400000",
+        "blockHash": "0x2782fd4407546adf707963e8b75fcc4c08d9c734d658d04e48aedd09eab201cd",
+        "blockNumber": 5040,
+        "slotNumber": 5041,
+        "txIndexInBlock": 0,
+        "epochNumber": 1260,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original artifact_valut writer grants 1",
+      "phase": "receipt-returned",
+      "txHash": "0x2c3a5c6b8358914dd764b55ed9f49729ddd2354d0a42ea684b8515456ff06667",
+      "serializedTransaction": {
+        "file": "setup-transaction-022.bin",
+        "sha256": "227fda2235b622bcab54a386bdd483c7dbf9ed1b09564a3e64b9d10d00fe2618"
+      },
+      "receipt": {
+        "txHash": "0x2c3a5c6b8358914dd764b55ed9f49729ddd2354d0a42ea684b8515456ff06667",
+        "executionResult": "success",
+        "transactionFee": "12590431200000",
+        "blockHash": "0x2fdb3213bada73038886dc84c2f0a7bd465efc28765d068f61f047c84a09d9dd",
+        "blockNumber": 5041,
+        "slotNumber": 5042,
+        "txIndexInBlock": 0,
+        "epochNumber": 1260,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate custom batch verifier",
+      "phase": "receipt-returned",
+      "address": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "salt": "0x0cc30cff496bbd1370cf936ef11877b7240618e3a993c1d69a8d998fc6d3f69e",
+      "classId": "0x1e219b9b0545e9cb1bef40bf89c1077371fdb5a378b1bc232198aa2b360a56fa",
+      "txHash": "0x10177f6b74be9d89a419d030cdec68294726d61abfbde2470fa44fbd435a53e7",
+      "serializedTransaction": {
+        "file": "setup-transaction-023.bin",
+        "sha256": "a8c4c2c5e719e92af1c468321466f589f8a8a59f24e73194635fda224f8d8530"
+      },
+      "receipt": {
+        "txHash": "0x10177f6b74be9d89a419d030cdec68294726d61abfbde2470fa44fbd435a53e7",
+        "executionResult": "success",
+        "transactionFee": "9280725000000",
+        "blockHash": "0x21ed1e45cade7cda1f9f96d1232972110a27cd009541a78c4cf934538a044a3c",
+        "blockNumber": 5042,
+        "slotNumber": 5043,
+        "txIndexInBlock": 0,
+        "epochNumber": 1260,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate artifact_valut",
+      "phase": "receipt-returned",
+      "address": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "salt": "0x2d5b6607d90255ea3bc9357a8c82ea1a4dfda0886906860d92ce9e462d0d06c1",
+      "classId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484",
+      "txHash": "0x17cb8f430f73abdf3e9b244e59199e267c1ee1cce8bb99347e46ef299e7db5e4",
+      "serializedTransaction": {
+        "file": "setup-transaction-024.bin",
+        "sha256": "96e5a6dbb622a8895adbfbedb7babc7f5781641df21063769e680a05a007f362"
+      },
+      "receipt": {
+        "txHash": "0x17cb8f430f73abdf3e9b244e59199e267c1ee1cce8bb99347e46ef299e7db5e4",
+        "executionResult": "success",
+        "transactionFee": "7601386800000",
+        "blockHash": "0x13ece9af1874308ad4b98ce29725cd519f3044ae70f411245f7deedad2d03ff2",
+        "blockNumber": 5043,
+        "slotNumber": 5044,
+        "txIndexInBlock": 0,
+        "epochNumber": 1261,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "candidate artifact_valut backend wiring 0",
+      "phase": "receipt-returned",
+      "txHash": "0x19335941d4917272393ae89d239a34e603032fcf0d294e385eac6d0b05623157",
+      "serializedTransaction": {
+        "file": "setup-transaction-025.bin",
+        "sha256": "6ef80f062e99289bfa5c60d23481396845c9a5a0a3497637bdbeb76ae7c5609c"
+      },
+      "receipt": {
+        "txHash": "0x19335941d4917272393ae89d239a34e603032fcf0d294e385eac6d0b05623157",
+        "executionResult": "success",
+        "transactionFee": "7184217000000",
+        "blockHash": "0x061c05e47236130a5745646bd2e3d3e09fc4f9f44173dba523d3e4dbbdd8a28b",
+        "blockNumber": 5044,
+        "slotNumber": 5045,
+        "txIndexInBlock": 0,
+        "epochNumber": 1261,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "candidate artifact_valut writer grants 0",
+      "phase": "receipt-returned",
+      "txHash": "0x2a1ba72c3d4b319c7ba70188a31a589c0c576fd5c7e0d31d5370a46daacd739f",
+      "serializedTransaction": {
+        "file": "setup-transaction-026.bin",
+        "sha256": "ee883223328175a1fe96cc437295742b6365cbcdc36e611e018b81e5cad548bd"
+      },
+      "receipt": {
+        "txHash": "0x2a1ba72c3d4b319c7ba70188a31a589c0c576fd5c7e0d31d5370a46daacd739f",
+        "executionResult": "success",
+        "transactionFee": "12573968400000",
+        "blockHash": "0x286f5f994333d385a1a9cccaf76f5b17f43f6f673f97143844c7ee7efb95b0ea",
+        "blockNumber": 5045,
+        "slotNumber": 5046,
+        "txIndexInBlock": 0,
+        "epochNumber": 1261,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate artifact_valut writer grants 1",
+      "phase": "receipt-returned",
+      "txHash": "0x05d7063a64bd2675dd0d994be774da7b468212afdc99e407a0e55d1788d72a3a",
+      "serializedTransaction": {
+        "file": "setup-transaction-027.bin",
+        "sha256": "ed24147bb3c845cf0313d8bcb38cbbc2513f235d26faeca37ee2a1c8714efc6a"
+      },
+      "receipt": {
+        "txHash": "0x05d7063a64bd2675dd0d994be774da7b468212afdc99e407a0e55d1788d72a3a",
+        "executionResult": "success",
+        "transactionFee": "12590431200000",
+        "blockHash": "0x25e8b03446e80b172645c2279defbbb47fd94115ca60b66bb94d2d5dd096c95e",
+        "blockNumber": 5046,
+        "slotNumber": 5047,
+        "txIndexInBlock": 0,
+        "epochNumber": 1261,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "give_spaceships/empty exact isolated seeds 0",
+      "phase": "receipt-returned",
+      "txHash": "0x27e81f0b5721d39c1eda1058ed317c2adb722562a878bf1652c24252bbaa258b",
+      "serializedTransaction": {
+        "file": "setup-transaction-028.bin",
+        "sha256": "dc1e8b2fee02e5d6bd2de783671fd34f83fcd72bedb1cec48f8a9c54b1fe1b74"
+      },
+      "receipt": {
+        "txHash": "0x27e81f0b5721d39c1eda1058ed317c2adb722562a878bf1652c24252bbaa258b",
+        "executionResult": "success",
+        "transactionFee": "9198411000000",
+        "blockHash": "0x2a0116b0ab5dcbe26b6aca5e9e315fc66b511193873175d67fa1fd955fb006f9",
+        "blockNumber": 5047,
+        "slotNumber": 5048,
+        "txIndexInBlock": 0,
+        "epochNumber": 1262,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty replace only arrival",
+      "phase": "receipt-returned",
+      "txHash": "0x2a13613562960d604302bc589f17f8cd1fdce75fd265337557b545fde4ebb02d",
+      "serializedTransaction": {
+        "file": "setup-transaction-029.bin",
+        "sha256": "314267408447dff01eed272032b39f8a847cd9058b595e6b08925c9c7d9762e2"
+      },
+      "receipt": {
+        "txHash": "0x2a13613562960d604302bc589f17f8cd1fdce75fd265337557b545fde4ebb02d",
+        "executionResult": "success",
+        "transactionFee": "9147972000000",
+        "blockHash": "0x22059a2f812a3f28c047d3280cdd24eeb6f2e1a69d3c88df8dd26bc1e11a9d1b",
+        "blockNumber": 5048,
+        "slotNumber": 5049,
+        "txIndexInBlock": 0,
+        "epochNumber": 1262,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty/arrival false",
+      "phase": "receipt-returned",
+      "txHash": "0x093941a921c0682ee8023bbd40728a55c07cd6af50ad97f68e58fc9c272c1ba6",
+      "serializedTransaction": {
+        "file": "setup-transaction-030.bin",
+        "sha256": "c5b50adc29aff88acd03d7de9e0c88938ba2412260f2997c06ea738d226647d5"
+      },
+      "receipt": {
+        "txHash": "0x093941a921c0682ee8023bbd40728a55c07cd6af50ad97f68e58fc9c272c1ba6",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x06567f945e95079ade9f6f080965e51602418a8e43a6c8c890bba602a76ab116",
+        "blockNumber": 5049,
+        "slotNumber": 5050,
+        "txIndexInBlock": 0,
+        "epochNumber": 1262,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty/arrival sentinel",
+      "phase": "receipt-returned",
+      "txHash": "0x21d269d00290bc50b0b181ac64b2bb9c7cfebf1f2bcad65017ebb0ee3206a4e4",
+      "serializedTransaction": {
+        "file": "setup-transaction-031.bin",
+        "sha256": "eb97ea599b525ff37f535609ad6f44998de5d8b9eaa71a4b5154ee34f151cf02"
+      },
+      "receipt": {
+        "txHash": "0x21d269d00290bc50b0b181ac64b2bb9c7cfebf1f2bcad65017ebb0ee3206a4e4",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x1d6d73ed7aa495ef8af957a2ecd19a5c24cb65ecc278347f18868903235a590a",
+        "blockNumber": 5050,
+        "slotNumber": 5051,
+        "txIndexInBlock": 0,
+        "epochNumber": 1262,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty replace only arrival",
+      "phase": "receipt-returned",
+      "txHash": "0x2b9b9976f194551da9625c33a1aca128b36154fbeccf5a41d1a446b1db39eb23",
+      "serializedTransaction": {
+        "file": "setup-transaction-032.bin",
+        "sha256": "5fdd6e23535f9774214159b2df4a022789b149123c1d1ffa6cc5dd66c1b7f9af"
+      },
+      "receipt": {
+        "txHash": "0x2b9b9976f194551da9625c33a1aca128b36154fbeccf5a41d1a446b1db39eb23",
+        "executionResult": "success",
+        "transactionFee": "9150083400000",
+        "blockHash": "0x1834facdd9812628c045d841d420bfadf221aa1c435acdc63a6730143dc2be58",
+        "blockNumber": 5051,
+        "slotNumber": 5052,
+        "txIndexInBlock": 0,
+        "epochNumber": 1263,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival false",
+      "phase": "receipt-returned",
+      "txHash": "0x23aa8a186f5870a0d646d5d67853bfcb142c35ab767da594d1f3cb5233a0401e",
+      "serializedTransaction": {
+        "file": "setup-transaction-033.bin",
+        "sha256": "f5c36ad098710380411e5a1d5cb49fb6034c399a924628ba8c11afc87bbc26d3"
+      },
+      "receipt": {
+        "txHash": "0x23aa8a186f5870a0d646d5d67853bfcb142c35ab767da594d1f3cb5233a0401e",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x046555fba4ecb0e2834494ea5ede4024fae726361a9042b02a672b1f99d33736",
+        "blockNumber": 5052,
+        "slotNumber": 5053,
+        "txIndexInBlock": 0,
+        "epochNumber": 1263,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival sentinel",
+      "phase": "receipt-returned",
+      "txHash": "0x1f221fe84a90b574f055959e8247eabafe1cdf14457641a1ec9696fe2fa27228",
+      "serializedTransaction": {
+        "file": "setup-transaction-034.bin",
+        "sha256": "1c9c89b3ca4a2e799350d69d5c8075045f3e1b06bdbce66b85425deb6a543ef1"
+      },
+      "receipt": {
+        "txHash": "0x1f221fe84a90b574f055959e8247eabafe1cdf14457641a1ec9696fe2fa27228",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x2ad8f8a402104ec9a740dc4bbdfd52f4851fe314cdee7118edeefc7f0286c8f3",
+        "blockNumber": 5053,
+        "slotNumber": 5054,
+        "txIndexInBlock": 0,
+        "epochNumber": 1263,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty replace only artifact",
+      "phase": "receipt-returned",
+      "txHash": "0x17e53f77c33498a503febe59f506ee7f178a1e31df74650213accbb63aa3ee8d",
+      "serializedTransaction": {
+        "file": "setup-transaction-035.bin",
+        "sha256": "938745eda06022f2e12397370de8e6c2fe735c95f3a834f066a4a65a5766e6a3"
+      },
+      "receipt": {
+        "txHash": "0x17e53f77c33498a503febe59f506ee7f178a1e31df74650213accbb63aa3ee8d",
+        "executionResult": "success",
+        "transactionFee": "9147972000000",
+        "blockHash": "0x19d26390f9c22b3fa7776689aa68a8b52dc245d771964f02c57c9e457001305e",
+        "blockNumber": 5054,
+        "slotNumber": 5055,
+        "txIndexInBlock": 0,
+        "epochNumber": 1263,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty/artifact false",
+      "phase": "receipt-returned",
+      "txHash": "0x234a608cf32b23f20419aa955fefb875a3b1c9b3c8b6d855394ab6ae1823c341",
+      "serializedTransaction": {
+        "file": "setup-transaction-036.bin",
+        "sha256": "9244b295316d685cc1d1d17de984676b268d0c052bec3ec4fbbb47ec2a2a7632"
+      },
+      "receipt": {
+        "txHash": "0x234a608cf32b23f20419aa955fefb875a3b1c9b3c8b6d855394ab6ae1823c341",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x1ffa39e50c570145f9a6225866e4e37fd7eb4cecd8763f96652f5f8ab05cbd62",
+        "blockNumber": 5055,
+        "slotNumber": 5056,
+        "txIndexInBlock": 0,
+        "epochNumber": 1264,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty/artifact sentinel",
+      "phase": "receipt-returned",
+      "txHash": "0x0cdacaced98fabaf60be5eb52109d5a7a067b9323b0787a5041f7d65772a22d9",
+      "serializedTransaction": {
+        "file": "setup-transaction-037.bin",
+        "sha256": "6c28af074ccaaa6c3d158685bd265f2b3655628218059f375d48ab694a35b6e4"
+      },
+      "receipt": {
+        "txHash": "0x0cdacaced98fabaf60be5eb52109d5a7a067b9323b0787a5041f7d65772a22d9",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x272ebaa61ec3131b14b8957ec3aa84be5d0913a29782b735b029ca47a8e8030c",
+        "blockNumber": 5056,
+        "slotNumber": 5057,
+        "txIndexInBlock": 0,
+        "epochNumber": 1264,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty replace only artifact",
+      "phase": "receipt-returned",
+      "txHash": "0x2a680579289957bbd746c0780aadcea5f71d1209584619911168061b25e86bd6",
+      "serializedTransaction": {
+        "file": "setup-transaction-038.bin",
+        "sha256": "9c01958d1ab8be5030991886f7ea1a349eb5bf6c0213bc579b11b0fb3af1e97e"
+      },
+      "receipt": {
+        "txHash": "0x2a680579289957bbd746c0780aadcea5f71d1209584619911168061b25e86bd6",
+        "executionResult": "success",
+        "transactionFee": "9150083400000",
+        "blockHash": "0x203dedd492c1667e3f7073b0a44a4074a6efb7b153b6c0b7484cb3fa4c1c989b",
+        "blockNumber": 5057,
+        "slotNumber": 5058,
+        "txIndexInBlock": 0,
+        "epochNumber": 1264,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact false",
+      "phase": "receipt-returned",
+      "txHash": "0x2ff95f7112cf06dba328e71b7f46b7954d060d8e5c780fdad0133777eb83b44d",
+      "serializedTransaction": {
+        "file": "setup-transaction-039.bin",
+        "sha256": "8bc1a268f4a86210c5cbbff2262576b60fcca89974a2334002cad0c0942524eb"
+      },
+      "receipt": {
+        "txHash": "0x2ff95f7112cf06dba328e71b7f46b7954d060d8e5c780fdad0133777eb83b44d",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x0da00a7c6e050ce7b27492b9523bbaed352aa5c575fdd5a746805399c144f94c",
+        "blockNumber": 5058,
+        "slotNumber": 5059,
+        "txIndexInBlock": 0,
+        "epochNumber": 1264,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact sentinel",
+      "phase": "receipt-returned",
+      "txHash": "0x2afc839a8be8bb1f5fd3394555fa9b683f3292999a148e636fd7fb8acee36a04",
+      "serializedTransaction": {
+        "file": "setup-transaction-040.bin",
+        "sha256": "2d70e6ce4f1ea3df0142ae2c5c97955c96c2f1ce70f4fd1caff4ab7e1ba7c9a2"
+      },
+      "receipt": {
+        "txHash": "0x2afc839a8be8bb1f5fd3394555fa9b683f3292999a148e636fd7fb8acee36a04",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x0a6f5f0b846d4baac4118d365e01ba1b2d359f21377500f6bcefc6b3e528817c",
+        "blockNumber": 5059,
+        "slotNumber": 5060,
+        "txIndexInBlock": 0,
+        "epochNumber": 1265,
+        "status": "proven"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty replace only artifact_location",
+      "phase": "receipt-returned",
+      "txHash": "0x0db6daa625c500f5f01eb54cba349d63c02c33f60c80486c61031d001a3ac689",
+      "serializedTransaction": {
+        "file": "setup-transaction-041.bin",
+        "sha256": "36839b7e817933b77970838fd4f65c3f61875887f2737ac01114a64476bbb802"
+      },
+      "receipt": {
+        "txHash": "0x0db6daa625c500f5f01eb54cba349d63c02c33f60c80486c61031d001a3ac689",
+        "executionResult": "success",
+        "transactionFee": "9147972000000",
+        "blockHash": "0x03829795ad3709cb6fb6b8793953b9d288d3a5f829c956de24485f18beed44aa",
+        "blockNumber": 5060,
+        "slotNumber": 5061,
+        "txIndexInBlock": 0,
+        "epochNumber": 1265,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location false",
+      "phase": "receipt-returned",
+      "txHash": "0x14d06048e3e785d9fc96c68d7c89d458f4b567b4801b4dd0872d175ad544a8df",
+      "serializedTransaction": {
+        "file": "setup-transaction-042.bin",
+        "sha256": "89963a12d31c9c55792447b5cee2d6900eea57e77709692dbb797245c5e498ec"
+      },
+      "receipt": {
+        "txHash": "0x14d06048e3e785d9fc96c68d7c89d458f4b567b4801b4dd0872d175ad544a8df",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x2a4946bddb845a22bcd3787fe2521957283dbd522039ec83473386cdfbef8ebf",
+        "blockNumber": 5061,
+        "slotNumber": 5062,
+        "txIndexInBlock": 0,
+        "epochNumber": 1265,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location sentinel",
+      "phase": "receipt-returned",
+      "txHash": "0x1d7ae656659ea21625de6eaa3567d5fa56115b4b24b70bb74dc93b92998fc202",
+      "serializedTransaction": {
+        "file": "setup-transaction-043.bin",
+        "sha256": "fdf4602fdac9fac64a60240c364025c10b9bd06e4d0f9dc03bdf4edbaca3b01f"
+      },
+      "receipt": {
+        "txHash": "0x1d7ae656659ea21625de6eaa3567d5fa56115b4b24b70bb74dc93b92998fc202",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x23a1fa9b3bd6be82d056275a1c986e945c2f0335efeab6f9c9a3e1731f167410",
+        "blockNumber": 5062,
+        "slotNumber": 5063,
+        "txIndexInBlock": 0,
+        "epochNumber": 1265,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty replace only artifact_location",
+      "phase": "receipt-returned",
+      "txHash": "0x15d008f3c847ee0458a8d05f84c715a36d94296f8259055d44d03d1075586744",
+      "serializedTransaction": {
+        "file": "setup-transaction-044.bin",
+        "sha256": "760d050cbccc471d7d0e2e7eb3eb9fbbd607348ac69e2c0b6aaf99b879c44e75"
+      },
+      "receipt": {
+        "txHash": "0x15d008f3c847ee0458a8d05f84c715a36d94296f8259055d44d03d1075586744",
+        "executionResult": "success",
+        "transactionFee": "9150083400000",
+        "blockHash": "0x04f96d6c7eae70df827b61ff735038a593df63f09c42505b5791411480c84211",
+        "blockNumber": 5063,
+        "slotNumber": 5064,
+        "txIndexInBlock": 0,
+        "epochNumber": 1266,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location false",
+      "phase": "receipt-returned",
+      "txHash": "0x284d7251fe1bd8bc38ae893c117c72f20818d5051d35dd3d7c128eadb92e51d6",
+      "serializedTransaction": {
+        "file": "setup-transaction-045.bin",
+        "sha256": "f8104134a1c45adb6a52e4f42d44cf412d10aedf7b331f1d5d4b8cd72fcf5dee"
+      },
+      "receipt": {
+        "txHash": "0x284d7251fe1bd8bc38ae893c117c72f20818d5051d35dd3d7c128eadb92e51d6",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x05eb98f4a7975262c92e7bd5b8927ca7b7210211e3db44ec950887913264c2b2",
+        "blockNumber": 5064,
+        "slotNumber": 5065,
+        "txIndexInBlock": 0,
+        "epochNumber": 1266,
+        "status": "checkpointed"
+      }
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location sentinel",
+      "phase": "receipt-returned",
+      "txHash": "0x0c2ae977fa71f3bf9e4f4e7edabbd279ac3e052225b06f8852eea1502239e386",
+      "serializedTransaction": {
+        "file": "setup-transaction-046.bin",
+        "sha256": "8f44121ea230107a2e87682e21747935782154f19a2489700e5bdfc99e738be4"
+      },
+      "receipt": {
+        "txHash": "0x0c2ae977fa71f3bf9e4f4e7edabbd279ac3e052225b06f8852eea1502239e386",
+        "executionResult": "success",
+        "transactionFee": "7785915000000",
+        "blockHash": "0x11cae307ab0f830729d588d5abb77b812a784e86d92f30b595f1ee28f5e37c5d",
+        "blockNumber": 5065,
+        "slotNumber": 5066,
+        "txIndexInBlock": 0,
+        "epochNumber": 1266,
+        "status": "proven"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "label": "original give_spaceships/empty/arrival/false rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "original give_spaceships/empty/arrival/false preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "arrivals hash mismatch",
+      "revertData": [
+        "0x00000000000000000000000000000000000000000000000070c34da97e5f9102"
+      ],
+      "variant": "original",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "arrival",
+      "mode": {
+        "name": "false",
+        "zero": "1",
+        "nonzero": "0",
+        "reason": "arrivals hash mismatch"
+      },
+      "originalPrivateApi": true,
+      "system": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "customVerifier": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "inputSha256": "b82d524c9fa47b89d0d08bc0de635b4d57ba4bdaf871ff03dc724eda3fbc56c6",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530177"
+    },
+    {
+      "label": "original give_spaceships/empty/arrival/false preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "original give_spaceships/empty/arrival/sentinel rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "original give_spaceships/empty/arrival/sentinel preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "Original zero batch observed",
+      "revertData": [
+        "0x0000000000000000000000000000000000000000000000001fa878d7b38d80ae"
+      ],
+      "variant": "original",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "arrival",
+      "mode": {
+        "name": "sentinel",
+        "zero": "2",
+        "nonzero": "0",
+        "reason": "Original zero batch observed"
+      },
+      "originalPrivateApi": true,
+      "system": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "customVerifier": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "inputSha256": "257bb31bb0bbe26703a7d5a8c2bf63535cb4e97d77a10a06b50690d8fb5cda41",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530249"
+    },
+    {
+      "label": "original give_spaceships/empty/arrival/sentinel preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival/false rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival/false preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "arrivals hash mismatch",
+      "revertData": [
+        "0x00000000000000000000000000000000000000000000000070c34da97e5f9102"
+      ],
+      "variant": "candidate",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "arrival",
+      "mode": {
+        "name": "false",
+        "zero": "1",
+        "nonzero": "0",
+        "reason": "arrivals hash mismatch"
+      },
+      "originalPrivateApi": true,
+      "system": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "customVerifier": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "inputSha256": "6eee052a637f1f0bcbdc4dc52f1730281192ed64929d39a8415d2ed54271979d",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530393"
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival/false preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival/sentinel rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival/sentinel preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "Original zero batch observed",
+      "revertData": [
+        "0x0000000000000000000000000000000000000000000000001fa878d7b38d80ae"
+      ],
+      "variant": "candidate",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "arrival",
+      "mode": {
+        "name": "sentinel",
+        "zero": "2",
+        "nonzero": "0",
+        "reason": "Original zero batch observed"
+      },
+      "originalPrivateApi": true,
+      "system": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "customVerifier": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "inputSha256": "84880bb7f0a2f4738d36465cbcfd83e8d1fde6740f7a56a4b34e962ebcc8b988",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530465"
+    },
+    {
+      "label": "candidate give_spaceships/empty/arrival/sentinel preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "original give_spaceships/empty/artifact/false rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "original give_spaceships/empty/artifact/false preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "artifacts hash mismatch",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000963591a1f4b2ddf5"
+      ],
+      "variant": "original",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact",
+      "mode": {
+        "name": "false",
+        "zero": "1",
+        "nonzero": "0",
+        "reason": "artifacts hash mismatch"
+      },
+      "originalPrivateApi": true,
+      "system": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "customVerifier": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "inputSha256": "c5172428afdbaa5802bc20aa7c84b9cf50273fb59f244881de41697dda75fa6f",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530609"
+    },
+    {
+      "label": "original give_spaceships/empty/artifact/false preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "original give_spaceships/empty/artifact/sentinel rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "original give_spaceships/empty/artifact/sentinel preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "Original zero batch observed",
+      "revertData": [
+        "0x0000000000000000000000000000000000000000000000001fa878d7b38d80ae"
+      ],
+      "variant": "original",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact",
+      "mode": {
+        "name": "sentinel",
+        "zero": "2",
+        "nonzero": "0",
+        "reason": "Original zero batch observed"
+      },
+      "originalPrivateApi": true,
+      "system": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "customVerifier": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "inputSha256": "45bea438351a6eae6c4e320e3b25c3d68fbd91961243d3de7417344881a8fcd2",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530681"
+    },
+    {
+      "label": "original give_spaceships/empty/artifact/sentinel preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact/false rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact/false preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "artifacts hash mismatch",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000963591a1f4b2ddf5"
+      ],
+      "variant": "candidate",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact",
+      "mode": {
+        "name": "false",
+        "zero": "1",
+        "nonzero": "0",
+        "reason": "artifacts hash mismatch"
+      },
+      "originalPrivateApi": true,
+      "system": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "customVerifier": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "inputSha256": "9106e43a149d7b7bb5be261cb604fea9f147e0b0dcce3f0e54841fdb6c16084d",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530825"
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact/false preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact/sentinel rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact/sentinel preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "Original zero batch observed",
+      "revertData": [
+        "0x0000000000000000000000000000000000000000000000001fa878d7b38d80ae"
+      ],
+      "variant": "candidate",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact",
+      "mode": {
+        "name": "sentinel",
+        "zero": "2",
+        "nonzero": "0",
+        "reason": "Original zero batch observed"
+      },
+      "originalPrivateApi": true,
+      "system": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "customVerifier": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "inputSha256": "b438148b0a9cd19c62d69bb26f07790a3eeabb92cd4624cda8bc03d96df96f33",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789530897"
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact/sentinel preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location/false rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location/false preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "artifact locations hash mismatch",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000c3d7bddb5b2db267"
+      ],
+      "variant": "original",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact_location",
+      "mode": {
+        "name": "false",
+        "zero": "1",
+        "nonzero": "0",
+        "reason": "artifact locations hash mismatch"
+      },
+      "originalPrivateApi": true,
+      "system": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "customVerifier": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "inputSha256": "f1fd81173f2763e406e709be2b4a55b50c98448c5d123adeb36f7c7523d39c3f",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789531041"
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location/false preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location/sentinel rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location/sentinel preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "Original zero batch observed",
+      "revertData": [
+        "0x0000000000000000000000000000000000000000000000001fa878d7b38d80ae"
+      ],
+      "variant": "original",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact_location",
+      "mode": {
+        "name": "sentinel",
+        "zero": "2",
+        "nonzero": "0",
+        "reason": "Original zero batch observed"
+      },
+      "originalPrivateApi": true,
+      "system": "0x2660d235d657099f957a25dc6cb3012c4b3638e4bbff63debc9f3a0ee910f561",
+      "customVerifier": "0x24aac6c87da6f4b713578922b75797b5084785f7f9baa792c93079ad1e013414",
+      "inputSha256": "125a91784a563f7d17d3d9bcdb905cb62e030255663e83e7d9ee13ff5e3ac8f2",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789531113"
+    },
+    {
+      "label": "original give_spaceships/empty/artifact_location/sentinel preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location/false rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location/false preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "artifact locations hash mismatch",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000c3d7bddb5b2db267"
+      ],
+      "variant": "candidate",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact_location",
+      "mode": {
+        "name": "false",
+        "zero": "1",
+        "nonzero": "0",
+        "reason": "artifact locations hash mismatch"
+      },
+      "originalPrivateApi": true,
+      "system": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "customVerifier": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "inputSha256": "f031847f0392673ff927ad4b13cff8909dc75fb8410ed0e6ef4d850a22090ec9",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789531257"
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location/false preserves isolated state and counter",
+      "passed": true
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location/sentinel rejects direct account caller",
+      "passed": true,
+      "expectedRejection": "Batch verifier caller changed",
+      "revertData": [
+        "0x000000000000000000000000000000000000000000000000f260e7f9f1c58d20"
+      ]
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location/sentinel preserves original verifier behavior",
+      "passed": true,
+      "expectedRejection": "Original zero batch observed",
+      "revertData": [
+        "0x0000000000000000000000000000000000000000000000001fa878d7b38d80ae"
+      ],
+      "variant": "candidate",
+      "method": "give_spaceships",
+      "shape": "empty",
+      "store": "artifact_location",
+      "mode": {
+        "name": "sentinel",
+        "zero": "2",
+        "nonzero": "0",
+        "reason": "Original zero batch observed"
+      },
+      "originalPrivateApi": true,
+      "system": "0x10ff57beddd396f86caae6a65f225c3e4c7a3ef7a64a369ede1b565193278483",
+      "customVerifier": "0x1ae2ad03e5e0fb9816789a4f4914b2d4359ac382131dd81db3ddb88658131c58",
+      "inputSha256": "b8a7184881230445543d5f450e92d68d4b933b47a3f8557cc3ce98b50720fcd3",
+      "expectedBatches": [
+        {
+          "side": "planet",
+          "ids": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "hashes": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "count": "0"
+        }
+      ],
+      "nonzeroCommitment": "0",
+      "nonzeroCountWithAllZeroIds": false,
+      "timestamp": "1789531329"
+    },
+    {
+      "label": "candidate give_spaceships/empty/artifact_location/sentinel preserves isolated state and counter",
+      "passed": true
+    }
+  ]
+}

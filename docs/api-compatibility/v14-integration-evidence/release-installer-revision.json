@@ -1,0 +1,36 @@
+{
+  "scope": "Root release install compatibility correction only; no compiler inputs or native artifacts changed",
+  "previousToolManifestSHA256": "4f69cca1029e2bf30033e239cf1d7f35d76e46f1f185279def8a9975089b4e57",
+  "toolManifestSHA256": "ac403fbc4ada7b7d15bd1aa863b2533f798c4115075fe44a65b9aa7c47a6df85",
+  "toolChanges": {
+    "README.md": {
+      "before": "0952314786b375645ca9c1b5667576526b80955d678b5e7060734637cae2ab5c",
+      "after": "4108af916b2116cdfe5bb920f79ead571b3e74f1bfa3e04c5796be9fa19175af"
+    },
+    "publish.py": {
+      "before": "4374a26dacf1b714a94c55eb5bbf0f449b08de313b237f83cb34b3d590c78e55",
+      "after": "555ece39677f5e3f41ef4376a183c3062847cacf0344d7b5769e8242c6f57266"
+    },
+    "test_publication.py": {
+      "before": "e6f37a6736ff4b5466edcb548243b4a25496070951116ef7bf67bad7120c372e",
+      "after": "2ad7edc8243fd2e01c336ef7fc1b51bce93cf574c41fedf8c8f78e6074e503e8"
+    },
+    "test_release.py": {
+      "before": "b0e8d456ea8746676c3644a705e3ba0149337e24354b40b38380f980a8ab2ef6",
+      "after": "5d746cf7ee40b74d3861a399f3984ec0e47e6d54188d6b41e45ea2f30a4ed64e"
+    }
+  },
+  "packageReleaseSHA256": "87b00195ccc471a35df7430fd65fa3135a18d40a9133a3cdf9dd35b7cf54169b",
+  "tests": {
+    "passed": 54,
+    "scope": "Offline build/publication/complete archive install and failure cases"
+  },
+  "fixes": [
+    "Native archive contains all349 authenticated build-source inputs",
+    "Checked publisher accepts complete input or complete final source snapshot, never a mixed binding set",
+    "Documented prebuilt installation does not compile or need Noir verification-key cache"
+  ],
+  "nativeBuildUsesImmutablePreviousToolTree": "/tmp/df-v13-touch-build-tools",
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0
+}

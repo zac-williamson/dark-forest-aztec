@@ -1,0 +1,188 @@
+{
+  "artifacts": {
+    "Admin": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "aa08ac637514f0da2e6a41b14ff00fc2c5914d22a890ae6ea256d6ae30dfb399"
+    },
+    "ArrivalStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "763627846ff01e3ba854011e6287f5320c307367bf3ca2e35ff0fce37e92bbc3"
+    },
+    "ArtifactAction": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "71349e50bbf7a45da8f555b7b510da01aac3ff19dd905b9065eb97086c032589"
+    },
+    "ArtifactFind": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "dc1a58c1d24d0ca7c108a65788da349c2905046be1283611de3a58e48a8ac676"
+    },
+    "ArtifactLocationStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "58b0ca15120be56f6de4e372bc4786230e9d152c8888e0f09b781d1c16a884d3"
+    },
+    "ArtifactProspect": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "57d2552bbcb12ee28e3b6ba05bb8b1ba7475dfbade8a61bcc9dbfa6eb35a0e1a"
+    },
+    "ArtifactStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "f962e4229e7963190b1159b8a60a188765faa073ec8af545c7df3b08117cb9b3"
+    },
+    "ArtifactValut": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "7a8c3f7aebb644259168375bb910c379c215d9ceae610a109e81d0b469c7f1d5"
+    },
+    "Config": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "ecd1e228050e180175530e8bddb582400de763e5bc26e380e225b93529775bb7"
+    },
+    "Core": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "b952eaaa2342ab5fa86f369191d584e0aca0502c36ca6ea1405091d3d92022ab"
+    },
+    "Move": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "308f0612d0419e8513d084e5a9bed7e49f7d3a75af1872e0e934369938dfd309"
+    },
+    "PlanetArtifactsStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "e2647fa5d973fcc658e8bf9a57d3efa5635e53666d348ac8392fabbda0a4cf03"
+    },
+    "PlanetEventsStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "2176e311ee720f719acc23075122626b933a61e045066073322eecd65be92f12"
+    },
+    "PlanetRevealedCoordsStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "63892e5b9edb0eb325ea56164cefcf6becd410b8e1856e798c13a71e7cd504fd"
+    },
+    "PlanetStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "1532636585e9e79857ac8db0ce00f58c1d65d9a32e114ce1e6e1c7750dc3d926"
+    },
+    "PlayerStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "7f3f98e5e1d084c479705d3dc14eb4f454aed82475d787a15f41f51b80cfc9de"
+    },
+    "WorldStorage": {
+      "owningSourceMatchesSnapshot": true,
+      "sha256": "f2c5e0a51c2d5b4db628bf97a1bc65bec4e90f172447d821b7705ea50a4f8c44"
+    }
+  },
+  "gitCommit": "00bfa05c18862cce1c5adb362e4ecebe084c329a",
+  "metadataSha256": {
+    "artifacts.json": "f4f586e3abdc4e03f3674a1cf4ab638dda4770dbca072e555e35169a1d51e8d2",
+    "external-references.json": "c7236d6eeabc08440b0db39f74add912ee2871894dcf976c2ccb1dfe01ba0194",
+    "inventory.json": "05f9ddc2fb43de9afda001f291b34208c75f4f1dc30171836810dc5eda667377"
+  },
+  "scope": "All contract Noir sources/manifests plus literal API caller files, frozen from the original Git commit.",
+  "sources": {
+    "client/src/ContractsAPI/ContractsAPI.ts": "b1b41af5a13de4b61c38de3f9da14a45918b5fa697165568121da0e9870a1d84",
+    "client/src/ContractsAPI/gameConfigToContractConstants.ts": "3da799bd258e3757f65f1cb03800c8dd5971256d741dac9094d3e047f230af0c",
+    "client/src/Frontend/Pages/App.tsx": "983b6d9e31c66e2a009a1a12284b40a0cd0f8427c8e589097cb1dcf81c4d8b61",
+    "client/src/Frontend/Pages/GameLandingPage.tsx": "04b926f99ac4c3262fa5c0059c2c7b8f16e21c67d6785ef9caabf5baca0c0054",
+    "client/src/Frontend/Pages/LandingPage.tsx": "dfee59e6ee9defff14bfc41ecce03bbd7f49d68fe6e3c7c282f9691145126665",
+    "client/src/Frontend/Pages/Test/TxExecutorTestPage.tsx": "548d30585e4838899a22dd4659d1f0a8a49280653e9b39ee9534390ea1d13502",
+    "client/src/Session/TxExecutor/ConfigCache.ts": "59194616bfec2ba63f36c8c8c05446216464c55a5d261b25e14bdb440e16b356",
+    "client/src/Session/TxExecutor/ContractResolver.ts": "b2755b31a2db18d0837cf051905f826d871cecd71ba37c0231fcc3ff60293a36",
+    "client/src/Session/TxExecutor/StateResolver.ts": "fdded7e9aa9defed4ebdd4a7419aa0cc9da219f3d3892f0e66c0a1b1cdf13b0c",
+    "client/src/Session/TxExecutor/TxExecutor.ts": "c0464c0274014cd1143d4dbd935b359c784abaa5e9104f23974d389a9414bea6",
+    "client/src/Session/WalletManager/WalletManager.ts": "78736014a867318209f94d49ab36e086370eb75e2792a0ee85485c415857f90e",
+    "client/src/config/capabilities.ts": "922f9133a12ae3fb539c3c897a272e327c0ce24f7b487b917256ba452d63594c",
+    "contracts/Nargo.toml": "4f84cb0dd48c854dea35fc450ef1c87bb4bf509224b2481794a822ba8f8a10bf",
+    "contracts/circuits/Nargo.toml": "73518463453049febe7e146be19f986a0cf0b5b446df60ab9af821530d4eddce",
+    "contracts/circuits/src/biomebase.nr": "dbf540fab6d802de0ce1270fd2fd1be0a70fa1f5396b3968172367f42667d7bb",
+    "contracts/circuits/src/init.nr": "ba282c4242a6dac3b623d03b43890a859fb3f0f14468b5bbb55da41aaece1c33",
+    "contracts/circuits/src/lib.nr": "85165403e2695003a6d4a12a9609922878759a498f07903f7ce871025ba5c395",
+    "contracts/circuits/src/move.nr": "19ff24ca65acdd124aeda63e8f8d1c5c624d7a3287e3c26b5f27082f52560702",
+    "contracts/circuits/src/perlin.nr": "f58d7963088219652b58b2f8b8e63a005efbf081bc11cbe0a71c69d8969301b2",
+    "contracts/circuits/src/reveal.nr": "f776a17dc63aec3c5f03e4bee7365d9c775d158b7780e041dcaa389aeb4724cc",
+    "contracts/config/Nargo.toml": "4e6f8a7a6b6de810ef225f5ebaf2207cbaffa044b5a4ee8f90fa274a56c3d0eb",
+    "contracts/config/src/main.nr": "00a98087cb778ab5b85535cb374eeb8cbf05679cde183396f6c967c77f1fa377",
+    "contracts/libs/Nargo.toml": "e8f14bfa42855740e2c964a0de8fa44ba580b21a4456e8e763650c76149cfd71",
+    "contracts/libs/src/artifact_utils.nr": "f32d3b66b3e5a6e09c672d9fc0df32638296bb2efddb93647ef94017919d5baf",
+    "contracts/libs/src/batch_utils.nr": "c4b0fb1a591fdabf7860b96d81267e2e9279d18b529c385b6b3b7e4ad22d9537",
+    "contracts/libs/src/game_utils.nr": "5922e1a0723741175bb853fe49ab163c9ecc50bc2bdb33ed8a483e8fead5c7c8",
+    "contracts/libs/src/lazy_update.nr": "e299bbe30510a1aa6ab4edb72f5b6e59ee8d8087b4a1b5e077883997ef0eabd5",
+    "contracts/libs/src/lib.nr": "048faccd2946dc9d62d31bc2802dee98d5373a89e98f857f7009c853aa7bfa15",
+    "contracts/libs/src/planet.nr": "01ef4a6df160aef97ae515d889243558d97e045aae787fa9124d381cf70a3157",
+    "contracts/scripts/deploy/configure.ts": "80774ac12198a09aa470d9da383028f9734264b557ee27dc12d68a68c5141a53",
+    "contracts/scripts/deploy/deploy.ts": "aeb3dd1426cee4cd611dd2847c23e4cee5756d88362c78d2e859a1d4fda474ec",
+    "contracts/scripts/deploy/storageAuthorizationExpectations.ts": "852ad7990ae5a6da8b0099b1fe08aeb325a70a84739915110fc68cfcba0b2eb5",
+    "contracts/scripts/deploy/sync-env-and-artifacts.ts": "7d9eb11647d882bfb402460be5da6dd3df3d56b6dc3a9d6cacc04373027aa31c",
+    "contracts/scripts/deploy/verify-storage-permissions.ts": "1927c959e2fe20d20c135c1957783947f7f29f3322626a6f5ebb0ee2466f44fb",
+    "contracts/scripts/dev/set-zk.ts": "5277436c7f8327adac5be4924f23464916abd4e412b8d342cf04d01b22857115",
+    "contracts/scripts/dev/timestamp-ticker.ts": "530593eef4c02ce60756d0f169e5c3dc50e0ead455bf6c09d8479161188163c4",
+    "contracts/scripts/dev/update-config.ts": "f64089bc057cff3b54862cf938c414b2b8afb7ec8356d1076ae0eb81cc3031ed",
+    "contracts/scripts/read/read-config.ts": "e5f14accba2ee8c685791534e76002e2dd88c78d1ea7ad9e88dc55096fc2e3c0",
+    "contracts/scripts/read/read-initialize-player-state.ts": "4b313aab888b60acb664459ef30687fdc3f5724db9d3fadc3b3933e37cd1f641",
+    "contracts/scripts/read/read-move-state.ts": "d0efefe04171e68822810c984f0237851cf92ecff9af5de71b17bd04d8509010",
+    "contracts/scripts/test/test-core-initialize-player.ts": "8c64587a989212a607426bcde39244437bdcf33acf422ab2afca87027263ca1e",
+    "contracts/scripts/test/test-move.ts": "71e1e6201b1c5e77edc8cf2b2cb951f7f514e1c85deb204ea37f4a194d852423",
+    "contracts/scripts/test/test-moveProof.ts": "e4e4e6a59e4e2b6530c732a01288d1a62924a4f6c2ea1d1bf4526c0df545e7b5",
+    "contracts/scripts/test/test-setup.ts": "e2b98567da25250adba5521b05371501fb8997e6e7efeca270f4e365762eba2f",
+    "contracts/scripts/test/test-upgrade.ts": "01bb200629bc9b1cc9dc1b0f430f43f29a0b7947e6fc7b615f9c7e4cfffc2918",
+    "contracts/scripts/test/test-withdraw.ts": "335c8cad88cfb2a85160260274e2c023f9116b6eae16733086634e02c9ac8818",
+    "contracts/scripts/utils/contracts.ts": "0eb31c459fd5a2b6a9bec46cf4dfafca151ce3103711a81c70b6c5a7da32c1f1",
+    "contracts/scripts/utils/deploy.ts": "ea456a838f2b03cac84de133ad723d4ec550dfe3e27572f47eb3f3d80dcf6a92",
+    "contracts/scripts/utils/env.ts": "1a0a6733510c9e08f2bc17a15943f0b6a996012de0c52fb40a10f00eaa264198",
+    "contracts/scripts/utils/feePayment.ts": "a0875e0bed4f7eaa72c67fd5316df995033195dac123cd47cc6e2d4494488709",
+    "contracts/storage/arrival/Nargo.toml": "dbd0db9966fb8f351e397a00b6f81d56a9577242988fe645875e5a8cac36c80d",
+    "contracts/storage/arrival/src/main.nr": "d2d9da6494ac327edb4313fae3557e12ceeb086c9a3e3ab587bbdbacedb7b8a7",
+    "contracts/storage/artifact/Nargo.toml": "e63a0dde707134717d3216760308f617750f1d923a5b4ed7aefcb067e2106db9",
+    "contracts/storage/artifact/src/main.nr": "14cfcda7992c6870e98cb78e7734ef33e683eab6175567479fbec16200923a62",
+    "contracts/storage/artifact_location/Nargo.toml": "0b894f450aa313ed1fb386c55bd4ff72b3c8362e20d15edafcf823cd0c036d4b",
+    "contracts/storage/artifact_location/src/main.nr": "1efa0bfd3fc40dd32bb3903360fad9b60f6ebe8f38228f252adda50b0d4ff410",
+    "contracts/storage/planet/Nargo.toml": "27549c78c6ced2d9a33fbf54e9fd422130bbf11234241d2778a006b31cfb4ecd",
+    "contracts/storage/planet/src/main.nr": "819d5d8a1bc5fb5ab7fc71a2910aa1f5c89792239d106f08d15d041db635c73b",
+    "contracts/storage/planet_artifacts/Nargo.toml": "69a567c81517dadfebd37fa6731d0e228d097b1df5ff544b6473a08b8d17946f",
+    "contracts/storage/planet_artifacts/src/main.nr": "58ed255c5a2a7ee7307e4fa77bf996e62cbd0f1d40b08d83d29ff926873ad3f4",
+    "contracts/storage/planet_events/Nargo.toml": "2b31310ecbaff578890c1570976ed6c3da6c4e5df9c2252a0fdaf14309e727a9",
+    "contracts/storage/planet_events/src/main.nr": "ec6d4e68b419c9faf74421f9036bfd7eef56d8bffa38b6fcc76b8c2f84bddb31",
+    "contracts/storage/planet_revealed_coords/Nargo.toml": "3a81ea13f2c3840274eaaa3a4428a4a9e889756b2d6b3d736efa99cc99a05cba",
+    "contracts/storage/planet_revealed_coords/src/main.nr": "ca2c58d3225c59b7bf8926fc95c6fd055ed9a0d99d149f91f256e60208999eb5",
+    "contracts/storage/player/Nargo.toml": "5a6629933cc8e553e6dd9f3958e02e041eba8339099612c0a4404cc5b70bdffa",
+    "contracts/storage/player/src/main.nr": "cabffa69c49e798d39b92a7092fe285ce0c454bb328a3b40566b3856556eec8d",
+    "contracts/storage/world/Nargo.toml": "124f48e1cabb2db7a3851ef6a1ddaaea0526d2eaaa0322a12a5515147fa5368b",
+    "contracts/storage/world/src/main.nr": "83ef937132ea39a0d00d66ab530954477f136ae770d0083d54e3772cc7072697",
+    "contracts/system/admin/Nargo.toml": "0c8d1c5c46bad7c06af6a393dc679dfec5a0a85339280c5f5dd88c17f657e1b7",
+    "contracts/system/admin/src/main.nr": "2faa36c79f8623fc6959098c3e01ce274dad268eb00c930d2fa90adc1e95723f",
+    "contracts/system/artifact_action/Nargo.toml": "69d9dd3efb3e1de90d5a850dde715e507fa59c9d63c2fe207064acf45e39742a",
+    "contracts/system/artifact_action/src/main.nr": "469ddec94cf68f2bc2ddfbbd191a1f3a93e84e24a54c76d95d99ee7ea8dd270a",
+    "contracts/system/artifact_find/Nargo.toml": "0ea1b8a430975d9a0d341d7ebb0608ddb476f0015972e7a8db944966f1487104",
+    "contracts/system/artifact_find/src/main.nr": "6d620aae61c70a01d18e12f8282c632629d4cf0dcd5a461e505fec06252b16d3",
+    "contracts/system/artifact_prospect/Nargo.toml": "c690be3b0b22cb8e3251bbe8228bdc61fa44fb0bfb8fef937dac8d45a60ab73f",
+    "contracts/system/artifact_prospect/src/main.nr": "66cf2c14b982a6a5ceaad56e555c73eeb231e85ea2c4fefe75d4f350d83dde94",
+    "contracts/system/artifact_valut/Nargo.toml": "883723c74c689029fa26b8590980a447f169949f8cdde38eba9ec8f1ff48a9c5",
+    "contracts/system/artifact_valut/src/main.nr": "97034e03caa421d578d1403ac7fd11c7795870c73f19989db1152ad255dcfda7",
+    "contracts/system/core/Nargo.toml": "0a1cc29bf743d876f35cd19bedb13b9c4e06e578de545b6478c2ae266b54a185",
+    "contracts/system/core/src/main.nr": "f2197ca379633faba8f018e605a672c22f6d3b827307612f6e6cfbc093b02938",
+    "contracts/system/move/Nargo.toml": "ed03c8ada68bc619ec29baada7881ab3ea2c1b958d91fd1beb0341ee9f78a398",
+    "contracts/system/move/src/main.nr": "45c27915f1936c65999cc1920266ecb05807145bf6a1577c35169834c8882774",
+    "contracts/types/Nargo.toml": "fa9342c05095eca7f65df037c2fd8792a257e769109c5aed8841a73ae9473219",
+    "contracts/types/src/args/mod.nr": "8387b48d2e2cc35ba3c9b8532d173069d76e2716ab694d157760c6b28ccb5c1e",
+    "contracts/types/src/config/artifacts.nr": "1113ef2d5bf4f34d0dddf7824c9ede0e33b86b8835586080b7e2bf4fb4d629de",
+    "contracts/types/src/config/capture_zones.nr": "bfcfaf58253f6fe64c11dab36cdd99c47bd9f587694bc54b05bb4e3350e9a5ea",
+    "contracts/types/src/config/default_stats.nr": "91d2689118c584602508d55e71bcf9cc4a411d74712308c7ae2f1393541b83ca",
+    "contracts/types/src/config/full_config.nr": "18baf13ce753e92c444419fddb5801b4fcd85e659664b2bfeb52be1a794a7263",
+    "contracts/types/src/config/game.nr": "9325bbc55603b97908944c1da7022f1d29be221830399d3c1be6f0c206ff475c",
+    "contracts/types/src/config/mod.nr": "bbe9f8de453c9bffa924d1eecafcaabc9a99b29b019c8cd20e920b20262b1a47",
+    "contracts/types/src/config/planet_init.nr": "17b7beb64d4a61515efc42d4a8e852936b4abaa6a181b694a4f7a24e3080b2b4",
+    "contracts/types/src/config/snark.nr": "63b487feff090edb48855dc4f8391c0da623e76d3c812d34bdc56f8bc5673e94",
+    "contracts/types/src/config/space_junk.nr": "81de2f593a3361df97ecf2e06cf4858cad624a8b3e7989d19f29b53368401d9e",
+    "contracts/types/src/config/spaceships.nr": "149b10757b1a2cb03b8cc78f918494e55a357fe2c49fb654f460cfaedf4d6dad",
+    "contracts/types/src/config/upgrade.nr": "8dfbbee990ca73a4c1fe0cd8628e3218377d49603dd2c83be7ba36dd39411a01",
+    "contracts/types/src/config/world.nr": "8eaeedfab9130c9b5b5ae7d01b9eea9d0d386fa8ebbecfb549dfd5b125f01e4f",
+    "contracts/types/src/lib.nr": "e23fbcbac52eba399dd57ef01b901ac53c97ead27c1d1c991b9ece97c7b77002",
+    "contracts/types/src/storage/arrival.nr": "1bd6781673776df083e2fda7f137a6ca7fbb694ec16431fa61adf6acdd8f3dc1",
+    "contracts/types/src/storage/artifact.nr": "413be94731707df8dcd3e5a9cafb92aba6eaea2828203b7a5fb5f0288237c49d",
+    "contracts/types/src/storage/mod.nr": "0e468e576c5ab889d3198887fb8e61cd5ded210ed1037404eab2b02b6f517c8f",
+    "contracts/types/src/storage/planet.nr": "de932a2483a24a5d15a8dee4de6221ac4d758298f204264be61d279221f63a70",
+    "contracts/types/src/storage/player.nr": "544c353d172a4b9794317e37c5c6cfebb8e9aad65445be6f06f62348ebd6f420",
+    "contracts/types/src/storage/world.nr": "6d4d26db8229689bc42f89bcfadd04237d0e064ae5bd1b35ca02c42b10e572d0",
+    "contracts/types/src/system_storage_addresses.nr": "587bbfbd94ff44b4771c0301a6818bdfed4ca1f1455ec8fe61a9bc54942b60e7",
+    "packages/contracts/src/index.ts": "d122c21edc5f0d343fedeabe1c8fbd539938edd2ed2b39d2ec135798311a4e6c",
+    "packages/indexer-core/src/AztecNodeSource.ts": "f460450a25cfce4208ec4592d0a727699431bdc2da7fb93948faccda6ab5d338",
+    "server/src/contractsConfig.ts": "72157608cd95deaa349a02cf01eeeecb6e4be11263ba8c84a7501252efbb3f14"
+  }
+}

@@ -1,0 +1,9 @@
+[package]
+name = "move_payload_tests"
+type = "lib"
+authors = [""]
+
+[dependencies]
+aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
+types = { path = "../../../contracts/types" }
+libs = { path = "../../../contracts/libs" }

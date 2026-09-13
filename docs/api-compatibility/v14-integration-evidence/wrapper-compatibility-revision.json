@@ -1,0 +1,30 @@
+{
+  "scope": "Post-native SDK5.0.1 generated-wrapper type compatibility and checked client sync; no native source or artifact changes",
+  "nativeBuildSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "priorToolManifestSHA256": "ac403fbc4ada7b7d15bd1aa863b2533f798c4115075fe44a65b9aa7c47a6df85",
+  "toolManifestSHA256": "e7bd07a4f6d86644d6e807539164506bf90cc68d3bdb258a4bf1d757fb821f15",
+  "toolFiles": 46,
+  "files": {
+    "contracts/scripts/dev/api-compatible-build/wrapper-compatibility.ts": "0464c509c519a9b19641e3f3a851bce9e3cdf898fb09fd06d9c282b5ca3fe207",
+    "contracts/scripts/dev/api-compatible-build/test_wrapper_compatibility.mjs": "fb1262f3c273ea40aab91883ba533ad0795ba65b7edd12854b8283aba8c66ca5",
+    "contracts/scripts/dev/api-compatible-build/artifacts.mjs": "cadc74f6240034b1ec55e694e01b8e6e469236ce2a1ba1d482387851b359e96e",
+    "contracts/scripts/dev/api-compatible-build/README.md": "0bd961b5407c689d196ee7876ff8142d425d00cc4867183d63ab7b4dead18e8b",
+    "contracts/scripts/dev/api-compatible-build/tooling-manifest.json": "e7bd07a4f6d86644d6e807539164506bf90cc68d3bdb258a4bf1d757fb821f15",
+    "contracts/scripts/deploy/sync-client-deployment.ts": "8625114c180c6e277a0f4873983283607b3950db03e151dc0b803d0565a03146",
+    "contracts/scripts/deploy/sync-client-deployment.test.mjs": "8161030b9ac75470374473ed5595f2d2408a3dbe06fc9bc55f4fbcbf6cc74210"
+  },
+  "nativeSourcesUnchanged": 349,
+  "nativeArtifactsUnchanged": 20,
+  "runtimeJavaScriptEquivalentContracts": 20,
+  "actualEquivalenceReport": {
+    "path": "/tmp/df-v14-wrapper-equivalence.json",
+    "sha256": "450d61723da8aa8f110b6d4ea3014761df508715f777b424b1a8d43893e548b2"
+  },
+  "sdkVersionMetadata": "FROM_RELEASE_BEFORE_VERSION_INJECTION preserved; never injected 5.0.1",
+  "sourceSyncChecksPassed": 52,
+  "ES2020Correction": "Equivalent split/join replaces replaceAll in the build-time adapter; output unchanged; final3 adapter checks pass",
+  "clientTypecheck": "PASS strict client against all17 original wrappers and unchanged402 source files; zero stale primary contract resolutions",
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0,
+  "nodeCalls": 0
+}

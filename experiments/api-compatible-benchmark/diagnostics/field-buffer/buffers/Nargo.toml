@@ -1,0 +1,7 @@
+[package]
+name="buffers"
+type="lib"
+authors=[""]
+[dependencies]
+aztec={git="https://github.com/AztecProtocol/aztec-nr",tag="v5.0.1",directory="aztec"}
+serde={git="https://github.com/AztecProtocol/aztec-packages",tag="v5.0.1",directory="noir-projects/noir-protocol-circuits/crates/serde"}

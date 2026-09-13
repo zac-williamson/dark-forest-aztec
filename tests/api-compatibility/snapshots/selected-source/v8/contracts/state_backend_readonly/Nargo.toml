@@ -1,0 +1,9 @@
+[package]
+name = "state_backend_readonly"
+type = "lib"
+authors = [""]
+
+[dependencies]
+aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
+types = { path = "../types" }
+libs = { path = "../libs" }

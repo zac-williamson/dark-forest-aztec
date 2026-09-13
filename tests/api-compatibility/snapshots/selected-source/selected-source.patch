@@ -1,0 +1,1876 @@
+--- a/contracts/circuits/Nargo.toml
++++ b/contracts/circuits/Nargo.toml
+@@ -4,5 +4,5 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../vendor/aztec" }
+ types = { path = "../types" }
+\ No newline at end of file
+--- a/contracts/config/Nargo.toml
++++ b/contracts/config/Nargo.toml
+@@ -4,5 +4,5 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../vendor/aztec" }
+ types = { path = "../types" }
+\ No newline at end of file
+--- a/contracts/libs/Nargo.toml
++++ b/contracts/libs/Nargo.toml
+@@ -4,5 +4,5 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../vendor/aztec" }
+ types = { path = "../types" }
+\ No newline at end of file
+--- a/contracts/libs/src/config_class.nr
++++ b/contracts/libs/src/config_class.nr
+@@ -1,2 +1,4 @@
+-// Generated from the native Config artifact before compiling initiating Systems.
++// Generated from the actual native Config and touch facade artifacts before compiling Systems.
+ pub global CONFIG_CLASS: Field = 0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8;
++pub global ARTIFACT_TOUCH_CLASS: Field = 0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332;
++pub global LOCATION_TOUCH_CLASS: Field = 0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b;
+--- a/contracts/libs/src/field_buffer.nr
++++ b/contracts/libs/src/field_buffer.nr
+@@ -4,6 +4,10 @@
+ use aztec::protocol::{traits::{Serialize, Deserialize}, utils::{reader::Reader, writer::Writer}};
+ 
+ pub struct FieldBuffer<let WIDTH: u32> { pub words: [Field; WIDTH] }
++
++// Explicit public-dispatch opt-in; all Serialize/Deserialize bodies remain unchanged.
++impl<let WIDTH: u32> aztec::macros::dispatch::SinglePublicArgumentDirectDeserialize for FieldBuffer<WIDTH> {}
++
+ 
+ impl<let WIDTH: u32> Serialize for FieldBuffer<WIDTH> {
+     let N: u32 = WIDTH;
+--- a/contracts/prospect_original_libs/Nargo.toml
++++ b/contracts/prospect_original_libs/Nargo.toml
+@@ -4,5 +4,5 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../vendor/aztec" }
+ types = { path = "../types" }
+\ No newline at end of file
+--- a/contracts/prospect_original_libs/src/config_class.nr
++++ b/contracts/prospect_original_libs/src/config_class.nr
+@@ -1,2 +1,4 @@
+-// Generated from the native Config artifact before compiling initiating Systems.
++// Generated from the actual native Config and touch facade artifacts before compiling Systems.
+ pub global CONFIG_CLASS: Field = 0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8;
++pub global ARTIFACT_TOUCH_CLASS: Field = 0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332;
++pub global LOCATION_TOUCH_CLASS: Field = 0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b;
+--- a/contracts/prospect_original_libs/src/field_buffer.nr
++++ b/contracts/prospect_original_libs/src/field_buffer.nr
+@@ -4,6 +4,10 @@
+ use aztec::protocol::{traits::{Serialize, Deserialize}, utils::{reader::Reader, writer::Writer}};
+ 
+ pub struct FieldBuffer<let WIDTH: u32> { pub words: [Field; WIDTH] }
++
++// Explicit public-dispatch opt-in; all Serialize/Deserialize bodies remain unchanged.
++impl<let WIDTH: u32> aztec::macros::dispatch::SinglePublicArgumentDirectDeserialize for FieldBuffer<WIDTH> {}
++
+ 
+ impl<let WIDTH: u32> Serialize for FieldBuffer<WIDTH> {
+     let N: u32 = WIDTH;
+--- a/contracts/settlement_workers/core/Nargo.toml
++++ b/contracts/settlement_workers/core/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/settlement_workers/core/src/system_class.nr
++++ b/contracts/settlement_workers/core/src/system_class.nr
+@@ -1,2 +1,2 @@
+ // Generated immutable initiating System class.
+-pub global SYSTEM_CLASS: Field = 0x18c5c699dfa680a81f301ed482b61bf44f4df2c94a05930cb65747cbbc15214a;
++pub global SYSTEM_CLASS: Field = 0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72;
+--- a/contracts/settlement_workers/vault/Nargo.toml
++++ b/contracts/settlement_workers/vault/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/settlement_workers/vault/src/main.nr
++++ b/contracts/settlement_workers/vault/src/main.nr
+@@ -411,6 +411,12 @@
+ 
+             let result=::libs::public_call::call(backend_address,calldata);
+             assert(result.len()==0, "Unexpected settlement result");
++        } else if plan.length <= 172 {
++            let selector = comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("commit_plan_medium(([Field;185]))") };
++            let calldata=[selector.to_field(), self.msg_sender().to_field(), addresses[0].to_field(), addresses[1].to_field(), addresses[2].to_field(), addresses[3].to_field(), addresses[4].to_field(), addresses[5].to_field(), addresses[6].to_field(), addresses[7].to_field(), addresses[8].to_field(), addresses[9].to_field(), required_mask as Field, plan.words[0], plan.words[1], plan.words[2], plan.words[3], plan.words[4], plan.words[5], plan.words[6], plan.words[7], plan.words[8], plan.words[9], plan.words[10], plan.words[11], plan.words[12], plan.words[13], plan.words[14], plan.words[15], plan.words[16], plan.words[17], plan.words[18], plan.words[19], plan.words[20], plan.words[21], plan.words[22], plan.words[23], plan.words[24], plan.words[25], plan.words[26], plan.words[27], plan.words[28], plan.words[29], plan.words[30], plan.words[31], plan.words[32], plan.words[33], plan.words[34], plan.words[35], plan.words[36], plan.words[37], plan.words[38], plan.words[39], plan.words[40], plan.words[41], plan.words[42], plan.words[43], plan.words[44], plan.words[45], plan.words[46], plan.words[47], plan.words[48], plan.words[49], plan.words[50], plan.words[51], plan.words[52], plan.words[53], plan.words[54], plan.words[55], plan.words[56], plan.words[57], plan.words[58], plan.words[59], plan.words[60], plan.words[61], plan.words[62], plan.words[63], plan.words[64], plan.words[65], plan.words[66], plan.words[67], plan.words[68], plan.words[69], plan.words[70], plan.words[71], plan.words[72], plan.words[73], plan.words[74], plan.words[75], plan.words[76], plan.words[77], plan.words[78], plan.words[79], plan.words[80], plan.words[81], plan.words[82], plan.words[83], plan.words[84], plan.words[85], plan.words[86], plan.words[87], plan.words[88], plan.words[89], plan.words[90], plan.words[91], plan.words[92], plan.words[93], plan.words[94], plan.words[95], plan.words[96], plan.words[97], plan.words[98], plan.words[99], plan.words[100], plan.words[101], plan.words[102], plan.words[103], plan.words[104], plan.words[105], plan.words[106], plan.words[107], plan.words[108], plan.words[109], plan.words[110], plan.words[111], plan.words[112], plan.words[113], plan.words[114], plan.words[115], plan.words[116], plan.words[117], plan.words[118], plan.words[119], plan.words[120], plan.words[121], plan.words[122], plan.words[123], plan.words[124], plan.words[125], plan.words[126], plan.words[127], plan.words[128], plan.words[129], plan.words[130], plan.words[131], plan.words[132], plan.words[133], plan.words[134], plan.words[135], plan.words[136], plan.words[137], plan.words[138], plan.words[139], plan.words[140], plan.words[141], plan.words[142], plan.words[143], plan.words[144], plan.words[145], plan.words[146], plan.words[147], plan.words[148], plan.words[149], plan.words[150], plan.words[151], plan.words[152], plan.words[153], plan.words[154], plan.words[155], plan.words[156], plan.words[157], plan.words[158], plan.words[159], plan.words[160], plan.words[161], plan.words[162], plan.words[163], plan.words[164], plan.words[165], plan.words[166], plan.words[167], plan.words[168], plan.words[169], plan.words[170], plan.words[171], plan.length as Field];
++
++            let result=::libs::public_call::call(backend_address,calldata);
++            assert(result.len()==0, "Unexpected settlement result");
+         } else {
+             let selector = comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("commit_plan(([Field;397]))") };
+             let calldata=[selector.to_field(), self.msg_sender().to_field(), addresses[0].to_field(), addresses[1].to_field(), addresses[2].to_field(), addresses[3].to_field(), addresses[4].to_field(), addresses[5].to_field(), addresses[6].to_field(), addresses[7].to_field(), addresses[8].to_field(), addresses[9].to_field(), required_mask as Field, plan.words[0], plan.words[1], plan.words[2], plan.words[3], plan.words[4], plan.words[5], plan.words[6], plan.words[7], plan.words[8], plan.words[9], plan.words[10], plan.words[11], plan.words[12], plan.words[13], plan.words[14], plan.words[15], plan.words[16], plan.words[17], plan.words[18], plan.words[19], plan.words[20], plan.words[21], plan.words[22], plan.words[23], plan.words[24], plan.words[25], plan.words[26], plan.words[27], plan.words[28], plan.words[29], plan.words[30], plan.words[31], plan.words[32], plan.words[33], plan.words[34], plan.words[35], plan.words[36], plan.words[37], plan.words[38], plan.words[39], plan.words[40], plan.words[41], plan.words[42], plan.words[43], plan.words[44], plan.words[45], plan.words[46], plan.words[47], plan.words[48], plan.words[49], plan.words[50], plan.words[51], plan.words[52], plan.words[53], plan.words[54], plan.words[55], plan.words[56], plan.words[57], plan.words[58], plan.words[59], plan.words[60], plan.words[61], plan.words[62], plan.words[63], plan.words[64], plan.words[65], plan.words[66], plan.words[67], plan.words[68], plan.words[69], plan.words[70], plan.words[71], plan.words[72], plan.words[73], plan.words[74], plan.words[75], plan.words[76], plan.words[77], plan.words[78], plan.words[79], plan.words[80], plan.words[81], plan.words[82], plan.words[83], plan.words[84], plan.words[85], plan.words[86], plan.words[87], plan.words[88], plan.words[89], plan.words[90], plan.words[91], plan.words[92], plan.words[93], plan.words[94], plan.words[95], plan.words[96], plan.words[97], plan.words[98], plan.words[99], plan.words[100], plan.words[101], plan.words[102], plan.words[103], plan.words[104], plan.words[105], plan.words[106], plan.words[107], plan.words[108], plan.words[109], plan.words[110], plan.words[111], plan.words[112], plan.words[113], plan.words[114], plan.words[115], plan.words[116], plan.words[117], plan.words[118], plan.words[119], plan.words[120], plan.words[121], plan.words[122], plan.words[123], plan.words[124], plan.words[125], plan.words[126], plan.words[127], plan.words[128], plan.words[129], plan.words[130], plan.words[131], plan.words[132], plan.words[133], plan.words[134], plan.words[135], plan.words[136], plan.words[137], plan.words[138], plan.words[139], plan.words[140], plan.words[141], plan.words[142], plan.words[143], plan.words[144], plan.words[145], plan.words[146], plan.words[147], plan.words[148], plan.words[149], plan.words[150], plan.words[151], plan.words[152], plan.words[153], plan.words[154], plan.words[155], plan.words[156], plan.words[157], plan.words[158], plan.words[159], plan.words[160], plan.words[161], plan.words[162], plan.words[163], plan.words[164], plan.words[165], plan.words[166], plan.words[167], plan.words[168], plan.words[169], plan.words[170], plan.words[171], plan.words[172], plan.words[173], plan.words[174], plan.words[175], plan.words[176], plan.words[177], plan.words[178], plan.words[179], plan.words[180], plan.words[181], plan.words[182], plan.words[183], plan.words[184], plan.words[185], plan.words[186], plan.words[187], plan.words[188], plan.words[189], plan.words[190], plan.words[191], plan.words[192], plan.words[193], plan.words[194], plan.words[195], plan.words[196], plan.words[197], plan.words[198], plan.words[199], plan.words[200], plan.words[201], plan.words[202], plan.words[203], plan.words[204], plan.words[205], plan.words[206], plan.words[207], plan.words[208], plan.words[209], plan.words[210], plan.words[211], plan.words[212], plan.words[213], plan.words[214], plan.words[215], plan.words[216], plan.words[217], plan.words[218], plan.words[219], plan.words[220], plan.words[221], plan.words[222], plan.words[223], plan.words[224], plan.words[225], plan.words[226], plan.words[227], plan.words[228], plan.words[229], plan.words[230], plan.words[231], plan.words[232], plan.words[233], plan.words[234], plan.words[235], plan.words[236], plan.words[237], plan.words[238], plan.words[239], plan.words[240], plan.words[241], plan.words[242], plan.words[243], plan.words[244], plan.words[245], plan.words[246], plan.words[247], plan.words[248], plan.words[249], plan.words[250], plan.words[251], plan.words[252], plan.words[253], plan.words[254], plan.words[255], plan.words[256], plan.words[257], plan.words[258], plan.words[259], plan.words[260], plan.words[261], plan.words[262], plan.words[263], plan.words[264], plan.words[265], plan.words[266], plan.words[267], plan.words[268], plan.words[269], plan.words[270], plan.words[271], plan.words[272], plan.words[273], plan.words[274], plan.words[275], plan.words[276], plan.words[277], plan.words[278], plan.words[279], plan.words[280], plan.words[281], plan.words[282], plan.words[283], plan.words[284], plan.words[285], plan.words[286], plan.words[287], plan.words[288], plan.words[289], plan.words[290], plan.words[291], plan.words[292], plan.words[293], plan.words[294], plan.words[295], plan.words[296], plan.words[297], plan.words[298], plan.words[299], plan.words[300], plan.words[301], plan.words[302], plan.words[303], plan.words[304], plan.words[305], plan.words[306], plan.words[307], plan.words[308], plan.words[309], plan.words[310], plan.words[311], plan.words[312], plan.words[313], plan.words[314], plan.words[315], plan.words[316], plan.words[317], plan.words[318], plan.words[319], plan.words[320], plan.words[321], plan.words[322], plan.words[323], plan.words[324], plan.words[325], plan.words[326], plan.words[327], plan.words[328], plan.words[329], plan.words[330], plan.words[331], plan.words[332], plan.words[333], plan.words[334], plan.words[335], plan.words[336], plan.words[337], plan.words[338], plan.words[339], plan.words[340], plan.words[341], plan.words[342], plan.words[343], plan.words[344], plan.words[345], plan.words[346], plan.words[347], plan.words[348], plan.words[349], plan.words[350], plan.words[351], plan.words[352], plan.words[353], plan.words[354], plan.words[355], plan.words[356], plan.words[357], plan.words[358], plan.words[359], plan.words[360], plan.words[361], plan.words[362], plan.words[363], plan.words[364], plan.words[365], plan.words[366], plan.words[367], plan.words[368], plan.words[369], plan.words[370], plan.words[371], plan.words[372], plan.words[373], plan.words[374], plan.words[375], plan.words[376], plan.words[377], plan.words[378], plan.words[379], plan.words[380], plan.words[381], plan.words[382], plan.words[383], plan.length as Field];
+--- a/contracts/settlement_workers/vault/src/system_class.nr
++++ b/contracts/settlement_workers/vault/src/system_class.nr
+@@ -1,2 +1,2 @@
+ // Generated immutable initiating System class.
+-pub global SYSTEM_CLASS: Field = 0x2861f5bc3bfb6f83080d9383e5770893026013aa9fb790efd5bcf1ccc59cfa35;
++pub global SYSTEM_CLASS: Field = 0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484;
+--- a/contracts/state_backend/Nargo.toml
++++ b/contracts/state_backend/Nargo.toml
+@@ -3,7 +3,7 @@
+ type = "contract"
+ authors = [""]
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../vendor/aztec" }
+ types = { path="../types" }
+ libs = { path="../libs" }
+ config = { path="../config" }
+--- a/contracts/state_backend/src/trusted_classes.nr
++++ b/contracts/state_backend/src/trusted_classes.nr
+@@ -1,9 +1,9 @@
+ // Generated from the immutable native artifacts by build-api-compatible.mjs.
+ // Full public hash validation remains mandatory for every other writer.
+ pub global CONFIG_CLASS: Field = 0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8;
+-pub global WORKER_CLASSES: [Field; 2] = [0x096396b4b5ef22a8f1110fdbe8b1acd3a41d72627b73a649e66d72ac47f0ebb2, 0x0131ca716396698a01676cb5d78847f4bd02fbd8c9d69945a4607839ded9ca34];
+-pub global SYSTEM_CLASSES: [Field; 7] = [0x2e6a77689bfa1f3868eaa927099297e9f7a2dfa308db0b131189b8b43d0bf9d9, 0x18c5c699dfa680a81f301ed482b61bf44f4df2c94a05930cb65747cbbc15214a, 0x1f08565d3ae0c119b87f98a4b08fb61cb44f13a4bd7174b5e73175e44a13d768, 0x0559602cf5a15ee94e9142aa8b7ce2b32b7adbc43850bc61f03ed72e2978aaca, 0x2f567befebc07deca16991d7aecc45660dee37c2d82591f1f9c0ee1b12f6a056, 0x2f3e651b7f8820b34bb5a7a924e9f43cab78c357a77b9d716bf90eb1b59ab2e2, 0x2861f5bc3bfb6f83080d9383e5770893026013aa9fb790efd5bcf1ccc59cfa35];
+-pub global FACADE_CLASSES: [Field; 9] = [0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934, 0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9, 0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03, 0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb, 0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918, 0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4, 0x2ebeb64d80dd9cf1da3e152d9df166adce1862072ee83505cad6a6b346b923a6, 0x28725b0d1219a632670fa96beb2c7169df0aca538b93a007fcf2bc56da74f1ed, 0x00677a91e83a0a3fcff0499a91864f107481a1634e70ccfa3fdbf43cc1cc78d4];
++pub global WORKER_CLASSES: [Field; 2] = [0x00fcab2a469bf2e21ef15b44fecdbc65bf23cb208756510043634d274f64e872, 0x0fb0e0a4bf49f80419a66c8768038aa9a6e0286d91282f34b6efef2c3fddc1e2];
++pub global SYSTEM_CLASSES: [Field; 7] = [0x1a9a196ce606e50d345c869d22f92231a4c9fad33e62efbb676188b5154941a5, 0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72, 0x28eb74154d163fe2f6e930d446715c05bac0c76629bb168e458370d164259dd4, 0x0e6a9bd340ea2f520046657277a3cedb9fefad2c9ed062b66b1d3df1462b5cbf, 0x27493770b04fa49fb89c99c0d532f5377f248168e3cc8d7f0e6b557d779f9254, 0x0bd13431758a496e5fc5d23e90f0048e14f2adcf7582a9f73e527b6d2f3d06e8, 0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484];
++pub global FACADE_CLASSES: [Field; 9] = [0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934, 0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9, 0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03, 0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb, 0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918, 0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4, 0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603, 0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332, 0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b];
+ pub fn contains(id: Field) -> bool {
+     (id != 0) & ((id == SYSTEM_CLASSES[0]) | (id == SYSTEM_CLASSES[1]) | (id == SYSTEM_CLASSES[2]) | (id == SYSTEM_CLASSES[3]) | (id == SYSTEM_CLASSES[4]) | (id == SYSTEM_CLASSES[5]) | (id == SYSTEM_CLASSES[6]))
+ }
+--- a/contracts/state_backend_readonly/Nargo.toml
++++ b/contracts/state_backend_readonly/Nargo.toml
+@@ -4,6 +4,6 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../vendor/aztec" }
+ types = { path = "../types" }
+ libs = { path = "../libs" }
+--- a/contracts/state_backend_readonly/src/public_read.nr
++++ b/contracts/state_backend_readonly/src/public_read.nr
+@@ -6,6 +6,7 @@
+ use types::storage::arrival::Arrival;
+ use libs::arrival_codec::keyed::unpack_arrival;
+ 
++#[inline_never]
+ pub unconstrained fn get_namespace_kind(backend:AztecAddress, namespace:AztecAddress)->u8 {
+     storage_read(derive_storage_slot_in_map(super::KINDS,namespace),backend.to_field()) as u8
+ }
+--- a/contracts/state_facade_interface/Nargo.toml
++++ b/contracts/state_facade_interface/Nargo.toml
+@@ -3,5 +3,5 @@
+ type = "contract"
+ authors = [""]
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../vendor/aztec" }
+ types = { path="../types" }
+--- a/contracts/storage/arrival/Nargo.toml
++++ b/contracts/storage/arrival/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ 
+ libs = { path = "../../libs" }
+--- a/contracts/storage/artifact/Nargo.toml
++++ b/contracts/storage/artifact/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/storage/artifact/src/main.nr
++++ b/contracts/storage/artifact/src/main.nr
+@@ -72,6 +72,22 @@
+         let fields = state.serialize();
+         let root = poseidon2_hash(fields);
+         self.storage.local_roots.at(id).write(root);
++        let tag = comptime { aztec::protocol::hash::compute_log_tag(
++            ArtifactUpdate::get_event_type_id().to_field(), aztec::protocol::constants::DOM_SEP__EVENT_LOG_TAG,
++        ) };
++        let log = [tag, id, block_number as Field, fields[0], fields[1], fields[2], fields[3], fields[4], fields[5], fields[6], fields[7], fields[8], fields[9], fields[10], fields[11], fields[12]];
++        // Exact public event encoding: domain-separated tag, ID, block, typed state.
++        aztec::oracle::avm::emit_public_log(log.as_vector());
++    }
++
++    // Additive authorized event-only path: independently verify the current root.
++    #[external("public")]
++    fn touch(state: Artifact, id: Field) {
++        self.internal.assert_authorized();
++        let block_number = self.context.block_number();
++        let fields = state.serialize();
++        let root = poseidon2_hash(fields);
++        assert(self.storage.local_roots.at(id).read() == root, "State changed after verification");
+         let tag = comptime { aztec::protocol::hash::compute_log_tag(
+             ArtifactUpdate::get_event_type_id().to_field(), aztec::protocol::constants::DOM_SEP__EVENT_LOG_TAG,
+         ) };
+--- a/contracts/storage/artifact_location/Nargo.toml
++++ b/contracts/storage/artifact_location/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/storage/artifact_location/src/main.nr
++++ b/contracts/storage/artifact_location/src/main.nr
+@@ -72,6 +72,22 @@
+         let fields = state.serialize();
+         let root = poseidon2_hash(fields);
+         self.storage.local_roots.at(id).write(root);
++        let tag = comptime { aztec::protocol::hash::compute_log_tag(
++            ArtifactLocationUpdate::get_event_type_id().to_field(), aztec::protocol::constants::DOM_SEP__EVENT_LOG_TAG,
++        ) };
++        let log = [tag, id, block_number as Field, fields[0], fields[1], fields[2]];
++        // Exact public event encoding: domain-separated tag, ID, block, typed state.
++        aztec::oracle::avm::emit_public_log(log.as_vector());
++    }
++
++    // Additive authorized event-only path: independently verify the current root.
++    #[external("public")]
++    fn touch(state: ArtifactLocation, id: Field) {
++        self.internal.assert_authorized();
++        let block_number = self.context.block_number();
++        let fields = state.serialize();
++        let root = poseidon2_hash(fields);
++        assert(self.storage.local_roots.at(id).read() == root, "State changed after verification");
+         let tag = comptime { aztec::protocol::hash::compute_log_tag(
+             ArtifactLocationUpdate::get_event_type_id().to_field(), aztec::protocol::constants::DOM_SEP__EVENT_LOG_TAG,
+         ) };
+--- a/contracts/storage/planet/Nargo.toml
++++ b/contracts/storage/planet/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/storage/planet_artifacts/Nargo.toml
++++ b/contracts/storage/planet_artifacts/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/storage/planet_events/Nargo.toml
++++ b/contracts/storage/planet_events/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/storage/planet_revealed_coords/Nargo.toml
++++ b/contracts/storage/planet_revealed_coords/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/storage/player/Nargo.toml
++++ b/contracts/storage/player/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/storage/world/Nargo.toml
++++ b/contracts/storage/world/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ types = { path = "../../types" }
+ game_state_backend = { path = "../../state_backend" }
+ state_backend_readonly = { path = "../../state_backend_readonly" }
+--- a/contracts/system/admin/Nargo.toml
++++ b/contracts/system/admin/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/system/artifact_action/Nargo.toml
++++ b/contracts/system/artifact_action/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/system/artifact_find/Nargo.toml
++++ b/contracts/system/artifact_find/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/system/artifact_find/src/main.nr
++++ b/contracts/system/artifact_find/src/main.nr
+@@ -796,6 +796,12 @@
+ 
+             let result=::libs::public_call::call(backend_address,calldata);
+             assert(result.len()==0, "Unexpected settlement result");
++        } else if plan.length <= 172 {
++            let selector = comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("commit_plan_medium(([Field;185]))") };
++            let calldata=[selector.to_field(), self.msg_sender().to_field(), addresses[0].to_field(), addresses[1].to_field(), addresses[2].to_field(), addresses[3].to_field(), addresses[4].to_field(), addresses[5].to_field(), addresses[6].to_field(), addresses[7].to_field(), addresses[8].to_field(), addresses[9].to_field(), required_mask as Field, plan.words[0], plan.words[1], plan.words[2], plan.words[3], plan.words[4], plan.words[5], plan.words[6], plan.words[7], plan.words[8], plan.words[9], plan.words[10], plan.words[11], plan.words[12], plan.words[13], plan.words[14], plan.words[15], plan.words[16], plan.words[17], plan.words[18], plan.words[19], plan.words[20], plan.words[21], plan.words[22], plan.words[23], plan.words[24], plan.words[25], plan.words[26], plan.words[27], plan.words[28], plan.words[29], plan.words[30], plan.words[31], plan.words[32], plan.words[33], plan.words[34], plan.words[35], plan.words[36], plan.words[37], plan.words[38], plan.words[39], plan.words[40], plan.words[41], plan.words[42], plan.words[43], plan.words[44], plan.words[45], plan.words[46], plan.words[47], plan.words[48], plan.words[49], plan.words[50], plan.words[51], plan.words[52], plan.words[53], plan.words[54], plan.words[55], plan.words[56], plan.words[57], plan.words[58], plan.words[59], plan.words[60], plan.words[61], plan.words[62], plan.words[63], plan.words[64], plan.words[65], plan.words[66], plan.words[67], plan.words[68], plan.words[69], plan.words[70], plan.words[71], plan.words[72], plan.words[73], plan.words[74], plan.words[75], plan.words[76], plan.words[77], plan.words[78], plan.words[79], plan.words[80], plan.words[81], plan.words[82], plan.words[83], plan.words[84], plan.words[85], plan.words[86], plan.words[87], plan.words[88], plan.words[89], plan.words[90], plan.words[91], plan.words[92], plan.words[93], plan.words[94], plan.words[95], plan.words[96], plan.words[97], plan.words[98], plan.words[99], plan.words[100], plan.words[101], plan.words[102], plan.words[103], plan.words[104], plan.words[105], plan.words[106], plan.words[107], plan.words[108], plan.words[109], plan.words[110], plan.words[111], plan.words[112], plan.words[113], plan.words[114], plan.words[115], plan.words[116], plan.words[117], plan.words[118], plan.words[119], plan.words[120], plan.words[121], plan.words[122], plan.words[123], plan.words[124], plan.words[125], plan.words[126], plan.words[127], plan.words[128], plan.words[129], plan.words[130], plan.words[131], plan.words[132], plan.words[133], plan.words[134], plan.words[135], plan.words[136], plan.words[137], plan.words[138], plan.words[139], plan.words[140], plan.words[141], plan.words[142], plan.words[143], plan.words[144], plan.words[145], plan.words[146], plan.words[147], plan.words[148], plan.words[149], plan.words[150], plan.words[151], plan.words[152], plan.words[153], plan.words[154], plan.words[155], plan.words[156], plan.words[157], plan.words[158], plan.words[159], plan.words[160], plan.words[161], plan.words[162], plan.words[163], plan.words[164], plan.words[165], plan.words[166], plan.words[167], plan.words[168], plan.words[169], plan.words[170], plan.words[171], plan.length as Field];
++
++            let result=::libs::public_call::call(backend_address,calldata);
++            assert(result.len()==0, "Unexpected settlement result");
+         } else {
+             let selector = comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("commit_plan(([Field;397]))") };
+             let calldata=[selector.to_field(), self.msg_sender().to_field(), addresses[0].to_field(), addresses[1].to_field(), addresses[2].to_field(), addresses[3].to_field(), addresses[4].to_field(), addresses[5].to_field(), addresses[6].to_field(), addresses[7].to_field(), addresses[8].to_field(), addresses[9].to_field(), required_mask as Field, plan.words[0], plan.words[1], plan.words[2], plan.words[3], plan.words[4], plan.words[5], plan.words[6], plan.words[7], plan.words[8], plan.words[9], plan.words[10], plan.words[11], plan.words[12], plan.words[13], plan.words[14], plan.words[15], plan.words[16], plan.words[17], plan.words[18], plan.words[19], plan.words[20], plan.words[21], plan.words[22], plan.words[23], plan.words[24], plan.words[25], plan.words[26], plan.words[27], plan.words[28], plan.words[29], plan.words[30], plan.words[31], plan.words[32], plan.words[33], plan.words[34], plan.words[35], plan.words[36], plan.words[37], plan.words[38], plan.words[39], plan.words[40], plan.words[41], plan.words[42], plan.words[43], plan.words[44], plan.words[45], plan.words[46], plan.words[47], plan.words[48], plan.words[49], plan.words[50], plan.words[51], plan.words[52], plan.words[53], plan.words[54], plan.words[55], plan.words[56], plan.words[57], plan.words[58], plan.words[59], plan.words[60], plan.words[61], plan.words[62], plan.words[63], plan.words[64], plan.words[65], plan.words[66], plan.words[67], plan.words[68], plan.words[69], plan.words[70], plan.words[71], plan.words[72], plan.words[73], plan.words[74], plan.words[75], plan.words[76], plan.words[77], plan.words[78], plan.words[79], plan.words[80], plan.words[81], plan.words[82], plan.words[83], plan.words[84], plan.words[85], plan.words[86], plan.words[87], plan.words[88], plan.words[89], plan.words[90], plan.words[91], plan.words[92], plan.words[93], plan.words[94], plan.words[95], plan.words[96], plan.words[97], plan.words[98], plan.words[99], plan.words[100], plan.words[101], plan.words[102], plan.words[103], plan.words[104], plan.words[105], plan.words[106], plan.words[107], plan.words[108], plan.words[109], plan.words[110], plan.words[111], plan.words[112], plan.words[113], plan.words[114], plan.words[115], plan.words[116], plan.words[117], plan.words[118], plan.words[119], plan.words[120], plan.words[121], plan.words[122], plan.words[123], plan.words[124], plan.words[125], plan.words[126], plan.words[127], plan.words[128], plan.words[129], plan.words[130], plan.words[131], plan.words[132], plan.words[133], plan.words[134], plan.words[135], plan.words[136], plan.words[137], plan.words[138], plan.words[139], plan.words[140], plan.words[141], plan.words[142], plan.words[143], plan.words[144], plan.words[145], plan.words[146], plan.words[147], plan.words[148], plan.words[149], plan.words[150], plan.words[151], plan.words[152], plan.words[153], plan.words[154], plan.words[155], plan.words[156], plan.words[157], plan.words[158], plan.words[159], plan.words[160], plan.words[161], plan.words[162], plan.words[163], plan.words[164], plan.words[165], plan.words[166], plan.words[167], plan.words[168], plan.words[169], plan.words[170], plan.words[171], plan.words[172], plan.words[173], plan.words[174], plan.words[175], plan.words[176], plan.words[177], plan.words[178], plan.words[179], plan.words[180], plan.words[181], plan.words[182], plan.words[183], plan.words[184], plan.words[185], plan.words[186], plan.words[187], plan.words[188], plan.words[189], plan.words[190], plan.words[191], plan.words[192], plan.words[193], plan.words[194], plan.words[195], plan.words[196], plan.words[197], plan.words[198], plan.words[199], plan.words[200], plan.words[201], plan.words[202], plan.words[203], plan.words[204], plan.words[205], plan.words[206], plan.words[207], plan.words[208], plan.words[209], plan.words[210], plan.words[211], plan.words[212], plan.words[213], plan.words[214], plan.words[215], plan.words[216], plan.words[217], plan.words[218], plan.words[219], plan.words[220], plan.words[221], plan.words[222], plan.words[223], plan.words[224], plan.words[225], plan.words[226], plan.words[227], plan.words[228], plan.words[229], plan.words[230], plan.words[231], plan.words[232], plan.words[233], plan.words[234], plan.words[235], plan.words[236], plan.words[237], plan.words[238], plan.words[239], plan.words[240], plan.words[241], plan.words[242], plan.words[243], plan.words[244], plan.words[245], plan.words[246], plan.words[247], plan.words[248], plan.words[249], plan.words[250], plan.words[251], plan.words[252], plan.words[253], plan.words[254], plan.words[255], plan.words[256], plan.words[257], plan.words[258], plan.words[259], plan.words[260], plan.words[261], plan.words[262], plan.words[263], plan.words[264], plan.words[265], plan.words[266], plan.words[267], plan.words[268], plan.words[269], plan.words[270], plan.words[271], plan.words[272], plan.words[273], plan.words[274], plan.words[275], plan.words[276], plan.words[277], plan.words[278], plan.words[279], plan.words[280], plan.words[281], plan.words[282], plan.words[283], plan.words[284], plan.words[285], plan.words[286], plan.words[287], plan.words[288], plan.words[289], plan.words[290], plan.words[291], plan.words[292], plan.words[293], plan.words[294], plan.words[295], plan.words[296], plan.words[297], plan.words[298], plan.words[299], plan.words[300], plan.words[301], plan.words[302], plan.words[303], plan.words[304], plan.words[305], plan.words[306], plan.words[307], plan.words[308], plan.words[309], plan.words[310], plan.words[311], plan.words[312], plan.words[313], plan.words[314], plan.words[315], plan.words[316], plan.words[317], plan.words[318], plan.words[319], plan.words[320], plan.words[321], plan.words[322], plan.words[323], plan.words[324], plan.words[325], plan.words[326], plan.words[327], plan.words[328], plan.words[329], plan.words[330], plan.words[331], plan.words[332], plan.words[333], plan.words[334], plan.words[335], plan.words[336], plan.words[337], plan.words[338], plan.words[339], plan.words[340], plan.words[341], plan.words[342], plan.words[343], plan.words[344], plan.words[345], plan.words[346], plan.words[347], plan.words[348], plan.words[349], plan.words[350], plan.words[351], plan.words[352], plan.words[353], plan.words[354], plan.words[355], plan.words[356], plan.words[357], plan.words[358], plan.words[359], plan.words[360], plan.words[361], plan.words[362], plan.words[363], plan.words[364], plan.words[365], plan.words[366], plan.words[367], plan.words[368], plan.words[369], plan.words[370], plan.words[371], plan.words[372], plan.words[373], plan.words[374], plan.words[375], plan.words[376], plan.words[377], plan.words[378], plan.words[379], plan.words[380], plan.words[381], plan.words[382], plan.words[383], plan.length as Field];
+--- a/contracts/system/artifact_prospect/Nargo.toml
++++ b/contracts/system/artifact_prospect/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/system/artifact_valut/Nargo.toml
++++ b/contracts/system/artifact_valut/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/system/artifact_valut/src/main.nr
++++ b/contracts/system/artifact_valut/src/main.nr
+@@ -232,8 +232,28 @@
+             "artifact location hash mismatch",
+         );
+ 
+-        self.call(artifact_storage.set(id, artifact));
+-        self.call(artifact_location_storage.set(id, location));
++        // Both exact current classes are required. A custom first setter may mutate
++        // the second store, so a mixed pair must retain BOTH original set calls.
++        let use_touch = if (::libs::config_class::ARTIFACT_TOUCH_CLASS == 0)
++            | (::libs::config_class::LOCATION_TOUCH_CLASS == 0) {
++            false
++        } else if artifact_storage.target_contract == artifact_location_storage.target_contract {
++            false
++        } else {
++            let artifact_class = ::aztec::oracle::get_contract_instance::get_contract_instance_current_class_id_avm(artifact_storage.target_contract);
++            let location_class = ::aztec::oracle::get_contract_instance::get_contract_instance_current_class_id_avm(artifact_location_storage.target_contract);
++            if artifact_class.is_some() & location_class.is_some() {
++                (artifact_class.unwrap().to_field() == ::libs::config_class::ARTIFACT_TOUCH_CLASS)
++                    & (location_class.unwrap().to_field() == ::libs::config_class::LOCATION_TOUCH_CLASS)
++            } else { false }
++        };
++        if use_touch {
++            self.call(artifact_storage.touch(artifact, id));
++            self.call(artifact_location_storage.touch(location, id));
++        } else {
++            self.call(artifact_storage.set(id, artifact));
++            self.call(artifact_location_storage.set(id, location));
++        }
+     }
+ 
+     /// Noir port of Solidity `DFArtifactFacet.depositArtifact`.
+--- a/contracts/system/core/Nargo.toml
++++ b/contracts/system/core/Nargo.toml
+@@ -4,11 +4,11 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+-libs = { path = "../../prospect_original_libs" }
++libs = { path = "../../libs" }
+ types = { path = "../../types" }
+ 
+ arrival_storage = { path = "../../storage/arrival" }
+--- a/contracts/system/core/src/main.nr
++++ b/contracts/system/core/src/main.nr
+@@ -277,23 +277,75 @@
+             }
+         }
+ 
+-        self.enqueue_self.refresh_planet_public(
+-            location,
+-            timestamp,
+-            planet_state_hash,
+-            planet_artifacts_state_hash,
+-            planet_events_state_hash,
+-            original_arrivals_count,
+-            arrival_ids,
+-            arrival_hashes,
+-            arrival_artifact_ids,
+-            arrival_artifact_hashes,
+-            arrival_artifact_location_hashes,
+-            new_planet,
+-            new_planet_artifacts_state,
+-            new_planet_events_state,
+-            new_arrival_artifact_locations,
+-        );
++        {
++            if (original_arrivals_count) == 0 {
++            let mut compact_payload:[Field;144]=[0;144];
++            let compact_part_0=(location).serialize();
++            for compact_i in 0..1 { compact_payload[0+compact_i]=compact_part_0[compact_i]; }
++            let compact_part_1=(timestamp).serialize();
++            for compact_i in 0..1 { compact_payload[1+compact_i]=compact_part_1[compact_i]; }
++            let compact_part_2=(planet_state_hash).serialize();
++            for compact_i in 0..1 { compact_payload[2+compact_i]=compact_part_2[compact_i]; }
++            let compact_part_3=(planet_artifacts_state_hash).serialize();
++            for compact_i in 0..1 { compact_payload[3+compact_i]=compact_part_3[compact_i]; }
++            let compact_part_4=(planet_events_state_hash).serialize();
++            for compact_i in 0..1 { compact_payload[4+compact_i]=compact_part_4[compact_i]; }
++            let compact_part_5=(new_planet).serialize();
++            for compact_i in 0..32 { compact_payload[5+compact_i]=compact_part_5[compact_i]; }
++            let compact_part_6=(new_planet_artifacts_state).serialize();
++            for compact_i in 0..22 { compact_payload[37+compact_i]=compact_part_6[compact_i]; }
++            let compact_part_7=(new_planet_events_state).serialize();
++            for compact_i in 0..22 { compact_payload[59+compact_i]=compact_part_7[compact_i]; }
++            let compact_part_8=(poseidon2_hash((new_planet).serialize())).serialize();
++            for compact_i in 0..1 { compact_payload[81+compact_i]=compact_part_8[compact_i]; }
++            let compact_part_9=(poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
++            for compact_i in 0..1 { compact_payload[82+compact_i]=compact_part_9[compact_i]; }
++            let compact_part_10=(poseidon2_hash((new_planet_events_state).serialize())).serialize();
++            for compact_i in 0..1 { compact_payload[83+compact_i]=compact_part_10[compact_i]; }
++            let compact_part_11=(new_arrival_artifact_locations).serialize();
++            for compact_i in 0..60 { compact_payload[84+compact_i]=compact_part_11[compact_i]; }
++            self.enqueue_self.refresh_planet_empty_public_prepared(::libs::field_buffer::FieldBuffer { words: compact_payload });
++        } else {
++            let mut prepared_payload: [Field;245] = [0;245];
++            let prepared_part_0 = (location).serialize();
++            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
++            let prepared_part_1 = (timestamp).serialize();
++            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
++            let prepared_part_2 = (planet_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
++            let prepared_part_3 = (planet_artifacts_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
++            let prepared_part_4 = (planet_events_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }
++            let prepared_part_5 = (original_arrivals_count).serialize();
++            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }
++            let prepared_part_6 = (arrival_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }
++            let prepared_part_7 = (arrival_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[26 + prepared_i] = prepared_part_7[prepared_i]; }
++            let prepared_part_8 = (arrival_artifact_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[46 + prepared_i] = prepared_part_8[prepared_i]; }
++            let prepared_part_9 = (arrival_artifact_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[66 + prepared_i] = prepared_part_9[prepared_i]; }
++            let prepared_part_10 = (arrival_artifact_location_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[86 + prepared_i] = prepared_part_10[prepared_i]; }
++            let prepared_part_11 = (new_planet).serialize();
++            for prepared_i in 0..32 { prepared_payload[106 + prepared_i] = prepared_part_11[prepared_i]; }
++            let prepared_part_12 = (new_planet_artifacts_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[138 + prepared_i] = prepared_part_12[prepared_i]; }
++            let prepared_part_13 = (new_planet_events_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[160 + prepared_i] = prepared_part_13[prepared_i]; }
++            let prepared_part_14 = (new_arrival_artifact_locations).serialize();
++            for prepared_i in 0..60 { prepared_payload[182 + prepared_i] = prepared_part_14[prepared_i]; }
++            let prepared_part_15 = (poseidon2_hash((new_planet).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[242 + prepared_i] = prepared_part_15[prepared_i]; }
++            let prepared_part_16 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[243 + prepared_i] = prepared_part_16[prepared_i]; }
++            let prepared_part_17 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[244 + prepared_i] = prepared_part_17[prepared_i]; }
++            self.enqueue_self.refresh_planet_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
++        }
++        }
+     }
+ 
+     #[external("public")]
+@@ -315,66 +367,7 @@
+         new_planet_events_state: PlanetEvents,
+         new_arrival_artifact_locations: [ArtifactLocation; 20],
+     ) {
+-        let actual_timestamp = self.context.timestamp();
+-        assert_public_timestamp(timestamp, actual_timestamp);
+-        let state_backend_address = self.storage.state_backend.read();
+-
+-        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
+-        let planet_artifacts_storage =
+-            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
+-        let planet_events_storage =
+-            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
+-        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
+-        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
+-        let artifact_location_storage =
+-            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
+-
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
+-            "Planet state hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
+-            "Planet artifacts state hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
+-            "Planet events state hash mismatch",
+-        );
+-
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
+-                arrival_ids,
+-                arrival_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Arrival hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
+-                arrival_artifact_ids,
+-                arrival_artifact_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Artifact hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
+-                arrival_artifact_ids,
+-                arrival_artifact_location_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Artifact location hash mismatch",
+-        );
+-
+-        self.call(planet_storage.set(location, new_planet));
+-        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
+-        self.call(planet_events_storage.set(location, new_planet_events_state));
+-        self.call(artifact_location_storage.set_arrival_locations_max20(
+-            arrival_artifact_ids,
+-            new_arrival_artifact_locations,
+-            original_arrivals_count,
+-        ));
++        _refresh_planet_public_local(self.context, location, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, new_planet, new_planet_artifacts_state, new_planet_events_state, new_arrival_artifact_locations);
+     }
+ 
+     #[external("private")]
+@@ -461,29 +454,58 @@
+             }
+         }
+ 
+-        self.enqueue_self.upgrade_planet_public(
+-            location,
+-            sender,
+-            branch,
+-            current_branch_level,
+-            timestamp,
+-            planet_state_hash,
+-            planet_artifacts_state_hash,
+-            planet_events_state_hash,
+-            original_arrivals_count,
+-            arrival_ids,
+-            arrival_hashes,
+-            arrival_artifact_ids,
+-            arrival_artifact_hashes,
+-            arrival_artifact_location_hashes,
+-            upgrade_config_hash,
+-            upgrade_hash,
+-            world_hash,
+-            new_planet,
+-            new_planet_events_state,
+-            new_planet_artifacts_state,
+-            new_arrival_artifact_locations,
+-        );
++        {
++            let mut prepared_payload: [Field;251] = [0;251];
++            let prepared_part_0 = (location).serialize();
++            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
++            let prepared_part_1 = (sender).serialize();
++            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
++            let prepared_part_2 = (branch).serialize();
++            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
++            let prepared_part_3 = (current_branch_level).serialize();
++            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
++            let prepared_part_4 = (timestamp).serialize();
++            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }
++            let prepared_part_5 = (planet_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }
++            let prepared_part_6 = (planet_artifacts_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }
++            let prepared_part_7 = (planet_events_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[7 + prepared_i] = prepared_part_7[prepared_i]; }
++            let prepared_part_8 = (original_arrivals_count).serialize();
++            for prepared_i in 0..1 { prepared_payload[8 + prepared_i] = prepared_part_8[prepared_i]; }
++            let prepared_part_9 = (arrival_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[9 + prepared_i] = prepared_part_9[prepared_i]; }
++            let prepared_part_10 = (arrival_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[29 + prepared_i] = prepared_part_10[prepared_i]; }
++            let prepared_part_11 = (arrival_artifact_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[49 + prepared_i] = prepared_part_11[prepared_i]; }
++            let prepared_part_12 = (arrival_artifact_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[69 + prepared_i] = prepared_part_12[prepared_i]; }
++            let prepared_part_13 = (arrival_artifact_location_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[89 + prepared_i] = prepared_part_13[prepared_i]; }
++            let prepared_part_14 = (upgrade_config_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[109 + prepared_i] = prepared_part_14[prepared_i]; }
++            let prepared_part_15 = (upgrade_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[110 + prepared_i] = prepared_part_15[prepared_i]; }
++            let prepared_part_16 = (world_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[111 + prepared_i] = prepared_part_16[prepared_i]; }
++            let prepared_part_17 = (new_planet).serialize();
++            for prepared_i in 0..32 { prepared_payload[112 + prepared_i] = prepared_part_17[prepared_i]; }
++            let prepared_part_18 = (new_planet_events_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[144 + prepared_i] = prepared_part_18[prepared_i]; }
++            let prepared_part_19 = (new_planet_artifacts_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[166 + prepared_i] = prepared_part_19[prepared_i]; }
++            let prepared_part_20 = (new_arrival_artifact_locations).serialize();
++            for prepared_i in 0..60 { prepared_payload[188 + prepared_i] = prepared_part_20[prepared_i]; }
++            let prepared_part_21 = (poseidon2_hash((new_planet).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[248 + prepared_i] = prepared_part_21[prepared_i]; }
++            let prepared_part_22 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[249 + prepared_i] = prepared_part_22[prepared_i]; }
++            let prepared_part_23 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[250 + prepared_i] = prepared_part_23[prepared_i]; }
++            self.enqueue_self.upgrade_planet_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
++        }
+     }
+ 
+     #[external("public")]
+@@ -511,85 +533,7 @@
+         new_planet_artifacts_state: PlanetArtifacts,
+         new_arrival_artifact_locations: [ArtifactLocation; 20],
+     ) {
+-        let actual_timestamp = self.context.timestamp();
+-        assert_public_timestamp(timestamp, actual_timestamp);
+-        let state_backend_address = self.storage.state_backend.read();
+-
+-        let config = Config::at(self.storage.config_storage_address.read());
+-        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
+-        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
+-        let planet_artifacts_storage =
+-            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
+-        let planet_events_storage =
+-            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
+-        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
+-        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
+-        let artifact_location_storage =
+-            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
+-
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
+-            "Planet state hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
+-            "Planet artifacts state hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
+-            "Planet events state hash mismatch",
+-        );
+-
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
+-                arrival_ids,
+-                arrival_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Arrival hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
+-                arrival_artifact_ids,
+-                arrival_artifact_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Artifact hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
+-                arrival_artifact_ids,
+-                arrival_artifact_location_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Artifact location hash mismatch",
+-        );
+-
+-        assert(
+-            self.view(config.verify_upgrade_config_hash(upgrade_config_hash)),
+-            "Upgrade config hash mismatch",
+-        );
+-
+-        assert(
+-            self.view(config.verify_upgrade_hash_by_branch_level(
+-                branch as u128,
+-                current_branch_level as u128,
+-                upgrade_hash,
+-            )),
+-            "Upgrade hash mismatch",
+-        );
+-
+-        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, world_storage.target_contract, 0, world_hash) } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
+-
+-        assert(new_planet.owner == sender, "Planet owner mismatch");
+-        self.call(planet_storage.set(location, new_planet));
+-        self.call(planet_events_storage.set(location, new_planet_events_state));
+-        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
+-        self.call(artifact_location_storage.set_arrival_locations_max20(
+-            arrival_artifact_ids,
+-            new_arrival_artifact_locations,
+-            original_arrivals_count,
+-        ));
++        _upgrade_planet_public_local(self.context, location, sender, branch, current_branch_level, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, upgrade_config_hash, upgrade_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations);
+     }
+ 
+     #[external("private")]
+@@ -684,28 +628,58 @@
+         }
+         new_player.last_updated = timestamp;
+ 
+-        self.enqueue_self.withdraw_silver_public(
+-            location,
+-            sender,
+-            timestamp,
+-            planet_state_hash,
+-            planet_artifacts_state_hash,
+-            planet_events_state_hash,
+-            original_arrivals_count,
+-            arrival_ids,
+-            arrival_hashes,
+-            arrival_artifact_ids,
+-            arrival_artifact_hashes,
+-            arrival_artifact_location_hashes,
+-            player_state_hash,
+-            world_config_hash,
+-            world_hash,
+-            new_planet,
+-            new_planet_events_state,
+-            new_planet_artifacts_state,
+-            new_arrival_artifact_locations,
+-            new_player,
+-        );
++        {
++            let mut prepared_payload: [Field;258] = [0;258];
++            let prepared_part_0 = (location).serialize();
++            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
++            let prepared_part_1 = (sender).serialize();
++            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
++            let prepared_part_2 = (timestamp).serialize();
++            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
++            let prepared_part_3 = (planet_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
++            let prepared_part_4 = (planet_artifacts_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[4 + prepared_i] = prepared_part_4[prepared_i]; }
++            let prepared_part_5 = (planet_events_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[5 + prepared_i] = prepared_part_5[prepared_i]; }
++            let prepared_part_6 = (original_arrivals_count).serialize();
++            for prepared_i in 0..1 { prepared_payload[6 + prepared_i] = prepared_part_6[prepared_i]; }
++            let prepared_part_7 = (arrival_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[7 + prepared_i] = prepared_part_7[prepared_i]; }
++            let prepared_part_8 = (arrival_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[27 + prepared_i] = prepared_part_8[prepared_i]; }
++            let prepared_part_9 = (arrival_artifact_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[47 + prepared_i] = prepared_part_9[prepared_i]; }
++            let prepared_part_10 = (arrival_artifact_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[67 + prepared_i] = prepared_part_10[prepared_i]; }
++            let prepared_part_11 = (arrival_artifact_location_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[87 + prepared_i] = prepared_part_11[prepared_i]; }
++            let prepared_part_12 = (player_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[107 + prepared_i] = prepared_part_12[prepared_i]; }
++            let prepared_part_13 = (world_config_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[108 + prepared_i] = prepared_part_13[prepared_i]; }
++            let prepared_part_14 = (world_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[109 + prepared_i] = prepared_part_14[prepared_i]; }
++            let prepared_part_15 = (new_planet).serialize();
++            for prepared_i in 0..32 { prepared_payload[110 + prepared_i] = prepared_part_15[prepared_i]; }
++            let prepared_part_16 = (new_planet_events_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[142 + prepared_i] = prepared_part_16[prepared_i]; }
++            let prepared_part_17 = (new_planet_artifacts_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[164 + prepared_i] = prepared_part_17[prepared_i]; }
++            let prepared_part_18 = (new_arrival_artifact_locations).serialize();
++            for prepared_i in 0..60 { prepared_payload[186 + prepared_i] = prepared_part_18[prepared_i]; }
++            let prepared_part_19 = (new_player).serialize();
++            for prepared_i in 0..8 { prepared_payload[246 + prepared_i] = prepared_part_19[prepared_i]; }
++            let prepared_part_20 = (poseidon2_hash((new_planet).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[254 + prepared_i] = prepared_part_20[prepared_i]; }
++            let prepared_part_21 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[255 + prepared_i] = prepared_part_21[prepared_i]; }
++            let prepared_part_22 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[256 + prepared_i] = prepared_part_22[prepared_i]; }
++            let prepared_part_23 = (poseidon2_hash((new_player).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[257 + prepared_i] = prepared_part_23[prepared_i]; }
++            self.enqueue_self.withdraw_silver_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
++        }
+     }
+ 
+     #[external("public")]
+@@ -732,82 +706,7 @@
+         new_arrival_artifact_locations: [ArtifactLocation; 20],
+         new_player: Player,
+     ) {
+-        let actual_timestamp = self.context.timestamp();
+-        assert_public_timestamp(timestamp, actual_timestamp);
+-        let state_backend_address = self.storage.state_backend.read();
+-
+-        let config = Config::at(self.storage.config_storage_address.read());
+-        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
+-        let player_storage = PlayerStorage::at(self.storage.player_storage_address.read());
+-        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
+-        let planet_artifacts_storage =
+-            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
+-        let planet_events_storage =
+-            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
+-        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
+-        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
+-        let artifact_location_storage =
+-            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
+-
+-        assert(
+-            self.view(config.verify_world_config_hash(world_config_hash)),
+-            "World config hash mismatch",
+-        );
+-
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
+-            "Planet state hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
+-            "Planet artifacts state hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
+-            "Planet events state hash mismatch",
+-        );
+-
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
+-                arrival_ids,
+-                arrival_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Arrival hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
+-                arrival_artifact_ids,
+-                arrival_artifact_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Artifact hash mismatch",
+-        );
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
+-                arrival_artifact_ids,
+-                arrival_artifact_location_hashes,
+-                original_arrivals_count,
+-            )) }),
+-            "Artifact location hash mismatch",
+-        );
+-
+-        assert(
+-            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, player_storage.target_contract) == 2 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, player_storage.target_contract, sender.to_field(), player_state_hash) } else { self.view(player_storage.verify_hash(sender, player_state_hash)) }),
+-            "Player state hash mismatch",
+-        );
+-
+-        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, world_storage.target_contract, 0, world_hash) } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
+-
+-        self.call(planet_storage.set(location, new_planet));
+-        self.call(planet_events_storage.set(location, new_planet_events_state));
+-        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
+-        self.call(artifact_location_storage.set_arrival_locations_max20(
+-            arrival_artifact_ids,
+-            new_arrival_artifact_locations,
+-            original_arrivals_count,
+-        ));
+-        self.call(player_storage.set(sender, new_player));
++        _withdraw_silver_public_local(self.context, location, sender, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_config_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
+     }
+ 
+     /// Noir port of Solidity `DFCoreFacet.revealLocation`.
+@@ -1221,29 +1120,85 @@
+         };
+ 
+         // 7. Enqueue public verification and writes
+-        self.enqueue_self.initialize_player_public(
+-            sender,
+-            location_id,
+-            timestamp,
+-            config_hashes,
+-            planet_default_stats_hash,
+-            planet_state_hash,
+-            planet_artifacts_state_hash,
+-            planet_events_state_hash,
+-            original_arrivals_count,
+-            arrival_ids,
+-            arrival_hashes,
+-            arrival_artifact_ids,
+-            arrival_artifact_hashes,
+-            arrival_artifact_location_hashes,
+-            player_state_hash,
+-            world_hash,
+-            new_planet,
+-            new_planet_events_state,
+-            new_planet_artifacts_state,
+-            new_arrival_artifact_locations,
+-            new_player,
+-        );
++        {
++            if (planet_state_hash) == 0 {
++            let mut compact_payload:[Field;56]=[0;56];
++            let compact_part_0=(sender).serialize();
++            for compact_i in 0..1 { compact_payload[0+compact_i]=compact_part_0[compact_i]; }
++            let compact_part_1=(location_id).serialize();
++            for compact_i in 0..1 { compact_payload[1+compact_i]=compact_part_1[compact_i]; }
++            let compact_part_2=(timestamp).serialize();
++            for compact_i in 0..1 { compact_payload[2+compact_i]=compact_part_2[compact_i]; }
++            let compact_part_3=(config_hashes).serialize();
++            for compact_i in 0..9 { compact_payload[3+compact_i]=compact_part_3[compact_i]; }
++            let compact_part_4=(planet_default_stats_hash).serialize();
++            for compact_i in 0..1 { compact_payload[12+compact_i]=compact_part_4[compact_i]; }
++            let compact_part_5=(world_hash).serialize();
++            for compact_i in 0..1 { compact_payload[13+compact_i]=compact_part_5[compact_i]; }
++            let compact_part_6=(new_planet).serialize();
++            for compact_i in 0..32 { compact_payload[14+compact_i]=compact_part_6[compact_i]; }
++            let compact_part_7=(new_player).serialize();
++            for compact_i in 0..8 { compact_payload[46+compact_i]=compact_part_7[compact_i]; }
++            let compact_part_8=(poseidon2_hash((new_planet).serialize())).serialize();
++            for compact_i in 0..1 { compact_payload[54+compact_i]=compact_part_8[compact_i]; }
++            let compact_part_9=(poseidon2_hash((new_player).serialize())).serialize();
++            for compact_i in 0..1 { compact_payload[55+compact_i]=compact_part_9[compact_i]; }
++            self.enqueue_self.initialize_player_new_public_prepared(::libs::field_buffer::FieldBuffer { words: compact_payload });
++        } else {
++            let mut prepared_payload: [Field;267] = [0;267];
++            let prepared_part_0 = (sender).serialize();
++            for prepared_i in 0..1 { prepared_payload[0 + prepared_i] = prepared_part_0[prepared_i]; }
++            let prepared_part_1 = (location_id).serialize();
++            for prepared_i in 0..1 { prepared_payload[1 + prepared_i] = prepared_part_1[prepared_i]; }
++            let prepared_part_2 = (timestamp).serialize();
++            for prepared_i in 0..1 { prepared_payload[2 + prepared_i] = prepared_part_2[prepared_i]; }
++            let prepared_part_3 = (config_hashes).serialize();
++            for prepared_i in 0..9 { prepared_payload[3 + prepared_i] = prepared_part_3[prepared_i]; }
++            let prepared_part_4 = (planet_default_stats_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[12 + prepared_i] = prepared_part_4[prepared_i]; }
++            let prepared_part_5 = (planet_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[13 + prepared_i] = prepared_part_5[prepared_i]; }
++            let prepared_part_6 = (planet_artifacts_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[14 + prepared_i] = prepared_part_6[prepared_i]; }
++            let prepared_part_7 = (planet_events_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[15 + prepared_i] = prepared_part_7[prepared_i]; }
++            let prepared_part_8 = (original_arrivals_count).serialize();
++            for prepared_i in 0..1 { prepared_payload[16 + prepared_i] = prepared_part_8[prepared_i]; }
++            let prepared_part_9 = (arrival_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[17 + prepared_i] = prepared_part_9[prepared_i]; }
++            let prepared_part_10 = (arrival_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[37 + prepared_i] = prepared_part_10[prepared_i]; }
++            let prepared_part_11 = (arrival_artifact_ids).serialize();
++            for prepared_i in 0..20 { prepared_payload[57 + prepared_i] = prepared_part_11[prepared_i]; }
++            let prepared_part_12 = (arrival_artifact_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[77 + prepared_i] = prepared_part_12[prepared_i]; }
++            let prepared_part_13 = (arrival_artifact_location_hashes).serialize();
++            for prepared_i in 0..20 { prepared_payload[97 + prepared_i] = prepared_part_13[prepared_i]; }
++            let prepared_part_14 = (player_state_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[117 + prepared_i] = prepared_part_14[prepared_i]; }
++            let prepared_part_15 = (world_hash).serialize();
++            for prepared_i in 0..1 { prepared_payload[118 + prepared_i] = prepared_part_15[prepared_i]; }
++            let prepared_part_16 = (new_planet).serialize();
++            for prepared_i in 0..32 { prepared_payload[119 + prepared_i] = prepared_part_16[prepared_i]; }
++            let prepared_part_17 = (new_planet_events_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[151 + prepared_i] = prepared_part_17[prepared_i]; }
++            let prepared_part_18 = (new_planet_artifacts_state).serialize();
++            for prepared_i in 0..22 { prepared_payload[173 + prepared_i] = prepared_part_18[prepared_i]; }
++            let prepared_part_19 = (new_arrival_artifact_locations).serialize();
++            for prepared_i in 0..60 { prepared_payload[195 + prepared_i] = prepared_part_19[prepared_i]; }
++            let prepared_part_20 = (new_player).serialize();
++            for prepared_i in 0..8 { prepared_payload[255 + prepared_i] = prepared_part_20[prepared_i]; }
++            let prepared_part_21 = (poseidon2_hash((new_planet).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[263 + prepared_i] = prepared_part_21[prepared_i]; }
++            let prepared_part_22 = (poseidon2_hash((new_planet_events_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[264 + prepared_i] = prepared_part_22[prepared_i]; }
++            let prepared_part_23 = (poseidon2_hash((new_planet_artifacts_state).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[265 + prepared_i] = prepared_part_23[prepared_i]; }
++            let prepared_part_24 = (poseidon2_hash((new_player).serialize())).serialize();
++            for prepared_i in 0..1 { prepared_payload[266 + prepared_i] = prepared_part_24[prepared_i]; }
++            self.enqueue_self.initialize_player_public_prepared(::libs::field_buffer::FieldBuffer { words: prepared_payload });
++        }
++        }
+     }
+ 
+     #[external("public")]
+@@ -1271,6 +1226,254 @@
+         new_arrival_artifact_locations: [ArtifactLocation; 20],
+         new_player: Player,
+     ) {
++        _initialize_player_public_local(self.context, sender, location_id, timestamp, config_hashes, planet_default_stats_hash, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
++    }
++
++
++    // Additional hashes are bound by the existing private gameplay proof.
++    #[external("public")]
++    #[only_self]
++    fn refresh_planet_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<245>) {
++        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
++        let location: Field = Deserialize::stream_deserialize(&mut reader);
++        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
++        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
++        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
++        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
++        reader.advance_offset(3);
++        reader.finish();
++        _refresh_planet_public_local(self.context, location, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, new_planet, new_planet_artifacts_state, new_planet_events_state, new_arrival_artifact_locations);
++    }
++
++    // Additional hashes are bound by the existing private gameplay proof.
++    #[external("public")]
++    #[only_self]
++    fn upgrade_planet_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<251>) {
++        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
++        let location: Field = Deserialize::stream_deserialize(&mut reader);
++        let sender: AztecAddress = Deserialize::stream_deserialize(&mut reader);
++        let branch: u8 = Deserialize::stream_deserialize(&mut reader);
++        let current_branch_level: u8 = Deserialize::stream_deserialize(&mut reader);
++        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
++        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
++        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let upgrade_config_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let upgrade_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let world_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
++        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
++        reader.advance_offset(3);
++        reader.finish();
++        _upgrade_planet_public_local(self.context, location, sender, branch, current_branch_level, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, upgrade_config_hash, upgrade_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations);
++    }
++
++    // Additional hashes are bound by the existing private gameplay proof.
++    #[external("public")]
++    #[only_self]
++    fn withdraw_silver_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<258>) {
++        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
++        let location: Field = Deserialize::stream_deserialize(&mut reader);
++        let sender: AztecAddress = Deserialize::stream_deserialize(&mut reader);
++        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
++        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
++        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let player_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let world_config_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let world_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
++        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
++        let new_player: Player = Deserialize::stream_deserialize(&mut reader);
++        reader.advance_offset(4);
++        reader.finish();
++        _withdraw_silver_public_local(self.context, location, sender, timestamp, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_config_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
++    }
++
++    // Additional hashes are bound by the existing private gameplay proof.
++
++
++    // Additional hashes are bound by the existing private gameplay proof.
++    #[external("public")]
++    #[only_self]
++    fn initialize_player_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<267>) {
++        let mut reader = aztec::protocol::utils::reader::Reader::new(prepared_payload.words);
++        let sender: AztecAddress = Deserialize::stream_deserialize(&mut reader);
++        let location_id: Field = Deserialize::stream_deserialize(&mut reader);
++        let timestamp: u64 = Deserialize::stream_deserialize(&mut reader);
++        let config_hashes: [Field; 9] = Deserialize::stream_deserialize(&mut reader);
++        let planet_default_stats_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_artifacts_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let planet_events_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let original_arrivals_count: u32 = Deserialize::stream_deserialize(&mut reader);
++        let arrival_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_ids: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let arrival_artifact_location_hashes: [Field; 20] = crate::read_prepared_core_field20(&mut reader);
++        let player_state_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let world_hash: Field = Deserialize::stream_deserialize(&mut reader);
++        let new_planet: Planet = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_events_state: PlanetEvents = Deserialize::stream_deserialize(&mut reader);
++        let new_planet_artifacts_state: PlanetArtifacts = Deserialize::stream_deserialize(&mut reader);
++        let new_arrival_artifact_locations: [ArtifactLocation; 20] = Deserialize::stream_deserialize(&mut reader);
++        let new_player: Player = Deserialize::stream_deserialize(&mut reader);
++        reader.advance_offset(4);
++        reader.finish();
++        _initialize_player_public_local(self.context, sender, location_id, timestamp, config_hashes, planet_default_stats_hash, planet_state_hash, planet_artifacts_state_hash, planet_events_state_hash, original_arrivals_count, arrival_ids, arrival_hashes, arrival_artifact_ids, arrival_artifact_hashes, arrival_artifact_location_hashes, player_state_hash, world_hash, new_planet, new_planet_events_state, new_planet_artifacts_state, new_arrival_artifact_locations, new_player);
++    }
++
++    #[external("public")]
++    fn set_state_backend(state_backend: AztecAddress) {
++        self.internal.assert_admin();
++        self.storage.state_backend.write(state_backend);
++    }
++
++    #[external("utility")]
++    unconstrained fn get_state_backend() -> AztecAddress {
++        self.storage.state_backend.read()
++    }
++    #[external("public")]
++    fn set_state_worker(state_worker:AztecAddress) {
++        self.internal.assert_admin();
++        self.storage.state_worker.write(state_worker);
++    }
++    #[external("utility")]
++    unconstrained fn get_state_worker() -> AztecAddress {
++        self.storage.state_worker.read()
++    }
++
++    #[inline_never]
++    #[contract_library_method]
++    unconstrained fn _checked_worker_result(result:[Field]) -> bool {
++        // A malformed response cannot bypass the original continuation.
++        if result.len()==1 { result[0]==1 } else { false }
++    }
++    #[external("public")] #[only_self]
++    fn initialize_player_new_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<56>) {
++        let prepared_payload=prepared_payload.words;
++        let backend=self.storage.state_backend.read();
++        let mut settled=false;
++        if !backend.is_zero() {
++            if ::libs::config_recognition::supports_config(self.storage.config_storage_address.read()) {
++            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("try_settle_initialize_new(([Field;60]))") };
++            let calldata=[selector.to_field(), self.storage.config_storage_address.read().to_field(), self.storage.world_storage_address.read().to_field(), self.storage.player_storage_address.read().to_field(), self.storage.planet_storage_address.read().to_field(), prepared_payload[0], prepared_payload[1], prepared_payload[2], prepared_payload[3], prepared_payload[4], prepared_payload[5], prepared_payload[6], prepared_payload[7], prepared_payload[8], prepared_payload[9], prepared_payload[10], prepared_payload[11], prepared_payload[12], prepared_payload[13], prepared_payload[14], prepared_payload[15], prepared_payload[16], prepared_payload[17], prepared_payload[18], prepared_payload[19], prepared_payload[20], prepared_payload[21], prepared_payload[22], prepared_payload[23], prepared_payload[24], prepared_payload[25], prepared_payload[26], prepared_payload[27], prepared_payload[28], prepared_payload[29], prepared_payload[30], prepared_payload[31], prepared_payload[32], prepared_payload[33], prepared_payload[34], prepared_payload[35], prepared_payload[36], prepared_payload[37], prepared_payload[38], prepared_payload[39], prepared_payload[40], prepared_payload[41], prepared_payload[42], prepared_payload[43], prepared_payload[44], prepared_payload[45], prepared_payload[46], prepared_payload[47], prepared_payload[48], prepared_payload[49], prepared_payload[50], prepared_payload[51], prepared_payload[52], prepared_payload[53], prepared_payload[54], prepared_payload[55]];
++            settled=_checked_worker_result(::libs::public_call::call(backend,calldata));
++            }
++        }
++        if !settled {
++            // The original new-planet branch never reads these omitted parameters.
++            // Reconstruct its same typed call; the supplied fields remain exact.
++            let mut original_calldata:[Field;264]=[0;264];
++            for i in 0..1 { original_calldata[1+i]=prepared_payload[0+i]; }
++            for i in 0..1 { original_calldata[2+i]=prepared_payload[1+i]; }
++            for i in 0..1 { original_calldata[3+i]=prepared_payload[2+i]; }
++            for i in 0..9 { original_calldata[4+i]=prepared_payload[3+i]; }
++            for i in 0..1 { original_calldata[13+i]=prepared_payload[12+i]; }
++            for i in 0..1 { original_calldata[119+i]=prepared_payload[13+i]; }
++            for i in 0..32 { original_calldata[120+i]=prepared_payload[14+i]; }
++            for i in 0..8 { original_calldata[256+i]=prepared_payload[46+i]; }
++            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("initialize_player_public((Field),Field,u64,[Field;9],Field,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([(Field);20],u32,u64),([Field;20],u32,u64),[(Field,Field,u64);20],(u64,Field,u64,u128,u128,u128,bool,u64))") };
++            original_calldata[0]=selector.to_field();
++            let result=::libs::public_call::call(self.context.this_address(),original_calldata);
++            assert(result.len()==0,"Unexpected original continuation result");
++        }
++    }
++    #[external("public")] #[only_self]
++    fn refresh_planet_empty_public_prepared(prepared_payload: ::libs::field_buffer::FieldBuffer<144>) {
++        let prepared_payload=prepared_payload.words;
++        let backend=self.storage.state_backend.read();
++        let mut settled=false;
++        if !backend.is_zero() {
++            let arrival=self.storage.arrivals_storage_address.read();
++            let artifact=self.storage.artifact_storage_address.read();
++            if (::state_backend_readonly::public_read::get_namespace_kind(backend,arrival)==7)
++                & (::state_backend_readonly::public_read::get_namespace_kind(backend,artifact)==8) {
++            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("try_settle_refresh_empty(([Field;88]))") };
++            let calldata=[selector.to_field(), self.storage.planet_storage_address.read().to_field(), self.storage.planet_artifacts_storage_address.read().to_field(), self.storage.planet_events_storage_address.read().to_field(), self.storage.artifact_location_storage_address.read().to_field(), prepared_payload[0], prepared_payload[1], prepared_payload[2], prepared_payload[3], prepared_payload[4], prepared_payload[5], prepared_payload[6], prepared_payload[7], prepared_payload[8], prepared_payload[9], prepared_payload[10], prepared_payload[11], prepared_payload[12], prepared_payload[13], prepared_payload[14], prepared_payload[15], prepared_payload[16], prepared_payload[17], prepared_payload[18], prepared_payload[19], prepared_payload[20], prepared_payload[21], prepared_payload[22], prepared_payload[23], prepared_payload[24], prepared_payload[25], prepared_payload[26], prepared_payload[27], prepared_payload[28], prepared_payload[29], prepared_payload[30], prepared_payload[31], prepared_payload[32], prepared_payload[33], prepared_payload[34], prepared_payload[35], prepared_payload[36], prepared_payload[37], prepared_payload[38], prepared_payload[39], prepared_payload[40], prepared_payload[41], prepared_payload[42], prepared_payload[43], prepared_payload[44], prepared_payload[45], prepared_payload[46], prepared_payload[47], prepared_payload[48], prepared_payload[49], prepared_payload[50], prepared_payload[51], prepared_payload[52], prepared_payload[53], prepared_payload[54], prepared_payload[55], prepared_payload[56], prepared_payload[57], prepared_payload[58], prepared_payload[59], prepared_payload[60], prepared_payload[61], prepared_payload[62], prepared_payload[63], prepared_payload[64], prepared_payload[65], prepared_payload[66], prepared_payload[67], prepared_payload[68], prepared_payload[69], prepared_payload[70], prepared_payload[71], prepared_payload[72], prepared_payload[73], prepared_payload[74], prepared_payload[75], prepared_payload[76], prepared_payload[77], prepared_payload[78], prepared_payload[79], prepared_payload[80], prepared_payload[81], prepared_payload[82], prepared_payload[83]];
++            settled=_checked_worker_result(::libs::public_call::call(backend,calldata));
++            }
++        }
++        if !settled {
++            // Count-zero hash/ID arrays are provably zero; preserve every location word
++            // because an arbitrary configured legacy setter can inspect inactive values.
++            let mut original_calldata:[Field;243]=[0;243];
++            for i in 0..1 { original_calldata[1+i]=prepared_payload[0+i]; }
++            for i in 0..1 { original_calldata[2+i]=prepared_payload[1+i]; }
++            for i in 0..1 { original_calldata[3+i]=prepared_payload[2+i]; }
++            for i in 0..1 { original_calldata[4+i]=prepared_payload[3+i]; }
++            for i in 0..1 { original_calldata[5+i]=prepared_payload[4+i]; }
++            for i in 0..32 { original_calldata[107+i]=prepared_payload[5+i]; }
++            for i in 0..22 { original_calldata[139+i]=prepared_payload[37+i]; }
++            for i in 0..22 { original_calldata[161+i]=prepared_payload[59+i]; }
++            for i in 0..60 { original_calldata[183+i]=prepared_payload[84+i]; }
++            let selector=comptime { aztec::protocol::abis::function_selector::FunctionSelector::from_signature("refresh_planet_public(Field,u64,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([Field;20],u32,u64),([(Field);20],u32,u64),[(Field,Field,u64);20])") };
++            original_calldata[0]=selector.to_field();
++            let result=::libs::public_call::call(self.context.this_address(),original_calldata);
++            assert(result.len()==0,"Unexpected original continuation result");
++        }
++    }
++
++
++
++
++
++
++    // The same public context preserves the actual caller and storage authority.
++    #[inline_never]
++    #[contract_library_method]
++    unconstrained fn _initialize_player_public_local(
++        context: aztec::context::PublicContext,
++        sender: AztecAddress,
++        location_id: Field,
++        timestamp: u64,
++        config_hashes: [Field; 9],
++        planet_default_stats_hash: Field,
++        planet_state_hash: Field,
++        planet_artifacts_state_hash: Field,
++        planet_events_state_hash: Field,
++        original_arrivals_count: u32,
++        arrival_ids: [Field; 20],
++        arrival_hashes: [Field; 20],
++        arrival_artifact_ids: [Field; 20],
++        arrival_artifact_hashes: [Field; 20],
++        arrival_artifact_location_hashes: [Field; 20],
++        player_state_hash: Field,
++        world_hash: Field,
++        new_planet: Planet,
++        new_planet_events_state: PlanetEvents,
++        new_planet_artifacts_state: PlanetArtifacts,
++        new_arrival_artifact_locations: [ArtifactLocation; 20],
++        new_player: Player,
++    ) {
++        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
+         let actual_timestamp = self.context.timestamp();
+         assert_public_timestamp(timestamp, actual_timestamp);
+         let state_backend_address = self.storage.state_backend.read();
+@@ -1368,51 +1571,336 @@
+     }
+ 
+ 
+-    // Additional hashes are bound by the existing private gameplay proof.
+-
+-
+-    // Additional hashes are bound by the existing private gameplay proof.
+-
+-
+-    // Additional hashes are bound by the existing private gameplay proof.
+-
+-
+-    // Additional hashes are bound by the existing private gameplay proof.
+-
+-
+-    // Additional hashes are bound by the existing private gameplay proof.
+-
+-
+-    #[external("public")]
+-    fn set_state_backend(state_backend: AztecAddress) {
+-        self.internal.assert_admin();
+-        self.storage.state_backend.write(state_backend);
+-    }
+-
+-    #[external("utility")]
+-    unconstrained fn get_state_backend() -> AztecAddress {
+-        self.storage.state_backend.read()
+-    }
+-    #[external("public")]
+-    fn set_state_worker(state_worker:AztecAddress) {
+-        self.internal.assert_admin();
+-        self.storage.state_worker.write(state_worker);
+-    }
+-    #[external("utility")]
+-    unconstrained fn get_state_worker() -> AztecAddress {
+-        self.storage.state_worker.read()
+-    }
+-
++    // The same public context preserves the actual caller and storage authority.
+     #[inline_never]
+     #[contract_library_method]
+-    unconstrained fn _checked_worker_result(result:[Field]) -> bool {
+-        // A malformed response cannot bypass the original continuation.
+-        if result.len()==1 { result[0]==1 } else { false }
+-    }
+-
+-
+-
+-
+-
+-
++    unconstrained fn _refresh_planet_public_local(
++        context: aztec::context::PublicContext,
++        location: Field,
++        timestamp: u64,
++        planet_state_hash: Field,
++        planet_artifacts_state_hash: Field,
++        planet_events_state_hash: Field,
++        original_arrivals_count: u32,
++        arrival_ids: [Field; 20],
++        arrival_hashes: [Field; 20],
++        arrival_artifact_ids: [Field; 20],
++        arrival_artifact_hashes: [Field; 20],
++        arrival_artifact_location_hashes: [Field; 20],
++        new_planet: Planet,
++        new_planet_artifacts_state: PlanetArtifacts,
++        new_planet_events_state: PlanetEvents,
++        new_arrival_artifact_locations: [ArtifactLocation; 20],
++    ) {
++        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
++        let actual_timestamp = self.context.timestamp();
++        assert_public_timestamp(timestamp, actual_timestamp);
++        let state_backend_address = self.storage.state_backend.read();
++
++        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
++        let planet_artifacts_storage =
++            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
++        let planet_events_storage =
++            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
++        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
++        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
++        let artifact_location_storage =
++            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
++
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
++            "Planet state hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
++            "Planet artifacts state hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
++            "Planet events state hash mismatch",
++        );
++
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
++                arrival_ids,
++                arrival_hashes,
++                original_arrivals_count,
++            )) }),
++            "Arrival hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
++                arrival_artifact_ids,
++                arrival_artifact_hashes,
++                original_arrivals_count,
++            )) }),
++            "Artifact hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
++                arrival_artifact_ids,
++                arrival_artifact_location_hashes,
++                original_arrivals_count,
++            )) }),
++            "Artifact location hash mismatch",
++        );
++
++        self.call(planet_storage.set(location, new_planet));
++        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
++        self.call(planet_events_storage.set(location, new_planet_events_state));
++        self.call(artifact_location_storage.set_arrival_locations_max20(
++            arrival_artifact_ids,
++            new_arrival_artifact_locations,
++            original_arrivals_count,
++        ));
++    }
++
++
++    // The same public context preserves the actual caller and storage authority.
++    #[inline_never]
++    #[contract_library_method]
++    unconstrained fn _upgrade_planet_public_local(
++        context: aztec::context::PublicContext,
++        location: Field,
++        sender: AztecAddress,
++        branch: u8,
++        current_branch_level: u8,
++        timestamp: u64,
++        planet_state_hash: Field,
++        planet_artifacts_state_hash: Field,
++        planet_events_state_hash: Field,
++        original_arrivals_count: u32,
++        arrival_ids: [Field; 20],
++        arrival_hashes: [Field; 20],
++        arrival_artifact_ids: [Field; 20],
++        arrival_artifact_hashes: [Field; 20],
++        arrival_artifact_location_hashes: [Field; 20],
++        upgrade_config_hash: Field,
++        upgrade_hash: Field,
++        world_hash: Field,
++        new_planet: Planet,
++        new_planet_events_state: PlanetEvents,
++        new_planet_artifacts_state: PlanetArtifacts,
++        new_arrival_artifact_locations: [ArtifactLocation; 20],
++    ) {
++        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
++        let actual_timestamp = self.context.timestamp();
++        assert_public_timestamp(timestamp, actual_timestamp);
++        let state_backend_address = self.storage.state_backend.read();
++
++        let config = Config::at(self.storage.config_storage_address.read());
++        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
++        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
++        let planet_artifacts_storage =
++            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
++        let planet_events_storage =
++            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
++        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
++        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
++        let artifact_location_storage =
++            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
++
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
++            "Planet state hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
++            "Planet artifacts state hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
++            "Planet events state hash mismatch",
++        );
++
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
++                arrival_ids,
++                arrival_hashes,
++                original_arrivals_count,
++            )) }),
++            "Arrival hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
++                arrival_artifact_ids,
++                arrival_artifact_hashes,
++                original_arrivals_count,
++            )) }),
++            "Artifact hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
++                arrival_artifact_ids,
++                arrival_artifact_location_hashes,
++                original_arrivals_count,
++            )) }),
++            "Artifact location hash mismatch",
++        );
++
++        assert(
++            self.view(config.verify_upgrade_config_hash(upgrade_config_hash)),
++            "Upgrade config hash mismatch",
++        );
++
++        assert(
++            self.view(config.verify_upgrade_hash_by_branch_level(
++                branch as u128,
++                current_branch_level as u128,
++                upgrade_hash,
++            )),
++            "Upgrade hash mismatch",
++        );
++
++        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, world_storage.target_contract, 0, world_hash) } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
++
++        assert(new_planet.owner == sender, "Planet owner mismatch");
++        self.call(planet_storage.set(location, new_planet));
++        self.call(planet_events_storage.set(location, new_planet_events_state));
++        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
++        self.call(artifact_location_storage.set_arrival_locations_max20(
++            arrival_artifact_ids,
++            new_arrival_artifact_locations,
++            original_arrivals_count,
++        ));
++    }
++
++
++    // The same public context preserves the actual caller and storage authority.
++    #[inline_never]
++    #[contract_library_method]
++    unconstrained fn _withdraw_silver_public_local(
++        context: aztec::context::PublicContext,
++        location: Field,
++        sender: AztecAddress,
++        timestamp: u64,
++        planet_state_hash: Field,
++        planet_artifacts_state_hash: Field,
++        planet_events_state_hash: Field,
++        original_arrivals_count: u32,
++        arrival_ids: [Field; 20],
++        arrival_hashes: [Field; 20],
++        arrival_artifact_ids: [Field; 20],
++        arrival_artifact_hashes: [Field; 20],
++        arrival_artifact_location_hashes: [Field; 20],
++        player_state_hash: Field,
++        world_config_hash: Field,
++        world_hash: Field,
++        new_planet: Planet,
++        new_planet_events_state: PlanetEvents,
++        new_planet_artifacts_state: PlanetArtifacts,
++        new_arrival_artifact_locations: [ArtifactLocation; 20],
++        new_player: Player,
++    ) {
++        let mut self = __aztec_nr_internals__create_public_self_from_context(context);
++        let actual_timestamp = self.context.timestamp();
++        assert_public_timestamp(timestamp, actual_timestamp);
++        let state_backend_address = self.storage.state_backend.read();
++
++        let config = Config::at(self.storage.config_storage_address.read());
++        let world_storage = WorldStorage::at(self.storage.world_storage_address.read());
++        let player_storage = PlayerStorage::at(self.storage.player_storage_address.read());
++        let planet_storage = PlanetStorage::at(self.storage.planet_storage_address.read());
++        let planet_artifacts_storage =
++            PlanetArtifactsStorage::at(self.storage.planet_artifacts_storage_address.read());
++        let planet_events_storage =
++            PlanetEventsStorage::at(self.storage.planet_events_storage_address.read());
++        let arrival_storage = ArrivalStorage::at(self.storage.arrivals_storage_address.read());
++        let artifact_storage = ArtifactStorage::at(self.storage.artifact_storage_address.read());
++        let artifact_location_storage =
++            ArtifactLocationStorage::at(self.storage.artifact_location_storage_address.read());
++
++        assert(
++            self.view(config.verify_world_config_hash(world_config_hash)),
++            "World config hash mismatch",
++        );
++
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_storage.target_contract) == 3 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_storage.target_contract, location, planet_state_hash) } else { self.view(planet_storage.verify_hash(location, planet_state_hash)) }),
++            "Planet state hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_artifacts_storage.target_contract) == 6 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_artifacts_storage.target_contract, location, planet_artifacts_state_hash) } else { self.view(planet_artifacts_storage.verify_hash(location, planet_artifacts_state_hash)) }),
++            "Planet artifacts state hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, planet_events_storage.target_contract) == 5 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, planet_events_storage.target_contract, location, planet_events_state_hash) } else { self.view(planet_events_storage.verify_hash(location, planet_events_state_hash)) }),
++            "Planet events state hash mismatch",
++        );
++
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, arrival_storage.target_contract) == 7 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, arrival_storage.target_contract, arrival_ids, arrival_hashes, original_arrivals_count) } else { self.view(arrival_storage.verify_hashes_batch(
++                arrival_ids,
++                arrival_hashes,
++                original_arrivals_count,
++            )) }),
++            "Arrival hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_storage.target_contract) == 8 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_storage.target_contract, arrival_artifact_ids, arrival_artifact_hashes, original_arrivals_count) } else { self.view(artifact_storage.verify_hashes_batch(
++                arrival_artifact_ids,
++                arrival_artifact_hashes,
++                original_arrivals_count,
++            )) }),
++            "Artifact hash mismatch",
++        );
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, artifact_location_storage.target_contract) == 9 }) { ::state_backend_readonly::public_read::verify_hashes_batch_20(state_backend_address, artifact_location_storage.target_contract, arrival_artifact_ids, arrival_artifact_location_hashes, original_arrivals_count) } else { self.view(artifact_location_storage.verify_hashes_batch(
++                arrival_artifact_ids,
++                arrival_artifact_location_hashes,
++                original_arrivals_count,
++            )) }),
++            "Artifact location hash mismatch",
++        );
++
++        assert(
++            (if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, player_storage.target_contract) == 2 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, player_storage.target_contract, sender.to_field(), player_state_hash) } else { self.view(player_storage.verify_hash(sender, player_state_hash)) }),
++            "Player state hash mismatch",
++        );
++
++        assert((if (if state_backend_address.is_zero() { false } else { ::state_backend_readonly::public_read::get_namespace_kind(state_backend_address, world_storage.target_contract) == 1 }) { ::state_backend_readonly::public_read::verify_hash(state_backend_address, world_storage.target_contract, 0, world_hash) } else { self.view(world_storage.verify_hash(0, world_hash)) }), "World state hash mismatch");
++
++        self.call(planet_storage.set(location, new_planet));
++        self.call(planet_events_storage.set(location, new_planet_events_state));
++        self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));
++        self.call(artifact_location_storage.set_arrival_locations_max20(
++            arrival_artifact_ids,
++            new_arrival_artifact_locations,
++            original_arrivals_count,
++        ));
++        self.call(player_storage.set(sender, new_player));
++    }
+ }
++
++
++// Public-only parser helper. Share the five Field20 reads within each prepared
++// Reader width without changing the pinned Field20 read/advance semantics.
++#[inline_never]
++unconstrained fn read_prepared_core_field20<let N: u32>(
++    reader: &mut ::aztec::protocol::utils::reader::Reader<N>,
++) -> [Field; 20] {
++    let result = [
++        reader.peek_offset(0),
++        reader.peek_offset(1),
++        reader.peek_offset(2),
++        reader.peek_offset(3),
++        reader.peek_offset(4),
++        reader.peek_offset(5),
++        reader.peek_offset(6),
++        reader.peek_offset(7),
++        reader.peek_offset(8),
++        reader.peek_offset(9),
++        reader.peek_offset(10),
++        reader.peek_offset(11),
++        reader.peek_offset(12),
++        reader.peek_offset(13),
++        reader.peek_offset(14),
++        reader.peek_offset(15),
++        reader.peek_offset(16),
++        reader.peek_offset(17),
++        reader.peek_offset(18),
++        reader.peek_offset(19),
++    ];
++    reader.advance_offset(20);
++    result
++}
+--- a/contracts/system/move/Nargo.toml
++++ b/contracts/system/move/Nargo.toml
+@@ -4,7 +4,7 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../../vendor/aztec" }
+ 
+ circuits = { path = "../../circuits" }
+ config = { path = "../../config" }
+--- a/contracts/types/Nargo.toml
++++ b/contracts/types/Nargo.toml
+@@ -4,4 +4,4 @@
+ authors = [""]
+ 
+ [dependencies]
+-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "v5.0.1", directory = "aztec" }
++aztec = { path = "../../vendor/aztec" }
+--- a/vendor/aztec/src/macros/dispatch.nr
++++ b/vendor/aztec/src/macros/dispatch.nr
+@@ -8,6 +8,35 @@
+ /// Minimum number of public functions that must share a parameter-type signature before we extract a shared
+ /// unpack helper. See [compute_unpack_prelude] for the rationale behind the chosen value.
+ global EXTRACTION_THRESHOLD: u32 = 4;
++
++/// Opts a one-field-array transport into direct decoding as the sole public argument.
++///
++/// Implementors promise Serialize::N == Deserialize::N == the array width and that direct decoding equals
++/// stream decoding on every complete serialized packet, with no additional stream checks or side effects.
++/// This affects public dispatch only. Implementing it does not alter private serializers or either decoder.
++pub trait SinglePublicArgumentDirectDeserialize {}
++
++// The marker is resolved by actual trait identity, never by a type or field name.
++comptime fn use_direct_single_argument(parameters: [(Quoted, Type)]) -> bool {
++    if parameters.len() != 1 {
++        false
++    } else {
++        let param_type = parameters[0].1;
++        let marker = quote { crate::macros::dispatch::SinglePublicArgumentDirectDeserialize }.as_trait_constraint();
++        if !param_type.implements(marker) {
++            false
++        } else {
++            let (definition, generics) = param_type.as_data_type().expect(f"Direct public input must be a struct");
++            let fields = definition.fields(generics);
++            assert(fields.len() == 1, "Direct public input must have one field");
++            let (element, width) = fields[0].1.as_array().expect(f"Direct public input must contain an array");
++            assert(element.is_field(), "Direct public input elements must be Field");
++            assert(width.as_constant().is_some(), "Direct public input width must be constant");
++            true
++        }
++    }
++}
++
+ 
+ /// Generates a `public_dispatch` function for an Aztec contract module `m`.
+ ///
+@@ -200,12 +229,68 @@
+     }
+ }
+ 
++// Experimental public-dispatch-only specialization. Keep all other Deserialize paths unchanged.
++comptime fn unpack_parameter(arg_name: Quoted, param_type: Type) -> Quoted {
++    let is_field20 = if param_type.as_array().is_some() {
++        let (element_type, array_len) = param_type.as_array().unwrap();
++        if element_type.is_field() {
++            if array_len.as_constant().is_some() {
++                array_len.as_constant().unwrap() == 20
++            } else {
++                false
++            }
++        } else {
++            false
++        }
++    } else {
++        false
++    };
++    if is_field20 {
++        quote {
++            let $arg_name: $param_type = [
++                reader.peek_offset(0),
++                reader.peek_offset(1),
++                reader.peek_offset(2),
++                reader.peek_offset(3),
++                reader.peek_offset(4),
++                reader.peek_offset(5),
++                reader.peek_offset(6),
++                reader.peek_offset(7),
++                reader.peek_offset(8),
++                reader.peek_offset(9),
++                reader.peek_offset(10),
++                reader.peek_offset(11),
++                reader.peek_offset(12),
++                reader.peek_offset(13),
++                reader.peek_offset(14),
++                reader.peek_offset(15),
++                reader.peek_offset(16),
++                reader.peek_offset(17),
++                reader.peek_offset(18),
++                reader.peek_offset(19),
++            ];
++            reader.advance_offset(20);
++        }
++    } else {
++        quote {
++            let $arg_name: $param_type = aztec::protocol::traits::Deserialize::stream_deserialize(&mut reader);
++        }
++    }
++}
++
+ /// Inlined calldata read + per-parameter `stream_deserialize` for signatures that are not worth extracting.
+ comptime fn inline_unpack(parameters: [(Quoted, Type)]) -> Quoted {
+     let params_len_quote = get_params_len_quote(parameters);
+-    let initial_read = quote {
+-        let input_calldata: [Field; $params_len_quote] = aztec::oracle::avm::calldata_copy(1, $params_len_quote);
+-        let mut reader = aztec::protocol::utils::reader::Reader::new(input_calldata);
++    let direct = use_direct_single_argument(parameters);
++    let initial_read = if direct {
++        quote {
++            let input_calldata: [Field; $params_len_quote] = aztec::oracle::avm::calldata_copy(1, $params_len_quote);
++        }
++    } else {
++        quote {
++            let input_calldata: [Field; $params_len_quote] = aztec::oracle::avm::calldata_copy(1, $params_len_quote);
++            let mut reader = aztec::protocol::utils::reader::Reader::new(input_calldata);
++        }
+     };
+ 
+     let mut read_quotes: [Quoted] = @[];
+@@ -213,8 +298,12 @@
+         let arg_name = f"arg{parameter_index}".quoted_contents();
+         let param_type = parameters[parameter_index].1;
+         read_quotes = read_quotes.push_back(
+-            quote {
+-                let $arg_name: $param_type = aztec::protocol::traits::Deserialize::stream_deserialize(&mut reader);
++            if direct {
++                quote {
++                    let $arg_name: $param_type = aztec::protocol::traits::Deserialize::deserialize(input_calldata);
++                }
++            } else {
++                unpack_parameter(arg_name, param_type)
+             },
+         );
+     }
+@@ -240,9 +329,16 @@
+     // - Parameters: the parameters of the function intended to dispatch
+     // That is, exactly what is expected for a call to the target function, but with a selector added at the
+     // beginning.
+-    let initial_read = quote {
+-        let input_calldata: [Field; $params_len_quote] = aztec::oracle::avm::calldata_copy(1, $params_len_quote);
+-        let mut reader = aztec::protocol::utils::reader::Reader::new(input_calldata);
++    let direct = use_direct_single_argument(parameters);
++    let initial_read = if direct {
++        quote {
++            let input_calldata: [Field; $params_len_quote] = aztec::oracle::avm::calldata_copy(1, $params_len_quote);
++        }
++    } else {
++        quote {
++            let input_calldata: [Field; $params_len_quote] = aztec::oracle::avm::calldata_copy(1, $params_len_quote);
++            let mut reader = aztec::protocol::utils::reader::Reader::new(input_calldata);
++        }
+     };
+ 
+     let mut read_quotes: [Quoted] = @[];
+@@ -252,8 +348,12 @@
+         let arg_name = f"arg{parameter_index}".quoted_contents();
+         let param_type = parameters[parameter_index].1;
+         read_quotes = read_quotes.push_back(
+-            quote {
+-                let $arg_name: $param_type = aztec::protocol::traits::Deserialize::stream_deserialize(&mut reader);
++            if direct {
++                quote {
++                    let $arg_name: $param_type = aztec::protocol::traits::Deserialize::deserialize(input_calldata);
++                }
++            } else {
++                unpack_parameter(arg_name, param_type)
+             },
+         );
+         arg_quotes = arg_quotes.push_back(arg_name);

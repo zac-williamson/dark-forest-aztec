@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "scope": "Actual V14 native/source identity, offline installer, generated wrappers and application type integration; not additional fees, gameplay or proving measurements",
+  "nativeManifestSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c",
+  "nativeArtifacts": 20,
+  "compiledSources": 349,
+  "originalMethods": 447,
+  "privateCircuitsReused": 14,
+  "secondIdentityPass": 19,
+  "sourceChecks": 139,
+  "selectedSemanticChecks": 25,
+  "buildPublicationOfflineChecks": 54,
+  "wrapperClientSyncChecks": 52,
+  "finalAdapterChecks": 3,
+  "actualWrapperJavaScriptEquivalence": 20,
+  "clientTypecheck": {
+    "passed": true,
+    "sourceEqualityFiles": 402,
+    "originalWrappers": 17,
+    "copiedFiles": 40,
+    "stalePrimaryContractSources": 0,
+    "noEmit": true
+  },
+  "deploymentTypecheck": {
+    "command": "pnpm --filter contracts scripts:typecheck",
+    "exitCode": 0,
+    "session": 53930,
+    "scope": "Normal tsconfig.integration.json deployment and utilities with all imported generated wrappers"
+  },
+  "normalBuildPreflight": {
+    "passed": true,
+    "session": 53000,
+    "evidence": "/var/folders/ym/q1vh2x5n58xbsmpmvs5_6w3r0000gn/T/df-api-compatible-build-vO8oxI",
+    "compiler": "/tmp/df-noir-beta22/nargo",
+    "sourceFiles": 349,
+    "rawSelectors": 27,
+    "compiled": false
+  },
+  "preservedFailures": {
+    "wrongPathCompilerPreflight": "/var/folders/ym/q1vh2x5n58xbsmpmvs5_6w3r0000gn/T/df-api-compatible-build-2n74tn",
+    "SDKLocalSocketSandboxAttempt": "/tmp/df-v14-client-sync-r3-attempt1-native-socket-failure",
+    "temporaryClientTypeResolution": "/tmp/df-v14-client-validation-review/client-typecheck.log",
+    "missingSDKVersionTypeMetadata": "/tmp/df-v14-client-validation-review/client-typecheck-r2.log",
+    "unmodifiedBaseContractsConfigNotNormalScript": "/tmp/df-v14-client-validation-review/contracts-typecheck-r3.log",
+    "adapterES2020ReplaceAll": "Session88242; fixed to equivalent split/join without changing generated output"
+  },
+  "fixtureAddressesOnly": true,
+  "primaryDeploymentIndexUnchanged": true,
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0,
+  "chainCallsForIntegration": 0
+}

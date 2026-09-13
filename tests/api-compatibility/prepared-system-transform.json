@@ -1,0 +1,1222 @@
+{
+  "scope": "Additive continuations for six system contracts, excluding Move; source checks only.",
+  "packages": {
+    "core": {
+      "originalFunctions": {
+        "assert_admin": {
+          "signatureHash": "ca2473f7656f4355d37fc9b891ce918663604738d41f2d93213e1a86e3660688",
+          "functionHash": "a486f82ccd62ae20e96523691b5ca27b53690b31eebf84be4e72e350034f3551"
+        },
+        "constructor": {
+          "signatureHash": "bc4ac8c268ef567b1246d70b22ab8a1735ebec6ba9db53600b06efc0840ed8f2",
+          "functionHash": "e121413c094828134cb5fa15fb86e6a4420a3125ab52d54b18836a0c9f6473d4"
+        },
+        "transfer_admin": {
+          "signatureHash": "6e0c0f2506c657f9cce64e2a2e593a9f3ebf8194b03385638798f92a467a4573",
+          "functionHash": "5a7892e5d6573e8900e659111b044ebd241a2ff73af8eb4c801e9e1b755f7fa7"
+        },
+        "set_config_storage_address": {
+          "signatureHash": "256e30108ae620cbc5bc8443778cf3d06386ca223a074996ae2f731914c41598",
+          "functionHash": "3214acd56bdb5f1e13d2cca76963e3177ca29c30c38cfc720b0c610ff892cfdf"
+        },
+        "set_world_storage_address": {
+          "signatureHash": "1f91cf01656f09a4b95aa8afc999d3440205da2bcd9263a74e041766d102b0ee",
+          "functionHash": "2db88e1a890a63153e007ea4757bce2dc214ce093fa1ccad1df3d63e5efca463"
+        },
+        "set_player_storage_address": {
+          "signatureHash": "47474a033ec9f56279707e28dbd174b070dc9c7403d37944c4972589937dfa33",
+          "functionHash": "c9b1b92709daf6d61524d7f701a854f4526610162afabfa53ea1f88ee6b5c1a4"
+        },
+        "set_planet_storage_address": {
+          "signatureHash": "dcaf524b0a48c397e4e1169c92cc2eea27da38a90b5733f4eb139037e8de0a46",
+          "functionHash": "bb7be60e71a0fb1b1014d2eb9068a6f186df836ffa4581040d0d3a7ca03c5e0a"
+        },
+        "set_planet_revealed_coords_storage_address": {
+          "signatureHash": "53f6b07b2166c97e4ab2a3dd5e996cd91de183b999c2396a664c684f0f67103f",
+          "functionHash": "85504d4d46754a402468f438bb83d693bcd260e7f0d6e4b25166b41f1638c7d0"
+        },
+        "set_planet_events_storage_address": {
+          "signatureHash": "650a5a384b49fc0a0585a42630aea026cb0b13aea1ce6b3d70d1c321bd88f3d3",
+          "functionHash": "1829dd18a241472e86ae07ec6416e4e775bd4150e032ce41ebe8a9c94bebf616"
+        },
+        "set_planet_artifacts_storage_address": {
+          "signatureHash": "28e5637d11bdbb0d1c49ca06ee7dbe52ae65149350f777b321c7d2c4ee992eff",
+          "functionHash": "f88500aa75f8eddae7cb9b2cbedebed64bc8de82bd99282d01c714ab64b26483"
+        },
+        "set_arrivals_storage_address": {
+          "signatureHash": "273f36534b437ca9e40d95b8ed40cfd0c0d4337cfaaca7d3603c7d578e299ca6",
+          "functionHash": "569e43d1bed09ed5b298dc1502b44f6b7656ad913f332d14ad355d4b6ab039f9"
+        },
+        "set_artifact_storage_address": {
+          "signatureHash": "2da43f72535b3a5a8ec625d4a7ac1a3b08dde5789b8b0a99025ef9d9ffcdd24c",
+          "functionHash": "419b8866843c9d74e8105da1288ea48622d4c5557af90984bbe764100ce90717"
+        },
+        "set_artifact_location_storage_address": {
+          "signatureHash": "cc58a11cdb7c0a0c4271464f5ebec8e53aa5fc83718bbcbc22e51f89a9feccca",
+          "functionHash": "7d64affbbfdd54dcaf16167476b6f75418c08fcbcb1401bdbcf1f7d10787e739"
+        },
+        "set_all_storage_addresses": {
+          "signatureHash": "2e928e15ade06086927c018acf653cfb785b53b0666b7a894067030f346a8d37",
+          "functionHash": "ad31d68cfc5d752974ec15b561ef6fdc2841739131f2640cb0743a56b30fb95b"
+        },
+        "get_all_storage_addresses_unconstrained": {
+          "signatureHash": "b23b588969b406644bd2cbccfa6c29f52d18e5256d33bfef742e749eea2e7336",
+          "functionHash": "4a3cba30d6eb6981a25ad0bf05e591a7e80651d8d1047dbcf82bfdb7da996e8e"
+        },
+        "refresh_planet": {
+          "signatureHash": "6c688b17ed5822f0c00b9bd61f07cecb1361ba7c60e08fb7fc2291830c5422e3",
+          "functionHash": "53266d45460a4d5b7964513792dc924d9afcc357a03f823288b9a1b6ae4c65a4"
+        },
+        "refresh_planet_public": {
+          "signatureHash": "9ccedfe4dbd551582b1454548d2fb0121845b540afaefb7e4bca98835d5be3e7",
+          "functionHash": "3f6a748663376d17f217c68bdb95a2bb4db1f8f5934c21981633057cb88bd486"
+        },
+        "upgrade_planet": {
+          "signatureHash": "82a51dae815112e7556e13c8814ad4d5e1f332be39ed24ee8b5f9eedd1453057",
+          "functionHash": "dee13bd7d1edf80ca057c9ea818441cf7ede69bc53efcadc896b485591c1a5ea"
+        },
+        "upgrade_planet_public": {
+          "signatureHash": "83ae47cb4923527bbafd7bc0544a6420c57118f4a5f6c01d2c80b9c78b826e6b",
+          "functionHash": "f547e3268616c7840f575b42e72dd734d43d7d15c2fdc7664ef668a0575e47a1"
+        },
+        "withdraw_silver": {
+          "signatureHash": "1e98f8c75790a21045712600fe09e82ec7d890e5d71ec78d39529879249186c1",
+          "functionHash": "074e921dd3a9b9314174a0f787c6fffa6ccc0bdddf0953ec73c16a80f6fbde1e"
+        },
+        "withdraw_silver_public": {
+          "signatureHash": "e238ca7a66b374d475a0f3947058f581ecb6b5d1f51a39d2637dfc9f0d5556ba",
+          "functionHash": "6940b8ca46c35103cc0f935b133ae8944e32dfccc70ccd7e0c4916111ae9cd25"
+        },
+        "reveal_location": {
+          "signatureHash": "6a1bbc9d9e93a739cb0935b0b562384c908af0127507251538cffd864cc989e6",
+          "functionHash": "85a1fc559c5d246aac63ef30605427bc2ba338e777adff923bba245765d1af0a"
+        },
+        "reveal_location_public": {
+          "signatureHash": "ee6b2523abe85ebf050492a0ad3aa582c7eef057d8ccae1e9ba05b7508c0ccd9",
+          "functionHash": "19d67141bfbc0a4a4743cba4fc4e753f5147832c28fcc880ae1be75ff807a919"
+        },
+        "initialize_player": {
+          "signatureHash": "04dac357ade701c5b699563e4138c18fb46bb7350289f758cf5ba967ad3ab2de",
+          "functionHash": "f91ddaf0f6e990945f68027bfa1650f53d845e46dec32577b773f44769ee33f4"
+        },
+        "initialize_player_public": {
+          "signatureHash": "29cd2c25fd87775f124a2bdfb7d808daf82e9fe619286c2063033843b87252b8",
+          "functionHash": "bff96c43f85037ed6db3ae1ed54506be061f74e609abac8a55c00cec593eb66c"
+        }
+      },
+      "continuations": [
+        {
+          "private": "refresh_planet",
+          "original": "refresh_planet_public",
+          "prepared": "refresh_planet_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_artifacts_state",
+            "new_planet_events_state"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.refresh_planet_public(\n            location,\n            timestamp,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            new_arrival_artifact_locations,\n        );",
+          "preparedEnqueue": "self.enqueue_self.refresh_planet_public_prepared(\n            location,\n            timestamp,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            new_arrival_artifact_locations,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n        );",
+          "privateOriginalHash": "53266d45460a4d5b7964513792dc924d9afcc357a03f823288b9a1b6ae4c65a4"
+        },
+        {
+          "private": "upgrade_planet",
+          "original": "upgrade_planet_public",
+          "prepared": "upgrade_planet_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_events_state",
+            "new_planet_artifacts_state"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.upgrade_planet_public(\n            location,\n            sender,\n            branch,\n            current_branch_level,\n            timestamp,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            upgrade_config_hash,\n            upgrade_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_arrival_artifact_locations,\n        );",
+          "preparedEnqueue": "self.enqueue_self.upgrade_planet_public_prepared(\n            location,\n            sender,\n            branch,\n            current_branch_level,\n            timestamp,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            upgrade_config_hash,\n            upgrade_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_arrival_artifact_locations,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n        );",
+          "privateOriginalHash": "dee13bd7d1edf80ca057c9ea818441cf7ede69bc53efcadc896b485591c1a5ea"
+        },
+        {
+          "private": "withdraw_silver",
+          "original": "withdraw_silver_public",
+          "prepared": "withdraw_silver_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_events_state",
+            "new_planet_artifacts_state",
+            "new_player"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(player_storage.set(sender, new_player));",
+              "replacement": "if supports_prepared_player_storage {\n            self.call(player_storage.set_prepared(sender, new_player, prepared_new_player_root));\n        } else {\n            self.call(player_storage.set(sender, new_player));\n        }",
+              "store": "player_storage",
+              "key": "sender",
+              "state": "new_player",
+              "address": "player_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_player_storage = ::libs::prepared_storage::supports_prepared(player_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.withdraw_silver_public(\n            location,\n            sender,\n            timestamp,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            player_state_hash,\n            world_config_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_arrival_artifact_locations,\n            new_player,\n        );",
+          "preparedEnqueue": "self.enqueue_self.withdraw_silver_public_prepared(\n            location,\n            sender,\n            timestamp,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            player_state_hash,\n            world_config_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_arrival_artifact_locations,\n            new_player,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_player).serialize()),\n        );",
+          "privateOriginalHash": "074e921dd3a9b9314174a0f787c6fffa6ccc0bdddf0953ec73c16a80f6fbde1e"
+        },
+        {
+          "private": "reveal_location",
+          "original": "reveal_location_public",
+          "prepared": "reveal_location_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_revealed_coords",
+            "new_player_state"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_revealed_coords_storage.set(location, new_planet_revealed_coords));",
+              "replacement": "if supports_prepared_planet_revealed_coords_storage {\n            self.call(planet_revealed_coords_storage.set_prepared(location, new_planet_revealed_coords, prepared_new_planet_revealed_coords_root));\n        } else {\n            self.call(planet_revealed_coords_storage.set(location, new_planet_revealed_coords));\n        }",
+              "store": "planet_revealed_coords_storage",
+              "key": "location",
+              "state": "new_planet_revealed_coords",
+              "address": "planet_revealed_coords_storage_address"
+            },
+            {
+              "original": "self.call(player_storage.set(sender, new_player_state));",
+              "replacement": "if supports_prepared_player_storage {\n            self.call(player_storage.set_prepared(sender, new_player_state, prepared_new_player_state_root));\n        } else {\n            self.call(player_storage.set(sender, new_player_state));\n        }",
+              "store": "player_storage",
+              "key": "sender",
+              "state": "new_player_state",
+              "address": "player_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_revealed_coords_storage = ::libs::prepared_storage::supports_prepared(planet_revealed_coords_storage.target_contract);",
+            "\n        let supports_prepared_player_storage = ::libs::prepared_storage::supports_prepared(player_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.reveal_location_public(\n            location,\n            sender,\n            timestamp,\n            is_admin,\n            config_hashes,\n            planet_default_stats_hash,\n            planet_state_hash,\n            planet_revealed_coords_hash,\n            player_state_hash,\n            world_hash,\n            new_planet,\n            new_planet_revealed_coords,\n            new_player_state,\n        );",
+          "preparedEnqueue": "self.enqueue_self.reveal_location_public_prepared(\n            location,\n            sender,\n            timestamp,\n            is_admin,\n            config_hashes,\n            planet_default_stats_hash,\n            planet_state_hash,\n            planet_revealed_coords_hash,\n            player_state_hash,\n            world_hash,\n            new_planet,\n            new_planet_revealed_coords,\n            new_player_state,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_revealed_coords).serialize()),\n            poseidon2_hash((new_player_state).serialize()),\n        );",
+          "privateOriginalHash": "85a1fc559c5d246aac63ef30605427bc2ba338e777adff923bba245765d1af0a"
+        },
+        {
+          "private": "initialize_player",
+          "original": "initialize_player_public",
+          "prepared": "initialize_player_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_events_state",
+            "new_planet_artifacts_state",
+            "new_player"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(player_storage.set(sender, new_player));",
+              "replacement": "if supports_prepared_player_storage {\n            self.call(player_storage.set_prepared(sender, new_player, prepared_new_player_root));\n        } else {\n            self.call(player_storage.set(sender, new_player));\n        }",
+              "store": "player_storage",
+              "key": "sender",
+              "state": "new_player",
+              "address": "player_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_player_storage = ::libs::prepared_storage::supports_prepared(player_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.initialize_player_public(\n            sender,\n            location_id,\n            timestamp,\n            config_hashes,\n            planet_default_stats_hash,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            player_state_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_arrival_artifact_locations,\n            new_player,\n        );",
+          "preparedEnqueue": "self.enqueue_self.initialize_player_public_prepared(\n            sender,\n            location_id,\n            timestamp,\n            config_hashes,\n            planet_default_stats_hash,\n            planet_state_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            original_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            player_state_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_arrival_artifact_locations,\n            new_player,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_player).serialize()),\n        );",
+          "privateOriginalHash": "f91ddaf0f6e990945f68027bfa1650f53d845e46dec32577b773f44769ee33f4"
+        }
+      ]
+    },
+    "artifact_action": {
+      "originalFunctions": {
+        "assert_admin": {
+          "signatureHash": "ca2473f7656f4355d37fc9b891ce918663604738d41f2d93213e1a86e3660688",
+          "functionHash": "a486f82ccd62ae20e96523691b5ca27b53690b31eebf84be4e72e350034f3551"
+        },
+        "constructor": {
+          "signatureHash": "bc4ac8c268ef567b1246d70b22ab8a1735ebec6ba9db53600b06efc0840ed8f2",
+          "functionHash": "e121413c094828134cb5fa15fb86e6a4420a3125ab52d54b18836a0c9f6473d4"
+        },
+        "transfer_admin": {
+          "signatureHash": "6e0c0f2506c657f9cce64e2a2e593a9f3ebf8194b03385638798f92a467a4573",
+          "functionHash": "5a7892e5d6573e8900e659111b044ebd241a2ff73af8eb4c801e9e1b755f7fa7"
+        },
+        "set_all_storage_addresses": {
+          "signatureHash": "e009cf119f9fe230536626632b97b7181b66a0087a2953074d3dd0f017b8f393",
+          "functionHash": "a09d1920c324469014e642b8152609d08e12b2382bd5319e67483e0938765873"
+        },
+        "set_config_storage_address": {
+          "signatureHash": "256e30108ae620cbc5bc8443778cf3d06386ca223a074996ae2f731914c41598",
+          "functionHash": "3214acd56bdb5f1e13d2cca76963e3177ca29c30c38cfc720b0c610ff892cfdf"
+        },
+        "set_arrivals_storage_address": {
+          "signatureHash": "273f36534b437ca9e40d95b8ed40cfd0c0d4337cfaaca7d3603c7d578e299ca6",
+          "functionHash": "569e43d1bed09ed5b298dc1502b44f6b7656ad913f332d14ad355d4b6ab039f9"
+        },
+        "set_artifact_storage_address": {
+          "signatureHash": "2da43f72535b3a5a8ec625d4a7ac1a3b08dde5789b8b0a99025ef9d9ffcdd24c",
+          "functionHash": "419b8866843c9d74e8105da1288ea48622d4c5557af90984bbe764100ce90717"
+        },
+        "set_artifact_location_storage_address": {
+          "signatureHash": "cc58a11cdb7c0a0c4271464f5ebec8e53aa5fc83718bbcbc22e51f89a9feccca",
+          "functionHash": "7d64affbbfdd54dcaf16167476b6f75418c08fcbcb1401bdbcf1f7d10787e739"
+        },
+        "set_planet_storage_address": {
+          "signatureHash": "dcaf524b0a48c397e4e1169c92cc2eea27da38a90b5733f4eb139037e8de0a46",
+          "functionHash": "bb7be60e71a0fb1b1014d2eb9068a6f186df836ffa4581040d0d3a7ca03c5e0a"
+        },
+        "set_planet_artifacts_storage_address": {
+          "signatureHash": "28e5637d11bdbb0d1c49ca06ee7dbe52ae65149350f777b321c7d2c4ee992eff",
+          "functionHash": "f88500aa75f8eddae7cb9b2cbedebed64bc8de82bd99282d01c714ab64b26483"
+        },
+        "set_planet_events_storage_address": {
+          "signatureHash": "650a5a384b49fc0a0585a42630aea026cb0b13aea1ce6b3d70d1c321bd88f3d3",
+          "functionHash": "1829dd18a241472e86ae07ec6416e4e775bd4150e032ce41ebe8a9c94bebf616"
+        },
+        "set_player_storage_address": {
+          "signatureHash": "47474a033ec9f56279707e28dbd174b070dc9c7403d37944c4972589937dfa33",
+          "functionHash": "c9b1b92709daf6d61524d7f701a854f4526610162afabfa53ea1f88ee6b5c1a4"
+        },
+        "set_world_storage_address": {
+          "signatureHash": "1f91cf01656f09a4b95aa8afc999d3440205da2bcd9263a74e041766d102b0ee",
+          "functionHash": "2db88e1a890a63153e007ea4757bce2dc214ce093fa1ccad1df3d63e5efca463"
+        },
+        "get_all_storage_addresses_unconstrained": {
+          "signatureHash": "a9edbbb343bb462e8cd60666343856143ba04f30ac891e1ac3342c623f3ac164",
+          "functionHash": "18256825278d4a83717dfa4dc61f1fd1633c0c07266a49e40312d336807cd186"
+        },
+        "activate_artifact": {
+          "signatureHash": "d9162adb968b1eac5e7b590418ff9086b4cb0230790461b43bc902118888601f",
+          "functionHash": "474e0dbefd3e0984949e5a5a3bb21213e61e2776042550fc3843032526584cbb"
+        },
+        "activate_artifact_public": {
+          "signatureHash": "4f6d03ad7d019c85075bcbe03cd88cb6645243bc66a6889bfed734d74735b7b4",
+          "functionHash": "170379d640ba71e8f6d4996ddedbbe1fdbf1219078e321fc7d35ad4e79b408cc"
+        },
+        "deactivate_artifact": {
+          "signatureHash": "a5f402bd1370fe262a3df481626b247d2e09da2721665e91e395344af55ab89d",
+          "functionHash": "a34eafff6e87882e3a2f09e460face8c1a4430f3558cc829f3631da727a8f7db"
+        },
+        "deactivate_artifact_public": {
+          "signatureHash": "bbdbcb858354d467a39daa30d016689fc70fde01ba66d87806dbe7b9b835da1b",
+          "functionHash": "1e845648de61a7fdf59090882ecfa365b23353fe1cdb6371005d2e165f417c0c"
+        }
+      },
+      "continuations": [
+        {
+          "private": "activate_artifact",
+          "original": "activate_artifact_public",
+          "prepared": "activate_artifact_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_events_state",
+            "new_planet_artifacts_state",
+            "new_artifact",
+            "new_artifact_location"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(artifact_storage.set(artifact_id, new_artifact));",
+              "replacement": "if supports_prepared_artifact_storage {\n            self.call(artifact_storage.set_prepared(artifact_id, new_artifact, prepared_new_artifact_root));\n        } else {\n            self.call(artifact_storage.set(artifact_id, new_artifact));\n        }",
+              "store": "artifact_storage",
+              "key": "artifact_id",
+              "state": "new_artifact",
+              "address": "artifact_storage_address"
+            },
+            {
+              "original": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location));",
+              "replacement": "if supports_prepared_artifact_location_storage {\n            self.call(artifact_location_storage.set_prepared(artifact_id, new_artifact_location, prepared_new_artifact_location_root));\n        } else {\n            self.call(artifact_location_storage.set(artifact_id, new_artifact_location));\n        }",
+              "store": "artifact_location_storage",
+              "key": "artifact_id",
+              "state": "new_artifact_location",
+              "address": "artifact_location_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_artifact_storage = ::libs::prepared_storage::supports_prepared(artifact_storage.target_contract);",
+            "\n        let supports_prepared_artifact_location_storage = ::libs::prepared_storage::supports_prepared(artifact_location_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.activate_artifact_public(\n            location_id,\n            artifact_id,\n            wormhole_to,\n            timestamp,\n            planet_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            origin_arrivals_count,\n            planet_artifacts_state_hash,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            world_config_hash,\n            planet_default_stats_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n        );",
+          "preparedEnqueue": "self.enqueue_self.activate_artifact_public_prepared(\n            location_id,\n            artifact_id,\n            wormhole_to,\n            timestamp,\n            planet_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            origin_arrivals_count,\n            planet_artifacts_state_hash,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            world_config_hash,\n            planet_default_stats_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_artifact).serialize()),\n            poseidon2_hash((new_artifact_location).serialize()),\n        );",
+          "privateOriginalHash": "474e0dbefd3e0984949e5a5a3bb21213e61e2776042550fc3843032526584cbb"
+        },
+        {
+          "private": "deactivate_artifact",
+          "original": "deactivate_artifact_public",
+          "prepared": "deactivate_artifact_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_events_state",
+            "new_planet_artifacts_state",
+            "new_artifact",
+            "new_artifact_location"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(artifact_storage.set(artifact_id, new_artifact));",
+              "replacement": "if supports_prepared_artifact_storage {\n            self.call(artifact_storage.set_prepared(artifact_id, new_artifact, prepared_new_artifact_root));\n        } else {\n            self.call(artifact_storage.set(artifact_id, new_artifact));\n        }",
+              "store": "artifact_storage",
+              "key": "artifact_id",
+              "state": "new_artifact",
+              "address": "artifact_storage_address"
+            },
+            {
+              "original": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location));",
+              "replacement": "if supports_prepared_artifact_location_storage {\n            self.call(artifact_location_storage.set_prepared(artifact_id, new_artifact_location, prepared_new_artifact_location_root));\n        } else {\n            self.call(artifact_location_storage.set(artifact_id, new_artifact_location));\n        }",
+              "store": "artifact_location_storage",
+              "key": "artifact_id",
+              "state": "new_artifact_location",
+              "address": "artifact_location_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_artifact_storage = ::libs::prepared_storage::supports_prepared(artifact_storage.target_contract);",
+            "\n        let supports_prepared_artifact_location_storage = ::libs::prepared_storage::supports_prepared(artifact_location_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.deactivate_artifact_public(\n            location_id,\n            artifact_id,\n            timestamp,\n            planet_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            origin_arrivals_count,\n            planet_artifacts_state_hash,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n        );",
+          "preparedEnqueue": "self.enqueue_self.deactivate_artifact_public_prepared(\n            location_id,\n            artifact_id,\n            timestamp,\n            planet_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            origin_arrivals_count,\n            planet_artifacts_state_hash,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_artifact).serialize()),\n            poseidon2_hash((new_artifact_location).serialize()),\n        );",
+          "privateOriginalHash": "a34eafff6e87882e3a2f09e460face8c1a4430f3558cc829f3631da727a8f7db"
+        }
+      ]
+    },
+    "artifact_find": {
+      "originalFunctions": {
+        "assert_admin": {
+          "signatureHash": "ca2473f7656f4355d37fc9b891ce918663604738d41f2d93213e1a86e3660688",
+          "functionHash": "a486f82ccd62ae20e96523691b5ca27b53690b31eebf84be4e72e350034f3551"
+        },
+        "constructor": {
+          "signatureHash": "bc4ac8c268ef567b1246d70b22ab8a1735ebec6ba9db53600b06efc0840ed8f2",
+          "functionHash": "e121413c094828134cb5fa15fb86e6a4420a3125ab52d54b18836a0c9f6473d4"
+        },
+        "transfer_admin": {
+          "signatureHash": "6e0c0f2506c657f9cce64e2a2e593a9f3ebf8194b03385638798f92a467a4573",
+          "functionHash": "5a7892e5d6573e8900e659111b044ebd241a2ff73af8eb4c801e9e1b755f7fa7"
+        },
+        "set_all_storage_addresses": {
+          "signatureHash": "e009cf119f9fe230536626632b97b7181b66a0087a2953074d3dd0f017b8f393",
+          "functionHash": "a09d1920c324469014e642b8152609d08e12b2382bd5319e67483e0938765873"
+        },
+        "set_config_storage_address": {
+          "signatureHash": "256e30108ae620cbc5bc8443778cf3d06386ca223a074996ae2f731914c41598",
+          "functionHash": "3214acd56bdb5f1e13d2cca76963e3177ca29c30c38cfc720b0c610ff892cfdf"
+        },
+        "set_arrivals_storage_address": {
+          "signatureHash": "273f36534b437ca9e40d95b8ed40cfd0c0d4337cfaaca7d3603c7d578e299ca6",
+          "functionHash": "569e43d1bed09ed5b298dc1502b44f6b7656ad913f332d14ad355d4b6ab039f9"
+        },
+        "set_artifact_storage_address": {
+          "signatureHash": "2da43f72535b3a5a8ec625d4a7ac1a3b08dde5789b8b0a99025ef9d9ffcdd24c",
+          "functionHash": "419b8866843c9d74e8105da1288ea48622d4c5557af90984bbe764100ce90717"
+        },
+        "set_artifact_location_storage_address": {
+          "signatureHash": "cc58a11cdb7c0a0c4271464f5ebec8e53aa5fc83718bbcbc22e51f89a9feccca",
+          "functionHash": "7d64affbbfdd54dcaf16167476b6f75418c08fcbcb1401bdbcf1f7d10787e739"
+        },
+        "set_planet_storage_address": {
+          "signatureHash": "dcaf524b0a48c397e4e1169c92cc2eea27da38a90b5733f4eb139037e8de0a46",
+          "functionHash": "bb7be60e71a0fb1b1014d2eb9068a6f186df836ffa4581040d0d3a7ca03c5e0a"
+        },
+        "set_planet_artifacts_storage_address": {
+          "signatureHash": "28e5637d11bdbb0d1c49ca06ee7dbe52ae65149350f777b321c7d2c4ee992eff",
+          "functionHash": "f88500aa75f8eddae7cb9b2cbedebed64bc8de82bd99282d01c714ab64b26483"
+        },
+        "set_planet_events_storage_address": {
+          "signatureHash": "650a5a384b49fc0a0585a42630aea026cb0b13aea1ce6b3d70d1c321bd88f3d3",
+          "functionHash": "1829dd18a241472e86ae07ec6416e4e775bd4150e032ce41ebe8a9c94bebf616"
+        },
+        "set_player_storage_address": {
+          "signatureHash": "47474a033ec9f56279707e28dbd174b070dc9c7403d37944c4972589937dfa33",
+          "functionHash": "c9b1b92709daf6d61524d7f701a854f4526610162afabfa53ea1f88ee6b5c1a4"
+        },
+        "set_world_storage_address": {
+          "signatureHash": "1f91cf01656f09a4b95aa8afc999d3440205da2bcd9263a74e041766d102b0ee",
+          "functionHash": "2db88e1a890a63153e007ea4757bce2dc214ce093fa1ccad1df3d63e5efca463"
+        },
+        "get_all_storage_addresses_unconstrained": {
+          "signatureHash": "a9edbbb343bb462e8cd60666343856143ba04f30ac891e1ac3342c623f3ac164",
+          "functionHash": "18256825278d4a83717dfa4dc61f1fd1633c0c07266a49e40312d336807cd186"
+        },
+        "find_artifact": {
+          "signatureHash": "df9a1eb6d0704125a1a5420707c1caefacfd32540ed7ae8be42fae7ab4f823ec",
+          "functionHash": "5eccce389453793f05b2de13f6bdbf45ab378ef088a7066507f186cdd1bdaed2"
+        },
+        "find_artifact_public": {
+          "signatureHash": "b2862494ceffb005c53747fb18d7a6d96919eed5b4d5cd7c5075db0b68fd57be",
+          "functionHash": "f3ccbeb1375971387510fdea69ce3e2154d7f7b4e70e8ff0b047eaf301d6c44d"
+        }
+      },
+      "continuations": [
+        {
+          "private": "find_artifact",
+          "original": "find_artifact_public",
+          "prepared": "find_artifact_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_events_state",
+            "new_planet_artifacts_state",
+            "new_artifact",
+            "new_artifact_location",
+            "new_player"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(artifact_storage.set(artifact_id, new_artifact));",
+              "replacement": "if supports_prepared_artifact_storage {\n            self.call(artifact_storage.set_prepared(artifact_id, new_artifact, prepared_new_artifact_root));\n        } else {\n            self.call(artifact_storage.set(artifact_id, new_artifact));\n        }",
+              "store": "artifact_storage",
+              "key": "artifact_id",
+              "state": "new_artifact",
+              "address": "artifact_storage_address"
+            },
+            {
+              "original": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location));",
+              "replacement": "if supports_prepared_artifact_location_storage {\n            self.call(artifact_location_storage.set_prepared(artifact_id, new_artifact_location, prepared_new_artifact_location_root));\n        } else {\n            self.call(artifact_location_storage.set(artifact_id, new_artifact_location));\n        }",
+              "store": "artifact_location_storage",
+              "key": "artifact_id",
+              "state": "new_artifact_location",
+              "address": "artifact_location_storage_address"
+            },
+            {
+              "original": "self.call(player_storage.set(sender, new_player));",
+              "replacement": "if supports_prepared_player_storage {\n            self.call(player_storage.set_prepared(sender, new_player, prepared_new_player_root));\n        } else {\n            self.call(player_storage.set(sender, new_player));\n        }",
+              "store": "player_storage",
+              "key": "sender",
+              "state": "new_player",
+              "address": "player_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_artifact_storage = ::libs::prepared_storage::supports_prepared(artifact_storage.target_contract);",
+            "\n        let supports_prepared_artifact_location_storage = ::libs::prepared_storage::supports_prepared(artifact_location_storage.target_contract);",
+            "\n        let supports_prepared_player_storage = ::libs::prepared_storage::supports_prepared(player_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.find_artifact_public(\n            location_id,\n            artifact_id,\n            timestamp,\n            provided_snark_config_hash,\n            game_config_core_hash,\n            world_config_hash,\n            artifacts_config_hash,\n            player_hash,\n            planet_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            origin_arrivals_count,\n            planet_artifacts_state_hash,\n            owned_artifact_ids,\n            owned_artifact_hashes,\n            owned_artifact_location_hashes,\n            owned_artifact_count,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n            new_player,\n        );",
+          "preparedEnqueue": "self.enqueue_self.find_artifact_public_prepared(\n            location_id,\n            artifact_id,\n            timestamp,\n            provided_snark_config_hash,\n            game_config_core_hash,\n            world_config_hash,\n            artifacts_config_hash,\n            player_hash,\n            planet_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            arrival_artifact_ids,\n            arrival_artifact_hashes,\n            arrival_artifact_location_hashes,\n            origin_arrivals_count,\n            planet_artifacts_state_hash,\n            owned_artifact_ids,\n            owned_artifact_hashes,\n            owned_artifact_location_hashes,\n            owned_artifact_count,\n            world_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n            new_player,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_artifact).serialize()),\n            poseidon2_hash((new_artifact_location).serialize()),\n            poseidon2_hash((new_player).serialize()),\n        );",
+          "privateOriginalHash": "5eccce389453793f05b2de13f6bdbf45ab378ef088a7066507f186cdd1bdaed2"
+        }
+      ]
+    },
+    "artifact_prospect": {
+      "originalFunctions": {
+        "assert_admin": {
+          "signatureHash": "ca2473f7656f4355d37fc9b891ce918663604738d41f2d93213e1a86e3660688",
+          "functionHash": "a486f82ccd62ae20e96523691b5ca27b53690b31eebf84be4e72e350034f3551"
+        },
+        "constructor": {
+          "signatureHash": "bc4ac8c268ef567b1246d70b22ab8a1735ebec6ba9db53600b06efc0840ed8f2",
+          "functionHash": "e121413c094828134cb5fa15fb86e6a4420a3125ab52d54b18836a0c9f6473d4"
+        },
+        "transfer_admin": {
+          "signatureHash": "6e0c0f2506c657f9cce64e2a2e593a9f3ebf8194b03385638798f92a467a4573",
+          "functionHash": "5a7892e5d6573e8900e659111b044ebd241a2ff73af8eb4c801e9e1b755f7fa7"
+        },
+        "set_all_storage_addresses": {
+          "signatureHash": "e009cf119f9fe230536626632b97b7181b66a0087a2953074d3dd0f017b8f393",
+          "functionHash": "a09d1920c324469014e642b8152609d08e12b2382bd5319e67483e0938765873"
+        },
+        "set_config_storage_address": {
+          "signatureHash": "256e30108ae620cbc5bc8443778cf3d06386ca223a074996ae2f731914c41598",
+          "functionHash": "3214acd56bdb5f1e13d2cca76963e3177ca29c30c38cfc720b0c610ff892cfdf"
+        },
+        "set_arrivals_storage_address": {
+          "signatureHash": "273f36534b437ca9e40d95b8ed40cfd0c0d4337cfaaca7d3603c7d578e299ca6",
+          "functionHash": "569e43d1bed09ed5b298dc1502b44f6b7656ad913f332d14ad355d4b6ab039f9"
+        },
+        "set_artifact_storage_address": {
+          "signatureHash": "2da43f72535b3a5a8ec625d4a7ac1a3b08dde5789b8b0a99025ef9d9ffcdd24c",
+          "functionHash": "419b8866843c9d74e8105da1288ea48622d4c5557af90984bbe764100ce90717"
+        },
+        "set_artifact_location_storage_address": {
+          "signatureHash": "cc58a11cdb7c0a0c4271464f5ebec8e53aa5fc83718bbcbc22e51f89a9feccca",
+          "functionHash": "7d64affbbfdd54dcaf16167476b6f75418c08fcbcb1401bdbcf1f7d10787e739"
+        },
+        "set_planet_storage_address": {
+          "signatureHash": "dcaf524b0a48c397e4e1169c92cc2eea27da38a90b5733f4eb139037e8de0a46",
+          "functionHash": "bb7be60e71a0fb1b1014d2eb9068a6f186df836ffa4581040d0d3a7ca03c5e0a"
+        },
+        "set_planet_artifacts_storage_address": {
+          "signatureHash": "28e5637d11bdbb0d1c49ca06ee7dbe52ae65149350f777b321c7d2c4ee992eff",
+          "functionHash": "f88500aa75f8eddae7cb9b2cbedebed64bc8de82bd99282d01c714ab64b26483"
+        },
+        "set_planet_events_storage_address": {
+          "signatureHash": "650a5a384b49fc0a0585a42630aea026cb0b13aea1ce6b3d70d1c321bd88f3d3",
+          "functionHash": "1829dd18a241472e86ae07ec6416e4e775bd4150e032ce41ebe8a9c94bebf616"
+        },
+        "set_player_storage_address": {
+          "signatureHash": "47474a033ec9f56279707e28dbd174b070dc9c7403d37944c4972589937dfa33",
+          "functionHash": "c9b1b92709daf6d61524d7f701a854f4526610162afabfa53ea1f88ee6b5c1a4"
+        },
+        "set_world_storage_address": {
+          "signatureHash": "1f91cf01656f09a4b95aa8afc999d3440205da2bcd9263a74e041766d102b0ee",
+          "functionHash": "2db88e1a890a63153e007ea4757bce2dc214ce093fa1ccad1df3d63e5efca463"
+        },
+        "get_all_storage_addresses_unconstrained": {
+          "signatureHash": "a9edbbb343bb462e8cd60666343856143ba04f30ac891e1ac3342c623f3ac164",
+          "functionHash": "18256825278d4a83717dfa4dc61f1fd1633c0c07266a49e40312d336807cd186"
+        },
+        "prospect_planet": {
+          "signatureHash": "8b5bad188ef5b0606bc572b150b40b6f8aea930c2fc4df3e939b3ea8eff2e17a",
+          "functionHash": "ba752d7b8a18de9a53610244b0e51ea0ac5d156f703debc6cdaa46af0a51fb6e"
+        },
+        "prospect_planet_public": {
+          "signatureHash": "cac909dad53a841428f2b3e55430b1bb9bd942641981c1706d914786ccc61718",
+          "functionHash": "a9c29264ab652394774bdfcc93cc268e5745bd7f51a174b8502effb63633b7ef"
+        }
+      },
+      "continuations": [
+        {
+          "private": "prospect_planet",
+          "original": "prospect_planet_public",
+          "prepared": "prospect_planet_public_prepared",
+          "states": [
+            "new_planet_artifacts_state",
+            "new_planet_events_state"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            }
+          ],
+          "skipped": [
+            {
+              "store": "planet_storage",
+              "state": "prospect_planet",
+              "reason": "Public-created or mutated output"
+            }
+          ],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.prospect_planet_public(\n            location_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            origin_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            world_hash,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            owned_artifact_ids,\n            owned_artifact_hashes,\n            owned_artifact_location_hashes,\n            owned_artifact_count,\n        );",
+          "preparedEnqueue": "self.enqueue_self.prospect_planet_public_prepared(\n            location_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            origin_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            world_hash,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            change_artifact_location_count,\n            change_artifact_location_ids,\n            change_artifact_locations,\n            owned_artifact_ids,\n            owned_artifact_hashes,\n            owned_artifact_location_hashes,\n            owned_artifact_count,\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n        );",
+          "privateOriginalHash": "ba752d7b8a18de9a53610244b0e51ea0ac5d156f703debc6cdaa46af0a51fb6e"
+        }
+      ]
+    },
+    "artifact_valut": {
+      "originalFunctions": {
+        "assert_admin": {
+          "signatureHash": "ca2473f7656f4355d37fc9b891ce918663604738d41f2d93213e1a86e3660688",
+          "functionHash": "a486f82ccd62ae20e96523691b5ca27b53690b31eebf84be4e72e350034f3551"
+        },
+        "constructor": {
+          "signatureHash": "bc4ac8c268ef567b1246d70b22ab8a1735ebec6ba9db53600b06efc0840ed8f2",
+          "functionHash": "e121413c094828134cb5fa15fb86e6a4420a3125ab52d54b18836a0c9f6473d4"
+        },
+        "transfer_admin": {
+          "signatureHash": "6e0c0f2506c657f9cce64e2a2e593a9f3ebf8194b03385638798f92a467a4573",
+          "functionHash": "5a7892e5d6573e8900e659111b044ebd241a2ff73af8eb4c801e9e1b755f7fa7"
+        },
+        "set_all_storage_addresses": {
+          "signatureHash": "e009cf119f9fe230536626632b97b7181b66a0087a2953074d3dd0f017b8f393",
+          "functionHash": "a09d1920c324469014e642b8152609d08e12b2382bd5319e67483e0938765873"
+        },
+        "set_config_storage_address": {
+          "signatureHash": "256e30108ae620cbc5bc8443778cf3d06386ca223a074996ae2f731914c41598",
+          "functionHash": "3214acd56bdb5f1e13d2cca76963e3177ca29c30c38cfc720b0c610ff892cfdf"
+        },
+        "set_arrivals_storage_address": {
+          "signatureHash": "273f36534b437ca9e40d95b8ed40cfd0c0d4337cfaaca7d3603c7d578e299ca6",
+          "functionHash": "569e43d1bed09ed5b298dc1502b44f6b7656ad913f332d14ad355d4b6ab039f9"
+        },
+        "set_artifact_storage_address": {
+          "signatureHash": "2da43f72535b3a5a8ec625d4a7ac1a3b08dde5789b8b0a99025ef9d9ffcdd24c",
+          "functionHash": "419b8866843c9d74e8105da1288ea48622d4c5557af90984bbe764100ce90717"
+        },
+        "set_artifact_location_storage_address": {
+          "signatureHash": "cc58a11cdb7c0a0c4271464f5ebec8e53aa5fc83718bbcbc22e51f89a9feccca",
+          "functionHash": "7d64affbbfdd54dcaf16167476b6f75418c08fcbcb1401bdbcf1f7d10787e739"
+        },
+        "set_planet_storage_address": {
+          "signatureHash": "dcaf524b0a48c397e4e1169c92cc2eea27da38a90b5733f4eb139037e8de0a46",
+          "functionHash": "bb7be60e71a0fb1b1014d2eb9068a6f186df836ffa4581040d0d3a7ca03c5e0a"
+        },
+        "set_planet_artifacts_storage_address": {
+          "signatureHash": "28e5637d11bdbb0d1c49ca06ee7dbe52ae65149350f777b321c7d2c4ee992eff",
+          "functionHash": "f88500aa75f8eddae7cb9b2cbedebed64bc8de82bd99282d01c714ab64b26483"
+        },
+        "set_planet_events_storage_address": {
+          "signatureHash": "650a5a384b49fc0a0585a42630aea026cb0b13aea1ce6b3d70d1c321bd88f3d3",
+          "functionHash": "1829dd18a241472e86ae07ec6416e4e775bd4150e032ce41ebe8a9c94bebf616"
+        },
+        "set_player_storage_address": {
+          "signatureHash": "47474a033ec9f56279707e28dbd174b070dc9c7403d37944c4972589937dfa33",
+          "functionHash": "c9b1b92709daf6d61524d7f701a854f4526610162afabfa53ea1f88ee6b5c1a4"
+        },
+        "set_world_storage_address": {
+          "signatureHash": "1f91cf01656f09a4b95aa8afc999d3440205da2bcd9263a74e041766d102b0ee",
+          "functionHash": "2db88e1a890a63153e007ea4757bce2dc214ce093fa1ccad1df3d63e5efca463"
+        },
+        "get_all_storage_addresses_unconstrained": {
+          "signatureHash": "a9edbbb343bb462e8cd60666343856143ba04f30ac891e1ac3342c623f3ac164",
+          "functionHash": "18256825278d4a83717dfa4dc61f1fd1633c0c07266a49e40312d336807cd186"
+        },
+        "create_artifact": {
+          "signatureHash": "1a2393072b32bbd792579f991b310b1f2d9a725d1a386af6a91921169b6fe936",
+          "functionHash": "6e71c18e7708f392e52b87319d65cf75393c705b98f5e578ee56ad6d1418a161"
+        },
+        "update_artifact": {
+          "signatureHash": "b901106a79f9ecd112f6b3724212ace01d4ba28587904f9b14b0e62423ddf222",
+          "functionHash": "805e370c7dbda1087f34b32a4c13f754facbabde939903a7dc585f180b652717"
+        },
+        "deposit_artifact": {
+          "signatureHash": "66d03a37c7ab36ffc98d4942c6b93e8d0b70f335d8c1e412690ef6be9d5e0f31",
+          "functionHash": "e4265b770064eeb7c29ceebe0b5147b985153bd07e9b2346d70fb5f50c52de8e"
+        },
+        "deposit_artifact_public": {
+          "signatureHash": "1cb5119421bc24a564058338b13ee5cd8adffbac845900d83d0a4ecbf525f32a",
+          "functionHash": "33fa0f80572e43bbeda109d045923f7ca06bd19c554d3ef7865a319942a3253b"
+        },
+        "withdraw_artifact": {
+          "signatureHash": "86f12e2ac5f20801cb53104f235a6364fed4292ff68875f3a6d86b243f4ffd54",
+          "functionHash": "6924675dc07955c5e3d078cb231209419ec4a313993b5f2e27b3cf7af1aec95a"
+        },
+        "withdraw_artifact_public": {
+          "signatureHash": "d2bd1eca2e5217b908728a66f05039fff1b024fdcf9574f24d2a8dd61a8c3574",
+          "functionHash": "550fa4b94b974f5573f19a85390f7f2a7a51fcb308efc66f4cd438ba6ca2600d"
+        },
+        "give_spaceships": {
+          "signatureHash": "9b6bee8437549df137a429f9f09c14bd91faf08b81d358ce3d04dfa798705a80",
+          "functionHash": "562087a03206402bfb2bc833ba45f38937927cd9d69138135b5b99fdc5ccad8c"
+        },
+        "give_spaceships_public": {
+          "signatureHash": "28ea4aa547e69e310f505602a842061ddfc46335c9baa7e8bef4b19f0858029a",
+          "functionHash": "2a1c518a0db7b1744df07e59760a55f3c5ea22c725da253fe4eed7a5661e23ee"
+        },
+        "admin_give_artifact": {
+          "signatureHash": "0c0b684d13e9131410a5db5817a83cfdb8c2040cc1f73a12ecc739124622f907",
+          "functionHash": "30c0f755b2123cfd2d7f84f3d9668404fc79ed99c8e4b210929783867ac9474f"
+        },
+        "admin_give_spaceship": {
+          "signatureHash": "b5b8675bfbcb41adf873417b70fef36dbe4e3f7f4daa77c796f4bfaaca44937d",
+          "functionHash": "711374cc77a9780960d279be5319aca94d3d761eff00d24d5b6b171fdb7383f2"
+        }
+      },
+      "continuations": [
+        {
+          "private": "deposit_artifact",
+          "original": "deposit_artifact_public",
+          "prepared": "deposit_artifact_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_artifacts_state",
+            "new_planet_events_state",
+            "new_artifact",
+            "new_artifact_location"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(artifact_storage.set(artifact_id, new_artifact));",
+              "replacement": "if supports_prepared_artifact_storage {\n            self.call(artifact_storage.set_prepared(artifact_id, new_artifact, prepared_new_artifact_root));\n        } else {\n            self.call(artifact_storage.set(artifact_id, new_artifact));\n        }",
+              "store": "artifact_storage",
+              "key": "artifact_id",
+              "state": "new_artifact",
+              "address": "artifact_storage_address"
+            },
+            {
+              "original": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location));",
+              "replacement": "if supports_prepared_artifact_location_storage {\n            self.call(artifact_location_storage.set_prepared(artifact_id, new_artifact_location, prepared_new_artifact_location_root));\n        } else {\n            self.call(artifact_location_storage.set(artifact_id, new_artifact_location));\n        }",
+              "store": "artifact_location_storage",
+              "key": "artifact_id",
+              "state": "new_artifact_location",
+              "address": "artifact_location_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_artifact_storage = ::libs::prepared_storage::supports_prepared(artifact_storage.target_contract);",
+            "\n        let supports_prepared_artifact_location_storage = ::libs::prepared_storage::supports_prepared(artifact_location_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.deposit_artifact_public(\n            location_id,\n            artifact_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            origin_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            new_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n        );",
+          "preparedEnqueue": "self.enqueue_self.deposit_artifact_public_prepared(\n            location_id,\n            artifact_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            origin_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            new_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_artifact).serialize()),\n            poseidon2_hash((new_artifact_location).serialize()),\n        );",
+          "privateOriginalHash": "e4265b770064eeb7c29ceebe0b5147b985153bd07e9b2346d70fb5f50c52de8e"
+        },
+        {
+          "private": "withdraw_artifact",
+          "original": "withdraw_artifact_public",
+          "prepared": "withdraw_artifact_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_artifacts_state",
+            "new_planet_events_state",
+            "new_artifact",
+            "new_artifact_location"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(artifact_storage.set(artifact_id, new_artifact));",
+              "replacement": "if supports_prepared_artifact_storage {\n            self.call(artifact_storage.set_prepared(artifact_id, new_artifact, prepared_new_artifact_root));\n        } else {\n            self.call(artifact_storage.set(artifact_id, new_artifact));\n        }",
+              "store": "artifact_storage",
+              "key": "artifact_id",
+              "state": "new_artifact",
+              "address": "artifact_storage_address"
+            },
+            {
+              "original": "self.call(artifact_location_storage.set(artifact_id, new_artifact_location));",
+              "replacement": "if supports_prepared_artifact_location_storage {\n            self.call(artifact_location_storage.set_prepared(artifact_id, new_artifact_location, prepared_new_artifact_location_root));\n        } else {\n            self.call(artifact_location_storage.set(artifact_id, new_artifact_location));\n        }",
+              "store": "artifact_location_storage",
+              "key": "artifact_id",
+              "state": "new_artifact_location",
+              "address": "artifact_location_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_artifact_storage = ::libs::prepared_storage::supports_prepared(artifact_storage.target_contract);",
+            "\n        let supports_prepared_artifact_location_storage = ::libs::prepared_storage::supports_prepared(artifact_location_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.withdraw_artifact_public(\n            location_id,\n            artifact_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            origin_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            new_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n        );",
+          "preparedEnqueue": "self.enqueue_self.withdraw_artifact_public_prepared(\n            location_id,\n            artifact_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            origin_arrivals_count,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            artifact_hash,\n            artifact_location_hash,\n            world_hash,\n            new_planet,\n            new_planet_artifacts_state,\n            new_planet_events_state,\n            new_artifact_locations,\n            new_artifact,\n            new_artifact_location,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_artifact).serialize()),\n            poseidon2_hash((new_artifact_location).serialize()),\n        );",
+          "privateOriginalHash": "6924675dc07955c5e3d078cb231209419ec4a313993b5f2e27b3cf7af1aec95a"
+        },
+        {
+          "private": "give_spaceships",
+          "original": "give_spaceships_public",
+          "prepared": "give_spaceships_public_prepared",
+          "states": [
+            "new_planet",
+            "new_planet_events_state",
+            "new_planet_artifacts_state",
+            "new_player"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            },
+            {
+              "original": "self.call(planet_events_storage.set(location_id, new_planet_events_state));",
+              "replacement": "if supports_prepared_planet_events_storage {\n            self.call(planet_events_storage.set_prepared(location_id, new_planet_events_state, prepared_new_planet_events_state_root));\n        } else {\n            self.call(planet_events_storage.set(location_id, new_planet_events_state));\n        }",
+              "store": "planet_events_storage",
+              "key": "location_id",
+              "state": "new_planet_events_state",
+              "address": "planet_events_storage_address"
+            },
+            {
+              "original": "self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));",
+              "replacement": "if supports_prepared_planet_artifacts_storage {\n            self.call(planet_artifacts_storage.set_prepared(location_id, new_planet_artifacts_state, prepared_new_planet_artifacts_state_root));\n        } else {\n            self.call(planet_artifacts_storage.set(location_id, new_planet_artifacts_state));\n        }",
+              "store": "planet_artifacts_storage",
+              "key": "location_id",
+              "state": "new_planet_artifacts_state",
+              "address": "planet_artifacts_storage_address"
+            },
+            {
+              "original": "self.call(player_storage.set(sender, new_player));",
+              "replacement": "if supports_prepared_player_storage {\n            self.call(player_storage.set_prepared(sender, new_player, prepared_new_player_root));\n        } else {\n            self.call(player_storage.set(sender, new_player));\n        }",
+              "store": "player_storage",
+              "key": "sender",
+              "state": "new_player",
+              "address": "player_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);",
+            "\n        let supports_prepared_planet_events_storage = ::libs::prepared_storage::supports_prepared(planet_events_storage.target_contract);",
+            "\n        let supports_prepared_planet_artifacts_storage = ::libs::prepared_storage::supports_prepared(planet_artifacts_storage.target_contract);",
+            "\n        let supports_prepared_player_storage = ::libs::prepared_storage::supports_prepared(player_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.give_spaceships_public(\n            sender,\n            location_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            origin_arrivals_count,\n            player_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_artifact_locations,\n            new_player,\n            spaceships_ids,\n            spaceships,\n            spaceships_locations,\n        );",
+          "preparedEnqueue": "self.enqueue_self.give_spaceships_public_prepared(\n            sender,\n            location_id,\n            timestamp,\n            planet_hash,\n            planet_artifacts_state_hash,\n            planet_events_state_hash,\n            arrival_ids,\n            arrival_hashes,\n            artifact_ids,\n            artifact_hashes,\n            artifact_location_hashes,\n            origin_arrivals_count,\n            player_hash,\n            new_planet,\n            new_planet_events_state,\n            new_planet_artifacts_state,\n            new_artifact_locations,\n            new_player,\n            spaceships_ids,\n            spaceships,\n            spaceships_locations,\n            poseidon2_hash((new_planet).serialize()),\n            poseidon2_hash((new_planet_events_state).serialize()),\n            poseidon2_hash((new_planet_artifacts_state).serialize()),\n            poseidon2_hash((new_player).serialize()),\n        );",
+          "privateOriginalHash": "562087a03206402bfb2bc833ba45f38937927cd9d69138135b5b99fdc5ccad8c"
+        }
+      ]
+    },
+    "admin": {
+      "originalFunctions": {
+        "constructor": {
+          "signatureHash": "8ff34b59e05e1c00ee83757ccc1ca78951f7e224c56cc44473014b42bf951ad6",
+          "functionHash": "b17bb695f48e9927c39993af39728d2b93a0cd242a6ccd856052ab30de49e765"
+        },
+        "assert_admin": {
+          "signatureHash": "ca2473f7656f4355d37fc9b891ce918663604738d41f2d93213e1a86e3660688",
+          "functionHash": "a486f82ccd62ae20e96523691b5ca27b53690b31eebf84be4e72e350034f3551"
+        },
+        "transfer_admin": {
+          "signatureHash": "6e0c0f2506c657f9cce64e2a2e593a9f3ebf8194b03385638798f92a467a4573",
+          "functionHash": "5a7892e5d6573e8900e659111b044ebd241a2ff73af8eb4c801e9e1b755f7fa7"
+        },
+        "set_config_storage_address": {
+          "signatureHash": "256e30108ae620cbc5bc8443778cf3d06386ca223a074996ae2f731914c41598",
+          "functionHash": "3214acd56bdb5f1e13d2cca76963e3177ca29c30c38cfc720b0c610ff892cfdf"
+        },
+        "set_world_storage_address": {
+          "signatureHash": "1f91cf01656f09a4b95aa8afc999d3440205da2bcd9263a74e041766d102b0ee",
+          "functionHash": "2db88e1a890a63153e007ea4757bce2dc214ce093fa1ccad1df3d63e5efca463"
+        },
+        "set_player_storage_address": {
+          "signatureHash": "47474a033ec9f56279707e28dbd174b070dc9c7403d37944c4972589937dfa33",
+          "functionHash": "c9b1b92709daf6d61524d7f701a854f4526610162afabfa53ea1f88ee6b5c1a4"
+        },
+        "set_planet_storage_address": {
+          "signatureHash": "dcaf524b0a48c397e4e1169c92cc2eea27da38a90b5733f4eb139037e8de0a46",
+          "functionHash": "bb7be60e71a0fb1b1014d2eb9068a6f186df836ffa4581040d0d3a7ca03c5e0a"
+        },
+        "set_all_storage_addresses": {
+          "signatureHash": "263374401e2bf072144d2c692c66c798e555a52712ac17d079ee24b11ff1f565",
+          "functionHash": "55930c2af944c4c53e06b5bc8c81041c20d158e0f28e1348b5848630779978f8"
+        },
+        "get_all_storage_addresses_unconstrained": {
+          "signatureHash": "ff94c357cc471dfa6c361d178cc746ff0c7afb22cb3ee968e3ff3499a1ab0738",
+          "functionHash": "746df0a8b4e4005f37746ffc33b13ebb314f216a7d4bde0940b73600b9318197"
+        },
+        "pause": {
+          "signatureHash": "bfc2b83ad42fddd024677b10d944c4ed6707270d579c6a703f456161e3e7035d",
+          "functionHash": "f7fc4c53f68c4b4a168843ac439305870abf5b8b4e428bfcc679e4b293d4565d"
+        },
+        "unpause": {
+          "signatureHash": "8b84d7cd5574b3c61fe1967296a5758d12083dde7b26320b4e4662a4e4f691fe",
+          "functionHash": "3ad0d700fcd678d38a9f527ef9daefd0421d3d306c9e9a6ffbd1997e7af8c5cd"
+        },
+        "set_owner": {
+          "signatureHash": "7effad665442499e41bf85be3931e8bf21c67db9b4e65aa5179325936621bd08",
+          "functionHash": "4e95c927c08219dcfe12bf34d3079d9953cd692ff21e7a425e4aa141c40a6c20"
+        },
+        "deduct_score": {
+          "signatureHash": "6ca5d0de62ff01547781b2a10eebbe23182dc9b40405b29257447be4274ce3f3",
+          "functionHash": "971a3a8555dfda1a286441ae179afcf63e1f57694d816e14cc6bf0b97809f01f"
+        },
+        "add_score": {
+          "signatureHash": "ad08657cb00a72a123e21973f4e23d3d58b7bcee51bd8c8030fc76c03468254d",
+          "functionHash": "05fdeef3420c054a40b923708dafb1be7e14ca4b893be30bfe303895c294efcb"
+        },
+        "safe_set_owner": {
+          "signatureHash": "3eee7dc4a8b48f26b793f7ecfce6fcf25ef9e1cd82507aadbcee5ccd8f1b1eef",
+          "functionHash": "83baacfe05a236fffcb49bad6a2a23c823fa94b2b98fbd2eb706472bcdf61c15"
+        },
+        "safe_set_owner_public": {
+          "signatureHash": "1a68042b368ae7652268a5b0facd5adc47fa1a417a2ffaecb58b3ebb6320c3b3",
+          "functionHash": "e27fd3fcf22d881556599a107799a6719212bb9ab42e5851f3e22a96260da3c7"
+        },
+        "admin_set_world_radius": {
+          "signatureHash": "0bf14db34319f51443969959fa4be0f3cb8ae7802c6ec8e99fc04c36b4a81333",
+          "functionHash": "b98f87beef3c95a18430d0910963bc617c4d8e762d1a490d72b296425bee6ca7"
+        },
+        "create_planet": {
+          "signatureHash": "8795e1df3702ae79a2c3d84f2aa1d3648bd94dbb5f159d96b2550998ee3416dc",
+          "functionHash": "4d7e3ea12e70c3f8876a7ebc25604b4b7cb6708543c4b1d653921e9ad4106dcc"
+        },
+        "admin_initialize_planet": {
+          "signatureHash": "fb9a80e77c74cd908daacfeae96e4bdb9c62f77d0523a1ffb05aef328eab5c62",
+          "functionHash": "b1de5c8615a44da6761bdf13e74c37f32127573baf01e42c43bfa1664cbfde17"
+        }
+      },
+      "continuations": [
+        {
+          "private": "safe_set_owner",
+          "original": "safe_set_owner_public",
+          "prepared": "safe_set_owner_public_prepared",
+          "states": [
+            "new_planet"
+          ],
+          "replacements": [
+            {
+              "original": "self.call(planet_storage.set(location_id, new_planet));",
+              "replacement": "if supports_prepared_planet_storage {\n            self.call(planet_storage.set_prepared(location_id, new_planet, prepared_new_planet_root));\n        } else {\n            self.call(planet_storage.set(location_id, new_planet));\n        }",
+              "store": "planet_storage",
+              "key": "location_id",
+              "state": "new_planet",
+              "address": "planet_storage_address"
+            }
+          ],
+          "skipped": [],
+          "classDeclarations": [
+            "\n        let supports_prepared_planet_storage = ::libs::prepared_storage::supports_prepared(planet_storage.target_contract);"
+          ],
+          "originalEnqueue": "self.enqueue_self.safe_set_owner_public(\n            sender,\n            location_id,\n            level,\n            timestamp,\n            planet_default_stats_hash,\n            config_hashes,\n            world_state_hash,\n            planet_state_hash,\n            new_planet,\n        );",
+          "preparedEnqueue": "self.enqueue_self.safe_set_owner_public_prepared(\n            sender,\n            location_id,\n            level,\n            timestamp,\n            planet_default_stats_hash,\n            config_hashes,\n            world_state_hash,\n            planet_state_hash,\n            new_planet,\n            poseidon2_hash((new_planet).serialize()),\n        );",
+          "privateOriginalHash": "83baacfe05a236fffcb49bad6a2a23c823fa94b2b98fbd2eb706472bcdf61c15"
+        }
+      ]
+    }
+  }
+}

@@ -57,6 +57,28 @@ const DEPLOY_DEFINITIONS: Array<{
         addresses: Record<string, { toField: () => unknown }>;
     }) => unknown[];
 }> = [
+    {
+        name: 'CoreSettlementWorker',
+        envPrefix: 'CORE_SETTLEMENT_WORKER',
+        modulePath: '../artifacts/CoreSettlementWorker.ts',
+        exportName: 'CoreSettlementWorkerContract',
+        getConstructorArgs: () => [],
+    },
+    {
+        name: 'VaultSettlementWorker',
+        envPrefix: 'VAULT_SETTLEMENT_WORKER',
+        modulePath: '../artifacts/VaultSettlementWorker.ts',
+        exportName: 'VaultSettlementWorkerContract',
+        getConstructorArgs: () => [],
+    },
+    // Shared canonical state. The existing storage/system constructors stay unchanged.
+    {
+        name: 'GameStateBackend',
+        envPrefix: 'GAME_STATE_BACKEND',
+        modulePath: '../artifacts/GameStateBackend.ts',
+        exportName: 'GameStateBackendContract',
+        getConstructorArgs: () => [],
+    },
     // --- Config ---
     {
         name: 'Config',

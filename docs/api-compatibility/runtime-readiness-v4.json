@@ -1,0 +1,189 @@
+{
+  "status": "all_runtime_suites_passed",
+  "runtimeExecuted": true,
+  "scope": "Five runtime suites completed against frozen V4 artifacts: 620 logical checks passed. Separate fresh PXEs used proverEnabled:false. Read-only and hostile trust checks sent no transactions; storage and caller setup changed isolated namespaces and System clones only. Custom caller gameplay calls were reverting full-entry simulations, with exact expected selectors and state rollback checked. Shared game and fee namespaces remained unchanged. This is compatibility evidence, not proof latency or new fee evidence.",
+  "variant": "candidate-v4",
+  "baselineVariant": "baseline-v2",
+  "nativeDirectory": "/tmp/df-api-compatible-v4-native",
+  "newFindAnchor": "v4",
+  "requiredRelease": "Released by fee owner after all45 fee pairs and first4 gate; all runtime PXEs are now stopped.",
+  "proverEnabled": false,
+  "backendDirectWidths": {
+    "try_settle_move_move": 549,
+    "try_settle_move_move_empty": 227,
+    "try_settle_initialize_new": 60,
+    "try_settle_refresh_empty": 88,
+    "commit_plan_small": 141,
+    "commit_plan": 397
+  },
+  "backendDelegatedWidths": {
+    "commit_plan_small_for_system": 141,
+    "commit_plan_for_system": 397
+  },
+  "compactSystemWidths": {
+    "Core.initialize_player_new_public_prepared": 56,
+    "Core.refresh_planet_empty_public_prepared": 144,
+    "Move.move_public_empty_prepared": 337
+  },
+  "classProvenance": "Every loaded runtime artifact is checked against live current class; storage and caller suites also check every isolated new deployment. Read-only suite registers only9 facades and requires selected backend address.",
+  "commands": [
+    "NODE_BACKEND=js LOG_LEVEL=error node --import ./node_modules/tsx/dist/loader.mjs tests/api-compatible-storage/read-only.mjs candidate-v4 /tmp/df-api-compatible-v4-native",
+    "NODE_BACKEND=js LOG_LEVEL=error node --import ./node_modules/tsx/dist/loader.mjs tests/api-compatible-storage/trust.mjs candidate-v4 /tmp/df-api-compatible-v4-native",
+    "NODE_BACKEND=js LOG_LEVEL=error node --import ./node_modules/tsx/dist/loader.mjs tests/api-compatible-storage/run.mjs candidate-v4 /tmp/df-api-compatible-v4-native",
+    "NODE_BACKEND=js LOG_LEVEL=error node --import ./node_modules/tsx/dist/loader.mjs tests/api-compatible-storage/config-caller.mjs candidate-v4 /tmp/df-api-compatible-v4-native",
+    "RUN_CALLER_LOCATION=1 NODE_BACKEND=js LOG_LEVEL=error node --import ./node_modules/tsx/dist/loader.mjs tests/api-compatible-storage/location-caller.mjs candidate-v4 /tmp/df-api-compatible-v4-native"
+  ],
+  "sourceHashes": {
+    "tests/api-compatible-storage/README.md": "5802eec5ebc19f3590c974f3b0a52ce71873af05bd32a353cf798d0511354e66",
+    "tests/api-compatible-storage/caller-config/Nargo.toml": "ad9a25fa25b086388ec7dd4f797c1b60fab1ac7e03630ae68bc1ed275add6ddc",
+    "tests/api-compatible-storage/caller-config/src/main.nr": "5932ebb2c5599fbc5e9de86b1a4d00510836b92eb6763adb103b68bd728f544b",
+    "tests/api-compatible-storage/caller-location-fixtures.mjs": "903f989117ce60f38ecac6abdaf9cda202793a61a92853e41c274d0b39e431f2",
+    "tests/api-compatible-storage/caller-location-fixtures.test.mjs": "962cc578cec615c7c6146ed8d0ccdcc18168149558f35d33ff248b58ce0f91b9",
+    "tests/api-compatible-storage/caller-location/Nargo.toml": "32df64f635ff47a3e0d2f03d81adc55768c7ee0343e8a5721e41f2785fd5f9ad",
+    "tests/api-compatible-storage/caller-location/README.md": "7575475a06026d0ba09a4fc704b9723963baebb09b17c5faf91c1696d57a2611",
+    "tests/api-compatible-storage/caller-location/src/main.nr": "48cc0a5cb07824764c8699adbb316231b14175fa62a7186a1e9bfa32dd6d6bd9",
+    "tests/api-compatible-storage/config-caller.mjs": "fae07595f5d84c291cff969d9d14ca96295260cbe81926e05fcd35eb0bea8c43",
+    "tests/api-compatible-storage/invocation.mjs": "b45621b9ae0a7b9920665c6917fcf77daa986cfc8d9da8cd3fcb498e57d6e27e",
+    "tests/api-compatible-storage/location-caller.mjs": "88048cb0b0aa3d75a88369fa5a47d20a255a20dc65887bdcef8f5869344d864a",
+    "tests/api-compatible-storage/read-only.mjs": "13ea37b7766954383cf85b5eff36ab594021ce2192f9e5e8237852606209c159",
+    "tests/api-compatible-storage/run.mjs": "813377cfb89432f05ae389fd7892ed945783d6c29ddd78e8710ca43f94bcb9d5",
+    "tests/api-compatible-storage/trust-routes.mjs": "7ea4e9c40047093f848214f3b3fb126441ad87f46ce985570df8f0ef63f2af7a",
+    "tests/api-compatible-storage/trust.mjs": "3456fc36e692d1f6c7eff4be3032e8c19c316b4000cd209b76c944f9b42d3407",
+    "tests/api-compatible-storage/verify-move-transport.mjs": "6a4964523b04942cc241eef77ed6a970e69afcb14f6ff6774b5807051edd0f6f"
+  },
+  "offlineChecks": {
+    "syntaxFiles": 4,
+    "trustRouteTests": 4,
+    "invocationDefaultsAndOverrides": true,
+    "diagnosticCompiledCore144Move337BackendRoutes": true,
+    "backendSelectors": {
+      "try_settle_move_move": "0xa8add67c",
+      "try_settle_move_move_empty": "0xed11b512"
+    },
+    "customCallerSyntaxChecks": 2,
+    "inactiveLocationFixtureTests": 2,
+    "configOriginalSelectorSignatures": 5
+  },
+  "publicFixtureBuilds": {
+    "caller-config": {
+      "status": "native_compiled_runtime_passed",
+      "artifact": "tests/api-compatible-storage/caller-config/target/caller_sensitive_config-CallerSensitiveConfig.json",
+      "expectedPrivateFunctions": 0,
+      "commands": [
+        "RAYON_NUM_THREADS=2 /tmp/df-noir-beta22/nargo compile --program-dir tests/api-compatible-storage/caller-config --force",
+        "HARDWARE_CONCURRENCY=2 RAYON_NUM_THREADS=2 node_modules/.bin/bb aztec_process -i tests/api-compatible-storage/caller-config/target/caller_sensitive_config-CallerSensitiveConfig.json"
+      ],
+      "preTranspileRequirement": "Assert raw artifact has zero abi_private functions before native processing. No private keys or transaction proofs are needed.",
+      "sha256": "47264b90280147944a5cb4a3edeada0f89707b5a91f4e9e2ffcf83758f3cf0ab",
+      "sourceSHA256": "5932ebb2c5599fbc5e9de86b1a4d00510836b92eb6763adb103b68bd728f544b",
+      "nativePublicBytes": 3774,
+      "packedFields": 123,
+      "privateFunctionsBeforeNative": 0,
+      "privateFunctionsAfterNative": 0,
+      "verificationKeysGenerated": 0,
+      "transactionProofsGenerated": 0,
+      "compiledSourceMatches": true
+    },
+    "caller-location": {
+      "status": "native_compiled_runtime_passed",
+      "artifact": "tests/api-compatible-storage/caller-location/target/caller_sensitive_location-CallerSensitiveLocation.json",
+      "expectedPrivateFunctions": 0,
+      "commands": [
+        "RAYON_NUM_THREADS=2 /tmp/df-noir-beta22/nargo compile --program-dir tests/api-compatible-storage/caller-location --force",
+        "HARDWARE_CONCURRENCY=2 RAYON_NUM_THREADS=2 node_modules/.bin/bb aztec_process -i tests/api-compatible-storage/caller-location/target/caller_sensitive_location-CallerSensitiveLocation.json"
+      ],
+      "preTranspileRequirement": "Assert raw artifact has zero abi_private functions before native processing. No private keys or transaction proofs are needed.",
+      "sha256": "13ee9a88baed6e0b1ca0012df078efe040cc735432ee3e593dc9d725895f083e",
+      "sourceSHA256": "48cc0a5cb07824764c8699adbb316231b14175fa62a7186a1e9bfa32dd6d6bd9",
+      "nativePublicBytes": 7344,
+      "packedFields": 238,
+      "privateFunctionsBeforeNative": 0,
+      "privateFunctionsAfterNative": 0,
+      "verificationKeysGenerated": 0,
+      "transactionProofsGenerated": 0,
+      "compiledSourceMatches": true
+    }
+  },
+  "callerFixturePathsVerified": {
+    "baseline-v2-initialize_player-ordinary.json": "experiments/api-compatible-benchmark/.state/baseline-v2-initialize_player-ordinary.json",
+    "baseline-v2-move-ordinary.json": "experiments/api-compatible-benchmark/.state/baseline-v2-move-ordinary.json",
+    "baseline-v2-refresh_planet-ordinary.json": "experiments/api-compatible-benchmark/.state/baseline-v2-refresh_planet-ordinary.json",
+    "baseline-move-20.json": "experiments/api-compatible-benchmark/.state/baseline-move-20.json",
+    "baseline-upgrade_planet-ordinary.json": "experiments/api-compatible-benchmark/.state/baseline-upgrade_planet-ordinary.json",
+    "baseline-withdraw_silver-ordinary.json": "experiments/api-compatible-benchmark/.state/baseline-withdraw_silver-ordinary.json",
+    "baseline-reveal_location-ordinary.json": "experiments/api-compatible-benchmark/.state/baseline-reveal_location-ordinary.json"
+  },
+  "completedRuntimeSuites": {
+    "trust": {
+      "report": "docs/api-compatibility/trust-regressions-candidate-v4.json",
+      "checksPassed": 98,
+      "checksTotal": 98,
+      "proverEnabled": false,
+      "transactionsSubmitted": 0,
+      "verifiedArtifactClasses": 19,
+      "reportSHA256": "5923378abed6f9045cd4e0b8e5286e615fa41392c915d4b18c085e0a690eda3c"
+    },
+    "readOnly": {
+      "report": "docs/api-compatibility/reader-regressions-candidate-v4.json",
+      "checksPassed": 162,
+      "checksTotal": 162,
+      "proverEnabled": false,
+      "reportSHA256": "1837cc05493776f66759b44244234281705f898131d8a9b4984cc37af90f48ee",
+      "transactionsSubmitted": 0,
+      "registeredArtifacts": 9,
+      "backendArtifactRegistered": false
+    },
+    "storage": {
+      "report": "docs/api-compatibility/storage-regressions-candidate-v4.json",
+      "checksPassed": 306,
+      "checksTotal": 306,
+      "proverEnabled": false,
+      "reportSHA256": "03cc7370fc6e3f56f122fd4ae74a4acb10caa0b070ded80923275a61c1e8814f",
+      "recordedSetupReceipts": 64,
+      "sharedGameNamespaceMutations": 0,
+      "receiptCountNote": "Recorded setup receipt list excludes18 constructor deployment receipts; constructor events and deployed classes were checked separately."
+    },
+    "configCaller": {
+      "report": "docs/api-compatibility/config-caller-regressions-candidate-v4.json",
+      "checksPassed": 34,
+      "checksTotal": 34,
+      "proverEnabled": false,
+      "reportSHA256": "d192e10199c7f6edd217bcd5952f4de8c23282992a54f484f4272c86161e10c0",
+      "recordedSetupReceipts": 42,
+      "sharedGameNamespaceMutations": 0,
+      "gameplayTransactionsSubmitted": 0
+    },
+    "locationCaller": {
+      "report": "docs/api-compatibility/location-caller-regressions-candidate-v4.json",
+      "checksPassed": 20,
+      "checksTotal": 20,
+      "proverEnabled": false,
+      "reportSHA256": "0086e86b8c7feaca513d99653fb7bb15876433579c3357feebcb03017e1eb4f1",
+      "recordedSetupReceipts": 39,
+      "sharedGameNamespaceMutations": 0,
+      "gameplayTransactionsSubmitted": 0
+    }
+  },
+  "heldRuntimeSuites": [],
+  "completedAtUTC": "2026-09-12T05:27:51.032082+00:00",
+  "checksPassed": 620,
+  "checksTotal": 620,
+  "transactionProofsGenerated": 0,
+  "harnessCorrections": [
+    {
+      "file": "tests/api-compatible-storage/run.mjs",
+      "reason": "Register the live-class-verified Backend artifact so PXE can decode nested public assertion payloads. Separate reader suite still proves backend-artifact independence.",
+      "preservedLog": "/tmp/df-api-compatible-v4-storage-missing-backend-artifact.log"
+    },
+    {
+      "file": "tests/api-compatible-storage/config-caller.mjs",
+      "reason": "SDK5.2 public static direct simulation returns raw revertReason without PXE enrichment. Decode actual revertData against the compiled fixture public_dispatch ABI; record selectors and retain exact marker checks.",
+      "preservedReport": "docs/api-compatibility/config-caller-regressions-candidate-v4-static-decode-failed.json"
+    },
+    {
+      "file": "tests/api-compatible-storage/location-caller.mjs",
+      "reason": "Seed input roots before choosing the shared timestamp and batch both System wiring calls, keeping local slot advancement within the unchanged original300-second window. Assert seeds remain identical; retain exact paired inputs and custom output commitments.",
+      "preservedReport": "docs/api-compatibility/location-caller-regressions-candidate-v4-expired-setup.json"
+    }
+  ]
+}

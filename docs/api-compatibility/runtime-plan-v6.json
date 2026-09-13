@@ -1,0 +1,150 @@
+{
+  "candidate": "candidate-v6",
+  "preparedOnly": true,
+  "status": "Await completed45 and carried4 fee pairs; no runtime suite launched",
+  "transactionProofsEnabled": false,
+  "profilingEnabled": false,
+  "steps": [
+    {
+      "id": "read-only",
+      "cwd": "/tmp/df-api-compatible-v6-worktree",
+      "program": "/tmp/df-api-compatible-v6-worktree/tests/api-compatible-storage/read-only.mjs",
+      "arguments": [
+        "candidate-v6",
+        "/tmp/df-api-compatible-v6-native",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/reader-regressions-candidate-v6.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/experiments/api-compatible-benchmark/.state/candidate-v6-deployments.json"
+      },
+      "log": "/tmp/df-api-compatible-v6-read-only.log"
+    },
+    {
+      "id": "trust",
+      "cwd": "/tmp/df-api-compatible-v6-worktree",
+      "program": "/tmp/df-api-compatible-v6-worktree/tests/api-compatible-storage/trust.mjs",
+      "arguments": [
+        "candidate-v6",
+        "/tmp/df-api-compatible-v6-native",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/trust-regressions-candidate-v6.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/experiments/api-compatible-benchmark/.state/candidate-v6-deployments.json"
+      },
+      "log": "/tmp/df-api-compatible-v6-trust.log"
+    },
+    {
+      "id": "run",
+      "cwd": "/tmp/df-api-compatible-v6-worktree",
+      "program": "/tmp/df-api-compatible-v6-worktree/tests/api-compatible-storage/run.mjs",
+      "arguments": [
+        "candidate-v6",
+        "/tmp/df-api-compatible-v6-native",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/storage-regressions-candidate-v6.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/experiments/api-compatible-benchmark/.state/candidate-v6-deployments.json"
+      },
+      "log": "/tmp/df-api-compatible-v6-run.log"
+    },
+    {
+      "id": "config-caller",
+      "cwd": "/tmp/df-api-compatible-v6-worktree",
+      "program": "/tmp/df-api-compatible-v6-worktree/tests/api-compatible-storage/config-caller.mjs",
+      "arguments": [
+        "candidate-v6",
+        "/tmp/df-api-compatible-v6-native",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/config-caller-regressions-candidate-v6.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/experiments/api-compatible-benchmark/.state/candidate-v6-deployments.json",
+        "CALLER_CONFIG_ARTIFACT": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-config/target/caller_sensitive_config-CallerSensitiveConfig.json"
+      },
+      "log": "/tmp/df-api-compatible-v6-config-caller.log"
+    },
+    {
+      "id": "location-caller",
+      "cwd": "/tmp/df-api-compatible-v6-worktree",
+      "program": "/tmp/df-api-compatible-v6-worktree/tests/api-compatible-storage/location-caller.mjs",
+      "arguments": [
+        "candidate-v6",
+        "/tmp/df-api-compatible-v6-native",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/location-caller-regressions-candidate-v6.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/experiments/api-compatible-benchmark/.state/candidate-v6-deployments.json",
+        "CALLER_LOCATION_ARTIFACT": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-location/target/caller_sensitive_location-CallerSensitiveLocation.json",
+        "RUN_CALLER_LOCATION": "1"
+      },
+      "log": "/tmp/df-api-compatible-v6-location-caller.log"
+    },
+    {
+      "id": "batch-caller",
+      "cwd": "/tmp/df-api-compatible-v6-worktree",
+      "program": "/tmp/df-api-compatible-v6-worktree/tests/api-compatible-storage/batch-caller.mjs",
+      "arguments": [
+        "candidate-v6",
+        "/tmp/df-api-compatible-v6-native",
+        "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/docs/api-compatibility/batch-caller-regressions-candidate-v6.json"
+      ],
+      "environment": {
+        "RAYON_NUM_THREADS": "2",
+        "HARDWARE_CONCURRENCY": "2",
+        "NODE_BACKEND": "js",
+        "LOG_LEVEL": "error",
+        "AZTEC_NODE_URL": "http://127.0.0.1:8097",
+        "STORAGE_DEPLOYMENTS": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/experiments/api-compatible-benchmark/.state/candidate-v6-deployments.json",
+        "CALLER_BATCH_ARTIFACT": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+        "RUN_CALLER_BATCH": "1"
+      },
+      "log": "/tmp/df-api-compatible-v6-batch-caller.log"
+    }
+  ],
+  "fixtureArtifacts": {
+    "config": {
+      "path": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-config/target/caller_sensitive_config-CallerSensitiveConfig.json",
+      "sha256": "47264b90280147944a5cb4a3edeada0f89707b5a91f4e9e2ffcf83758f3cf0ab"
+    },
+    "location": {
+      "path": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-location/target/caller_sensitive_location-CallerSensitiveLocation.json",
+      "sha256": "13ee9a88baed6e0b1ca0012df078efe040cc735432ee3e593dc9d725895f083e"
+    },
+    "batch": {
+      "path": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/tests/api-compatible-storage/caller-batch/target/caller_sensitive_batch-CallerSensitiveBatch.json",
+      "sha256": "45f6140d11b04d203b447fd5c95e20e3ca090b5ec36fc54de3133b6dea8dd76b"
+    }
+  },
+  "frozenSourceSnapshot": "/tmp/df-api-compatible-v6-source/snapshot.json",
+  "conditions": [
+    "Serial exclusive chain writer; separate fresh PXEs",
+    "Before each suite verify same frozen20 native artifacts and each live class",
+    "No CALLER_BATCH_RESUME_FROM inherited; all new candidate checks execute",
+    "Output absent before first run; uncertain setup sends must be reconciled, never blindly repeated",
+    "No aggregate runtime check count is claimed until actual reports finish"
+  ]
+}

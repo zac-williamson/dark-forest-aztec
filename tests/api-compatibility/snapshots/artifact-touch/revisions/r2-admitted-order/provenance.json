@@ -1,0 +1,16 @@
+{
+  "scope": "Exact reviewed class-only touch revision; actual native input hashes are authenticated by selected-source manifest.",
+  "reviewedProbeReadinessSHA256": "5201f23f0ac7f2d75cde25e0b8f7a3f7190ed99cfaf92bb3b8f180741b714915",
+  "nativeBuildSHA256": "fc9fe754303056cd14a078ed1003d3754da6571bc9ee3dcafb293f581a3c3b13",
+  "dispatchSHA256": "6531b278e806a4cd944ab7ebfc1b4c3625098dcaf6a710cdbcc9b469461e5c6d",
+  "v8References": {
+    "contracts/system/artifact_valut/src/main.nr": "95738b02ff88821e5525d4bb182d206284bca5ec4ab39ec56e8c8ec2cd058657",
+    "contracts/storage/artifact/src/main.nr": "57b22f8508ba57de41562e0d6d8fa7a5ecbfa492d933e27ba7347bac5386a1a8",
+    "contracts/storage/artifact_location/src/main.nr": "048f26e24fe3ab8424d72960c58881d822fc02f82568570d79f38c508f1ac905"
+  },
+  "admittedV13Sources": {
+    "contracts/system/artifact_valut/src/main.nr": "b8eb0d4353a11280fc88fa12185a1e3b48211cf91d235bfc4939fee19d74dfa7",
+    "contracts/storage/artifact/src/main.nr": "0a64b26a4daa7744f4904e94842e92bd98e5ec26c69d97f8b66e492616355629",
+    "contracts/storage/artifact_location/src/main.nr": "788c831709f93b03f32415e017269776d0bb2a4bff6efd85dbe24c84160c6f7c"
+  }
+}

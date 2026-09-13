@@ -1,0 +1,9 @@
+{
+  "scope": "Authenticated V7 canonical prepared routes; only five scalar root records per action may move to public hashing.",
+  "v7ActionSnapshot": {
+    "path": "tests/api-compatibility/snapshots/v8-actions-v7/artifact_action.nr",
+    "sha256": "0fc40de519fe142ea9e08fc09c82bc4315d4059e4351ff8d19a0b36dc787a84a"
+  },
+  "originalGit": "00bfa05c18862cce1c5adb362e4ecebe084c329a",
+  "originalActionSourceSha256": "469ddec94cf68f2bc2ddfbbd191a1f3a93e84e24a54c76d95d99ee7ea8dd270a"
+}

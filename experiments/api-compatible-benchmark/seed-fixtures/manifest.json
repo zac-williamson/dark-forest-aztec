@@ -1,0 +1,80 @@
+{
+  "scope": "Exact synthetic original-contract fixtures copied read-only from the completed prior experiment. No old file is modified. Accounts are deterministic local development addresses; these are not live player data.",
+  "files": [
+    {
+      "file": "fixture-0-account.json",
+      "sha256": "d6d2cb7e6dcf93ca370aab99d2e19d8da3d913180da556470ed0fa1950b708e7",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-0-account.json"
+    },
+    {
+      "file": "fixture-1-account.json",
+      "sha256": "545923b247a7c6b342065d76dd016d62882ec0f5cc7a6bc3a1c31c1fe4096cde",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-1-account.json"
+    },
+    {
+      "file": "fixture-5-account.json",
+      "sha256": "83428c8ced441e58f45a18c2ee32223ad37c5b5e5d889992682fd789cc12e7ba",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-5-account.json"
+    },
+    {
+      "file": "fixture-20-account.json",
+      "sha256": "cea2e77c7a5db4c5a15c60d04c08ee7f3ce06cdb482ce6f7bc26fb4b707f44e7",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-20-account.json"
+    },
+    {
+      "file": "fixture-artifact_move-account.json",
+      "sha256": "d4b5278e2f5f877ad353513e11da0ff5f96e26370d29a284070fcdd474f6854b",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-artifact_move-account.json"
+    },
+    {
+      "file": "fixture-artifact_arrival-account.json",
+      "sha256": "bf34eeaf5ed1c2cf12e500d403a8a53715c941f8577fc3074869b5d38a58ec61",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-artifact_arrival-account.json"
+    },
+    {
+      "file": "fixture-conquest-account.json",
+      "sha256": "a57d4a9d595699f6e4631afeb3566bd3358598c59d65f2c33ee8b7f78b37aec4",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-conquest-account.json"
+    },
+    {
+      "file": "fixture-wormhole-account.json",
+      "sha256": "9ec4a3399e8f38e27a69ffc1a309fde6b19318e020685864b3e3de592cd4dc26",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-wormhole-account.json"
+    },
+    {
+      "file": "fixture-photoid-account.json",
+      "sha256": "e4700d1cb47ab8013300aec5af41f586119193fbe1420920724eb963d9de39d4",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-photoid-account.json"
+    },
+    {
+      "file": "fixture-artifact_alias-account.json",
+      "sha256": "32bbefce4e8e38b128ec08719c3003f65343be4ab0b70b120c8b8a096fdd0b07",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-artifact_alias-account.json"
+    },
+    {
+      "file": "fixture-nonzero_padding-account.json",
+      "sha256": "5cc8d38456d8575dfd222d815646865cf51b4301c3d91261ff8155d8958cd22b",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-nonzero_padding-account.json"
+    },
+    {
+      "file": "fixture-future_queue-account.json",
+      "sha256": "fbbf6844f8593f49792c6a995e09eb0a9129fc155355cd13ec2678d62b4bcf37",
+      "source": "experiments/systemic-fee-benchmark/.state/fixture-future_queue-account.json"
+    },
+    {
+      "file": "refresh-fixture-baseline-0.json",
+      "sha256": "826c6c57f9cb5be664a82f252231d6febe6e3cd5d8167595cd5df05915e47a72",
+      "source": "experiments/systemic-fee-benchmark/.state/refresh-fixture-baseline-0.json"
+    },
+    {
+      "file": "refresh-fixture-baseline-20.json",
+      "sha256": "9d0e30971f85b46397cec8e905b26baddbbc1329554ca73442cf167ee1c8e163",
+      "source": "experiments/systemic-fee-benchmark/.state/refresh-fixture-baseline-20.json"
+    },
+    {
+      "file": "refresh-fixture-baseline-artifact_arrival.json",
+      "sha256": "1f1382aeb2843adc53f8627214315a5de96da5758ae1260247072a99cdea4559",
+      "source": "experiments/systemic-fee-benchmark/.state/refresh-fixture-baseline-artifact_arrival.json"
+    }
+  ]
+}

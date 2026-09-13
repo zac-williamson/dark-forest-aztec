@@ -1,0 +1,45 @@
+{
+  "status": "integrated_offline_checked_waiting_final_build_runtime_GO",
+  "runtimeExecuted": false,
+  "proverEnabled": false,
+  "transactionProofsGenerated": 0,
+  "threads": 2,
+  "offlineTestsPassed": 5,
+  "actualFrozenV4NativeLayoutReplayPassed": true,
+  "integration": "V5 run.mjs calls physicalStorageChecks.root from every verifyState and constructor plus independent overwrite; root calls imported observeLocalRoot. Seven permission/admin transition checkpoints call physicalStorageChecks.permission, which invokes imported observeNamespacePermission. Expected values come from exact serialized typed states and explicit grant/admin operations, never getter results.",
+  "v4Replay": "Compiled V4 own storage layouts remain supported; all V5 physical observations are disabled and no V5 slots are read.",
+  "versionGuard": "Before wallet creation, select each artifact own contract_name declaration, assert all9 facade local_roots slot3 plus Backend admins2/authorized3/arrivals7/counters8 for V5; V4 roots7/arrivals8/counters9.",
+  "rootCoverage": [
+    "constructor before binding",
+    "bound root unchanged",
+    "explicit H(zero)",
+    "full-width typed states",
+    "Arrival full-to-compact-to-full-to-explicit-zero overwrites",
+    "World radius53000 and numeric-zero distinction",
+    "duplicate-ID batches",
+    "independent neighboring namespaces",
+    "all known typed-state hashes after each permission/admin transition"
+  ],
+  "permissionCoverage": [
+    "initial admin fallback and absent grants",
+    "batch grants including zero address",
+    "zero-address removal",
+    "third actor removal",
+    "admin transfer to already-granted actor",
+    "admin transfer back",
+    "zero-admin transfer"
+  ],
+  "physicalPermissionAssertions": [
+    "effective authorization",
+    "exact raw grant word 0 or1",
+    "exact raw admin Field"
+  ],
+  "sourceHashes": {
+    "tests/api-compatible-storage/run.mjs": "3b80cff0df8eb198cec033bcce2ff2e1a308abad8ba608ed0df2ebaf5c84cd9f",
+    "tests/api-compatible-storage/physical-storage-checks.mjs": "416afd0e5a44327b4448628026b2cc7e05c9fa0a052549d7ce0ebe6ade7016cf",
+    "tests/api-compatible-storage/physical-storage-checks.test.mjs": "64d32f6aae2b5cc43d765d340730134178df258c4175d48c61e67145725794fd",
+    "tests/api-compatible-storage/local-root-observer.mjs": "8e0521369c7be50cde62ef6837c0b2cbbc29eba2362a958da19d94b04431c148",
+    "tests/api-compatible-storage/invocation.mjs": "0439682e70cb11f9a3268798ecc0ac6828cb5b4ff3af2023b4898cc834275514",
+    "tests/api-compatible-storage/README.md": "33ee8cbcae8da1909ebf9014125e1bfab638c962ef623a158cc58c1c77f4d2b5"
+  }
+}

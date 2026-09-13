@@ -1,0 +1,50 @@
+[
+  {
+    "package": "core",
+    "method": "refresh_planet_public",
+    "signature": "refresh_planet_public(Field,u64,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([Field;20],u32,u64),([(Field);20],u32,u64),[(Field,Field,u64);20])",
+    "matchesOriginalCompiledABI": true
+  },
+  {
+    "package": "core",
+    "method": "upgrade_planet_public",
+    "signature": "upgrade_planet_public(Field,(Field),u8,u8,u64,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],Field,Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([(Field);20],u32,u64),([Field;20],u32,u64),[(Field,Field,u64);20])",
+    "matchesOriginalCompiledABI": true
+  },
+  {
+    "package": "core",
+    "method": "withdraw_silver_public",
+    "signature": "withdraw_silver_public(Field,(Field),u64,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],Field,Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([(Field);20],u32,u64),([Field;20],u32,u64),[(Field,Field,u64);20],(u64,Field,u64,u128,u128,u128,bool,u64))",
+    "matchesOriginalCompiledABI": true
+  },
+  {
+    "package": "core",
+    "method": "reveal_location_public",
+    "signature": "reveal_location_public(Field,(Field),u64,bool,[Field;9],Field,Field,Field,Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),(Field,Field,Field,(Field)),(u64,Field,u64,u128,u128,u128,bool,u64))",
+    "matchesOriginalCompiledABI": true
+  },
+  {
+    "package": "core",
+    "method": "initialize_player_public",
+    "signature": "initialize_player_public((Field),Field,u64,[Field;9],Field,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([(Field);20],u32,u64),([Field;20],u32,u64),[(Field,Field,u64);20],(u64,Field,u64,u128,u128,u128,bool,u64))",
+    "matchesOriginalCompiledABI": true
+  },
+  {
+    "package": "artifact_valut",
+    "method": "deposit_artifact_public",
+    "signature": "deposit_artifact_public(Field,Field,u64,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],Field,Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([Field;20],u32,u64),([(Field);20],u32,u64),[(Field,Field,u64);20],(Field,u8,u8,u64,(Field),u8,u128,u64,u64,Field,(Field),(Field),u64),(Field,Field,u64))",
+    "matchesOriginalCompiledABI": true
+  },
+  {
+    "package": "artifact_valut",
+    "method": "withdraw_artifact_public",
+    "signature": "withdraw_artifact_public(Field,Field,u64,Field,Field,Field,u32,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],Field,Field,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([Field;20],u32,u64),([(Field);20],u32,u64),[(Field,Field,u64);20],(Field,u8,u8,u64,(Field),u8,u128,u64,u64,Field,(Field),(Field),u64),(Field,Field,u64))",
+    "matchesOriginalCompiledABI": true
+  },
+  {
+    "package": "artifact_valut",
+    "method": "give_spaceships_public",
+    "signature": "give_spaceships_public((Field),Field,u64,Field,Field,Field,[Field;20],[Field;20],[Field;20],[Field;20],[Field;20],u32,Field,(u8,u64,(Field),u8,u8,u8,bool,bool,bool,(Field),(Field),u32,u128,u128,u128,u128,u128,u128,u128,u128,u128,u8,u8,u8,u64,u128,u128,u128,u128,u128,bool,u32),([(Field);20],u32,u64),([Field;20],u32,u64),[(Field,Field,u64);20],(u64,Field,u64,u128,u128,u128,bool,u64),[Field;5],[(Field,u8,u8,u64,(Field),u8,u128,u64,u64,Field,(Field),(Field),u64);5],[(Field,Field,u64);5])",
+    "matchesOriginalCompiledABI": true
+  }
+]

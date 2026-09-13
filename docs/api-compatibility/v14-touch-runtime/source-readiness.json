@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "scope": "Source/native preparation and offline evidence checks only; no runtime execution",
+  "variant": "candidate-v14",
+  "executionManifestSHA256": "d3a3d9c2241ceeaed0e125464c3b47a477d54e0c3e916bb4e9834368085232b5",
+  "files": 43,
+  "offlineChecks": 14,
+  "actualNativeABIPreflight": true,
+  "sentinelOrderAndFullTypeMatchBeforeWallet": true,
+  "genuineFixtureSHA256": "3136912b64545cbd2b47dfe5bfd054528baa774cbc5d5d7aebbfafbbb4dc913f",
+  "actualTouchABI": [
+    "state",
+    "id"
+  ],
+  "freshContracts": 10,
+  "checksUse": [
+    "actual signed account success transactions",
+    "no-send rejection simulations",
+    "same-block original setter controls",
+    "independent physical roots and permissions",
+    "exact target-leaf write absence",
+    "canonical receipts with same-Tx pre-send journal",
+    "custom first setter mutation plus required second setter restoration"
+  ],
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "pending": "Independent final review and exclusive post-first2 execution GO",
+  "logs": {
+    "/tmp/df-v13-touch-regression-runtime/results/offline-checks.tap": "1fb4b05bbc16cde5f82e5371b47234a82645750c6e386b0af25bed1d721986de",
+    "/tmp/df-v13-touch-regression-runtime/results/abi-preflight.log": "2c65d680d5112f09dd1190b88380b778d5ea1a7b6f8538d118e228c87ae5e0ce"
+  }
+}

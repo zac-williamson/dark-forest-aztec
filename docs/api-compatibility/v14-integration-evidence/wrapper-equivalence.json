@@ -1,0 +1,170 @@
+{
+  "passed": true,
+  "contracts": 20,
+  "scope": "All actual20 wrappers emit byte-identical JavaScript; native JSON and loaded class IDs unchanged; SDK legacy metadata default preserved",
+  "rows": [
+    {
+      "contract": "Config",
+      "nativeSHA256": "2ac06fe5ca5d49e8b970e7168220354f25ba5c6822de5bef5e2fb1a525d2fb9a",
+      "classId": "0x2293704c904f3b2a0fead203d00894205b30c3f2c1605f885744f5c23f8a06e8",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "63a59e058f333ec3e151a6eba720b1ca830ce758581cd256b448fe8a6dc7ba17"
+    },
+    {
+      "contract": "WorldStorage",
+      "nativeSHA256": "3c311a698e829bde9ca08e11139bccf25537f9686466ce908e3738178d205d6a",
+      "classId": "0x0b6607d44fa9bcfd9efa7e52fae98da61935c5c50b81f619fc85261141f6c934",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "14002b703e4f63adc625f44cad0ffb265f9a5e19e2fa16cd2379a8a457f2fa1e"
+    },
+    {
+      "contract": "PlayerStorage",
+      "nativeSHA256": "0eb88afdcc3584c4eee0bc1df7a8b7e2bffc5c4b2bc66dd5979b1cf74fb7e84a",
+      "classId": "0x0a06761f7bded88c00dfd138c19198247baa603573de638f92f187674ba927f9",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "e83527eefde42349b01eec99c9f35b3bd7976bbc30cc19c21db3063b609dbb52"
+    },
+    {
+      "contract": "PlanetStorage",
+      "nativeSHA256": "0b1723bfcf4c3abae7525602fad0bc5323c27b58d3a132cbf2ed6b3700a71888",
+      "classId": "0x219f7a575b7aa4b1d561c549d43c78e5ac0c04ea69e5c15650d4647cf40d5a03",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "f827583ab47b838be815faef926b8c2d4b685df8f56ef2012fa9e08fa5400305"
+    },
+    {
+      "contract": "PlanetRevealedCoordsStorage",
+      "nativeSHA256": "824debb7d430d7b20786cd7a32fc748ea28278bb59f169a5bb4631d321294ef6",
+      "classId": "0x22bd593061cc5c5b8c2b5f7fba9a67eab7ce62dc77dffe74a9fe5859c9a72fcb",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "fc239cee89e50c2d9b59e2002bf41c89a359d4942a2deb063d0aef2a582e9fe6"
+    },
+    {
+      "contract": "PlanetEventsStorage",
+      "nativeSHA256": "1dba4f3efa73ea56e9cc6ef3b03df426e3adacbefcc66ff2bae3f36e95e0d7d9",
+      "classId": "0x02c28965f273e7b943037d3ccf65c847d9e6f53c8ad8c92e6a989af2459d3918",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "9bf69f2017e41df16262958312ee0b99cc5f9aa8dd04c0a8afd3cd13e344019a"
+    },
+    {
+      "contract": "PlanetArtifactsStorage",
+      "nativeSHA256": "86b785ba03ccf6939ac75d7b401530f75a21f6f8b22559222a3480f464365020",
+      "classId": "0x24c9ca7d5255b1d33463814a63534283f326980f7a6a059976b44914a9091ff4",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "f714b02a914ac5580fa878ba2edc0f0f3bc2c238f230ee7c2bf0c2375407ba64"
+    },
+    {
+      "contract": "ArrivalStorage",
+      "nativeSHA256": "25df2092f3f187d299edd3aa18ffde5a2fea68d3a954b43882f349d021969809",
+      "classId": "0x213817151b789aa3f9d602e34595902eabdfe2d12965667451ec4e20ca390603",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "d05ffeadab2f3152fa46406638edbab23292bc1d4ccfc540b99fa1ac3f6dd56a"
+    },
+    {
+      "contract": "ArtifactStorage",
+      "nativeSHA256": "81eb5e1138470cfc9b2bd8b37a7b8e4bfe9f30ac02ce9d963e07a63c37ed8545",
+      "classId": "0x095dc6dc248d96f6014c41b1df27d6f05ae7df0ea2966ba6286cc76639611332",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "43cafc4f5d89fa83f06479786a7db8c6790acd4b6368fa83cca60bad337db7f5"
+    },
+    {
+      "contract": "ArtifactLocationStorage",
+      "nativeSHA256": "ea1f6aef5792d73b0edc1ebc654da05f5e96d08e64ae144d3837f1cd0e0b8d8a",
+      "classId": "0x29a6daffc52522cf7ec99aae15480256fc501be83a74d475de45f5cbfc6c0b7b",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "06d9973295d3d78ad0f38c978f628ff42a0464c95c3a822c840a2ae169e55dca"
+    },
+    {
+      "contract": "Admin",
+      "nativeSHA256": "60013e0cb1a24bf58ce46448b47b86ebf74dcf956f1e8be78ec1ae4006d20029",
+      "classId": "0x1a9a196ce606e50d345c869d22f92231a4c9fad33e62efbb676188b5154941a5",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "9de8ce513c3e7bba25dc1022042fbaa191fe5963b9e48702db8eab15e83a2be2"
+    },
+    {
+      "contract": "Core",
+      "nativeSHA256": "810b8bd4358e03b19bc15d4e5e74e20ad3aecf6ca12dedde93ff0e3168c378d5",
+      "classId": "0x0fda8f42d9e8b910d26bc588b22dc0eca84899b6d5df78511aea2d20dad00a72",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "7792051cf73b881882fe373aa68360906e94dde9edd48a1bcf6e96a7943356b5"
+    },
+    {
+      "contract": "Move",
+      "nativeSHA256": "a5f0ae2999f46a3b01d57c43f8754a324d6e5aa1294edd270da1c36438b8c1af",
+      "classId": "0x28eb74154d163fe2f6e930d446715c05bac0c76629bb168e458370d164259dd4",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "01fa38fc6477e7dd2d60c1a443af2380758649cb5201030d543e91deb9140840"
+    },
+    {
+      "contract": "ArtifactAction",
+      "nativeSHA256": "f4eec7991712eb94e182830048016030485006baae7fbb8a741bc1a93425b6bc",
+      "classId": "0x0e6a9bd340ea2f520046657277a3cedb9fefad2c9ed062b66b1d3df1462b5cbf",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "83f9578822621d8f223daacb34ec2978a973fddce171815171d893ba0c638e74"
+    },
+    {
+      "contract": "ArtifactFind",
+      "nativeSHA256": "d471b514b52a6d9d7bb1c24c5e13197a521b2d22cae8317c84dee7ff436c6576",
+      "classId": "0x27493770b04fa49fb89c99c0d532f5377f248168e3cc8d7f0e6b557d779f9254",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "b033131a9de664bba6ff390c4a0883fe2f5f2c0caedbb9f081f78f793150e7b9"
+    },
+    {
+      "contract": "ArtifactProspect",
+      "nativeSHA256": "9b55febd14f1066033d808682f2280500421af0d73d49fca3c193ad9dbeed14c",
+      "classId": "0x0bd13431758a496e5fc5d23e90f0048e14f2adcf7582a9f73e527b6d2f3d06e8",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "d18c5f43a59f48926bad8dec149b460fc44cf9fc1f9ec7a0694b4110aac5f491"
+    },
+    {
+      "contract": "ArtifactValut",
+      "nativeSHA256": "d211ced4f4e42dc379fa3aeeaebc1c6a1bd2d72832b78f44b4899d9a4d7db859",
+      "classId": "0x2dcf4854ce4e8f589cd7afd1dfc6dc49dc7b9985915711d857d1b271d2538484",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "91b389067570f992b2b268023caf03b3b17e9cfd7f1f8f989c17a377fd9ab5cb"
+    },
+    {
+      "contract": "CoreSettlementWorker",
+      "nativeSHA256": "bd842720d4c7c107938cca1c5cd075a5f70ab3e33f943ab0f261b21cd9ba57da",
+      "classId": "0x00fcab2a469bf2e21ef15b44fecdbc65bf23cb208756510043634d274f64e872",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "27ede8e5e509304a48345f1fcdfd57323f19cdaebec7bf1465ea7f9e09b06f5a"
+    },
+    {
+      "contract": "VaultSettlementWorker",
+      "nativeSHA256": "89691d8083417027ac4b34efee6235d454e27aa1e4ac9a5cdaa5eb7f204f83fa",
+      "classId": "0x0fb0e0a4bf49f80419a66c8768038aa9a6e0286d91282f34b6efef2c3fddc1e2",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "798368cba7b1477aef03c75797e45e4d636198824410d2a4a0266d9598d960cc"
+    },
+    {
+      "contract": "GameStateBackend",
+      "nativeSHA256": "23b3f8f4ac5ecb063b4bb47b6a4c441df1551f8e0f415b984508736f9d3cab8b",
+      "classId": "0x1526cea11a475af86152fed567c6e9344568b5ad1dcc2ee654b353b121e433ac",
+      "aztecVersion": "FROM_RELEASE_BEFORE_VERSION_INJECTION",
+      "identicalEmittedJavaScript": true,
+      "wrapperSHA256": "67e50e0c8db000a2d846791d97b22b3d9a6807673202152b75e736c790afbc6e"
+    }
+  ],
+  "proofsGenerated": 0,
+  "newKeysGenerated": 0,
+  "nodeCalls": 0
+}

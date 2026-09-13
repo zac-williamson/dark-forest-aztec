@@ -1,0 +1,58 @@
+{
+  "variant": "candidate-v5",
+  "passed": true,
+  "checks": 1398,
+  "suites": [
+    {
+      "suite": "reader",
+      "checks": 162,
+      "report": "docs/api-compatibility/reader-regressions-candidate-v5.json",
+      "sha256": "e7ea84e584865b14d0be7ec6927c5f15c286b1efc9a4b0d9655542ad265176fb"
+    },
+    {
+      "suite": "trust",
+      "checks": 152,
+      "report": "docs/api-compatibility/trust-regressions-candidate-v5.json",
+      "sha256": "e901eb921ca442a815cbbabe6206e34ffce9a34bed3adc6cfb054155a3a8ef31"
+    },
+    {
+      "suite": "storage",
+      "checks": 792,
+      "report": "docs/api-compatibility/storage-regressions-candidate-v5.json",
+      "sha256": "2e8dfd13cdfd0cc32b1e92a19dbecedbb5e5f01717c2e55d70185de71314c7fa"
+    },
+    {
+      "suite": "config-caller",
+      "checks": 34,
+      "report": "docs/api-compatibility/config-caller-regressions-candidate-v5.json",
+      "sha256": "8beecb0fddd2d4f04aca76a916dce1b67f0da0311bc408095ad7ed4358bb6657"
+    },
+    {
+      "suite": "location-caller",
+      "checks": 20,
+      "report": "docs/api-compatibility/location-caller-regressions-candidate-v5.json",
+      "sha256": "91c1b6a3de418374b3f10398ae6cfda288affb1297a4f3a45eb1825a237449fb"
+    },
+    {
+      "suite": "batch-caller",
+      "checks": 238,
+      "report": "docs/api-compatibility/batch-caller-regressions-candidate-v5.json",
+      "sha256": "f7e3b66a81f700ae2182b88f69a060a423f360e2d0ea5e35ac2e1daeb4a266b4"
+    }
+  ],
+  "proofsEnabled": false,
+  "profilingEnabled": false,
+  "threads": 2,
+  "gameplayTransactionsSubmittedByCustomSuites": 0,
+  "physicalStorageObservations": 486,
+  "scope": "Original APIs, getters/events, physical storage and permission state, exact caller-sensitive Config/Location/Batch behavior. Local proof-disabled compatibility evidence; separate fee matrix and no proof/latency claim.",
+  "immutableSnapshot": "/tmp/df-api-compatible-v5/runtime",
+  "snapshotManifest": "/tmp/df-api-compatible-v5/runtime-manifest.json",
+  "batchResume": {
+    "retainedSuccessfulChecks": 76,
+    "canonicalSetupReceiptsValidated": 61,
+    "exactIsolatedClassesValidated": 17,
+    "newChecks": 162,
+    "harnessErrorsPreserved": true
+  }
+}

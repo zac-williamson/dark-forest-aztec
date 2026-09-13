@@ -1,0 +1,76 @@
+PASS artifact initial physical admin authorization
+PASS artifact/zero absent root differs from full typed hash
+PASS artifact/zero exact original event and no candidate root write
+PASS artifact independent full physical root 0
+PASS artifact/high_fields absent root differs from full typed hash
+PASS artifact/high_fields exact original event and no candidate root write
+PASS artifact independent full physical root 1766847064778384329583297500742918515827483896875618958121606201292619789
+PASS artifact/maximum absent root differs from full typed hash
+PASS artifact/maximum exact original event and no candidate root write
+PASS artifact independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact physical explicit grant
+PASS artifact independent full physical root 0
+PASS artifact/zero real grantee touch preserves event and no write
+PASS artifact independent full physical root 1766847064778384329583297500742918515827483896875618958121606201292619789
+PASS artifact/high_fields real grantee touch preserves event and no write
+PASS artifact independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact/maximum real grantee touch preserves event and no write
+PASS artifact authorized stale preimage rejected
+PASS artifact physical revoked grant
+PASS artifact original revoked writer rejection
+PASS artifact revoked touch rejects before stale hash
+PASS artifact stranger rejects before stale hash
+PASS artifact old admin physically unauthorized
+PASS artifact new admin physically authorized
+PASS artifact original old-admin rejection
+PASS artifact old-admin touch rejection
+PASS artifact independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact touch observes preceding pending set
+PASS artifact stale touch after pending set rejects and rolls back
+PASS artifact independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact_location initial physical admin authorization
+PASS artifact_location/zero absent root differs from full typed hash
+PASS artifact_location/zero exact original event and no candidate root write
+PASS artifact_location independent full physical root 0
+PASS artifact_location/high_fields absent root differs from full typed hash
+PASS artifact_location/high_fields exact original event and no candidate root write
+PASS artifact_location independent full physical root 1766847064778384329583297500742918515827483896875618958121606201292619789
+PASS artifact_location/maximum absent root differs from full typed hash
+PASS artifact_location/maximum exact original event and no candidate root write
+PASS artifact_location independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact_location physical explicit grant
+PASS artifact_location independent full physical root 0
+PASS artifact_location/zero real grantee touch preserves event and no write
+PASS artifact_location independent full physical root 1766847064778384329583297500742918515827483896875618958121606201292619789
+PASS artifact_location/high_fields real grantee touch preserves event and no write
+PASS artifact_location independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact_location/maximum real grantee touch preserves event and no write
+PASS artifact_location authorized stale preimage rejected
+PASS artifact_location physical revoked grant
+PASS artifact_location original revoked writer rejection
+PASS artifact_location revoked touch rejects before stale hash
+PASS artifact_location stranger rejects before stale hash
+PASS artifact_location old admin physically unauthorized
+PASS artifact_location new admin physically authorized
+PASS artifact_location original old-admin rejection
+PASS artifact_location old-admin touch rejection
+PASS artifact_location independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact_location independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS artifact_location touch observes preceding pending set
+PASS artifact_location stale touch after pending set rejects and rolls back
+PASS artifact_location independent full physical root 21888242871839275222246405745257275088548364400416034343698204186575808495616
+PASS original mixed wrong admin
+PASS original mixed original Artifact verify preserved
+PASS original mixed original Location verify preserved
+PASS original Location Vault rejection rolls back ordered mutation
+PASS original Location mutator rejection rolls back ordered mutation
+PASS candidate mixed wrong admin
+PASS candidate mixed original Artifact verify preserved
+PASS candidate mixed original Location verify preserved
+PASS candidate Location Vault rejection rolls back ordered mutation
+PASS candidate Location mutator rejection rolls back ordered mutation
+PASS original actual original setters preserve all three ordered events and restore requested root
+PASS artifact_location independent full physical root 1766847064778384329583297500742918515827483896875618958121606201292619789
+PASS candidate actual original setters preserve all three ordered events and restore requested root
+COMPLETE 75 touch and mixed-setter runtime checks

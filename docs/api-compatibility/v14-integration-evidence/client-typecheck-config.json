@@ -1,0 +1,66 @@
+{
+  "extends": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/client/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@dfpunk/contracts": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/index.ts"
+      ],
+      "@dfpunk/contracts/artifacts/WorldStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/WorldStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/PlayerStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlayerStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/PlanetStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/PlanetRevealedCoordsStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetRevealedCoordsStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/PlanetEventsStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetEventsStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/PlanetArtifactsStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/PlanetArtifactsStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/ArrivalStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArrivalStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/ArtifactStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/ArtifactLocationStorage": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactLocationStorage.ts"
+      ],
+      "@dfpunk/contracts/artifacts/Config": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Config.ts"
+      ],
+      "@dfpunk/contracts/artifacts/Core": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Core.ts"
+      ],
+      "@dfpunk/contracts/artifacts/Move": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Move.ts"
+      ],
+      "@dfpunk/contracts/artifacts/Admin": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/Admin.ts"
+      ],
+      "@dfpunk/contracts/artifacts/ArtifactAction": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactAction.ts"
+      ],
+      "@dfpunk/contracts/artifacts/ArtifactFind": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactFind.ts"
+      ],
+      "@dfpunk/contracts/artifacts/ArtifactProspect": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactProspect.ts"
+      ],
+      "@dfpunk/contracts/artifacts/ArtifactValut": [
+        "/tmp/df-v13-integration-worktree/packages/contracts/src/artifacts/ArtifactValut.ts"
+      ]
+    },
+    "noEmit": true,
+    "incremental": false,
+    "types": [
+      "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/client/node_modules/vite/client.d.ts"
+    ]
+  }
+}

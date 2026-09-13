@@ -1,0 +1,45 @@
+{
+  "scope": "Immutable completed75-check V14 touch suite only.",
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "28547cb6ca7a81664b9ae749596656d21b83eada0da4dc63bf0f1db0d7e28850",
+      "bytes": 1772
+    },
+    {
+      "file": "admission.json",
+      "sha256": "86f482b62ac38346bccc16beaf7002bdde15fc98953fceef16cdc275d6ef78d2",
+      "bytes": 3012
+    },
+    {
+      "file": "execution-inputs.json",
+      "sha256": "d3a3d9c2241ceeaed0e125464c3b47a477d54e0c3e916bb4e9834368085232b5",
+      "bytes": 6549
+    },
+    {
+      "file": "runtime-checks.json",
+      "sha256": "10d43c9d7440c3a8a68213c69616ad5d0edb39db483bd130cd6c08362d8018e8",
+      "bytes": 539226
+    },
+    {
+      "file": "runtime.log",
+      "sha256": "3a83943184968b4d13445bb0ac04b6204629279ee62e7187eb7470b9d89920ef",
+      "bytes": 5583
+    },
+    {
+      "file": "snapshot.json",
+      "sha256": "35745b7a0aeb3fdd108918c0dbddecb8c70795f1cf2a035fb34546d3dc109206",
+      "bytes": 12334
+    },
+    {
+      "file": "source-readiness.json",
+      "sha256": "1943860e4e1028a5aae756b290672e6c4432cb07389a8504889850c36b1f2003",
+      "bytes": 1353
+    },
+    {
+      "file": "summary.json",
+      "sha256": "c4c51ff51d24d4698effdfca8e90b191db8e12129f558d576178b6e40ae2f0d8",
+      "bytes": 2529
+    }
+  ]
+}

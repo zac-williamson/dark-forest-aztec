@@ -1,0 +1,5 @@
+{
+  "parentToolingManifestSHA256": "41dd87fcf8771f1c48fa9b69871878b40b43fc655ecf9c8bd2e814c5ee5f0970",
+  "source": "/tmp/df-v12-integration-worktree/contracts/scripts/dev/api-compatible-build",
+  "policy": "Separate touch-probe tooling; V12 admitted tool sources remain unchanged; no proofs/new verification keys"
+}

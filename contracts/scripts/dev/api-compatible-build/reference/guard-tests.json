@@ -1,0 +1,54 @@
+{
+  "scope": "Fail-closed invalid-operation guard tests; native binary never invoked",
+  "passed": true,
+  "tests": [
+    {
+      "pythonOptimize": "0",
+      "arguments": [],
+      "rejected": true
+    },
+    {
+      "pythonOptimize": "0",
+      "arguments": [
+        "prove"
+      ],
+      "rejected": true
+    },
+    {
+      "pythonOptimize": "0",
+      "arguments": [
+        "aztec_process",
+        "-i",
+        "/tmp/not-read",
+        "--force"
+      ],
+      "rejected": true
+    },
+    {
+      "pythonOptimize": "1",
+      "arguments": [],
+      "rejected": true
+    },
+    {
+      "pythonOptimize": "1",
+      "arguments": [
+        "prove"
+      ],
+      "rejected": true
+    },
+    {
+      "pythonOptimize": "1",
+      "arguments": [
+        "aztec_process",
+        "-i",
+        "/tmp/not-read",
+        "--force"
+      ],
+      "rejected": true
+    }
+  ],
+  "guardSha256": "62ba9c7beea0c09bb6692e13f6592fc4a6cb15ec7bcc0afc31a30321154124c4",
+  "knownKeysManifestSha256": "5a10dd43264601fbb3b946af861446cb07e46a928cc80a8b76eb968b3526beb4",
+  "proofsGenerated": false,
+  "keysGenerated": false
+}

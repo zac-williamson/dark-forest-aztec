@@ -1,0 +1,12 @@
+[package]
+name = "arrival"
+type = "contract"
+authors = [""]
+
+[dependencies]
+aztec = { git="https://github.com/AztecProtocol/aztec-nr", tag="v5.0.1", directory="aztec" }
+types = { path = "../../types" }
+
+libs = { path = "../../libs" }
+game_state_backend = { path = "../../state_backend" }
+state_backend_readonly = { path = "../../state_backend_readonly" }

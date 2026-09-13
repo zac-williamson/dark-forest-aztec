@@ -1,0 +1,15 @@
+{
+  "scope": "Completed local V14 installation and exact post-install verification",
+  "files": {
+    "README.md": "5647229616d305b5ffc5008d566b07d7b560f853f904a24de8e59f547b6e6c5f",
+    "codegen.txt": "151eff167bdf1d7c953720cc9fa5ddecbae7e4bd1367494088578e040e06fa41",
+    "compiled-api.txt": "71738f26bad3b0c3d475064881983839dcc5b04a078c4a6808b840cb3d804973",
+    "copy.txt": "45369e640d08e7041b87dc5ce7d02bbe9ad4ff6ecaae033a18823f7b84663a34",
+    "deployment-typecheck.txt": "d3d021c593c92ab5ecc7cd5fabfaba4d372d9f7a58e5522f5c5bd2bebf15b3f6",
+    "post-promotion.json": "a7829e0b43c4620ec3f3af50c67dd45568835266ae07d34df60ffcf8d2e17c53",
+    "publish-check.txt": "a8b474cddedbb3cca262916616d3c61d172ef687c835c1ddd6c19f866310c30d",
+    "publish.txt": "5898901f39ff3aabc865830a4b113163ed49d86edf47a9b5637f461235c78460",
+    "selected-source.txt": "87b93872d484dfe083dd1cdc371169eb633e19ad5de240aadbe146ad58fd7d82",
+    "source-promotion.json": "b0b9c58f2bcbf0f27627e1afe0867878e19389a22046af4582bd88e72c9590f3"
+  }
+}

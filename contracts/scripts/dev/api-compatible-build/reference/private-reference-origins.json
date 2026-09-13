@@ -1,0 +1,128 @@
+{
+  "admin-Admin.json": {
+    "sourceArtifactSHA256": "2c3388679e71d034f2502ff7b0c97442229e2ab3390f46fad61faba39fb539d3",
+    "sourceBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+    "policy": "V8",
+    "compactReferenceSHA256": "f1738b05806fee3b5ea60c156c56a61270670f12ee937a987151778219e75bd1",
+    "privateMethods": [
+      {
+        "method": "safe_set_owner",
+        "decompressedBytecodeSHA256": "d6190a76e219729639a1cd1847c818908a90b2fcf8bc4682a7e23907183382b4",
+        "cachedKeySHA256": "3825fdd717eb369bb8f1ee546827d850c95220e2d53444ccf1fa56c1172df2c1"
+      }
+    ]
+  },
+  "core-Core.json": {
+    "sourceArtifactSHA256": "87c6fe814aa32f294cd512f585861d366adc0bed9b596bdadbdbbbeab9bec552",
+    "sourceBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+    "policy": "V7 Core",
+    "compactReferenceSHA256": "01b3c9321926e6d9c1edfe7317ee59fd87c74fec99d43600c4acf1c646f26e86",
+    "privateMethods": [
+      {
+        "method": "initialize_player",
+        "decompressedBytecodeSHA256": "e9dc43c4940d6fee61b2cfa69ccd999379202f72fd94e4f13b9f83180c187cbc",
+        "cachedKeySHA256": "64ab9cd8bdb909bb532bf9e1669f4eeb67c8281a1c1f9cfd1f095feb3d85d18f"
+      },
+      {
+        "method": "refresh_planet",
+        "decompressedBytecodeSHA256": "d8696ed48539b8446cda5b277a0cc88f455d486b3ef49624c1a6997e37194912",
+        "cachedKeySHA256": "a22c154016467007fb36f451a52e78ead6e82ed2d3ba8d04ef85bd1d17667b10"
+      },
+      {
+        "method": "reveal_location",
+        "decompressedBytecodeSHA256": "6033032cd362d0027c691e5253e8c3cd3b38a70bf0c082e980c606ac18901d6b",
+        "cachedKeySHA256": "276aba939a1011014b001af031f5df547f68ab98ca67f4d58f73159e50740046"
+      },
+      {
+        "method": "upgrade_planet",
+        "decompressedBytecodeSHA256": "5585b3eddbf71adbf92a837f960c7496a1e8963395242cd1cb45fe8d7ae0a836",
+        "cachedKeySHA256": "8957c0fa03fcbf7cbb451dedb030fa03997f55aa8b66b48b7dde08783565be22"
+      },
+      {
+        "method": "withdraw_silver",
+        "decompressedBytecodeSHA256": "4049599641a384840a0a77bbe9ed5b2359a689a9697d96986b8e9ab7b0e93a82",
+        "cachedKeySHA256": "31cc363b2f2568cf624c875725cfb00845e49998cc663ae1f355fbcedbca2c89"
+      }
+    ]
+  },
+  "move-Move.json": {
+    "sourceArtifactSHA256": "74c94e9f5d2b2f8fdc661edb8971553a49ab381050d9dcc35bd0b6c773912e83",
+    "sourceBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+    "policy": "V8",
+    "compactReferenceSHA256": "7115613e1a822dcaef56ea5b1c9273b88acf14459d54860b4c5c26ab4300b369",
+    "privateMethods": [
+      {
+        "method": "move",
+        "decompressedBytecodeSHA256": "8fdbd3c7aa263740ba7a187f53b1c2cd1399bc2b367847ba1bf65de9fb024e66",
+        "cachedKeySHA256": "2a36cf4082616ab438c482cd26f98f294726d141b0546913828c36e6ab60ad1d"
+      }
+    ]
+  },
+  "artifact_action-ArtifactAction.json": {
+    "sourceArtifactSHA256": "18abde92b02238b6ecf6e70c99f69932c98f1c42a92d7be589a8808b288ef2fa",
+    "sourceBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+    "policy": "V8",
+    "compactReferenceSHA256": "2c805c41e05ba3defd7c598c97846690182ca3dcc1f1c30e9cca26b68ab7979b",
+    "privateMethods": [
+      {
+        "method": "activate_artifact",
+        "decompressedBytecodeSHA256": "e4eb4e58880c7e28e940dce6448c0e332a7a2eaa04cf0bb7a7b1f3debaa46af0",
+        "cachedKeySHA256": "1cbfd22e7629bcca5d2022522f3068f5693d80f858b343e73d90fdc1b9999398"
+      },
+      {
+        "method": "deactivate_artifact",
+        "decompressedBytecodeSHA256": "55064faaa61aa4b3a7c3ebf38f2e118c7d15e289399b4c083f427b2fd73d79bc",
+        "cachedKeySHA256": "791a380aaacf7f27705e5695d2012e798dd81639dd7c0542c164e94feb8379dc"
+      }
+    ]
+  },
+  "artifact_find-ArtifactFind.json": {
+    "sourceArtifactSHA256": "6109b5e58f038fbec6406be36aec1724c8ea4b57fd5bccd22fcbc8a747a6177e",
+    "sourceBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+    "policy": "V8",
+    "compactReferenceSHA256": "10b4a47056effe1a9d6a6e147cbb2c2a61257c8f65158ab3ea00680424d898b2",
+    "privateMethods": [
+      {
+        "method": "find_artifact",
+        "decompressedBytecodeSHA256": "82de015510bb3344c2590aaae0c39ae8f5b96f0d48102cd94217ab54ed4b5998",
+        "cachedKeySHA256": "bddb2dacc7d12f4268c500f96d6c6d001041e81b22d048fd8fffec1d51d11671"
+      }
+    ]
+  },
+  "artifact_prospect-ArtifactProspect.json": {
+    "sourceArtifactSHA256": "8b448586bf7e3338a00373dc87c9ecb602b1a7e9e6e3bcc16e559d687146fe84",
+    "sourceBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+    "policy": "V8",
+    "compactReferenceSHA256": "9244bbfe6b33d67cd0865e6acb7680dcb35130abb5098bdafe69fd18663657c6",
+    "privateMethods": [
+      {
+        "method": "prospect_planet",
+        "decompressedBytecodeSHA256": "fa252ca344eac294c1eb839c9d95ea8e55c721aa18d048e4a3f6e4fff9bcbc77",
+        "cachedKeySHA256": "2f2137d25bd36d91b3231f3f02a559fb4c990ac5237905adc5636115fb6441eb"
+      }
+    ]
+  },
+  "artifact_valut-ArtifactValut.json": {
+    "sourceArtifactSHA256": "fd07b4d5eaa63911289474642c232c0e49d99baa0f49e5b04d9a09ac24fe8dff",
+    "sourceBuildManifestSHA256": "53b3cd35ca0a1f821e29cf5e8f6b69c1a4cc423deebe85250b8359c54c839be0",
+    "policy": "V8",
+    "compactReferenceSHA256": "0399e2723ca667998f94401f32e7320ec9ef168c7a54654d992c78f35fdb8318",
+    "privateMethods": [
+      {
+        "method": "deposit_artifact",
+        "decompressedBytecodeSHA256": "34805804cdbf8e830e7b051a799fbf55d5aa9ecc937cfd5325d38522f0ea3ea2",
+        "cachedKeySHA256": "90d580a9b745c9d46fd3209d657a2ab32697de04833bf9117fd4f40edcd3ad9a"
+      },
+      {
+        "method": "give_spaceships",
+        "decompressedBytecodeSHA256": "4707036a722a7f73b806dbf5f41ffcebb9528f19cff783a1578097dd56b16445",
+        "cachedKeySHA256": "8a094596dd48c8dfda2ec857dc24fe975a933c1d21097b2bee75bd0f9ddd7387"
+      },
+      {
+        "method": "withdraw_artifact",
+        "decompressedBytecodeSHA256": "7d1496e43bc762a1b176116461a63fd78627d49d365885df1cdf96aba2322d5b",
+        "cachedKeySHA256": "33b3eb45992adbbff8f7b9e8399e38ef853e8780f25c0e9331895c251c9fbc56"
+      }
+    ]
+  }
+}

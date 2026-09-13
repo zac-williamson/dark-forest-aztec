@@ -1,0 +1,50 @@
+{
+  "api.py": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/check.py",
+    "sha256": "685237f851dc6cc4908e0eb7a4fca0c538bde74d24184c1a776ffc7f1e7d8fee"
+  },
+  "verify_facade_layout.py": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/verify_facade_layout.py",
+    "sha256": "8807b4f381f316fb6ac9f0e10a4d540c4401f9237e225eb58e9921c7eb78e4e3"
+  },
+  "verify_backend_layout.py": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/verify_backend_layout.py",
+    "sha256": "fd29264b2da68b938933baf7989c56a967d6eefac66b8ad099f00000a7263bec"
+  },
+  "original-inventory.json": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/baseline/inventory.json",
+    "sha256": "05f9ddc2fb43de9afda001f291b34208c75f4f1dc30171836810dc5eda667377"
+  },
+  "original-artifacts.json": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/baseline/artifacts.json",
+    "sha256": "f4f586e3abdc4e03f3674a1cf4ab638dda4770dbca072e555e35169a1d51e8d2"
+  },
+  "original-manifest.json": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/baseline/manifest.json",
+    "sha256": "de8127f4b6dcf0ab4df57438b4ca2238fd69a905c29840507566f6748958ed7d"
+  },
+  "v8-build.mjs": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/contracts/scripts/dev/build-api-compatible.mjs",
+    "sha256": "6760182ebf3c49bdaaa51db96c79c1540897e3f566416fd609e4c411b94b552b"
+  },
+  "v8-raw-selectors.mjs": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/check-raw-selectors.mjs",
+    "sha256": "1e53e8b0aa3c05627e2a8ac65753a26f35a049f3990e1ff788d3794160238c27"
+  },
+  "v8-config-layout.py": {
+    "source": "/tmp/df-api-compatible-v8-core-worktree/tests/api-compatibility/verify_config_layout.py",
+    "sha256": "b0ed5a4fa14676876c72a9df8455ab65179e6842733b3211d7ac91c47a2dc0a9"
+  },
+  "cached-only.py": {
+    "source": "/tmp/df-bb-cached-only.py",
+    "sha256": "62ba9c7beea0c09bb6692e13f6592fc4a6cb15ec7bcc0afc31a30321154124c4"
+  },
+  "known-private-keys.json": {
+    "source": "/tmp/df-known-private-keys.json",
+    "sha256": "5a10dd43264601fbb3b946af861446cb07e46a928cc80a8b76eb968b3526beb4"
+  },
+  "guard-tests.json": {
+    "source": "/tmp/df-cache-only-build-guard-tests.json",
+    "sha256": "f9203b17e39cbc058b0b396fb1534060c42d055d28c4480335fa6fced73c48fb"
+  }
+}

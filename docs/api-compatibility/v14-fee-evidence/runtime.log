@@ -1,0 +1,117 @@
+FULL58_STEP experiments/api-compatible-benchmark/verify-cached-originals-v14.mjs
+ORIGINAL_PREFLIGHT52_PASSED
+FULL58_STEP experiments/api-compatible-benchmark/run-plan-v14.mjs
+STEP verify-cached-original-receipts
+CACHED_BASELINE 44 canonical receipts, 17 classes, counter 0x0000000000000000000000000000000000000000000000000000000000000010
+STEP deploy-and-bind
+READY candidate-v14 all 17 original contracts
+STEP configure-identically
+BASE 4925234744530858171417654075256589666688346860022878524242846880227987649233 historical block 101
+CONFIGURED candidate-v14
+STEP initialize-first
+ACTION candidate-v14 initialize_player FJ 1.8950529625299364 exact roots verified
+STEP fresh-find-original
+ACTION baseline-v2 find_artifact FJ 5.650908135914738 exact roots verified
+STEP fresh-find-candidate
+ACTION candidate-v14 find_artifact FJ 3.628878842964018 exact roots verified
+STEP refresh-and-move
+ACTION candidate-v14 refresh_planet FJ 2.0198982341416505 exact roots verified
+ACTION candidate-v14 move FJ 3.308644903221926 exact roots verified
+STEP early-carried-refresh20
+ACTION candidate-v14 refresh_planet FJ 5.051630324081186 exact roots verified
+EARLY_CARRIED_REFRESH {"method":"refresh_planet","caseId":"carried_arrivals_20","paymentMode":"account","baselineFeeWei":"6105474571422732992","candidateFeeWei":"5051630324081185616","savedFeeWei":"1053844247341547376","regression":false}
+STEP remaining-private
+ACTION candidate-v14 reveal_location FJ 2.0530477901559667 exact roots verified
+ACTION candidate-v14 upgrade_planet FJ 3.2083001204914807 exact roots verified
+ACTION candidate-v14 withdraw_silver FJ 3.305165214099584 exact roots verified
+ACTION candidate-v14 safe_set_owner FJ 1.7398601651580918 exact roots verified
+ACTION candidate-v14 prospect_planet FJ 2.841314406269646 exact roots verified
+ACTION candidate-v14 deposit_artifact FJ 3.331765553815732 exact roots verified
+ACTION candidate-v14 withdraw_artifact FJ 3.3321266746599463 exact roots verified
+ACTION candidate-v14 give_spaceships FJ 3.7376118833289107 exact roots verified
+ACTION candidate-v14 activate_artifact FJ 3.3186782669244637 exact roots verified
+ACTION candidate-v14 deactivate_artifact FJ 3.193556581827054 exact roots verified
+STEP public-admin-and-vault
+ACTION candidate-v14 pause FJ 1.4899043541540367 exact roots verified
+ACTION candidate-v14 unpause FJ 1.4900849145761441 exact roots verified
+ACTION candidate-v14 admin_set_world_radius FJ 1.492592698216525 exact roots verified
+ACTION candidate-v14 set_owner FJ 1.691035289535634 exact roots verified
+ACTION candidate-v14 add_score FJ 1.506355414834936 exact roots verified
+ACTION candidate-v14 deduct_score FJ 1.5063754771040592 exact roots verified
+ACTION candidate-v14 create_planet FJ 2.2462251504007824 exact roots verified
+ACTION candidate-v14 admin_initialize_planet FJ 4.252017380207916 exact roots verified
+ACTION candidate-v14 admin_give_artifact FJ 2.149360056792679 exact roots verified
+ACTION candidate-v14 admin_give_spaceship FJ 2.535803942922857 exact roots verified
+STEP maximum-due-arrivals
+ACTION candidate-v14 refresh_planet FJ 3.2254734228608095 exact roots verified
+ACTION candidate-v14 move FJ 3.8553149871328194 exact roots verified
+STEP initialization-edges
+ACTION candidate-v14 initialize_player FJ 1.8950529625299364 exact roots verified
+ACTION candidate-v14 initialize_player FJ 3.3502116957038672 exact roots verified
+STEP refresh-edges
+ACTION candidate-v14 refresh_planet FJ 2.0198982341416505 exact roots verified
+ACTION candidate-v14 refresh_planet FJ 3.0765578865834655 exact roots verified
+STEP retained-move-branches
+ACTION candidate-v14 move FJ 3.55036849646249 exact roots verified
+ACTION candidate-v14 move FJ 3.6145677576562436 exact roots verified
+ACTION candidate-v14 move FJ 3.523253225172184 exact roots verified
+ACTION candidate-v14 move FJ 3.6995693627895845 exact roots verified
+ACTION candidate-v14 move FJ 3.6057158386909522 exact roots verified
+ACTION candidate-v14 move FJ 3.470344563212679 exact roots verified
+ACTION candidate-v14 move FJ 3.55036849646249 exact roots verified
+ACTION candidate-v14 move FJ 3.8155225908977606 exact roots verified
+ACTION candidate-v14 move FJ 3.839265171834381 exact roots verified
+ACTION candidate-v14 move FJ 3.308644903221926 exact roots verified
+STEP refresh-artifact-arrival
+ACTION candidate-v14 refresh_planet FJ 3.167865731644484 exact roots verified
+STEP sponsored-player-actions
+ACTION candidate-v14 refresh_planet FJ 2.0198982341416505 exact roots verified
+ACTION candidate-v14 move FJ 3.308644903221926 exact roots verified
+FULL58_STEP experiments/api-compatible-benchmark/run-carried-v14.mjs
+STEP baseline-v2 refresh_planet carried_arrivals_5
+STEP candidate-v14 refresh_planet carried_arrivals_5
+ACTION candidate-v14 refresh_planet FJ 3.5644477511048422 exact roots verified
+STEP baseline-v2 move carried_arrivals_5
+STEP candidate-v14 move carried_arrivals_5
+ACTION candidate-v14 move FJ 4.803662906861327 exact roots verified
+STEP baseline-v2 refresh_planet carried_arrivals_20
+STEP candidate-v14 refresh_planet carried_arrivals_20
+STEP baseline-v2 move carried_arrivals_20
+STEP candidate-v14 move carried_arrivals_20
+ACTION candidate-v14 move FJ 8.491442342829599 exact roots verified
+COMPLETE 4 additional carried-arrival pairs
+FULL58_STEP experiments/api-compatible-benchmark/run-artifact-extension-v14.mjs
+EXTENSION_STEP baseline-v14-artifacts find_artifact carried_find_2
+ACTION baseline-v14-artifacts find_artifact FJ 5.844865695514339 exact roots verified
+EXTENSION_STEP candidate-v14 find_artifact carried_find_2
+ACTION candidate-v14 find_artifact FJ 4.014330761343111 exact roots verified
+EXTENSION_STEP baseline-v14-artifacts find_artifact carried_find_5
+ACTION baseline-v14-artifacts find_artifact FJ 6.135802034913741 exact roots verified
+EXTENSION_STEP candidate-v14 find_artifact carried_find_5
+ACTION candidate-v14 find_artifact FJ 4.3531356748701056 exact roots verified
+EXTENSION_STEP baseline-v2 deposit_artifact carried_deposit_5
+EXTENSION_STEP candidate-v14 deposit_artifact carried_deposit_5
+ACTION candidate-v14 deposit_artifact FJ 4.055246644649062 exact roots verified
+EXTENSION_STEP baseline-v14-artifacts find_artifact boundary_find_1_due_1_future
+ACTION baseline-v14-artifacts find_artifact FJ 5.763856481936485 exact roots verified
+EXTENSION_STEP candidate-v14 find_artifact boundary_find_1_due_1_future
+ACTION candidate-v14 find_artifact FJ 3.8334248223785603 exact roots verified
+EXTENSION_STEP baseline-v14-artifacts find_artifact boundary_find_12_due_1_future
+ACTION baseline-v14-artifacts find_artifact FJ 6.83062305973429 exact roots verified
+EXTENSION_STEP candidate-v14 find_artifact boundary_find_12_due_1_future
+ACTION candidate-v14 find_artifact FJ 5.4624498671958674 exact roots verified
+EXTENSION_STEP baseline-v14-artifacts find_artifact boundary_find_13_due_1_future
+ACTION baseline-v14-artifacts find_artifact FJ 6.9276018395340895 exact roots verified
+EXTENSION_STEP candidate-v14 find_artifact boundary_find_13_due_1_future
+ACTION candidate-v14 find_artifact FJ 5.684804454168636 exact roots verified
+EXTENSION_STEP baseline-v12-artifacts deposit_artifact boundary_deposit_4_due_0_future
+EXTENSION_STEP candidate-v14 deposit_artifact boundary_deposit_4_due_0_future
+ACTION candidate-v14 deposit_artifact FJ 3.9221156558895283 exact roots verified
+EXTENSION_STEP baseline-v12-artifacts deposit_artifact boundary_deposit_4_due_11_future
+EXTENSION_STEP candidate-v14 deposit_artifact boundary_deposit_4_due_11_future
+ACTION candidate-v14 deposit_artifact FJ 5.4852294592145805 exact roots verified
+EXTENSION_STEP baseline-v12-artifacts deposit_artifact boundary_deposit_4_due_12_future
+EXTENSION_STEP candidate-v14 deposit_artifact boundary_deposit_4_due_12_future
+ACTION candidate-v14 deposit_artifact FJ 5.693540457801216 exact roots verified
+ARTIFACT_EXTENSION_COMPLETE 9
+COMPLETE58

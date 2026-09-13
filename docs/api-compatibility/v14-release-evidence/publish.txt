@@ -1,0 +1,1 @@
+{"passed": true, "artifacts": 20, "bindings": 5, "buildProvenanceSHA256": "8e8a622cbb96e46a660c765b64233411bd8cf98b1863dcbd3683eda4b85f268c", "codegenDirectory": "/Users/zac/Documents/ChatGPT/Dark Forest/dark-forest-aztec/contracts/target/api-compatible", "proofsGenerated": 0}
